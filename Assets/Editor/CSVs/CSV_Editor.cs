@@ -1094,18 +1094,21 @@ namespace CSVTools
             int x_Length = allEntries[0].Count - 1;
             int y_Length = allEntries.Count - 1;
 
-            int[][] newGrid = new int[x_Length][];
+            List<CoordinateFlagPair> newGrid = new List<CoordinateFlagPair>();
 
             for (int x = 0; x < x_Length; x++)
             {
-                newGrid[x] = new int[y_Length];
-                for (int y = 1; y < y_Length; y++)
+                for (int y = 1; y < y_Length + 1; y++)
                 {
-                    newGrid[x][y] = int.Parse(allEntries[y][x]);
+                    CoordinateFlagPair coordinateFlagPair = new CoordinateFlagPair();
+                    coordinateFlagPair.coordinate = new Vector2Int(x,y - 1);
+                    coordinateFlagPair.flag = int.Parse(allEntries[y][x]);
+
+                    newGrid.Add(coordinateFlagPair);
                 }
             }
 
-            levelDataSO.SetGrid(newGrid);
+            levelDataSO.SetGrid(newGrid, x_Length, y_Length);
 
             CSV_SOHelpers.CreateNewScriptableObjectIfAssetDoesntExist<LevelData>(levelDataSO, assetPath);
         }

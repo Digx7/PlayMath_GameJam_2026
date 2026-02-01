@@ -10,10 +10,10 @@ public class LevelData : ScriptableObject
 
     public List<TreasurePiece> treasureToFind;
 
-    public void SetGrid(int[][] newGrid)
+    public void SetGrid(List<CoordinateFlagPair> newData, int newX_Length, int newY_Length)
     {
         Debug.Log($"LevelData {name} had a new grid set");
-        grid = new Grid(newGrid);
+        grid = new Grid(newData, newX_Length, newY_Length);
     }
     public void SetTreasureToFind(List<TreasurePiece> newTreasureToFind){treasureToFind = newTreasureToFind;}
 
@@ -36,39 +36,21 @@ public class LevelData : ScriptableObject
 [System.Serializable]
 public class Grid
 {
-    // public int[][] data;
-
-    // [SerializeField]
-    // public Dictionary<Vector2Int, int> data;
     public List<CoordinateFlagPair> data;
     public int x_Length = 0;
     public int y_Length = 0;
 
-    public Grid(int[][] data)
+    public Grid(List<CoordinateFlagPair> newData, int newX_Length, int newY_Length)
     {
-        SetGrid(data);
+        SetGrid(newData, newX_Length, newY_Length);
     }
 
-    public void SetGrid(int[][] newGrid)
+    public void SetGrid(List<CoordinateFlagPair> newData, int newX_Length, int newY_Length)
     {
-        data = new List<CoordinateFlagPair>();
+        data = newData;
 
-        x_Length = newGrid.Length;
-        y_Length = newGrid[0].Length;
-
-        for (int x = 0; x < newGrid.Length; x++)
-        {
-            for (int y = 0; y < newGrid[x].Length; y++)
-            {
-                Vector2Int coords = new Vector2Int(x,y);
-                CoordinateFlagPair coordinateFlagPair = new CoordinateFlagPair();
-
-                coordinateFlagPair.coordinate = coords;
-                coordinateFlagPair.flag = newGrid[x][y];
-
-                data.Add(coordinateFlagPair);
-            }
-        }   
+        x_Length = newX_Length;
+        y_Length = newY_Length;
 
         PrintGrid();
     }

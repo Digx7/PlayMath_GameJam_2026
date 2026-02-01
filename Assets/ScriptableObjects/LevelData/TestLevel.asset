@@ -15,23 +15,23 @@ MonoBehaviour:
   grid:
     data:
     - coordinate: {x: 0, y: 0}
-      flag: 0
-    - coordinate: {x: 0, y: 1}
       flag: 131
+    - coordinate: {x: 0, y: 1}
+      flag: 0
     - coordinate: {x: 0, y: 2}
       flag: 0
     - coordinate: {x: 1, y: 0}
-      flag: 0
-    - coordinate: {x: 1, y: 1}
       flag: 132
-    - coordinate: {x: 1, y: 2}
+    - coordinate: {x: 1, y: 1}
       flag: 133
+    - coordinate: {x: 1, y: 2}
+      flag: 0
     - coordinate: {x: 2, y: 0}
       flag: 0
     - coordinate: {x: 2, y: 1}
-      flag: 0
-    - coordinate: {x: 2, y: 2}
       flag: 122
+    - coordinate: {x: 2, y: 2}
+      flag: 121
     x_Length: 3
     y_Length: 3
   treasureToFind: []

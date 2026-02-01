@@ -1,20 +1,41 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System;
+using System.Collections.Generic;
+
 
 public class LevelRuntimeData : MonoBehaviour 
 {
+    [Header("InComing Channels")]
     public Vector2IntChannel TryDigChannel;
     
+    // Level Data
     public LevelData levelDataSO;
 
+
+    // Runtime Data
     [SerializeField]
     public Digx7.Grids.Grid modifiedGrid;
+    [SerializeField]
+    public List<TreasureRuntimeData> treasureRuntimeDatas;
+    public bool levelFinished;
 
+    [Header("Events")]
     public DigDataEvent OnDig;
+    public StringEvent OnFullyDigUpPiece;
+    public UnityEvent OnFinishLevel;
 
     private void Awake() 
     {
         modifiedGrid = new Digx7.Grids.Grid(levelDataSO.grid.x_Length, levelDataSO.grid.y_Length);
+
+        treasureRuntimeDatas = new List<TreasureRuntimeData>();
+        for (int i = 0; i < levelDataSO.treasureToFind.Count; i++)
+        {
+            TreasureRuntimeData tRunTime = new TreasureRuntimeData(levelDataSO.treasureToFind[i]);
+            tRunTime.OnFullyDigUp.AddListener((string output) => OnFullyDigUpPiece.Invoke(output));
+            treasureRuntimeDatas.Add(tRunTime);
+        }
     }
 
     private void OnEnable() {
@@ -76,6 +97,41 @@ public class LevelRuntimeData : MonoBehaviour
         }
 
         OnDig.Invoke(digData);
+
+        AddFoundTreasureToFoundList(digData);
+
+        CheckIfLevelIsFinished();
+    }
+
+    private void AddFoundTreasureToFoundList(DigData digData)
+    {
+        // If found treasure add its piece to the list of pieces found
+        if(digData.spaceID == "T")
+        {
+            for (int i = 0; i < treasureRuntimeDatas.Count; i++)
+            {
+                if(treasureRuntimeDatas[i].treasurePieceSO.ID == digData.itemID)
+                {
+                    treasureRuntimeDatas[i].FindPiece(digData.itemSubID);
+                }
+            }
+        }
+    }
+
+    private void CheckIfLevelIsFinished()
+    {
+        // Check if we have found everything
+        bool hasFoundAllTreasure = true;
+        for (int i = 0; i < treasureRuntimeDatas.Count; i++)
+        {
+            if(treasureRuntimeDatas[i].fullyDugUp == false) hasFoundAllTreasure = false;
+        }
+
+        if(hasFoundAllTreasure) 
+        {
+            levelFinished = true;
+            OnFinishLevel.Invoke();
+        }
     }
 }
 
@@ -97,4 +153,70 @@ public struct DigData
     public string spaceID;
     public string itemID;
     public string itemSubID;
+    public Sprite subSprite;
+}
+
+[System.Serializable]
+public class TreasureRuntimeData
+{
+    public TreasurePiece treasurePieceSO;
+    public bool fullyDugUp;
+
+    public List<FoundFlagPair> foundPieces;
+
+    public StringEvent OnFullyDigUp;
+
+    public TreasureRuntimeData(TreasurePiece newTreasurePieceSO)
+    {
+        treasurePieceSO = newTreasurePieceSO;
+        fullyDugUp = false;
+
+        foundPieces = new List<FoundFlagPair>();
+        for (int i = 0; i < treasurePieceSO.subSprites.Count; i++)
+        {
+            FoundFlagPair foundFlagPair = new FoundFlagPair();
+            foundFlagPair.found = false;
+            foundFlagPair.subFlag = treasurePieceSO.subSprites[i].SubID;
+
+            foundPieces.Add(foundFlagPair);
+        }
+
+        OnFullyDigUp = new StringEvent();
+    }
+
+    public void FindPiece(string subFlag)
+    {
+        for (int i = 0; i < foundPieces.Count; i++)
+        {
+            if(foundPieces[i].subFlag == subFlag)
+            {
+                FoundFlagPair foundFlagPair = foundPieces[i];
+                foundFlagPair.found = true;
+                foundPieces[i] = foundFlagPair;
+            }
+        }
+
+        if(CheckIfIsFullyDugUp()) OnFullyDigUp.Invoke(treasurePieceSO.ID);
+    }
+
+    public bool CheckIfIsFullyDugUp()
+    {
+        for (int i = 0; i < foundPieces.Count; i++)
+        {
+            if(foundPieces[i].found == false) 
+            {
+                fullyDugUp = false;
+                return false;
+            }
+        }
+        fullyDugUp = true;
+        return true;
+    }
+}
+
+[System.Serializable]
+public struct FoundFlagPair
+{
+    public bool found;
+    public string subFlag;
 }

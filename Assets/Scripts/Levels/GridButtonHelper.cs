@@ -4,7 +4,20 @@ using UnityEngine.Events;
 public class GridButtonHelper : MonoBehaviour {
     public DigDataChannel onDig;
 
-    public Vector2Int coordinate;
+    [SerializeField]private Vector2Int coordinate;
+    public Vector2Int Coordinate
+    {
+        get 
+        {
+            return coordinate;
+        } 
+        set
+        {
+            coordinate = value;
+            vector2IntChannelRaiser.Data = value;
+        }
+        }
+    public Vector2IntChannelRaiser vector2IntChannelRaiser;
 
     public BooleanEvent onFoundTreasure;
 

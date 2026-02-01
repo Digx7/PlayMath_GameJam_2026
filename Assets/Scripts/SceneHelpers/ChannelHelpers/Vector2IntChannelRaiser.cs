@@ -5,6 +5,17 @@ public class Vector2IntChannelRaiser : MonoBehaviour
 {
     [SerializeField] private Vector2IntChannel channelToRaise;
     [SerializeField] private Vector2Int m_data;
+    public Vector2Int Data
+    {
+        get
+        {
+            return m_data;
+        }
+        set
+        {
+            m_data = value;
+        }
+    }
 
     public void Raise(Vector2Int data)
     {

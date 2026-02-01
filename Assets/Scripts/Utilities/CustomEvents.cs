@@ -53,3 +53,6 @@ public class SceneContextEvent : UnityEvent<SceneContext> {}
 
 [System.Serializable]
 public class DigDataEvent : UnityEvent<DigData> {}
+
+[System.Serializable]
+public class LevelDataEvent : UnityEvent<LevelData> {}

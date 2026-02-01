@@ -21,6 +21,7 @@ public class LevelRuntimeData : MonoBehaviour
     public bool levelFinished;
 
     [Header("Events")]
+    public LevelDataEvent OnSetup;
     public DigDataEvent OnDig;
     public StringEvent OnFullyDigUpPiece;
     public UnityEvent OnFinishLevel;
@@ -36,6 +37,8 @@ public class LevelRuntimeData : MonoBehaviour
             tRunTime.OnFullyDigUp.AddListener((string output) => OnFullyDigUpPiece.Invoke(output));
             treasureRuntimeDatas.Add(tRunTime);
         }
+
+        OnSetup.Invoke(levelDataSO);
     }
 
     private void OnEnable() {

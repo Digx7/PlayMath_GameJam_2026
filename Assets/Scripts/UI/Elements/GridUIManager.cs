@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System;
 
 public class GridUIManager : MonoBehaviour 
 {
@@ -8,6 +10,10 @@ public class GridUIManager : MonoBehaviour
     public GameObject gridButtonPrefab;
     public Transform gridButtonHolder;
     public GridLayoutGroup gridLayoutGroup;
+
+    public GameObject gridLabelPrefab;
+    public Transform gridLabelTopHolder;
+    public Transform gridLabelLeftHolder;
 
     private LevelData levelDataSO;
 
@@ -23,17 +29,13 @@ public class GridUIManager : MonoBehaviour
     {
         levelDataSO = levelData;
         gridLayoutGroup.constraintCount = levelDataSO.grid.x_Length;
-        
-        // for (int i = 0; i < levelDataSO.grid.data.Count; i++)
-        // {
-        //     GameObject obj = Instantiate(gridButtonPrefab, gridButtonHolder);
-        //     GridButtonHelper gridButtonHelper = obj.GetComponentInChildren<GridButtonHelper>();
-
-        //     gridButtonHelper.Coordinate = levelDataSO.grid.data[i].coordinate;
-        // }
 
         for (int y = 0; y < levelDataSO.grid.y_Length; y++)
         {
+            GameObject obj_Label_Left = Instantiate(gridLabelPrefab, gridLabelLeftHolder);
+            TextMeshProUGUI leftLabelTextMeshPro = obj_Label_Left.GetComponent<TextMeshProUGUI>();
+            leftLabelTextMeshPro.text = (y + 1).ToString();
+            
             for (int x = 0; x < levelDataSO.grid.x_Length; x++)
             {
                 GameObject obj = Instantiate(gridButtonPrefab, gridButtonHolder);
@@ -42,6 +44,13 @@ public class GridUIManager : MonoBehaviour
                 Vector2Int coordintate = new Vector2Int(x,y);
                 gridButtonHelper.Coordinate = coordintate;
             }
+        }
+
+        for (int x = 0; x < levelDataSO.grid.x_Length; x++)
+        {
+            GameObject obj_Label_Top = Instantiate(gridLabelPrefab, gridLabelTopHolder);
+            TextMeshProUGUI topLabelTextMeshPro = obj_Label_Top.GetComponent<TextMeshProUGUI>();
+            topLabelTextMeshPro.text = Convert.ToChar(x + 65).ToString();
         }
     }
 }

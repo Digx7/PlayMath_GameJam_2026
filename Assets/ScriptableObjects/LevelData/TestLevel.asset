@@ -36,3 +36,5 @@ MonoBehaviour:
     y_Length: 3
   treasureToFind:
   - {fileID: 11400000, guid: ac30c0ab89dd379488eb5019da6c5db1, type: 2}
+  hints:
+  - A5

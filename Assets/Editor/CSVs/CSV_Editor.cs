@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEditor;
+using Digx7.Grids;
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace CSVTools
     public delegate void EntryToSO(List<string> entry);
     public delegate void AllEntriestoSO(List<List<string>> allEntries);
     public delegate string SOToEntry<T>(T so) where T : ScriptableObject;
+    public delegate string[] SOToMultipleEntries<T>(T so) where T : ScriptableObject;
     
     public static class CSV_Editor
     {
@@ -85,6 +87,19 @@ namespace CSVTools
                 newLines[i + 1] = gameDataToString(scriptableObjects[i]);
                 newLines[i + 1] = Regex.Replace(newLines[i + 1], "(?<!\r)\n", "\r\n");
             }
+
+            File.WriteAllLines(csvPath, newLines);
+        }
+
+        public static void ExportObjectAsMultipleEntries<T>(string csvPath, string scriptableObjectPath, SOToMultipleEntries<T> gameDataToStrings) where T : ScriptableObject
+        {
+            T scriptableObject = CSV_SOHelpers.LoadScriptableObjectAtPath<T>(scriptableObjectPath);
+            string[] newLines = gameDataToStrings(scriptableObject);
+
+            // for (int i = 0; i < newLines.Length; i++)
+            // {
+            //     newLines[i] = Regex.Replace(newLines[i], "(?<!\r)\n", "\r\n");
+            // }
 
             File.WriteAllLines(csvPath, newLines);
         }
@@ -1073,9 +1088,10 @@ namespace CSVTools
             CSV_Editor.ImportAllEntriesAtOnce(Application.dataPath + CSV_UserData.LEVELDATA_CSV_PATH, AllEntriesToLevelData);
         }
 
+        [MenuItem("Utilities/CSV/LevelData/Export")]
         public static void ExportLevelData()
         {
-            CSV_Editor.Export<LevelData>(Application.dataPath + CSV_UserData.LEVELDATA_CSV_PATH, CSV_UserData.LEVELDATA_SO_PATH, LevelDataToEntry);
+            CSV_Editor.ExportObjectAsMultipleEntries<LevelData>(Application.dataPath + CSV_UserData.LEVELDATA_CSV_PATH, CSV_UserData.LEVELDATA_SO_PATH + "TestLevel.asset", LevelDataToEntry);
         }
 
         public static void AllEntriesToLevelData(List<List<string>> allEntries)
@@ -1113,9 +1129,35 @@ namespace CSVTools
             CSV_SOHelpers.CreateNewScriptableObjectIfAssetDoesntExist<LevelData>(levelDataSO, assetPath);
         }
 
-        public static string LevelDataToEntry(LevelData levelDataSOs)
+        public static string[] LevelDataToEntry(LevelData levelDataSOs)
         {
-            return "";
+            string[] lines = new string[levelDataSOs.grid.y_Length + 1];
+
+            // Header
+            string header = $"{levelDataSOs.name}";
+            if(levelDataSOs.grid.x_Length > 2)
+            {
+                for (int x = 1; x < levelDataSOs.grid.x_Length; x++)
+                {
+                    header += $"{CSV_UserData.COLUMN_DELIMITER}z";
+                }
+            }
+            header += $"{CSV_UserData.COLUMN_DELIMITER}$";
+            lines[0] = header;
+
+            // Data
+            for (int y = 0; y < levelDataSOs.grid.y_Length; y++)
+            {
+                for (int x = 0; x < levelDataSOs.grid.x_Length; x++)
+                {
+                    lines[y+1] += $"{levelDataSOs.grid.GetIDofGridSpace(x,y)}{CSV_UserData.COLUMN_DELIMITER}";
+                }
+                // lines[y+1] += $"{CSV_UserData.ROW_DELIMITER}";
+                lines[y+1] += "$";
+            }
+
+
+            return lines;
         }
 
         #endregion
@@ -1178,6 +1220,12 @@ namespace CSVTools
             }
 
             return SOs;
+        }
+
+        public static T LoadScriptableObjectAtPath<T>(string path) where T : ScriptableObject
+        {
+            T so = (T)AssetDatabase.LoadAssetAtPath(path, typeof(T));
+            return so;
         }
     }
 }

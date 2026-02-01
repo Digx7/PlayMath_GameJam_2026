@@ -311,8 +311,8 @@ namespace CSVTools
         // #endregion
 
         #region LevelData
-        public const string LEVELDATA_CSV_PATH = "/Editor/CSVs/TestLevel.csv";
-        public const string LEVELDATA_SO_PATH = "Assets/ScriptableObjects/LevelData/";
+        public const string LEVELDATA_CSV_DIR = "/Editor/CSVs/LevelData/";
+        public const string LEVELDATA_SO_DIR = "Assets/ScriptableObjects/LevelData/";
         #endregion
 
         #region General
@@ -1085,19 +1085,35 @@ namespace CSVTools
         [MenuItem("Utilities/CSV/LevelData/Import")]
         public static void ImportLevelData()
         {
-            CSV_Editor.ImportAllEntriesAtOnce(Application.dataPath + CSV_UserData.LEVELDATA_CSV_PATH, AllEntriesToLevelData);
+            string[] csvFiles = Directory.GetFiles(Application.dataPath + CSV_UserData.LEVELDATA_CSV_DIR, "*.csv", SearchOption.TopDirectoryOnly);
+            
+            foreach (string csvFile in csvFiles)
+            { 
+                CSV_Editor.ImportAllEntriesAtOnce(csvFile, AllEntriesToLevelData);
+            }
         }
 
         [MenuItem("Utilities/CSV/LevelData/Export")]
         public static void ExportLevelData()
         {
-            CSV_Editor.ExportObjectAsMultipleEntries<LevelData>(Application.dataPath + CSV_UserData.LEVELDATA_CSV_PATH, CSV_UserData.LEVELDATA_SO_PATH + "TestLevel.asset", LevelDataToEntry);
+            string[] csvFiles = Directory.GetFiles(Application.dataPath + CSV_UserData.LEVELDATA_CSV_DIR, "*.csv", SearchOption.TopDirectoryOnly);
+            string[] levelDataFiles = Directory.GetFiles(CSV_UserData.LEVELDATA_SO_DIR, "*.asset", SearchOption.TopDirectoryOnly);
+            
+            // C:\Users\Digx7\Desktop\Files\Work\Git_Repos\PlayMath_GameJam_2026\Assets\ScriptableObjects\LevelData
+            // C:\Users\Digx7\Desktop\Files\Work\Git_Repos\PlayMath_GameJam_2026\Assets\ScriptableObjects\LevelData
+
+
+            for (int i = 0; i < csvFiles.Length; i++)
+            {
+                CSV_Editor.ExportObjectAsMultipleEntries<LevelData>(csvFiles[i], levelDataFiles[i], LevelDataToEntry);
+            }
+            
         }
 
         public static void AllEntriesToLevelData(List<List<string>> allEntries)
         {
             string assetName = allEntries[0][0];
-            string assetPath = $"{CSV_UserData.LEVELDATA_SO_PATH}{assetName}.asset";
+            string assetPath = $"{CSV_UserData.LEVELDATA_SO_DIR}{assetName}.asset";
 
             Debug.Log($"Processing Level Data {assetName}");
 

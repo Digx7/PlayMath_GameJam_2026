@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 namespace CSVTools
 {
     public delegate void EntryToSO(List<string> entry);
+    public delegate void AllEntriestoSO(List<List<string>> allEntries);
     public delegate string SOToEntry<T>(T so) where T : ScriptableObject;
     
     public static class CSV_Editor
@@ -30,6 +31,22 @@ namespace CSVTools
             {
                 entryToGameData(entry);
             }
+        }
+
+        public static void Import(string csvPath, EntryToSO entryToGameData)
+        {
+            List<List<string>> data = ParseCSV(csvPath);
+
+            foreach (List<string> entry in data)
+            {
+                entryToGameData(entry);
+            }
+        }
+
+        public static void ImportAllEntriesAtOnce(string csvPath, AllEntriestoSO allEntriesToGameData)
+        {
+            List<List<string>> data = ParseCSV(csvPath);
+            allEntriesToGameData(data);
         }
 
         /// <summary>
@@ -55,6 +72,21 @@ namespace CSVTools
 
             File.WriteAllLines(csvPathTagged, newLines);
             UnTagCSV(csvPathUnTagged, csvPathTagged, entryIndexesToUnTag);
+        }
+
+        public static void Export<T>(string csvPath, string scriptableObjectDirPath, SOToEntry<T> gameDataToString) where T : ScriptableObject
+        {
+            List<T> scriptableObjects = CSV_SOHelpers.LoadAllScriptableObjectsInDir<T>(scriptableObjectDirPath);
+            string[] newLines = new string[scriptableObjects.Count + 1];
+            newLines[0] = GetCSVHeaderLine(csvPath);
+
+            for (int i = 0; i < scriptableObjects.Count; i++)
+            {
+                newLines[i + 1] = gameDataToString(scriptableObjects[i]);
+                newLines[i + 1] = Regex.Replace(newLines[i + 1], "(?<!\r)\n", "\r\n");
+            }
+
+            File.WriteAllLines(csvPath, newLines);
         }
 
         /// <summary>
@@ -262,6 +294,11 @@ namespace CSVTools
         // public const string GUIDES_SO_PATH = "Assets/Resources/ScriptableObjects/Guides/";
         // public static int[] GUIDES_TAG_INDEXS = new int[]{3};
         // #endregion
+
+        #region LevelData
+        public const string LEVELDATA_CSV_PATH = "/Editor/CSVs/TestLevel.csv";
+        public const string LEVELDATA_SO_PATH = "Assets/ScriptableObjects/LevelData/";
+        #endregion
 
         #region General
         public const string AUTOTAGS_CSV_PATH = "/Editor/CSVs/AutoTags.csv";
@@ -1029,6 +1066,57 @@ namespace CSVTools
     
         // #endregion 
     
+        #region LevelData
+        [MenuItem("Utilities/CSV/LevelData/Import")]
+        public static void ImportLevelData()
+        {
+            CSV_Editor.ImportAllEntriesAtOnce(Application.dataPath + CSV_UserData.LEVELDATA_CSV_PATH, AllEntriesToLevelData);
+        }
+
+        public static void ExportLevelData()
+        {
+            CSV_Editor.Export<LevelData>(Application.dataPath + CSV_UserData.LEVELDATA_CSV_PATH, CSV_UserData.LEVELDATA_SO_PATH, LevelDataToEntry);
+        }
+
+        public static void AllEntriesToLevelData(List<List<string>> allEntries)
+        {
+            string assetName = allEntries[0][0];
+            string assetPath = $"{CSV_UserData.LEVELDATA_SO_PATH}{assetName}.asset";
+
+            Debug.Log($"Processing Level Data {assetName}");
+
+            LevelData levelDataSO = CSV_SOHelpers.LoadOrCreateScriptableObjectInstance<LevelData>(assetPath, assetName);
+
+            // Parsing
+            levelDataSO.name = assetName;
+
+            // Grid
+            int x_Length = allEntries[0].Count - 1;
+            int y_Length = allEntries.Count - 1;
+
+            int[][] newGrid = new int[x_Length][];
+
+            for (int x = 0; x < x_Length; x++)
+            {
+                newGrid[x] = new int[y_Length];
+                for (int y = 1; y < y_Length; y++)
+                {
+                    newGrid[x][y] = int.Parse(allEntries[y][x]);
+                }
+            }
+
+            levelDataSO.SetGrid(newGrid);
+
+            CSV_SOHelpers.CreateNewScriptableObjectIfAssetDoesntExist<LevelData>(levelDataSO, assetPath);
+        }
+
+        public static string LevelDataToEntry(LevelData levelDataSOs)
+        {
+            return "";
+        }
+
+        #endregion
+
     }
 
     public static class CSV_SOHelpers

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPlayerOnSetup: 1
-  playerCharacterPreFab: {fileID: 4939326817478878853, guid: 4aca57158c49c244785a1ef786809d59, type: 3}
+  playerCharacterPreFab: {fileID: 4939326817478878853, guid: 82e54e72450279549842626b4f39e42b, type: 3}
   playerControllerPreFab: {fileID: 2707968005197875816, guid: 8efe1f92813e8f649a967195902fd696, type: 3}
   cameraManagerPreFab: {fileID: 167596003869953699, guid: c5e69b92bfa9c334fbbeb69a29a9cc93, type: 3}
   requestGameModeTearDownChannel: {fileID: 11400000, guid: f485a4babbc7fbf4e8185870298fcf5f, type: 2}

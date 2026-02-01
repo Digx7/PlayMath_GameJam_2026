@@ -1,0 +1,24 @@
+Get between brackets < >
+
+<([^>]*)>
+
+
+Get Linux Line (\n) WITHOUT also selecting Windows line endings (\r\n)
+
+(?<!\r)\n
+
+Get 2 or more consecutive spaces not precieded by a period
+
+(?<!\.)\s{2,}
+
+Get 3 or more line breaks in a row
+
+\n{3,}
+
+Get 'word' that is not followed by any letter
+
+word(?!filterWord)
+
+
+Speed: The speed options you can choose from if this train car is built.
+  <b><color=#0587fa> Worker  <sprite name="Worker" color=#0587fa>

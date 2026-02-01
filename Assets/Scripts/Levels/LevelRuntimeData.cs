@@ -3,6 +3,8 @@ using UnityEngine.Events;
 
 public class LevelRuntimeData : MonoBehaviour 
 {
+    public Vector2IntChannel TryDigChannel;
+    
     public LevelData levelDataSO;
 
     [SerializeField]
@@ -13,6 +15,14 @@ public class LevelRuntimeData : MonoBehaviour
     private void Awake() 
     {
         modifiedGrid = new Digx7.Grids.Grid(levelDataSO.grid.x_Length, levelDataSO.grid.y_Length);
+    }
+
+    private void OnEnable() {
+        TryDigChannel.channelEvent.AddListener(DigInSpace);
+    }
+
+    private void OnDisable() {
+        TryDigChannel.channelEvent.RemoveListener(DigInSpace);
     }
 
     public void DigInSpace(Vector2Int digCoordinates)

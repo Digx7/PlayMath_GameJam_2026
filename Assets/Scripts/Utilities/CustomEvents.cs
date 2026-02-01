@@ -25,6 +25,12 @@ public class Vector2Event : UnityEvent<Vector2> {}
 public class Vector3Event : UnityEvent<Vector3> {}
 
 [System.Serializable]
+public class Vector2IntEvent : UnityEvent<Vector2Int> {}
+
+[System.Serializable]
+public class Vector3IntEvent : UnityEvent<Vector3Int> {}
+
+[System.Serializable]
 public class SFXEvent : UnityEvent<string, Vector3> {}
 
 [System.Serializable]

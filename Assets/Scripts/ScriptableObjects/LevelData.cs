@@ -18,12 +18,18 @@ public class LevelData : ScriptableObject
     }
     public void SetTreasureToFind(List<TreasurePiece> newTreasureToFind){treasureToFind = newTreasureToFind;}
 
+    public bool DoesSpaceContainTreasure(Vector2Int coordinates)
+    {
+        if(!grid.IsCoordinateInGrid(coordinates)) return false;
+
+        if(grid.GetFlagofGridSpace(coordinates) > 10) return true;
+        else return false;
+    }
+
     public bool DoesSpaceContainTreasure(int x, int y)
     {
-        if(!grid.IsCoordinateInGrid(x,y)) return false;
-
-        if(grid.GetIDofGridSpace(x,y) > 10) return true;
-        else return false;
+        Vector2Int coordinates = new Vector2Int(x,y);
+        return DoesSpaceContainTreasure(coordinates);
     }
 
     [ContextMenu("Print Grid")]

@@ -1166,7 +1166,7 @@ namespace CSVTools
             {
                 for (int x = 0; x < levelDataSOs.grid.x_Length; x++)
                 {
-                    lines[y+1] += $"{levelDataSOs.grid.GetIDofGridSpace(x,y)}{CSV_UserData.COLUMN_DELIMITER}";
+                    lines[y+1] += $"{levelDataSOs.grid.GetFlagofGridSpace(x,y)}{CSV_UserData.COLUMN_DELIMITER}";
                 }
                 // lines[y+1] += $"{CSV_UserData.ROW_DELIMITER}";
                 lines[y+1] += "$";

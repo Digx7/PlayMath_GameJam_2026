@@ -15,11 +15,11 @@ MonoBehaviour:
   grid:
     data:
     - coordinate: {x: 0, y: 0}
-      flag: 0
+      flag: T_Gold_1
     - coordinate: {x: 0, y: 1}
-      flag: 0
+      flag: T_Gold_2
     - coordinate: {x: 0, y: 2}
-      flag: 0
+      flag: T_Gold_3
     - coordinate: {x: 1, y: 0}
       flag: 0
     - coordinate: {x: 1, y: 1}
@@ -34,4 +34,6 @@ MonoBehaviour:
       flag: 0
     x_Length: 3
     y_Length: 3
-  treasureToFind: []
+  treasureToFind:
+  - {fileID: 11400000, guid: ac30c0ab89dd379488eb5019da6c5db1, type: 2}
+  - {fileID: 11400000, guid: 1f666dc9f8fe22e4f8b1c255b0a57567, type: 2}

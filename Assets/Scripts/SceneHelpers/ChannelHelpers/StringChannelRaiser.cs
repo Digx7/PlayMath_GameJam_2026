@@ -6,7 +6,7 @@ public class StringChannelRaiser : MonoBehaviour
     [SerializeField] private StringChannel channelToRaise;
     [SerializeField] private string m_value;
 
-    public void Raise()
+    public void RaiseMValue()
     {
         Debug.Log("StringChannelRaiser: Raise() -> " + m_value);
         channelToRaise.Raise(m_value);

@@ -22,7 +22,7 @@ public class LevelData : ScriptableObject
     {
         if(!grid.IsCoordinateInGrid(coordinates)) return false;
 
-        if(grid.GetFlagofGridSpace(coordinates) > 10) return true;
+        if(grid.GetFlagofGridSpace(coordinates).Contains("T")) return true;
         else return false;
     }
 

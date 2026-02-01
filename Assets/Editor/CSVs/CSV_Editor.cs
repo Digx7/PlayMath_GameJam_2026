@@ -1134,7 +1134,7 @@ namespace CSVTools
                 {
                     CoordinateFlagPair coordinateFlagPair = new CoordinateFlagPair();
                     coordinateFlagPair.coordinate = new Vector2Int(x,y - 1);
-                    coordinateFlagPair.flag = int.Parse(allEntries[y][x]);
+                    coordinateFlagPair.flag = allEntries[y][x];
 
                     newGrid.Add(coordinateFlagPair);
                 }
@@ -1168,7 +1168,6 @@ namespace CSVTools
                 {
                     lines[y+1] += $"{levelDataSOs.grid.GetFlagofGridSpace(x,y)}{CSV_UserData.COLUMN_DELIMITER}";
                 }
-                // lines[y+1] += $"{CSV_UserData.ROW_DELIMITER}";
                 lines[y+1] += "$";
             }
 

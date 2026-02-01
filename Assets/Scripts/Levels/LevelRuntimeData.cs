@@ -20,13 +20,13 @@ public class LevelRuntimeData : MonoBehaviour
         DigData digData = new DigData();
         digData.coordinate = digCoordinates;
 
-        int spaceFlag = levelDataSO.grid.GetFlagofGridSpace(digCoordinates);
+        string spaceFlag = levelDataSO.grid.GetFlagofGridSpace(digCoordinates);
         
         if(levelDataSO.DoesSpaceContainTreasure(digCoordinates))
         {
-            if(modifiedGrid.GetFlagofGridSpace(digCoordinates) == 0)
+            if(modifiedGrid.GetFlagofGridSpace(digCoordinates) == "0")
             {
-                modifiedGrid.UpdateCoordinateFlag(digCoordinates, 2);
+                modifiedGrid.UpdateCoordinateFlag(digCoordinates, "2");
                 digData.result = DigResult.FOUND_NEW_TREASURE;
             }
             else
@@ -34,19 +34,22 @@ public class LevelRuntimeData : MonoBehaviour
                 digData.result = DigResult.FOUND_OLD_TREASURE;
             }
 
-            
+            string spaceFlagString = spaceFlag;
         }
         else
         {
-            if(modifiedGrid.GetFlagofGridSpace(digCoordinates) == 0)
+            if(modifiedGrid.GetFlagofGridSpace(digCoordinates) == "0")
             {
-                modifiedGrid.UpdateCoordinateFlag(digCoordinates, 1);
+                modifiedGrid.UpdateCoordinateFlag(digCoordinates, "1");
                 digData.result = DigResult.FOUND_NEW_EMPTY;
             }
             else
             {
                 digData.result = DigResult.FOUND_OLD_EMPTY;
             }
+
+            digData.treasureID = "-1";
+            digData.treasureSubID = "-1";
         }
 
         return true;
@@ -67,8 +70,8 @@ public struct DigData
 {
     public DigResult result;
     public Vector2Int coordinate;
-    public int treasureID;
-    public int treasureSubID;
+    public string treasureID;
+    public string treasureSubID;
     public Sprite treasureSprite;
     public Sprite treasureSubSprite;
 }

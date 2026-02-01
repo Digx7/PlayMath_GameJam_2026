@@ -36,7 +36,7 @@ namespace Digx7
                     {
                         CoordinateFlagPair coordinateFlagPair = new CoordinateFlagPair();
                         coordinateFlagPair.coordinate = new Vector2Int(x,y);
-                        coordinateFlagPair.flag = 0;
+                        coordinateFlagPair.flag = "0";
 
                         data.Add(coordinateFlagPair);
                     }
@@ -55,7 +55,7 @@ namespace Digx7
                 PrintGrid();
             }
 
-            public void UpdateCoordinateFlag(Vector2Int coordinate, int newFlag)
+            public void UpdateCoordinateFlag(Vector2Int coordinate, string newFlag)
             {
                 for (int i = 0; i < data.Count; i++)
                 {
@@ -68,19 +68,19 @@ namespace Digx7
                 }
             }
 
-            public int GetFlagofGridSpace(Vector2Int coordinate)
+            public string GetFlagofGridSpace(Vector2Int coordinate)
             {
-                if(data.Count == 0) return -1;
+                if(data.Count == 0) return "-1";
                 
                 for (int i = 0; i < data.Count; i++)
                 {
                     if(data[i].coordinate == coordinate) return data[i].flag;
                 }
 
-                return -1;
+                return "-1";
             }
 
-            public int GetFlagofGridSpace(int x, int y)
+            public string GetFlagofGridSpace(int x, int y)
             {
                 Vector2Int coordinate = new Vector2Int(x,y);
                 return GetFlagofGridSpace(coordinate);
@@ -117,7 +117,7 @@ namespace Digx7
         public struct CoordinateFlagPair
         {
             public Vector2Int coordinate;
-            public int flag;
+            public string flag;
         }
     }
 }

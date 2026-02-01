@@ -5,7 +5,7 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "NewTreasurePiece", menuName = "ScriptableObjects/TreasurePiece", order = 0)]
 public class TreasurePiece : ScriptableObject 
 {
-    public int ID;
+    public string ID;
     public Sprite mainSprite;
     public List<SubSprite> subSprites;
 }
@@ -13,6 +13,6 @@ public class TreasurePiece : ScriptableObject
 [System.Serializable]
 public struct SubSprite
 {
-    public int SubID;
+    public string SubID;
     public Sprite subSprite;
 }

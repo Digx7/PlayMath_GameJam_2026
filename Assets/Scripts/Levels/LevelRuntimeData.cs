@@ -8,14 +8,14 @@ public class LevelRuntimeData : MonoBehaviour
     [SerializeField]
     public Digx7.Grids.Grid modifiedGrid;
 
-    public BooleanEvent OnDig;
+    public DigDataEvent OnDig;
 
     private void Awake() 
     {
         modifiedGrid = new Digx7.Grids.Grid(levelDataSO.grid.x_Length, levelDataSO.grid.y_Length);
     }
 
-    public bool DigInSpace(Vector2Int digCoordinates)
+    public void DigInSpace(Vector2Int digCoordinates)
     {
         DigData digData = new DigData();
         digData.coordinate = digCoordinates;
@@ -26,7 +26,7 @@ public class LevelRuntimeData : MonoBehaviour
         {
             if(modifiedGrid.GetFlagofGridSpace(digCoordinates) == "0")
             {
-                modifiedGrid.UpdateCoordinateFlag(digCoordinates, "2");
+                modifiedGrid.UpdateCoordinateFlag(digCoordinates, "T");
                 digData.result = DigResult.FOUND_NEW_TREASURE;
             }
             else
@@ -34,13 +34,13 @@ public class LevelRuntimeData : MonoBehaviour
                 digData.result = DigResult.FOUND_OLD_TREASURE;
             }
 
-            string spaceFlagString = spaceFlag;
+            
         }
         else
         {
             if(modifiedGrid.GetFlagofGridSpace(digCoordinates) == "0")
             {
-                modifiedGrid.UpdateCoordinateFlag(digCoordinates, "1");
+                modifiedGrid.UpdateCoordinateFlag(digCoordinates, "E");
                 digData.result = DigResult.FOUND_NEW_EMPTY;
             }
             else
@@ -48,11 +48,24 @@ public class LevelRuntimeData : MonoBehaviour
                 digData.result = DigResult.FOUND_OLD_EMPTY;
             }
 
-            digData.treasureID = "-1";
-            digData.treasureSubID = "-1";
+            
         }
 
-        return true;
+        if(spaceFlag != "0")
+        {
+            string[] spaceFlagStrings = spaceFlag.Split('_');
+            digData.spaceID = spaceFlagStrings[0];
+            digData.itemID = spaceFlagStrings[1];
+            digData.itemSubID = spaceFlagStrings[2];
+        }
+        else
+        {
+            digData.spaceID = "Null";
+            digData.itemID = "Null";
+            digData.itemSubID = "Null";
+        }
+
+        OnDig.Invoke(digData);
     }
 }
 
@@ -62,7 +75,8 @@ public enum DigResult
     FOUND_NEW_TREASURE,
     FOUND_OLD_TREASURE,
     FOUND_NEW_EMPTY,
-    FOUND_OLD_EMPTY
+    FOUND_OLD_EMPTY,
+    FOUND_ROCK
 }
 
 [System.Serializable]
@@ -70,8 +84,7 @@ public struct DigData
 {
     public DigResult result;
     public Vector2Int coordinate;
-    public string treasureID;
-    public string treasureSubID;
-    public Sprite treasureSprite;
-    public Sprite treasureSubSprite;
+    public string spaceID;
+    public string itemID;
+    public string itemSubID;
 }

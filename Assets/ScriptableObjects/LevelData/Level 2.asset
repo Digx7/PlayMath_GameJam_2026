@@ -17,38 +17,24 @@ MonoBehaviour:
     - coordinate: {x: 0, y: 0}
       flag: 0
     - coordinate: {x: 0, y: 1}
-      flag: 0
+      flag: T_Diamond_1
     - coordinate: {x: 0, y: 2}
       flag: 0
-    - coordinate: {x: 0, y: 3}
-      flag: 0
     - coordinate: {x: 1, y: 0}
-      flag: T_Diamond_1
+      flag: 0
     - coordinate: {x: 1, y: 1}
-      flag: 0
-    - coordinate: {x: 1, y: 2}
-      flag: 0
-    - coordinate: {x: 1, y: 3}
-      flag: 0
-    - coordinate: {x: 2, y: 0}
       flag: T_Diamond_2
-    - coordinate: {x: 2, y: 1}
+    - coordinate: {x: 1, y: 2}
       flag: T_Diamond_4
+    - coordinate: {x: 2, y: 0}
+      flag: 0
+    - coordinate: {x: 2, y: 1}
+      flag: T_Diamond_3
     - coordinate: {x: 2, y: 2}
       flag: 0
-    - coordinate: {x: 2, y: 3}
-      flag: 0
-    - coordinate: {x: 3, y: 0}
-      flag: T_Diamond_3
-    - coordinate: {x: 3, y: 1}
-      flag: 0
-    - coordinate: {x: 3, y: 2}
-      flag: 0
-    - coordinate: {x: 3, y: 3}
-      flag: 0
-    x_Length: 4
-    y_Length: 4
+    x_Length: 3
+    y_Length: 3
   treasureToFind:
   - {fileID: 11400000, guid: cc579467d7a81284287a76f3ca613d94, type: 2}
   hints:
-  - C2
+  - B3

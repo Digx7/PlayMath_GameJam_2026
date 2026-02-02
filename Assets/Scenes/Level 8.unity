@@ -328,17 +328,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 172274750}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c1a2c6fd9a551b46a9eab7d810017f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c9353b38f362a641a61dc0f3491f39e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneChannelRaiser
-  channelToRaise: {fileID: 11400000, guid: 26f882a2247e43243bf155e95833e3ac, type: 2}
-  chapter: MainMenu
-  area: 
-  subArea: 
-  context:
-    SpawnPointID: 0
-    sceneCameraMode: 0
-    cameraLocation: {x: 0, y: 0, z: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::UIWidgetDataChannelRaiser
+  channelToRaise: {fileID: 11400000, guid: f451e53f6d34f5e4493c2c5bdbed8351, type: 2}
+  m_data: {fileID: 11400000, guid: acc78a71aed8dcf49834b0b5aeb22206, type: 2}
 --- !u!1001 &230098128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1147,7 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelRuntimeData
   TryDigChannel: {fileID: 11400000, guid: e8be464b7a2b2db49b389b545be43473, type: 2}
-  levelDataSO: {fileID: 11400000, guid: 03b438b5b18329a43ac414a40468e2f2, type: 2}
+  levelDataSO: {fileID: 11400000, guid: 8f54126b2fbabc34cb632c2490680889, type: 2}
   modifiedGrid:
     data: []
     x_Length: 0
@@ -1214,6 +1208,18 @@ MonoBehaviour:
   OnFinishLevel:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2031637933}
+        m_TargetAssemblyTypeName: UIWidgetDataChannelRaiser, Assembly-CSharp
+        m_MethodName: RaiseMData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 687876110}
         m_TargetAssemblyTypeName: StringChannelRaiser, Assembly-CSharp
         m_MethodName: RaiseMValue
@@ -1241,18 +1247,6 @@ MonoBehaviour:
       - m_Target: {fileID: 495304053}
         m_TargetAssemblyTypeName: UIWidgetDataChannelRaiser, Assembly-CSharp
         m_MethodName: RaiseMData
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 172274752}
-        m_TargetAssemblyTypeName: SceneChannelRaiser, Assembly-CSharp
-        m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

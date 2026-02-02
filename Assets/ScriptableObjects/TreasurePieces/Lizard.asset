@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f91b1084cc41f7e4d90c0537a73ae4f4, type: 3}
-  m_Name: Emerald
+  m_Name: Lizard
   m_EditorClassIdentifier: Assembly-CSharp::TreasurePiece
-  ID: Emerald
+  ID: Lizard
   mainSprite: {fileID: 107485968, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
   subSprites:
   - SubID: 1
@@ -21,5 +21,7 @@ MonoBehaviour:
     subSprite: {fileID: 107485968, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
   - SubID: 3
     subSprite: {fileID: 107485968, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
-  - SubID: 3
+  - SubID: 4
+    subSprite: {fileID: 107485968, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+  - SubID: 5
     subSprite: {fileID: 107485968, guid: 697a758092a7bd0438e2fd412620a427, type: 3}

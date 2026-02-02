@@ -21,5 +21,9 @@ MonoBehaviour:
     subSprite: {fileID: 461113695, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
   - SubID: 3
     subSprite: {fileID: 461113695, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
-  - SubID: 3
+  - SubID: 4
+    subSprite: {fileID: 461113695, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+  - SubID: 5
+    subSprite: {fileID: 461113695, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+  - SubID: 6
     subSprite: {fileID: 461113695, guid: 697a758092a7bd0438e2fd412620a427, type: 3}

@@ -15,174 +15,42 @@ MonoBehaviour:
   grid:
     data:
     - coordinate: {x: 0, y: 0}
-      flag: T_Gold_1
+      flag: 0
     - coordinate: {x: 0, y: 1}
-      flag: T_Gold_2
+      flag: T_Diamond_1
     - coordinate: {x: 0, y: 2}
-      flag: T_Gold_3
+      flag: 0
     - coordinate: {x: 0, y: 3}
-      flag: 0
-    - coordinate: {x: 0, y: 4}
-      flag: 0
-    - coordinate: {x: 0, y: 5}
-      flag: 0
-    - coordinate: {x: 0, y: 6}
-      flag: 0
-    - coordinate: {x: 0, y: 7}
-      flag: 0
-    - coordinate: {x: 0, y: 8}
       flag: 0
     - coordinate: {x: 1, y: 0}
       flag: 0
     - coordinate: {x: 1, y: 1}
-      flag: 0
+      flag: T_Diamond_2
     - coordinate: {x: 1, y: 2}
-      flag: 0
+      flag: T_Diamond_4
     - coordinate: {x: 1, y: 3}
-      flag: 0
-    - coordinate: {x: 1, y: 4}
-      flag: 0
-    - coordinate: {x: 1, y: 5}
-      flag: 0
-    - coordinate: {x: 1, y: 6}
-      flag: 0
-    - coordinate: {x: 1, y: 7}
-      flag: 0
-    - coordinate: {x: 1, y: 8}
       flag: 0
     - coordinate: {x: 2, y: 0}
       flag: 0
     - coordinate: {x: 2, y: 1}
-      flag: 0
+      flag: T_Diamond_3
     - coordinate: {x: 2, y: 2}
       flag: 0
     - coordinate: {x: 2, y: 3}
       flag: 0
-    - coordinate: {x: 2, y: 4}
-      flag: 0
-    - coordinate: {x: 2, y: 5}
-      flag: 0
-    - coordinate: {x: 2, y: 6}
-      flag: 0
-    - coordinate: {x: 2, y: 7}
-      flag: 0
-    - coordinate: {x: 2, y: 8}
-      flag: 0
     - coordinate: {x: 3, y: 0}
       flag: 0
     - coordinate: {x: 3, y: 1}
-      flag: 0
+      flag: T_Gold_1
     - coordinate: {x: 3, y: 2}
-      flag: 0
+      flag: T_Gold_2
     - coordinate: {x: 3, y: 3}
-      flag: 0
-    - coordinate: {x: 3, y: 4}
-      flag: 0
-    - coordinate: {x: 3, y: 5}
-      flag: 0
-    - coordinate: {x: 3, y: 6}
-      flag: 0
-    - coordinate: {x: 3, y: 7}
-      flag: 0
-    - coordinate: {x: 3, y: 8}
-      flag: 0
-    - coordinate: {x: 4, y: 0}
-      flag: T_Diamond_1
-    - coordinate: {x: 4, y: 1}
-      flag: 0
-    - coordinate: {x: 4, y: 2}
-      flag: 0
-    - coordinate: {x: 4, y: 3}
-      flag: 0
-    - coordinate: {x: 4, y: 4}
-      flag: 0
-    - coordinate: {x: 4, y: 5}
-      flag: 0
-    - coordinate: {x: 4, y: 6}
-      flag: 0
-    - coordinate: {x: 4, y: 7}
-      flag: 0
-    - coordinate: {x: 4, y: 8}
-      flag: 0
-    - coordinate: {x: 5, y: 0}
-      flag: T_Diamond_2
-    - coordinate: {x: 5, y: 1}
-      flag: T_Diamond_4
-    - coordinate: {x: 5, y: 2}
-      flag: 0
-    - coordinate: {x: 5, y: 3}
-      flag: 0
-    - coordinate: {x: 5, y: 4}
-      flag: 0
-    - coordinate: {x: 5, y: 5}
-      flag: 0
-    - coordinate: {x: 5, y: 6}
-      flag: 0
-    - coordinate: {x: 5, y: 7}
-      flag: 0
-    - coordinate: {x: 5, y: 8}
-      flag: 0
-    - coordinate: {x: 6, y: 0}
-      flag: T_Diamond_3
-    - coordinate: {x: 6, y: 1}
-      flag: 0
-    - coordinate: {x: 6, y: 2}
-      flag: 0
-    - coordinate: {x: 6, y: 3}
-      flag: 0
-    - coordinate: {x: 6, y: 4}
-      flag: 0
-    - coordinate: {x: 6, y: 5}
-      flag: 0
-    - coordinate: {x: 6, y: 6}
-      flag: 0
-    - coordinate: {x: 6, y: 7}
-      flag: 0
-    - coordinate: {x: 6, y: 8}
-      flag: 0
-    - coordinate: {x: 7, y: 0}
-      flag: 0
-    - coordinate: {x: 7, y: 1}
-      flag: 0
-    - coordinate: {x: 7, y: 2}
-      flag: 0
-    - coordinate: {x: 7, y: 3}
-      flag: 0
-    - coordinate: {x: 7, y: 4}
-      flag: 0
-    - coordinate: {x: 7, y: 5}
-      flag: 0
-    - coordinate: {x: 7, y: 6}
-      flag: 0
-    - coordinate: {x: 7, y: 7}
-      flag: T_Chest_1
-    - coordinate: {x: 7, y: 8}
-      flag: T_Chest_3
-    - coordinate: {x: 8, y: 0}
-      flag: 0
-    - coordinate: {x: 8, y: 1}
-      flag: 0
-    - coordinate: {x: 8, y: 2}
-      flag: 0
-    - coordinate: {x: 8, y: 3}
-      flag: 0
-    - coordinate: {x: 8, y: 4}
-      flag: 0
-    - coordinate: {x: 8, y: 5}
-      flag: 0
-    - coordinate: {x: 8, y: 6}
-      flag: 0
-    - coordinate: {x: 8, y: 7}
-      flag: T_Chest_2
-    - coordinate: {x: 8, y: 8}
-      flag: T_Chest_4
-    x_Length: 9
-    y_Length: 9
+      flag: T_Gold_3
+    x_Length: 4
+    y_Length: 4
   treasureToFind:
-  - {fileID: 11400000, guid: 1f666dc9f8fe22e4f8b1c255b0a57567, type: 2}
   - {fileID: 11400000, guid: cc579467d7a81284287a76f3ca613d94, type: 2}
-  - {fileID: 11400000, guid: 15e099bf15b93f44eb9b9347c15253e0, type: 2}
+  - {fileID: 11400000, guid: 1f666dc9f8fe22e4f8b1c255b0a57567, type: 2}
   hints:
-  - A1
-  - F2
-  - I9
+  - B2
+  - D3

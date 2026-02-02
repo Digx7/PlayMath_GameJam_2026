@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RequestUnloadWidgetDataChannel: {fileID: 11400000, guid: f451e53f6d34f5e4493c2c5bdbed8351, type: 2}
   gamePlayScene:
-    sceneName: Gameplay
+    sceneName: Level 1
     context:
       SpawnPointID: 0
       sceneCameraMode: 0
@@ -332,7 +332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 475105688228868513, guid: 879ede82d4abe724cb2c719eee40acbf, type: 3}
       propertyPath: m_fontSize
-      value: 133.8
+      value: 105.15
       objectReference: {fileID: 0}
     - target: {fileID: 2005282208601704212, guid: 879ede82d4abe724cb2c719eee40acbf, type: 3}
       propertyPath: m_Name

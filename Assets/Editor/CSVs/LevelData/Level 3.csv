@@ -1,5 +1,5 @@
 Level 3|z|z|z|$
-0|0|0|T_Gold_1|$
-0|0|0|T_Gold_2|$
-T_Chest_1|T_Chest_2|0|T_Gold_3|$
-T_Chest_3|T_Chest_4|0|0|$
+0|T_Diamond_1|T_Diamond_2|T_Diamond_3|$
+T_Gold_1|0|T_Diamond_4|0|$
+T_Gold_2|0|0|0|$
+T_Gold_3|0|0|0|$

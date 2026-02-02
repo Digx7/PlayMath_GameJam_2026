@@ -5,6 +5,7 @@ public class SceneChannelRaiser : MonoBehaviour
 {
     [SerializeField] private SceneChannel channelToRaise;
     [SerializeField] private string chapter;
+    public string Chapter{get{return chapter;} set{chapter = value;}}
     [SerializeField] private string area;
     [SerializeField] private string subArea;
     [SerializeField] private SceneContext context;
@@ -13,8 +14,9 @@ public class SceneChannelRaiser : MonoBehaviour
 
     public void Awake()
     {
-        m_Data.sceneName = chapter + "_" + area;
-        if(subArea != "") m_Data.sceneName = m_Data.sceneName + "_" + subArea;
+        m_Data.sceneName = chapter;
+        if(area != "") m_Data.sceneName = m_Data.sceneName + "_" + area;
+        if (subArea != "") m_Data.sceneName = m_Data.sceneName + "_" + subArea;
         m_Data.context = context;
     }
 

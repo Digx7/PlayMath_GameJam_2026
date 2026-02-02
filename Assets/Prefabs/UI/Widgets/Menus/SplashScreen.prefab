@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5897fd5739a534492f9d8eb823319a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RequestUnloadWidgetDataChannel: {fileID: 0}
   mainMenuWidgetData: {fileID: 11400000, guid: ded42b706e85a2f41835bfbacdce83d1, type: 2}
   requestLoadUIWidgetChannel: {fileID: 11400000, guid: f9e8b7ff78e0ae943a4926492de10937, type: 2}
   requestUnLoadUIWidgetChannel: {fileID: 11400000, guid: f451e53f6d34f5e4493c2c5bdbed8351, type: 2}
@@ -383,8 +384,12 @@ PrefabInstance:
       value: Title 1 (TMP)
       objectReference: {fileID: 0}
     - target: {fileID: 5732099593534810254, guid: f5fb38a070db5ff4d897f3c2a88a6b99, type: 3}
+      propertyPath: m_text
+      value: Treasure Hunt
+      objectReference: {fileID: 0}
+    - target: {fileID: 5732099593534810254, guid: f5fb38a070db5ff4d897f3c2a88a6b99, type: 3}
       propertyPath: m_fontSize
-      value: 300
+      value: 154
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

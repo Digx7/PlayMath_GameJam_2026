@@ -283,6 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StringChannelListener
   channelToListenTo: {fileID: 11400000, guid: 45a17107c69ab524f8fbc64734f505df, type: 2}
   dataToListenFor: Gem
+  shouldFilterData: 1
   OnHearData:
     m_PersistentCalls:
       m_Calls:
@@ -298,3 +299,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnHearData_Details:
+    m_PersistentCalls:
+      m_Calls: []

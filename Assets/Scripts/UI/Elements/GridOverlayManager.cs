@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GridOverlayManager : MonoBehaviour {
@@ -30,6 +31,8 @@ public class GridOverlayManager : MonoBehaviour {
             stringChannelListener.dataToListenFor = levelDataSO.treasureToFind[i].ID;
 
             TextMeshProUGUI hintText = obj.GetComponentInChildren<TextMeshProUGUI>();
+            Image image = obj.GetComponentInChildren<Image>();
+            image.sprite = levelDataSO.treasureToFind[i].mainSprite;
 
             hintText.text = levelDataSO.hints[i];
         }

@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelRuntimeData
   TryDigChannel: {fileID: 11400000, guid: e8be464b7a2b2db49b389b545be43473, type: 2}
-  levelDataSO: {fileID: 11400000, guid: 1c63bbd6b7384054a922a406537ffe51, type: 2}
+  levelDataSO: {fileID: 11400000, guid: d26d7612094d75641b6c27150954a405, type: 2}
   modifiedGrid:
     data: []
     x_Length: 0

@@ -327,8 +327,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 5605634710125421022}
     m_Modifications:
     - target: {fileID: 475105688228868513, guid: 879ede82d4abe724cb2c719eee40acbf, type: 3}
+      propertyPath: m_text
+      value: Treasure Hunt
+      objectReference: {fileID: 0}
+    - target: {fileID: 475105688228868513, guid: 879ede82d4abe724cb2c719eee40acbf, type: 3}
       propertyPath: m_fontSize
-      value: 101.35
+      value: 133.8
       objectReference: {fileID: 0}
     - target: {fileID: 2005282208601704212, guid: 879ede82d4abe724cb2c719eee40acbf, type: 3}
       propertyPath: m_Name

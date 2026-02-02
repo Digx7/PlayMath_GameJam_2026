@@ -33,7 +33,7 @@ public class GridUIManager : MonoBehaviour
         for (int y = 0; y < levelDataSO.grid.y_Length; y++)
         {
             GameObject obj_Label_Left = Instantiate(gridLabelPrefab, gridLabelLeftHolder);
-            TextMeshProUGUI leftLabelTextMeshPro = obj_Label_Left.GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI leftLabelTextMeshPro = obj_Label_Left.GetComponentInChildren<TextMeshProUGUI>();
             leftLabelTextMeshPro.text = (y + 1).ToString();
             
             for (int x = 0; x < levelDataSO.grid.x_Length; x++)
@@ -49,7 +49,7 @@ public class GridUIManager : MonoBehaviour
         for (int x = 0; x < levelDataSO.grid.x_Length; x++)
         {
             GameObject obj_Label_Top = Instantiate(gridLabelPrefab, gridLabelTopHolder);
-            TextMeshProUGUI topLabelTextMeshPro = obj_Label_Top.GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI topLabelTextMeshPro = obj_Label_Top.GetComponentInChildren<TextMeshProUGUI>();
             topLabelTextMeshPro.text = Convert.ToChar(x + 65).ToString();
         }
     }

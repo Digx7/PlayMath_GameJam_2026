@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2c996ae4092bbd4d89bef21bd4e1c8d, type: 3}
-  m_Name: Song 3
-  m_EditorClassIdentifier: 
-  Name: 
-  Artist: 
-  shouldLoop: 1
-  layers: []
+  m_Script: {fileID: 11500000, guid: 900c2cff8e9ca4947820e07682587b24, type: 3}
+  m_Name: FinishGameUI
+  m_EditorClassIdentifier: Assembly-CSharp::UIWidgetData
+  widgetPrefab: {fileID: 6102325973286937313, guid: bdafe870a0779df4891e3e073d414e3c, type: 3}

@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 2352506840822014023, guid: ad0bb65841a65dd4ea392abbbce3ede9, type: 3}
       propertyPath: songToJumpTo
       value: 
-      objectReference: {fileID: 11400000, guid: d2098f1401741a042b78b160ff0aa7e2, type: 2}
+      objectReference: {fileID: 11400000, guid: bd15bfd552254614d91cee4b695238ca, type: 2}
     - target: {fileID: 2352506840822014023, guid: ad0bb65841a65dd4ea392abbbce3ede9, type: 3}
       propertyPath: gameModeToChangeToOnSetup
       value: GamePlay
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIWidgetDataChannelRaiser
   channelToRaise: {fileID: 11400000, guid: f451e53f6d34f5e4493c2c5bdbed8351, type: 2}
-  m_data: {fileID: 11400000, guid: acc78a71aed8dcf49834b0b5aeb22206, type: 2}
+  m_data: {fileID: 11400000, guid: 99f20f90877d2ce468ef1e3428b6953c, type: 2}
 --- !u!1001 &230098128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1358,7 +1358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIWidgetDataChannelRaiser
   channelToRaise: {fileID: 11400000, guid: f9e8b7ff78e0ae943a4926492de10937, type: 2}
-  m_data: {fileID: 11400000, guid: acc78a71aed8dcf49834b0b5aeb22206, type: 2}
+  m_data: {fileID: 11400000, guid: 99f20f90877d2ce468ef1e3428b6953c, type: 2}
 --- !u!1001 &2055217987
 PrefabInstance:
   m_ObjectHideFlags: 0

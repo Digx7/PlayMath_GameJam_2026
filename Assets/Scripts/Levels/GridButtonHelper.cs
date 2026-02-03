@@ -20,6 +20,8 @@ public class GridButtonHelper : MonoBehaviour {
     public Vector2IntChannelRaiser vector2IntChannelRaiser;
 
     public BooleanEvent onFoundTreasure;
+    public UnityEvent onFoundTreasure_Default;
+    public UnityEvent onFoundEmpty_Default;
 
     private void OnEnable() 
     {
@@ -39,12 +41,14 @@ public class GridButtonHelper : MonoBehaviour {
             {
                 case DigResult.FOUND_NEW_TREASURE:
                     onFoundTreasure.Invoke(true);
+                    onFoundTreasure_Default.Invoke();
                     break;
                 case DigResult.FOUND_OLD_TREASURE:
                     onFoundTreasure.Invoke(true);
                     break;
                 case DigResult.FOUND_NEW_EMPTY:
                     onFoundTreasure.Invoke(false);
+                    onFoundEmpty_Default.Invoke();
                     break;
                 case DigResult.FOUND_OLD_EMPTY:
                     onFoundTreasure.Invoke(false);

@@ -8,23 +8,27 @@ public class LevelRuntimeData : MonoBehaviour
 {
     [Header("InComing Channels")]
     public Vector2IntChannel TryDigChannel;
+    public IntChannel TryChangeTool;
     
     // Level Data
     public LevelData levelDataSO;
 
 
     // Runtime Data
-    [SerializeField]
-    public Digx7.Grids.Grid modifiedGrid;
-    [SerializeField]
-    public List<TreasureRuntimeData> treasureRuntimeDatas;
+    [SerializeField] public Digx7.Grids.Grid modifiedGrid;
+    [SerializeField] public List<TreasureRuntimeData> treasureRuntimeDatas;
+    [SerializeField] public List<CountToolPair> tools;
+    public int selectedToolIndex = 0;
     public bool levelFinished;
 
     [Header("Events")]
     public LevelDataEvent OnSetup;
     public DigDataEvent OnDig;
     public StringEvent OnFullyDigUpPiece;
+    public IntEvent OnTryUseEmptyTool;
     public UnityEvent OnFinishLevel;
+    public UnityEvent OnWinLevel;
+    public UnityEvent OnLoseLevel;
 
     private void Awake() 
     {
@@ -37,19 +41,48 @@ public class LevelRuntimeData : MonoBehaviour
             tRunTime.OnFullyDigUp.AddListener((string output) => OnFullyDigUpPiece.Invoke(output));
             treasureRuntimeDatas.Add(tRunTime);
         }
+        tools = new List<CountToolPair>();
+        for (int i = 0; i < levelDataSO.tools.Count; i++)
+        {
+            tools.Add(levelDataSO.tools[i]);
+        }
 
         OnSetup.Invoke(levelDataSO);
     }
 
     private void OnEnable() {
-        TryDigChannel.channelEvent.AddListener(DigInSpace);
+        TryDigChannel.channelEvent.AddListener(TryDigInSpace);
+        TryChangeTool.channelEvent.AddListener(ChangeTool);
     }
 
     private void OnDisable() {
-        TryDigChannel.channelEvent.RemoveListener(DigInSpace);
+        TryDigChannel.channelEvent.RemoveListener(TryDigInSpace);
+        TryChangeTool.channelEvent.AddListener(ChangeTool);
     }
 
-    public void DigInSpace(Vector2Int digCoordinates)
+    public void ChangeTool(int newToolIndex)
+    {
+        if(newToolIndex < tools.Count) selectedToolIndex = newToolIndex;
+    }
+
+    public void TryDigInSpace(Vector2Int digCoordinates)
+    {
+        if(tools[selectedToolIndex].count > 0)
+        {
+            CountToolPair countToolPair = tools[selectedToolIndex];
+            countToolPair.count--;
+            tools[selectedToolIndex] = countToolPair;
+
+            DigInSpace(digCoordinates);
+            CheckIfLevelIsFinished();
+        }
+        else
+        {
+            OnTryUseEmptyTool.Invoke(selectedToolIndex);
+        }
+    }
+
+    private void DigInSpace(Vector2Int digCoordinates)
     {
         DigData digData = new DigData();
         digData.coordinate = digCoordinates;
@@ -102,8 +135,6 @@ public class LevelRuntimeData : MonoBehaviour
         OnDig.Invoke(digData);
 
         AddFoundTreasureToFoundList(digData);
-
-        CheckIfLevelIsFinished();
     }
 
     private void AddFoundTreasureToFoundList(DigData digData)
@@ -130,9 +161,22 @@ public class LevelRuntimeData : MonoBehaviour
             if(treasureRuntimeDatas[i].fullyDugUp == false) hasFoundAllTreasure = false;
         }
 
+        bool ranOutOFTools = true;
+        for (int i = 0; i < tools.Count; i++)
+        {
+            if(tools[i].count > 0) ranOutOFTools = false;
+        }
+
         if(hasFoundAllTreasure) 
         {
             levelFinished = true;
+            OnWinLevel.Invoke();
+            OnFinishLevel.Invoke();
+        }
+        else if(ranOutOFTools)
+        {
+            levelFinished = true;
+            OnLoseLevel.Invoke();
             OnFinishLevel.Invoke();
         }
     }

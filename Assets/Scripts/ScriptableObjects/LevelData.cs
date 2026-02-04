@@ -11,6 +11,7 @@ public class LevelData : ScriptableObject
 
     public List<TreasurePiece> treasureToFind;
     public List<String> hints;
+    public List<CountToolPair> tools;
 
     public void SetGrid(List<CoordinateFlagPair> newData, int newX_Length, int newY_Length)
     {

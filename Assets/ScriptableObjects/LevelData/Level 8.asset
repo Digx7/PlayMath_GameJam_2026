@@ -72,3 +72,6 @@ MonoBehaviour:
   hints:
   - E3
   - B5
+  tools:
+  - count: 7
+    tool: {fileID: 11400000, guid: 7ef80a48c11f0db4b9174efc95371beb, type: 2}

@@ -70,3 +70,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1f666dc9f8fe22e4f8b1c255b0a57567, type: 2}
   hints:
   - C3
+  tools:
+  - count: 5
+    tool: {fileID: 11400000, guid: 7ef80a48c11f0db4b9174efc95371beb, type: 2}

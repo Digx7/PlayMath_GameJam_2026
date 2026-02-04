@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7519307331211631400}
-  - component: {fileID: 109380305485626031}
+  - component: {fileID: 8663922554747579881}
   m_Layer: 0
   m_Name: OnUseEmptyTool
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7103015261264786592}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &109380305485626031
+--- !u!114 &8663922554747579881
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,11 +41,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3360593173735283355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4bb16ef459f5944a9c68acb09bf4d3d, type: 3}
+  m_Script: {fileID: 11500000, guid: fd102b62af832284ca5263ba91daada2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IntChannelRaiser
-  channelToRaise: {fileID: 11400000, guid: ca9d91b821fcb6b44861204ff3ca5af3, type: 2}
-  m_data: 0
+  m_EditorClassIdentifier: Assembly-CSharp::ToolChannelRaiser
+  channelToRaise: {fileID: 11400000, guid: 5aa5c7acfe7d8094da806b226a4e2358, type: 2}
+  m_value: {fileID: 0}
 --- !u!1 &3468754847560925141
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +94,7 @@ MonoBehaviour:
   m_data:
     result: 0
     coordinate: {x: 0, y: 0}
+    toolUsed: {fileID: 0}
     spaceID: 
     itemID: 
     itemSubID: 
@@ -468,7 +469,6 @@ MonoBehaviour:
     y_Length: 0
   treasureRuntimeDatas: []
   tools: []
-  selectedToolIndex: 0
   levelFinished: 0
   OnSetup:
     m_PersistentCalls:
@@ -530,8 +530,8 @@ MonoBehaviour:
   OnTryUseEmptyTool:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109380305485626031}
-        m_TargetAssemblyTypeName: IntChannelRaiser, Assembly-CSharp
+      - m_Target: {fileID: 8663922554747579881}
+        m_TargetAssemblyTypeName: ToolChannelRaiser, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 0
         m_Arguments:

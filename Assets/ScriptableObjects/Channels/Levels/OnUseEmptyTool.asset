@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fe2b7320b5c9e4287c032a0a1f7916, type: 3}
+  m_Script: {fileID: 11500000, guid: ec09e711182c3ab40af1adc8f963d81d, type: 3}
   m_Name: OnUseEmptyTool
-  m_EditorClassIdentifier: Assembly-CSharp::IntChannel
+  m_EditorClassIdentifier: Assembly-CSharp::ToolChannel
   channelEvent:
     m_PersistentCalls:
       m_Calls: []

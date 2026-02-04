@@ -8,7 +8,7 @@ public class LevelRuntimeData : MonoBehaviour
 {
     [Header("InComing Channels")]
     public Vector2IntChannel TryDigChannel;
-    public IntChannel TryChangeTool;
+    public ToolChannel TryChangeTool;
     
     // Level Data
     public LevelData levelDataSO;
@@ -18,14 +18,14 @@ public class LevelRuntimeData : MonoBehaviour
     [SerializeField] public Digx7.Grids.Grid modifiedGrid;
     [SerializeField] public List<TreasureRuntimeData> treasureRuntimeDatas;
     [SerializeField] public List<CountToolPair> tools;
-    public int selectedToolIndex = 0;
+    private int selectedToolIndex = 0;
     public bool levelFinished;
 
     [Header("Events")]
     public LevelDataEvent OnSetup;
     public DigDataEvent OnDig;
     public StringEvent OnFullyDigUpPiece;
-    public IntEvent OnTryUseEmptyTool;
+    public ToolEvent OnTryUseEmptyTool;
     public UnityEvent OnFinishLevel;
     public UnityEvent OnWinLevel;
     public UnityEvent OnLoseLevel;
@@ -60,25 +60,36 @@ public class LevelRuntimeData : MonoBehaviour
         TryChangeTool.channelEvent.AddListener(ChangeTool);
     }
 
-    public void ChangeTool(int newToolIndex)
+    public void ChangeTool(Tool newTool)
     {
-        if(newToolIndex < tools.Count) selectedToolIndex = newToolIndex;
+        for (int i = 0; i < tools.Count; i++)
+        {
+            if(tools[i].tool == newTool) 
+            {
+                selectedToolIndex = i;
+            }
+        }
     }
 
     public void TryDigInSpace(Vector2Int digCoordinates)
     {
+        if(modifiedGrid.GetFlagofGridSpace(digCoordinates) != "0") return;
+        
         if(tools[selectedToolIndex].count > 0)
         {
-            CountToolPair countToolPair = tools[selectedToolIndex];
-            countToolPair.count--;
-            tools[selectedToolIndex] = countToolPair;
+            if(modifiedGrid.GetFlagofGridSpace(digCoordinates) == "0")
+            {
+                CountToolPair countToolPair = tools[selectedToolIndex];
+                countToolPair.count--;
+                tools[selectedToolIndex] = countToolPair;
+            }
 
             DigInSpace(digCoordinates);
             CheckIfLevelIsFinished();
         }
         else
         {
-            OnTryUseEmptyTool.Invoke(selectedToolIndex);
+            OnTryUseEmptyTool.Invoke(tools[selectedToolIndex].tool);
         }
     }
 
@@ -86,6 +97,7 @@ public class LevelRuntimeData : MonoBehaviour
     {
         DigData digData = new DigData();
         digData.coordinate = digCoordinates;
+        digData.toolUsed = tools[selectedToolIndex].tool;
 
         string spaceFlag = levelDataSO.grid.GetFlagofGridSpace(digCoordinates);
         
@@ -197,6 +209,7 @@ public struct DigData
 {
     public DigResult result;
     public Vector2Int coordinate;
+    public Tool toolUsed;
     public string spaceID;
     public string itemID;
     public string itemSubID;

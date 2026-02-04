@@ -56,3 +56,6 @@ public class DigDataEvent : UnityEvent<DigData> {}
 
 [System.Serializable]
 public class LevelDataEvent : UnityEvent<LevelData> {}
+
+[System.Serializable]
+public class ToolEvent : UnityEvent<Tool> {}

@@ -10,36 +10,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05ac0c0a51408a04f9ea578326becd37, type: 3}
-  m_Name: Level 3
+  m_Name: 1-5
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   grid:
     data:
     - coordinate: {x: 0, y: 0}
       flag: 0
     - coordinate: {x: 0, y: 1}
-      flag: T_Gold_1
+      flag: 0
     - coordinate: {x: 0, y: 2}
-      flag: T_Gold_2
+      flag: 0
     - coordinate: {x: 0, y: 3}
-      flag: T_Gold_3
+      flag: 0
     - coordinate: {x: 1, y: 0}
-      flag: T_Diamond_1
+      flag: 0
     - coordinate: {x: 1, y: 1}
       flag: 0
     - coordinate: {x: 1, y: 2}
-      flag: 0
+      flag: T_Wand_3
     - coordinate: {x: 1, y: 3}
       flag: 0
     - coordinate: {x: 2, y: 0}
-      flag: T_Diamond_2
+      flag: 0
     - coordinate: {x: 2, y: 1}
-      flag: T_Diamond_4
+      flag: T_Wand_2
     - coordinate: {x: 2, y: 2}
       flag: 0
     - coordinate: {x: 2, y: 3}
       flag: 0
     - coordinate: {x: 3, y: 0}
-      flag: T_Diamond_3
+      flag: T_Wand_1
     - coordinate: {x: 3, y: 1}
       flag: 0
     - coordinate: {x: 3, y: 2}
@@ -49,11 +49,9 @@ MonoBehaviour:
     x_Length: 4
     y_Length: 4
   treasureToFind:
-  - {fileID: 11400000, guid: 1f666dc9f8fe22e4f8b1c255b0a57567, type: 2}
-  - {fileID: 11400000, guid: cc579467d7a81284287a76f3ca613d94, type: 2}
+  - {fileID: 11400000, guid: c7b9ba1ef62a6bb4ea34afc246a15add, type: 2}
   hints:
-  - A3
-  - C1
+  - C2
   tools:
-  - count: 9
+  - count: 4
     tool: {fileID: 11400000, guid: 7ef80a48c11f0db4b9174efc95371beb, type: 2}

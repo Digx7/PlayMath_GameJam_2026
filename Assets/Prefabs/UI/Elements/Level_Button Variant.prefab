@@ -98,6 +98,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level_Button Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2430887783993843577, guid: fcdda1224de852644831c34c80b862c7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2430887783993843577, guid: fcdda1224de852644831c34c80b862c7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2430887783993843577, guid: fcdda1224de852644831c34c80b862c7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2430887783993843577, guid: fcdda1224de852644831c34c80b862c7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7632145875938098759, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_Interactable
       value: 1
@@ -160,7 +176,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_Pivot.x

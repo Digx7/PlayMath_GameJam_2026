@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 112f7accd82f5e344b33b556b0054b4b, type: 3}
   m_Name: Shovel
   m_EditorClassIdentifier: Assembly-CSharp::Tool
-  sprite: {fileID: -636080611, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+  sprite: {fileID: -1944009273, guid: 79cae016e30f40547bd9dfc71899ea90, type: 3}

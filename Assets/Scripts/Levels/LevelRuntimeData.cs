@@ -96,21 +96,94 @@ public class LevelRuntimeData : MonoBehaviour
     private void DigInSpace(Vector2Int digCoordinates)
     {
         DigData digData = new DigData();
-        digData.coordinate = digCoordinates;
+        digData.result = DigResult.FOUND_OLD_EMPTY;
+        digData.tileData = new Dictionary<Vector2Int, DigTileData>();
         digData.toolUsed = tools[selectedToolIndex].tool;
 
-        string spaceFlag = levelDataSO.grid.GetFlagofGridSpace(digCoordinates);
+        for (int i = 0; i < digData.toolUsed.relativeSpacesToDig.Count; i++)
+        {
+            Vector2Int _digCoordinates = digCoordinates + digData.toolUsed.relativeSpacesToDig[i];
+            if(levelDataSO.grid.IsCoordinateInGrid(_digCoordinates))
+            {
+                DigTileData digTileData = DigInTile(_digCoordinates);
+
+                // Because Enums have an underlying int type we can compare them
+                // I want DigResults with a lower int type to override higher int types for the main result
+                if (digData.result > digTileData.result)digData.result = digTileData.result;
+
+                digData.tileData[_digCoordinates] = digTileData;
+            }
+        }
+
+        // digData.coordinate = digCoordinates;
+
+        // string spaceFlag = levelDataSO.grid.GetFlagofGridSpace(digCoordinates);
         
+        // if(levelDataSO.DoesSpaceContainTreasure(digCoordinates))
+        // {
+        //     if(modifiedGrid.GetFlagofGridSpace(digCoordinates) == "0")
+        //     {
+        //         modifiedGird.UpdateCoordinateFlag(digCoordinates, "T");
+        //         digData.result = DigResult.FOUND_NEW_TREASURE;
+        //     }
+        //     else
+        //     {
+        //         digData.result = DigResult.FOUND_OLD_TREASURE;
+        //     }
+
+            
+        // }
+        // else
+        // {
+        //     if(modifiedGrid.GetFlagofGridSpace(digCoordinates) == "0")
+        //     {
+        //         modifiedGrid.UpdateCoordinateFlag(digCoordinates, "E");
+        //         digData.result = DigResult.FOUND_NEW_EMPTY;
+        //     }
+        //     else
+        //     {
+        //         digData.result = DigResult.FOUND_OLD_EMPTY;
+        //     }
+
+            
+        // }
+
+        // if(spaceFlag != "0")
+        // {
+        //     string[] spaceFlagStrings = spaceFlag.Split('_');
+        //     digData.spaceID = spaceFlagStrings[0];
+        //     digData.itemID = spaceFlagStrings[1];
+        //     digData.itemSubID = spaceFlagStrings[2];
+        // }
+        // else
+        // {
+        //     digData.spaceID = "Null";
+        //     digData.itemID = "Null";
+        //     digData.itemSubID = "Null";
+        // }
+
+        OnDig.Invoke(digData);
+
+        AddFoundTreasureToFoundList(digData);
+    }
+
+    private DigTileData DigInTile(Vector2Int digCoordinates)
+    {
+        DigTileData digTileData = new DigTileData();
+        digTileData.coordinate = digCoordinates;
+
+        string spaceFlag = levelDataSO.grid.GetFlagofGridSpace(digCoordinates);
+
         if(levelDataSO.DoesSpaceContainTreasure(digCoordinates))
         {
             if(modifiedGrid.GetFlagofGridSpace(digCoordinates) == "0")
             {
                 modifiedGrid.UpdateCoordinateFlag(digCoordinates, "T");
-                digData.result = DigResult.FOUND_NEW_TREASURE;
+                digTileData.result = DigResult.FOUND_NEW_TREASURE;
             }
             else
             {
-                digData.result = DigResult.FOUND_OLD_TREASURE;
+                digTileData.result = DigResult.FOUND_OLD_TREASURE;
             }
 
             
@@ -120,45 +193,58 @@ public class LevelRuntimeData : MonoBehaviour
             if(modifiedGrid.GetFlagofGridSpace(digCoordinates) == "0")
             {
                 modifiedGrid.UpdateCoordinateFlag(digCoordinates, "E");
-                digData.result = DigResult.FOUND_NEW_EMPTY;
+                digTileData.result = DigResult.FOUND_NEW_EMPTY;
             }
             else
             {
-                digData.result = DigResult.FOUND_OLD_EMPTY;
+                digTileData.result = DigResult.FOUND_OLD_EMPTY;
             }
 
             
         }
 
+        digTileData.tileFlag = new TileFlag();
+
         if(spaceFlag != "0")
         {
             string[] spaceFlagStrings = spaceFlag.Split('_');
-            digData.spaceID = spaceFlagStrings[0];
-            digData.itemID = spaceFlagStrings[1];
-            digData.itemSubID = spaceFlagStrings[2];
+            digTileData.tileFlag.spaceID = spaceFlagStrings[0];
+            digTileData.tileFlag.itemID = spaceFlagStrings[1];
+            digTileData.tileFlag.itemSubID = spaceFlagStrings[2];
         }
         else
         {
-            digData.spaceID = "Null";
-            digData.itemID = "Null";
-            digData.itemSubID = "Null";
+            digTileData.tileFlag.spaceID = "Null";
+            digTileData.tileFlag.itemID = "Null";
+            digTileData.tileFlag.itemSubID = "Null";
         }
 
-        OnDig.Invoke(digData);
-
-        AddFoundTreasureToFoundList(digData);
+        return digTileData;
     }
 
     private void AddFoundTreasureToFoundList(DigData digData)
     {
         // If found treasure add its piece to the list of pieces found
-        if(digData.spaceID == "T")
+        // if(digData.spaceID == "T")
+        // {
+        //     for (int i = 0; i < treasureRuntimeDatas.Count; i++)
+        //     {
+        //         if(treasureRuntimeDatas[i].treasurePieceSO.ID == digData.itemID)
+        //         {
+        //             treasureRuntimeDatas[i].FindPiece(digData.itemSubID);
+        //         }
+        //     }
+        // }
+        foreach (KeyValuePair<Vector2Int, DigTileData> keyValuePair in digData.tileData)
         {
-            for (int i = 0; i < treasureRuntimeDatas.Count; i++)
+            if(keyValuePair.Value.tileFlag.spaceID == "T")
             {
-                if(treasureRuntimeDatas[i].treasurePieceSO.ID == digData.itemID)
+                for (int i = 0; i < treasureRuntimeDatas.Count; i++)
                 {
-                    treasureRuntimeDatas[i].FindPiece(digData.itemSubID);
+                    if(treasureRuntimeDatas[i].treasurePieceSO.ID == keyValuePair.Value.tileFlag.itemID)
+                    {
+                        treasureRuntimeDatas[i].FindPiece(keyValuePair.Value.tileFlag.itemSubID);
+                    }
                 }
             }
         }
@@ -208,12 +294,30 @@ public enum DigResult
 public struct DigData
 {
     public DigResult result;
-    public Vector2Int coordinate;
+    public Dictionary<Vector2Int, DigTileData> tileData;
     public Tool toolUsed;
+    // public Vector2Int coordinate;
+    // public string spaceID;
+    // public string itemID;
+    // public string itemSubID;
+    // public Sprite subSprite;
+}
+
+[System.Serializable]
+public struct DigTileData
+{
+    public DigResult result;
+    public Vector2Int coordinate;
+    public TileFlag tileFlag;
+    public Sprite subSprite;
+}
+
+[System.Serializable]
+public struct TileFlag
+{
     public string spaceID;
     public string itemID;
     public string itemSubID;
-    public Sprite subSprite;
 }
 
 [System.Serializable]

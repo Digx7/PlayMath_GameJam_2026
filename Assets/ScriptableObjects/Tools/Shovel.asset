@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Shovel
   m_EditorClassIdentifier: Assembly-CSharp::Tool
   sprite: {fileID: -1944009273, guid: 79cae016e30f40547bd9dfc71899ea90, type: 3}
+  relativeSpacesToDig:
+  - {x: 0, y: 0}

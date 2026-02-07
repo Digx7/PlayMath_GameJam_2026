@@ -35,9 +35,9 @@ public class GridButtonHelper : MonoBehaviour {
 
     public void Recieve_OnDig(DigData digData)
     {
-        if(digData.coordinate == coordinate)
+        if(digData.tileData.ContainsKey(coordinate))
         {
-            switch (digData.result)
+            switch (digData.tileData[coordinate].result)
             {
                 case DigResult.FOUND_NEW_TREASURE:
                     onFoundTreasure.Invoke(true);
@@ -57,5 +57,28 @@ public class GridButtonHelper : MonoBehaviour {
                     break;
             }
         }
+        
+        // if(digData.coordinate == coordinate)
+        // {
+        //     switch (digData.result)
+        //     {
+        //         case DigResult.FOUND_NEW_TREASURE:
+        //             onFoundTreasure.Invoke(true);
+        //             onFoundTreasure_Default.Invoke();
+        //             break;
+        //         case DigResult.FOUND_OLD_TREASURE:
+        //             onFoundTreasure.Invoke(true);
+        //             break;
+        //         case DigResult.FOUND_NEW_EMPTY:
+        //             onFoundTreasure.Invoke(false);
+        //             onFoundEmpty_Default.Invoke();
+        //             break;
+        //         case DigResult.FOUND_OLD_EMPTY:
+        //             onFoundTreasure.Invoke(false);
+        //             break;
+        //         default:
+        //             break;
+        //     }
+        // }
     }
 }

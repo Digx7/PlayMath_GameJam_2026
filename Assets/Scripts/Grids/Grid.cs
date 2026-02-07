@@ -57,7 +57,7 @@ namespace Digx7
 
             public void UpdateCoordinateFlag(Vector2Int coordinate, string newFlag)
             {
-                int i = CoordinateToIndex(coordinate);
+                int i = GridUtils.CoordinateToIndex(coordinate, x_Length, y_Length);
                 CoordinateFlagPair coordinateFlagPair = data[i];
                 coordinateFlagPair.flag = newFlag;
                 data[i] = coordinateFlagPair;
@@ -67,7 +67,7 @@ namespace Digx7
             {
                 if(data.Count == 0) return "-1";
 
-                int i = CoordinateToIndex(coordinate);
+                int i = GridUtils.CoordinateToIndex(coordinate, x_Length, y_Length);
 
                 return data[i].flag;
             }
@@ -103,16 +103,20 @@ namespace Digx7
                     Debug.Log($"{data[i].flag}");
                 }
             }
-        
-            private int CoordinateToIndex(Vector2Int coordinate)
-            {
-                return (coordinate.y + (y_Length * coordinate.x));
-            }
 
             private Vector2Int IndexToCoordinate(int index)
             {
                 return data[index].coordinate;
             }
+        }
+
+        public static class GridUtils
+        {
+            public static int CoordinateToIndex(Vector2Int coordinate, int x_Length, int y_Length)
+            {
+                return (coordinate.y + (y_Length * coordinate.x));
+            }
+               
         }
 
         [System.Serializable]

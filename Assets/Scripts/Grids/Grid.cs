@@ -57,27 +57,19 @@ namespace Digx7
 
             public void UpdateCoordinateFlag(Vector2Int coordinate, string newFlag)
             {
-                for (int i = 0; i < data.Count; i++)
-                {
-                    if(data[i].coordinate == coordinate) 
-                    {
-                        CoordinateFlagPair coordinateFlagPair = data[i];
-                        coordinateFlagPair.flag = newFlag;
-                        data[i] = coordinateFlagPair;
-                    }
-                }
+                int i = CoordinateToIndex(coordinate);
+                CoordinateFlagPair coordinateFlagPair = data[i];
+                coordinateFlagPair.flag = newFlag;
+                data[i] = coordinateFlagPair;
             }
 
             public string GetFlagofGridSpace(Vector2Int coordinate)
             {
                 if(data.Count == 0) return "-1";
-                
-                for (int i = 0; i < data.Count; i++)
-                {
-                    if(data[i].coordinate == coordinate) return data[i].flag;
-                }
 
-                return "-1";
+                int i = CoordinateToIndex(coordinate);
+
+                return data[i].flag;
             }
 
             public string GetFlagofGridSpace(int x, int y)
@@ -110,6 +102,16 @@ namespace Digx7
                 {
                     Debug.Log($"{data[i].flag}");
                 }
+            }
+        
+            private int CoordinateToIndex(Vector2Int coordinate)
+            {
+                return (coordinate.y + (y_Length * coordinate.x));
+            }
+
+            private Vector2Int IndexToCoordinate(int index)
+            {
+                return data[index].coordinate;
             }
         }
 

@@ -8,10 +8,14 @@ public class ToolUIButtonHelper : MonoBehaviour {
     [Header("Incoming Channels")]
     public ToolChannel OnUseEmptyToolChannel;
     public DigDataChannel OnDigChannel;
+
+    [Header("Incoming and OutGoing Channels")]
+    public ToolChannel TryChangeToolChannel;
     
     [Header("References")]
     public Image icon;
     public TextMeshProUGUI count;
+    public Toggle toggle;
 
     [Header("Events")]
     public ToolEvent TryChangeTool;
@@ -26,11 +30,13 @@ public class ToolUIButtonHelper : MonoBehaviour {
     private void OnEnable() {
         OnUseEmptyToolChannel.channelEvent.AddListener(OnRecieve_OnUseEmptyToolChannel);
         OnDigChannel.channelEvent.AddListener(OnReceive_OnDigChannel);
+        TryChangeToolChannel.channelEvent.AddListener(OnReceive_TryChangeToolChannel);
     }
 
     private void OnDisable() {
         OnUseEmptyToolChannel.channelEvent.RemoveListener(OnRecieve_OnUseEmptyToolChannel);
         OnDigChannel.channelEvent.RemoveListener(OnReceive_OnDigChannel);
+        TryChangeToolChannel.channelEvent.RemoveListener(OnReceive_TryChangeToolChannel);
     }
 
     public void OnRecieve_OnUseEmptyToolChannel(Tool tool)
@@ -49,6 +55,11 @@ public class ToolUIButtonHelper : MonoBehaviour {
         }
     }
 
+    public void OnReceive_TryChangeToolChannel(Tool tool)
+    {
+        if(m_tool != null && m_tool != tool) toggle.isOn = false;
+    }
+
     #endregion
 
     #region Public Functions
@@ -60,9 +71,9 @@ public class ToolUIButtonHelper : MonoBehaviour {
         RefreshCount();
     }
 
-    public void OnClick()
+    public void OnUpdate(bool value)
     {
-        if(m_tool != null) TryChangeTool.Invoke(m_tool);
+        if(value == true && m_tool != null) TryChangeToolChannel.Raise(m_tool);
     }
 
     #endregion

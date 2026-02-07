@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolUIManager
   OnSetupLevel: {fileID: 11400000, guid: 60e2db639608fe345a958f5ec8e127fd, type: 2}
-  toolButtonPrefab: {fileID: 43538854398606791, guid: ab3457eef992a844a8d8bc753b0ccacc, type: 3}
+  toolButtonPrefab: {fileID: 8075029534145646639, guid: 32a3ced6164a26b45bcaf5b49970d128, type: 3}
   toolButtonHolder: {fileID: 4703927573037325882}
 --- !u!1 &7592598520345085820
 GameObject:
@@ -763,6 +763,10 @@ PrefabInstance:
     - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_text
       value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
+      propertyPath: m_fontSize
+      value: 47.4
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_Pivot.x

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ToolUIManager : MonoBehaviour {
     public LevelDataChannel OnSetupLevel;
@@ -25,6 +26,14 @@ public class ToolUIManager : MonoBehaviour {
             GameObject obj_tool = Instantiate(toolButtonPrefab, toolButtonHolder);
             ToolUIButtonHelper toolUIButtonHelper = obj_tool.GetComponent<ToolUIButtonHelper>();
             toolUIButtonHelper.Setup(levelDataSO.tools[i]);
+
+            if (i == 0)
+            {
+                Toggle toggle = obj_tool.GetComponent<Toggle>();
+                toggle.isOn = true;
+            }
         }
+
+        
     }
 }

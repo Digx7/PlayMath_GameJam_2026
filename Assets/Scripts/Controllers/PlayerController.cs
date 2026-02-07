@@ -234,17 +234,17 @@ public class PlayerController : GameController
         }
     }
 
-    public void OnDeviceLost(PlayerInput playerInput)
+    public void OnDeviceLost(UnityEngine.InputSystem.PlayerInput playerInput)
     {
 
     }
 
-    public void OnDeviceRegained(PlayerInput playerInput)
+    public void OnDeviceRegained(UnityEngine.InputSystem.PlayerInput playerInput)
     {
 
     }
 
-    public void OnControlsChanged(PlayerInput playerInput)
+    public void OnControlsChanged(UnityEngine.InputSystem.PlayerInput playerInput)
     {
 
     }

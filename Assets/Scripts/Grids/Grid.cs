@@ -13,14 +13,18 @@ namespace Digx7
             public int x_Length = 0;
             public int y_Length = 0;
 
+            public Vector2Int origin;
+
             public Grid(int newX_Length, int newY_Length)
             {
                 SetEmptyGrid(newX_Length, newY_Length);
+                origin = new Vector2Int(newX_Length - 1, newY_Length -1);
             }
 
             public Grid(List<CoordinateFlagPair> newData, int newX_Length, int newY_Length)
             {
                 SetGrid(newData, newX_Length, newY_Length);
+                origin = new Vector2Int(newX_Length - 1, newY_Length -1);
             }
 
             public void SetEmptyGrid(int newX_Length, int newY_Length)
@@ -115,6 +119,22 @@ namespace Digx7
             public static int CoordinateToIndex(Vector2Int coordinate, int x_Length, int y_Length)
             {
                 return (coordinate.y + (y_Length * coordinate.x));
+            }
+
+            public static Vector2Int SpreadSheetCoordinateToGameCoordinate(Vector2Int spreadsheedCoordinate, Vector2Int spreadSheedOriginCoordinate)
+            {
+                Vector2Int output = spreadsheedCoordinate - spreadSheedOriginCoordinate;
+                output.y *= -1;
+
+                return output;
+            }
+
+            public static Vector2Int GameCoordinateToSpreadSheetCoordinate(Vector2Int gameCoordinate, Vector2Int topLeftCornerGameCoordinate)
+            {
+                Vector2Int output = gameCoordinate - topLeftCornerGameCoordinate;
+                output.y *= -1;
+
+                return output;
             }
                
         }

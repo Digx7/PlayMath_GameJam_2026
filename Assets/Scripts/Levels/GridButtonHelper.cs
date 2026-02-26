@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class GridButtonHelper : MonoBehaviour {
     public DigDataChannel onDig;
@@ -18,6 +19,9 @@ public class GridButtonHelper : MonoBehaviour {
         }
         }
     public Vector2IntChannelRaiser vector2IntChannelRaiser;
+    public TextMeshProUGUI graphNumberTMPro;
+    public GameObject verticalAxis;
+    public GameObject horizontalAxis;
 
     public BooleanEvent onFoundTreasure;
     public UnityEvent onFoundTreasure_Default;
@@ -81,4 +85,6 @@ public class GridButtonHelper : MonoBehaviour {
         //     }
         // }
     }
+
+    
 }

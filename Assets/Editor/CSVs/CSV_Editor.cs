@@ -313,6 +313,8 @@ namespace CSVTools
         #region LevelData
         public const string LEVELDATA_CSV_DIR = "/Editor/CSVs/LevelData/";
         public const string LEVELDATA_SO_DIR = "Assets/ScriptableObjects/LevelData/";
+        public const string TREASUREPIECEDATA_SO_DIR = "Assets/ScriptableObjects/TreasurePieces/";
+        public const string TOOL_SO_DIR = "Assets/ScriptableObjects/Tools/";
         #endregion
 
         #region General
@@ -1122,9 +1124,10 @@ namespace CSVTools
             // Parsing
             levelDataSO.name = assetName;
 
-            // Grid
+            // Grid =================================
             int x_Length = allEntries[0].Count - 1;
-            int y_Length = allEntries.Count - 1;
+            // int y_Length = allEntries.Count - 1;
+            int y_Length = x_Length;
 
             List<CoordinateFlagPair> newGrid = new List<CoordinateFlagPair>();
 
@@ -1140,7 +1143,61 @@ namespace CSVTools
                 }
             }
 
-            levelDataSO.SetGrid(newGrid, x_Length, y_Length);
+            // MetaData ================================
+            int metaDataStartIndex = y_Length + 2;
+            int treasureToFindStartIndex = metaDataStartIndex + 3;
+            int hintsStartIndex = treasureToFindStartIndex + 2;
+            int toolsStartIndex = hintsStartIndex + 2;
+
+            GridTypes gridType = (GridTypes)int.Parse(allEntries[metaDataStartIndex][1]);
+            Vector2Int origin = new Vector2Int(int.Parse(allEntries[metaDataStartIndex + 1][1]), int.Parse(allEntries[metaDataStartIndex + 1][2]));
+
+            // Treasure To Find ================================
+            List<TreasurePiece> treasureToFind = new List<TreasurePiece>();
+            for (int i = treasureToFindStartIndex; i < allEntries.Count; i++)
+            {
+                if (allEntries[i][0] == "--Hints--")
+                {
+                    hintsStartIndex = i + 1;
+                    break;
+                }
+
+                TreasurePiece treasurePiece = (TreasurePiece)AssetDatabase.LoadAssetAtPath($"{CSV_UserData.TREASUREPIECEDATA_SO_DIR}{allEntries[i][0]}.asset", typeof(TreasurePiece));
+                treasureToFind.Add(treasurePiece);
+            }
+
+            // Hints ======================================
+            List<string> hints = new List<string>();
+
+            for (int i = hintsStartIndex; i < allEntries.Count; i++)
+            {
+                if (allEntries[i][0] == "--Tools--")
+                {
+                    toolsStartIndex = i + 1;
+                    break;
+                }
+
+                hints.Add(allEntries[i][0]);
+            }
+
+            // Tools ======================================
+            List<CountToolPair> tools = new List<CountToolPair>();
+
+            for (int i = toolsStartIndex; i < allEntries.Count; i++)
+            {
+                string toolName = allEntries[i][0];
+                int toolCount = int.Parse(allEntries[i][1]);
+
+                Tool toolSO = (Tool)AssetDatabase.LoadAssetAtPath($"{CSV_UserData.TOOL_SO_DIR}{toolName}.asset", typeof(Tool));
+                CountToolPair countToolPair = new CountToolPair(toolCount, toolSO);
+                tools.Add(countToolPair);
+            }
+
+
+            levelDataSO.SetGrid(newGrid, x_Length, y_Length, gridType, origin);
+            levelDataSO.treasureToFind = treasureToFind;
+            levelDataSO.hints = hints;
+            levelDataSO.tools = tools;
 
             CSV_SOHelpers.CreateNewScriptableObjectIfAssetDoesntExist<LevelData>(levelDataSO, assetPath);
         }

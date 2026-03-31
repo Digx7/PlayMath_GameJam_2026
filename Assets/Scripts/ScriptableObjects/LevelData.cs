@@ -13,10 +13,11 @@ public class LevelData : ScriptableObject
     public List<String> hints;
     public List<CountToolPair> tools;
 
-    public void SetGrid(List<CoordinateFlagPair> newData, int newX_Length, int newY_Length)
+    public void SetGrid(List<CoordinateFlagPair> newData, int newX_Length, int newY_Length, GridTypes gridType = GridTypes.Coordinate, Vector2Int newOrigin = default(Vector2Int))
     {
         Debug.Log($"LevelData {name} had a new grid set");
-        grid = new Digx7.Grids.Grid(newData, newX_Length, newY_Length);
+        grid = new Digx7.Grids.Grid(newData, newX_Length, newY_Length, gridType);
+        grid.origin = newOrigin;
     }
     public void SetTreasureToFind(List<TreasurePiece> newTreasureToFind){treasureToFind = newTreasureToFind;}
 

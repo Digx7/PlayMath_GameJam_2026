@@ -12,6 +12,11 @@ public class Tool : ScriptableObject {
 [System.Serializable]
 public struct CountToolPair
 {
+    public CountToolPair(int count, Tool tool)
+    {
+        this.count = count;
+        this.tool = tool;
+    }
     public int count;
     public Tool tool;
 }

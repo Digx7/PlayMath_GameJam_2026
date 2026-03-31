@@ -1125,6 +1125,7 @@ namespace CSVTools
             levelDataSO.name = assetName;
 
             // Grid =================================
+            Debug.Log($"Processing Level Data {assetName} grid");
             int x_Length = allEntries[0].Count - 1;
             // int y_Length = allEntries.Count - 1;
             int y_Length = x_Length;
@@ -1144,6 +1145,7 @@ namespace CSVTools
             }
 
             // MetaData ================================
+            Debug.Log($"Processing Level Data {assetName} metadata");
             int metaDataStartIndex = y_Length + 2;
             int treasureToFindStartIndex = metaDataStartIndex + 3;
             int hintsStartIndex = treasureToFindStartIndex + 2;
@@ -1153,8 +1155,9 @@ namespace CSVTools
             Vector2Int origin = new Vector2Int(int.Parse(allEntries[metaDataStartIndex + 1][1]), int.Parse(allEntries[metaDataStartIndex + 1][2]));
 
             // Treasure To Find ================================
+            Debug.Log($"Processing Level Data {assetName} treasure to find");
             List<TreasurePiece> treasureToFind = new List<TreasurePiece>();
-            for (int i = treasureToFindStartIndex; i < allEntries.Count; i++)
+            for (int i = treasureToFindStartIndex; i < allEntries.Count - 1; i++)
             {
                 if (allEntries[i][0] == "--Hints--")
                 {
@@ -1167,9 +1170,10 @@ namespace CSVTools
             }
 
             // Hints ======================================
+            Debug.Log($"Processing Level Data {assetName} hints");
             List<string> hints = new List<string>();
 
-            for (int i = hintsStartIndex; i < allEntries.Count; i++)
+            for (int i = hintsStartIndex; i < allEntries.Count - 1; i++)
             {
                 if (allEntries[i][0] == "--Tools--")
                 {
@@ -1181,10 +1185,13 @@ namespace CSVTools
             }
 
             // Tools ======================================
+            Debug.Log($"Processing Level Data {assetName} tools");
             List<CountToolPair> tools = new List<CountToolPair>();
 
-            for (int i = toolsStartIndex; i < allEntries.Count; i++)
+            for (int i = toolsStartIndex; i < allEntries.Count - 1; i++)
             {
+                Debug.Log($"Processing Level Data {assetName} toolIndex {i} out of all entries count {allEntries.Count}");
+                
                 string toolName = allEntries[i][0];
                 int toolCount = int.Parse(allEntries[i][1]);
 
@@ -1204,7 +1211,7 @@ namespace CSVTools
 
         public static string[] LevelDataToEntry(LevelData levelDataSOs)
         {
-            int outputLength = levelDataSOs.grid.y_Length + 9 + levelDataSOs.treasureToFind.Count + levelDataSOs.hints.Count + levelDataSOs.tools.Count;
+            int outputLength = levelDataSOs.grid.y_Length + 8 + levelDataSOs.treasureToFind.Count + levelDataSOs.hints.Count + levelDataSOs.tools.Count;
             int gridStartIndex = 0;
             int metaDataStartIndex = levelDataSOs.grid.y_Length + 1;
             int treasureToFindStartIndex = metaDataStartIndex + 3;

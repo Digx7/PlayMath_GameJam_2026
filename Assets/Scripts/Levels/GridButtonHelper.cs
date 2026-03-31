@@ -17,7 +17,7 @@ public class GridButtonHelper : MonoBehaviour {
             coordinate = value;
             vector2IntChannelRaiser.Data = value;
         }
-        }
+    }
     public Vector2IntChannelRaiser vector2IntChannelRaiser;
     public TextMeshProUGUI graphNumberTMPro;
     public GameObject verticalAxis;

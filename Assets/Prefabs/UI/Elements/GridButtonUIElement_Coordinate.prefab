@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4103469428324714313}
   - component: {fileID: 5519201139595235129}
   m_Layer: 5
-  m_Name: GridButtonUIElement
+  m_Name: GridButtonUIElement_Coordinate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

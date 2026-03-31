@@ -147,7 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridUIManager
   OnSetupLevel: {fileID: 11400000, guid: 60e2db639608fe345a958f5ec8e127fd, type: 2}
-  gridButtonPrefab: {fileID: 162290830343854737, guid: 77ab64a73905eeb43bc01f82df950479, type: 3}
+  gridButtonPrefab_Coordinate: {fileID: 162290830343854737, guid: 77ab64a73905eeb43bc01f82df950479, type: 3}
+  gridButtonPrefab_A4: {fileID: 162290830343854737, guid: 369e72ee16f89f74b804dc3daaca5f9d, type: 3}
   gridButtonHolder: {fileID: 8336186324590564722}
   gridLayoutGroup: {fileID: 6988817052034601072}
   gridLabelPrefab: {fileID: 3477655196530361856, guid: 3050f57757709e84b90156caed8c851b, type: 3}

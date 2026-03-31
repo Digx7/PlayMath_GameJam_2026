@@ -66,6 +66,7 @@ MonoBehaviour:
       flag: 0
     x_Length: 5
     y_Length: 5
+    gridType: 1
     origin: {x: 0, y: 0}
   treasureToFind:
   - {fileID: 11400000, guid: 1f666dc9f8fe22e4f8b1c255b0a57567, type: 2}

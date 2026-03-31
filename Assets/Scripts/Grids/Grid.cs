@@ -13,26 +13,29 @@ namespace Digx7
             public int x_Length = 0;
             public int y_Length = 0;
 
+            public GridTypes gridType = GridTypes.Coordinate;
+
             public Vector2Int origin;
 
-            public Grid(int newX_Length, int newY_Length)
+            public Grid(int newX_Length, int newY_Length, GridTypes newGridType = GridTypes.Coordinate)
             {
-                SetEmptyGrid(newX_Length, newY_Length);
+                SetEmptyGrid(newX_Length, newY_Length, newGridType);
                 origin = new Vector2Int(newX_Length - 1, newY_Length -1);
             }
 
-            public Grid(List<CoordinateFlagPair> newData, int newX_Length, int newY_Length)
+            public Grid(List<CoordinateFlagPair> newData, int newX_Length, int newY_Length, GridTypes newGridType = GridTypes.Coordinate)
             {
-                SetGrid(newData, newX_Length, newY_Length);
+                SetGrid(newData, newX_Length, newY_Length, newGridType);
                 origin = new Vector2Int(newX_Length - 1, newY_Length -1);
             }
 
-            public void SetEmptyGrid(int newX_Length, int newY_Length)
+            public void SetEmptyGrid(int newX_Length, int newY_Length, GridTypes newGridType = GridTypes.Coordinate)
             {
                 data = new List<CoordinateFlagPair>();
 
                 x_Length = newX_Length;
                 y_Length = newY_Length;
+                gridType = newGridType;
 
                 for (int x = 0; x < x_Length; x++)
                 {
@@ -49,12 +52,13 @@ namespace Digx7
                 PrintGrid();
             }
 
-            public void SetGrid(List<CoordinateFlagPair> newData, int newX_Length, int newY_Length)
+            public void SetGrid(List<CoordinateFlagPair> newData, int newX_Length, int newY_Length, GridTypes newGridType = GridTypes.Coordinate)
             {
                 data = newData;
 
                 x_Length = newX_Length;
                 y_Length = newY_Length;
+                gridType = newGridType;
 
                 PrintGrid();
             }
@@ -144,6 +148,13 @@ namespace Digx7
         {
             public Vector2Int coordinate;
             public string flag;
+        }
+
+        [System.Serializable]
+        public enum GridTypes
+        {
+            A4,
+            Coordinate
         }
     }
 }

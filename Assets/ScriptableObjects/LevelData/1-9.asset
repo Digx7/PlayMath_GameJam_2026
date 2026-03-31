@@ -66,13 +66,14 @@ MonoBehaviour:
       flag: 0
     x_Length: 5
     y_Length: 5
+    gridType: 0
     origin: {x: 0, y: 0}
   treasureToFind:
   - {fileID: 11400000, guid: c7b9ba1ef62a6bb4ea34afc246a15add, type: 2}
   - {fileID: 11400000, guid: 1f666dc9f8fe22e4f8b1c255b0a57567, type: 2}
   hints:
-  - (1 -2)
-  - (3, -1)
+  - C2
+  - B4
   tools:
   - count: 7
     tool: {fileID: 11400000, guid: 7ef80a48c11f0db4b9174efc95371beb, type: 2}

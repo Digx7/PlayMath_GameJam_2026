@@ -1204,30 +1204,182 @@ namespace CSVTools
 
         public static string[] LevelDataToEntry(LevelData levelDataSOs)
         {
-            string[] lines = new string[levelDataSOs.grid.y_Length + 1];
+            int outputLength = levelDataSOs.grid.y_Length + 9 + levelDataSOs.treasureToFind.Count + levelDataSOs.hints.Count + levelDataSOs.tools.Count;
+            int gridStartIndex = 0;
+            int metaDataStartIndex = levelDataSOs.grid.y_Length + 1;
+            int treasureToFindStartIndex = metaDataStartIndex + 3;
+            int hintsStartIndex = treasureToFindStartIndex + levelDataSOs.treasureToFind.Count + 1;
+            int toolsStartIndex = hintsStartIndex + levelDataSOs.hints.Count + 1;
 
+            string[] lines = new string[outputLength];
+
+            // Grid ==================================
             // Header
-            string header = $"{levelDataSOs.name}";
+            string gridHeader = $"{levelDataSOs.name}";
             if(levelDataSOs.grid.x_Length > 2)
             {
                 for (int x = 1; x < levelDataSOs.grid.x_Length; x++)
                 {
-                    header += $"{CSV_UserData.COLUMN_DELIMITER}z";
+                    gridHeader += $"{CSV_UserData.COLUMN_DELIMITER}---";
                 }
             }
-            header += $"{CSV_UserData.COLUMN_DELIMITER}$";
-            lines[0] = header;
+            gridHeader += $"{CSV_UserData.COLUMN_DELIMITER}$";
+            lines[gridStartIndex] = gridHeader;
 
             // Data
             for (int y = 0; y < levelDataSOs.grid.y_Length; y++)
             {
                 for (int x = 0; x < levelDataSOs.grid.x_Length; x++)
                 {
-                    lines[y+1] += $"{levelDataSOs.grid.GetFlagofGridSpace(x,y)}{CSV_UserData.COLUMN_DELIMITER}";
+                    lines[gridStartIndex + y + 1] += $"{levelDataSOs.grid.GetFlagofGridSpace(x,y)}{CSV_UserData.COLUMN_DELIMITER}";
                 }
-                lines[y+1] += "$";
+                lines[gridStartIndex + y + 1] += "$";
             }
 
+            // MetaData ================================
+            // Header
+            string metaDataHeader = $"--MetaData--";
+            if(levelDataSOs.grid.x_Length > 2)
+            {
+                for (int x = 1; x < levelDataSOs.grid.x_Length; x++)
+                {
+                    metaDataHeader += $"{CSV_UserData.COLUMN_DELIMITER}---";
+                }
+            }
+            metaDataHeader += $"{CSV_UserData.COLUMN_DELIMITER}$";
+            lines[metaDataStartIndex] = metaDataHeader;
+
+            // Data
+            string gridTypeLine = $"Grid_Type";
+            if(levelDataSOs.grid.x_Length > 2)
+            {
+                for (int x = 1; x < levelDataSOs.grid.x_Length; x++)
+                {
+                    if(x == 1)
+                    {
+                        gridTypeLine += $"{CSV_UserData.COLUMN_DELIMITER}{(int)levelDataSOs.grid.gridType}";
+                    }
+                    else
+                    {
+                        gridTypeLine += $"{CSV_UserData.COLUMN_DELIMITER}---";
+                    }
+                }
+            }
+            gridTypeLine += $"{CSV_UserData.COLUMN_DELIMITER}$";
+            lines[metaDataStartIndex + 1] = gridTypeLine;
+
+            string originLine = $"Origin";
+            if(levelDataSOs.grid.x_Length > 2)
+            {
+                for (int x = 1; x < levelDataSOs.grid.x_Length; x++)
+                {
+                    if(x == 1)
+                    {
+                        originLine += $"{CSV_UserData.COLUMN_DELIMITER}{levelDataSOs.grid.origin.x}";
+                    }
+                    else if(x == 2)
+                    {
+                        originLine += $"{CSV_UserData.COLUMN_DELIMITER}{levelDataSOs.grid.origin.y}";
+                    }
+                    else
+                    {
+                        originLine += $"{CSV_UserData.COLUMN_DELIMITER}---";
+                    }
+                }
+            }
+            originLine += $"{CSV_UserData.COLUMN_DELIMITER}$";
+            lines[metaDataStartIndex + 2] = originLine;
+
+            // Treasure To Find ================================
+            // Header
+            string treasureToFindHeader = $"--TreasureToFind--";
+            if(levelDataSOs.grid.x_Length > 2)
+            {
+                for (int x = 1; x < levelDataSOs.grid.x_Length; x++)
+                {
+                    treasureToFindHeader += $"{CSV_UserData.COLUMN_DELIMITER}---";
+                }
+            }
+            treasureToFindHeader += $"{CSV_UserData.COLUMN_DELIMITER}$";
+            lines[treasureToFindStartIndex] = treasureToFindHeader;
+
+            // Data
+            for (int i = 0; i < levelDataSOs.treasureToFind.Count; i++)
+            {
+                string treasureLine = $"{levelDataSOs.treasureToFind[i].name}";
+                if(levelDataSOs.grid.x_Length > 2)
+                {
+                    for (int x = 1; x < levelDataSOs.grid.x_Length; x++)
+                    {
+                        treasureLine += $"{CSV_UserData.COLUMN_DELIMITER}---";
+                    }
+                }
+                treasureLine += $"{CSV_UserData.COLUMN_DELIMITER}$";
+                lines[treasureToFindStartIndex + i + 1] = treasureLine;
+            }
+
+            // Hints ================================
+            // Header
+            string hintsHeader = $"--Hints--";
+            if(levelDataSOs.grid.x_Length > 2)
+            {
+                for (int x = 1; x < levelDataSOs.grid.x_Length; x++)
+                {
+                    hintsHeader += $"{CSV_UserData.COLUMN_DELIMITER}---";
+                }
+            }
+            hintsHeader += $"{CSV_UserData.COLUMN_DELIMITER}$";
+            lines[hintsStartIndex] = hintsHeader;
+
+            // Data
+            for (int i = 0; i < levelDataSOs.hints.Count; i++)
+            {
+                string hintsLine = $"{levelDataSOs.hints[i]}";
+                if(levelDataSOs.grid.x_Length > 2)
+                {
+                    for (int x = 1; x < levelDataSOs.grid.x_Length; x++)
+                    {
+                        hintsLine += $"{CSV_UserData.COLUMN_DELIMITER}---";
+                    }
+                }
+                hintsLine += $"{CSV_UserData.COLUMN_DELIMITER}$";
+                lines[hintsStartIndex + i + 1] = hintsLine;
+            }
+
+            // Tools ================================
+            // Header
+            string toolsHeader = $"--Tools--";
+            if(levelDataSOs.grid.x_Length > 2)
+            {
+                for (int x = 1; x < levelDataSOs.grid.x_Length; x++)
+                {
+                    toolsHeader += $"{CSV_UserData.COLUMN_DELIMITER}---";
+                }
+            }
+            toolsHeader += $"{CSV_UserData.COLUMN_DELIMITER}$";
+            lines[toolsStartIndex] = toolsHeader;
+
+            // Data
+            for (int i = 0; i < levelDataSOs.tools.Count; i++)
+            {
+                string toolsLine = $"{levelDataSOs.tools[i].tool.name}";
+                if(levelDataSOs.grid.x_Length > 2)
+                {
+                    for (int x = 1; x < levelDataSOs.grid.x_Length; x++)
+                    {
+                        if(x == 1)
+                        {
+                            toolsLine += $"{CSV_UserData.COLUMN_DELIMITER}{levelDataSOs.tools[i].count}";
+                        }
+                        else
+                        {
+                            toolsLine += $"{CSV_UserData.COLUMN_DELIMITER}---";
+                        }
+                    }
+                }
+                toolsLine += $"{CSV_UserData.COLUMN_DELIMITER}$";
+                lines[toolsStartIndex + i + 1] = toolsLine;
+            }
 
             return lines;
         }

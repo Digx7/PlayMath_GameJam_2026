@@ -17,3 +17,12 @@ public struct SubSprite
     public Sprite subSprite;
     public Vector2Int relativePosition;
 }
+
+[System.Serializable]
+public enum TreasurePieceRotation
+{
+    None,
+    Rotate90,
+    Rotate180,
+    Rotate270
+}

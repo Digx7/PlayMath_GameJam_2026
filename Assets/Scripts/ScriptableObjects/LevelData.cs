@@ -10,6 +10,7 @@ public class LevelData : ScriptableObject
     public Digx7.Grids.Grid grid;
 
     public List<TreasurePiece> treasureToFind;
+    public List<TreasurePieceRotation> treasureRotations;
     public List<String> hints;
     public List<CountToolPair> tools;
 
@@ -19,7 +20,15 @@ public class LevelData : ScriptableObject
         grid = new Digx7.Grids.Grid(newData, newX_Length, newY_Length, gridType);
         grid.origin = newOrigin;
     }
-    public void SetTreasureToFind(List<TreasurePiece> newTreasureToFind){treasureToFind = newTreasureToFind;}
+    public void SetTreasureToFind(List<TreasurePiece> newTreasureToFind)
+    {
+        treasureToFind = newTreasureToFind;
+        treasureRotations = new List<TreasurePieceRotation>();
+        for (int i = 0; i < newTreasureToFind.Count; i++)
+        {
+            treasureRotations.Add(TreasurePieceRotation.None);
+        }
+    }
 
     public bool DoesSpaceContainTreasure(Vector2Int coordinates)
     {

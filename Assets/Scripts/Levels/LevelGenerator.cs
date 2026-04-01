@@ -20,6 +20,7 @@ namespace Digx7.Levels
 
             List<CoordinateFlagPair> gridData = new List<CoordinateFlagPair>();
             List<TreasurePiece> treasureToFind = new List<TreasurePiece>();
+            List<TreasurePieceRotation> treasureRotations = new List<TreasurePieceRotation>();
             List<string> hints = new List<string>();
             List<CountToolPair> tools = new List<CountToolPair>();
 
@@ -90,6 +91,34 @@ namespace Digx7.Levels
                 coordinatesToCheck.Add(randomPieceOrigin);
                 coordinatesToCheck.AddRange(treasureToFind[treasureIndex].subSprites.ConvertAll(sub => randomPieceOrigin + sub.relativePosition));
 
+                // Rotate the piece randomly before checking placement validity
+                TreasurePieceRotation treasureRotationType = TreasurePieceRotation.None;
+                bool shouldRotate = UnityEngine.Random.value < 0.5f; // Randomly decide whether to rotate the piece
+                if (shouldRotate)
+                {
+                    treasureRotationType = (TreasurePieceRotation)UnityEngine.Random.Range(1, 4); // Rotate 90, 180, or 270 degrees
+                    for (int i = 0; i < coordinatesToCheck.Count; i++)
+                    {
+                        Vector2Int relativePos = coordinatesToCheck[i] - randomPieceOrigin;
+                        Vector2Int rotatedRelativePos = relativePos;
+
+                        switch (treasureRotationType)
+                        {
+                            case TreasurePieceRotation.Rotate90: // 90 degrees
+                                rotatedRelativePos = new Vector2Int(-relativePos.y, relativePos.x);
+                                break;
+                            case TreasurePieceRotation.Rotate180: // 180 degrees
+                                rotatedRelativePos = new Vector2Int(-relativePos.x, -relativePos.y);
+                                break;
+                            case TreasurePieceRotation.Rotate270: // 270 degrees
+                                rotatedRelativePos = new Vector2Int(relativePos.y, -relativePos.x);
+                                break;
+                        }
+                        
+                        coordinatesToCheck[i] = randomPieceOrigin + rotatedRelativePos;
+                    }
+                }
+
                 foreach (Vector2Int coordinate in coordinatesToCheck)
                 {
                     if (!GridUtils.IsCoordinateInGrid(coordinate, xLength, yLength))
@@ -120,14 +149,18 @@ namespace Digx7.Levels
                     }
                     
                     // Add hints
+                    Vector2Int treasureHintCoordinate = coordinatesToCheck[UnityEngine.Random.Range(0, coordinatesToCheck.Count)]; // Randomly select one of the piece's coordinates for the hint
                     if(gridType == GridTypes.Coordinate)
                     {
-                        hints.Add($"{GridUtils.SpreadSheetCoordinateToGameCoordinate(randomPieceOrigin, origin)}"); // Hint is the index of the origin coordinate in the grid data list
+                        hints.Add($"{GridUtils.SpreadSheetCoordinateToGameCoordinate(treasureHintCoordinate, origin)}"); // Hint is the index of the origin coordinate in the grid data list
                     }
                     else if(gridType == GridTypes.A4)
                     {
-                        hints.Add($"{GridUtils.SpreadSheetCoordinateToGameA4(randomPieceOrigin)}");
+                        hints.Add($"{GridUtils.SpreadSheetCoordinateToGameA4(treasureHintCoordinate)}");
                     }
+
+                    // Add rotation info
+                    treasureRotations.Add(treasureRotationType);
 
 
                     attempts = 0; // Reset attempts for next piece
@@ -179,6 +212,7 @@ namespace Digx7.Levels
             LevelData levelDataSO = ScriptableObject.CreateInstance<LevelData>();
             levelDataSO.SetGrid(gridData, xLength, yLength, gridType, origin);
             levelDataSO.SetTreasureToFind(treasureToFind);
+            levelDataSO.treasureRotations = treasureRotations;
             levelDataSO.hints = hints;
             levelDataSO.tools = tools;
 

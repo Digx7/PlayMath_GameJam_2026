@@ -164,8 +164,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7851252869dbb534e8751ee1741013ac, type: 2}
   - {fileID: 11400000, guid: 5f0a69b717d3d674896aca54496d43a4, type: 2}
   - {fileID: 11400000, guid: f7edfd5be0ecfb842a776774d06d8f14, type: 2}
-  levels_string:
-  - 2-1
+  levels_string: []
 --- !u!1001 &9219621247782567449
 PrefabInstance:
   m_ObjectHideFlags: 0

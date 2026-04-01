@@ -20,6 +20,7 @@ public class GridOverlayManager : MonoBehaviour {
 
     public void SetupGrid(LevelData levelData)
     {
+        ClearOverlays();
         levelDataSO = levelData;
 
 
@@ -35,6 +36,14 @@ public class GridOverlayManager : MonoBehaviour {
             image.sprite = levelDataSO.treasureToFind[i].mainSprite;
 
             hintText.text = levelDataSO.hints[i];
+        }
+    }
+
+    private void ClearOverlays()
+    {
+        foreach (Transform child in overlayHolder)
+        {
+            Destroy(child.gameObject);
         }
     }
 

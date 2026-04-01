@@ -93,12 +93,7 @@ MonoBehaviour:
   channelToRaise: {fileID: 11400000, guid: 8e3d02440f7299d4b9889cd055e06e2c, type: 2}
   m_data:
     result: 0
-    coordinate: {x: 0, y: 0}
     toolUsed: {fileID: 0}
-    spaceID: 
-    itemID: 
-    itemSubID: 
-    subSprite: {fileID: 0}
 --- !u!1 &3672123150133970653
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,10 +458,13 @@ MonoBehaviour:
   TryDigChannel: {fileID: 11400000, guid: e8be464b7a2b2db49b389b545be43473, type: 2}
   TryChangeTool: {fileID: 11400000, guid: 3cb1b04714c461e46a53c86b4980e45c, type: 2}
   levelDataSO: {fileID: 11400000, guid: 055c2258f57cbda43a383be8e393fdfe, type: 2}
+  generateRandomLevelDataOnAwake: 0
   modifiedGrid:
     data: []
     x_Length: 0
     y_Length: 0
+    gridType: 0
+    origin: {x: 0, y: 0}
   treasureRuntimeDatas: []
   tools: []
   levelFinished: 0
@@ -548,18 +546,6 @@ MonoBehaviour:
       - m_Target: {fileID: 295239084735944386}
         m_TargetAssemblyTypeName: ChannelRaiser, Assembly-CSharp
         m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3495390907345841794}
-        m_TargetAssemblyTypeName: UIWidgetDataChannelRaiser, Assembly-CSharp
-        m_MethodName: RaiseMData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

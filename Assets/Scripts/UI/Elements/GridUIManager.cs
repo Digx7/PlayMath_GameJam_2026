@@ -29,6 +29,8 @@ public class GridUIManager : MonoBehaviour
 
     public void SetupGrid(LevelData levelData)
     {
+        ClearGrid();
+        
         levelDataSO = levelData;
         gridLayoutGroup.constraintCount = levelDataSO.grid.x_Length;
 
@@ -87,6 +89,24 @@ public class GridUIManager : MonoBehaviour
                 TextMeshProUGUI leftLabelTextMeshPro = obj_Label_Left.GetComponentInChildren<TextMeshProUGUI>();
                 leftLabelTextMeshPro.text = Convert.ToChar(x + 65).ToString();
             }
+        }
+    }
+
+    private void ClearGrid()
+    {
+        foreach (Transform child in gridButtonHolder)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (Transform child in gridLabelTopHolder)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (Transform child in gridLabelLeftHolder)
+        {
+            Destroy(child.gameObject);
         }
     }
 }

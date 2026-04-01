@@ -19,6 +19,7 @@ public class ToolUIManager : MonoBehaviour {
 
     public void SetupTools(LevelData levelData)
     {
+        ClearGrid();
         levelDataSO = levelData;
 
         for (int i = 0; i < levelDataSO.tools.Count; i++)
@@ -35,5 +36,13 @@ public class ToolUIManager : MonoBehaviour {
         }
 
         
+    }
+
+    private void ClearGrid()
+    {
+        foreach (Transform child in toolButtonHolder)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }

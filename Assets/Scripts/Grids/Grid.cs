@@ -125,6 +125,12 @@ namespace Digx7
                 return (coordinate.y + (y_Length * coordinate.x));
             }
 
+            public static bool IsCoordinateInGrid(Vector2Int coordinate, int x_Length, int y_Length)
+            {
+                if(coordinate.x >= 0 && coordinate.x < x_Length && coordinate.y >= 0 && coordinate.y < y_Length) return true;
+                else return false;
+            }
+
             public static Vector2Int SpreadSheetCoordinateToGameCoordinate(Vector2Int spreadsheedCoordinate, Vector2Int spreadSheedOriginCoordinate)
             {
                 Vector2Int output = spreadsheedCoordinate - spreadSheedOriginCoordinate;
@@ -140,12 +146,25 @@ namespace Digx7
 
                 return output;
             }
+
+            public static string SpreadSheetCoordinateToGameA4(Vector2Int spreadsheedCoordinate)
+            {
+                char row = (char)('A' + spreadsheedCoordinate.y);
+                int column = spreadsheedCoordinate.x + 1;
+
+                return $"{row}{column}";
+            }
                
         }
 
         [System.Serializable]
         public struct CoordinateFlagPair
         {
+            public CoordinateFlagPair(Vector2Int newCoordinate, string newFlag)
+            {
+                coordinate = newCoordinate;
+                flag = newFlag;
+            }
             public Vector2Int coordinate;
             public string flag;
         }

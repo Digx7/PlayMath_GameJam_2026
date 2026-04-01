@@ -17,9 +17,13 @@ MonoBehaviour:
   subSprites:
   - SubID: 1
     subSprite: {fileID: 1534529335, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    relativePosition: {x: 0, y: 0}
   - SubID: 2
     subSprite: {fileID: 1534529335, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    relativePosition: {x: 1, y: 0}
   - SubID: 3
     subSprite: {fileID: 1534529335, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    relativePosition: {x: 2, y: 0}
   - SubID: 4
     subSprite: {fileID: 1534529335, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    relativePosition: {x: 1, y: 1}

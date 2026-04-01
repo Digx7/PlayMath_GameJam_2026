@@ -312,9 +312,9 @@ namespace CSVTools
 
         #region LevelData
         public const string LEVELDATA_CSV_DIR = "/Editor/CSVs/LevelData/";
-        public const string LEVELDATA_SO_DIR = "Assets/ScriptableObjects/LevelData/";
-        public const string TREASUREPIECEDATA_SO_DIR = "Assets/ScriptableObjects/TreasurePieces/";
-        public const string TOOL_SO_DIR = "Assets/ScriptableObjects/Tools/";
+        public const string LEVELDATA_SO_DIR = "Assets/Resources/ScriptableObjects/LevelData/";
+        public const string TREASUREPIECEDATA_SO_DIR = "Assets/Resources/ScriptableObjects/TreasurePieces/";
+        public const string TOOL_SO_DIR = "Assets/Resources/ScriptableObjects/Tools/";
         #endregion
 
         #region General

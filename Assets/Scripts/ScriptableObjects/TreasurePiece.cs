@@ -15,4 +15,5 @@ public struct SubSprite
 {
     public string SubID;
     public Sprite subSprite;
+    public Vector2Int relativePosition;
 }

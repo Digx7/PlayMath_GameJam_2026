@@ -7,16 +7,29 @@ public class LevelUIButtonHelper : MonoBehaviour {
     [Header("References")]
     public TextMeshProUGUI label;
 
-    private LevelData m_levelData;
+    // private LevelData m_levelData;
+    private string m_sceneName;
 
     public void Setup(LevelData levelData)
     {
-        m_levelData = levelData;
+        m_sceneName = levelData.name;
         label.text = levelData.name;
+    }
+
+    public void Setup(string name)
+    {
+        m_sceneName = name;
+        label.text = name;
+    }
+
+    public void Setup(string labelText, string sceneName)
+    {
+        label.text = labelText;
+        m_sceneName = sceneName;
     }
 
     public void OnClick()
     {
-        if(m_levelData != null) UnityEngine.SceneManagement.SceneManager.LoadScene(m_levelData.name);
+        if(m_sceneName != null) UnityEngine.SceneManagement.SceneManager.LoadScene(m_sceneName);
     }
 }

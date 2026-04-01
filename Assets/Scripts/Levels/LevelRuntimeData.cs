@@ -12,6 +12,7 @@ public class LevelRuntimeData : MonoBehaviour
     
     // Level Data
     public LevelData levelDataSO;
+    public bool generateRandomLevelDataOnAwake = false;
 
 
     // Runtime Data
@@ -32,6 +33,11 @@ public class LevelRuntimeData : MonoBehaviour
 
     private void Awake() 
     {
+        if(generateRandomLevelDataOnAwake) 
+        {
+            levelDataSO = Digx7.Levels.LevelGenerator.GenerateRandomLevelData();
+        }
+        
         modifiedGrid = new Digx7.Grids.Grid(levelDataSO.grid.x_Length, levelDataSO.grid.y_Length);
 
         treasureRuntimeDatas = new List<TreasureRuntimeData>();

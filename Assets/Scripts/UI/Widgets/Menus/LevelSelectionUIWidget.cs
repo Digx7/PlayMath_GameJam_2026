@@ -14,7 +14,8 @@ public class LevelSelectionUIWidget : UIMenu
     [Header("References")]
     public GameObject levelButtonPrefab;
     public Transform levelButtonHolder;
-    public List<LevelData> levels;
+    public List<LevelData> levels_LevelData;
+    public List<string> levels_string;
 
     public override void Setup(UIWidgetData newUIWidgetData)
     {
@@ -35,11 +36,18 @@ public class LevelSelectionUIWidget : UIMenu
 
     public void SetupLevels()
     {
-        for (int i = 0; i < levels.Count; i++)
+        for (int i = 0; i < levels_LevelData.Count; i++)
         {
             GameObject obj = Instantiate(levelButtonPrefab, levelButtonHolder);
             LevelUIButtonHelper levelUIButtonHelper = obj.GetComponent<LevelUIButtonHelper>();
-            levelUIButtonHelper.Setup(levels[i]);
+            levelUIButtonHelper.Setup(levels_LevelData[i]);
+        }
+
+        for (int i = 0; i < levels_string.Count; i++)
+        {
+            GameObject obj = Instantiate(levelButtonPrefab, levelButtonHolder);
+            LevelUIButtonHelper levelUIButtonHelper = obj.GetComponent<LevelUIButtonHelper>();
+            levelUIButtonHelper.Setup(levels_string[i]);
         }
     }
 }

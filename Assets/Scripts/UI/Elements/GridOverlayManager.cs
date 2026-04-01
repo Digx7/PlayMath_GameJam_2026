@@ -27,15 +27,26 @@ public class GridOverlayManager : MonoBehaviour {
         for (int i = 0; i < levelDataSO.treasureToFind.Count; i++)
         {
             GameObject obj = Instantiate(overlayPrefab, overlayHolder);
-            StringChannelListener stringChannelListener = obj.GetComponentInChildren<StringChannelListener>();
+            OverlayPieceElement overlayPieceElement = obj.GetComponent<OverlayPieceElement>();
 
-            stringChannelListener.dataToListenFor = levelDataSO.treasureToFind[i].ID;
+            overlayPieceElement.TreasureID = levelDataSO.treasureToFind[i].ID;
+            overlayPieceElement.treasureImage.sprite = levelDataSO.treasureToFind[i].mainSprite;
+            if (levelDataSO.treasureRotations[i] != TreasurePieceRotation.None)
+            {
+                overlayPieceElement.SetIsRotated();
+            }
+            overlayPieceElement.hintText.text = levelDataSO.hints[i];
 
-            TextMeshProUGUI hintText = obj.GetComponentInChildren<TextMeshProUGUI>();
-            Image image = obj.GetComponentInChildren<Image>();
-            image.sprite = levelDataSO.treasureToFind[i].mainSprite;
 
-            hintText.text = levelDataSO.hints[i];
+            // StringChannelListener stringChannelListener = obj.GetComponentInChildren<StringChannelListener>();
+
+            // stringChannelListener.dataToListenFor = levelDataSO.treasureToFind[i].ID;
+
+            // TextMeshProUGUI hintText = obj.GetComponentInChildren<TextMeshProUGUI>();
+            // Image image = obj.GetComponentInChildren<Image>();
+            // image.sprite = levelDataSO.treasureToFind[i].mainSprite;
+
+            // hintText.text = levelDataSO.hints[i];
         }
     }
 

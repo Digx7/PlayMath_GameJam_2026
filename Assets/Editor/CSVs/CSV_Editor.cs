@@ -1148,7 +1148,8 @@ namespace CSVTools
             Debug.Log($"Processing Level Data {assetName} metadata");
             int metaDataStartIndex = y_Length + 2;
             int treasureToFindStartIndex = metaDataStartIndex + 3;
-            int hintsStartIndex = treasureToFindStartIndex + 2;
+            int treasureRotationsStartIndex = treasureToFindStartIndex + 2;
+            int hintsStartIndex = treasureRotationsStartIndex + 2;
             int toolsStartIndex = hintsStartIndex + 2;
 
             GridTypes gridType = (GridTypes)int.Parse(allEntries[metaDataStartIndex][1]);
@@ -1159,14 +1160,29 @@ namespace CSVTools
             List<TreasurePiece> treasureToFind = new List<TreasurePiece>();
             for (int i = treasureToFindStartIndex; i < allEntries.Count - 1; i++)
             {
+                if (allEntries[i][0] == "--TreasureRotations--")
+                {
+                    treasureRotationsStartIndex = i + 1;
+                    break;
+                }
+
+                TreasurePiece treasurePiece = (TreasurePiece)AssetDatabase.LoadAssetAtPath($"{CSV_UserData.TREASUREPIECEDATA_SO_DIR}{allEntries[i][0]}.asset", typeof(TreasurePiece));
+                treasureToFind.Add(treasurePiece);
+            }
+
+            // Treasure Rotations ================================
+            Debug.Log($"Processing Level Data {assetName} treasure rotations");
+            List<TreasurePieceRotation> treasureRotations = new List<TreasurePieceRotation>();
+            for (int i = treasureToFindStartIndex + treasureToFind.Count + 1; i < allEntries.Count - 1; i++)
+            {
                 if (allEntries[i][0] == "--Hints--")
                 {
                     hintsStartIndex = i + 1;
                     break;
                 }
 
-                TreasurePiece treasurePiece = (TreasurePiece)AssetDatabase.LoadAssetAtPath($"{CSV_UserData.TREASUREPIECEDATA_SO_DIR}{allEntries[i][0]}.asset", typeof(TreasurePiece));
-                treasureToFind.Add(treasurePiece);
+                TreasurePieceRotation treasureRotation = (TreasurePieceRotation)Enum.Parse(typeof(TreasurePieceRotation), allEntries[i][0]);
+                treasureRotations.Add(treasureRotation);
             }
 
             // Hints ======================================
@@ -1203,6 +1219,7 @@ namespace CSVTools
 
             levelDataSO.SetGrid(newGrid, x_Length, y_Length, gridType, origin);
             levelDataSO.treasureToFind = treasureToFind;
+            levelDataSO.treasureRotations = treasureRotations;
             levelDataSO.hints = hints;
             levelDataSO.tools = tools;
 

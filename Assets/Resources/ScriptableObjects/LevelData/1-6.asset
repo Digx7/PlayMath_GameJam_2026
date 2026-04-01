@@ -71,6 +71,7 @@ MonoBehaviour:
   treasureToFind:
   - {fileID: 11400000, guid: c7b9ba1ef62a6bb4ea34afc246a15add, type: 2}
   - {fileID: 11400000, guid: 1f666dc9f8fe22e4f8b1c255b0a57567, type: 2}
+  treasureRotations: 0000000000000000
   hints:
   - (0, 1)
   - (0, -1)

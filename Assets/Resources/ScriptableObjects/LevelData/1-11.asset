@@ -70,6 +70,7 @@ MonoBehaviour:
     origin: {x: 2, y: 2}
   treasureToFind:
   - {fileID: 11400000, guid: fa0c68f69dd61cd4ea2ca25a62c715d4, type: 2}
+  treasureRotations: 00000000
   hints:
   - (-1, 1)
   tools:

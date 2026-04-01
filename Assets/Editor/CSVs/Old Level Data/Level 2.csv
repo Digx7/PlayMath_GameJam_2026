@@ -1,4 +1,16 @@
-1-2|z|z|$
+1-2|---|---|$
 0|0|0|$
 T_Diamond_1|T_Diamond_2|T_Diamond_3|$
 0|T_Diamond_4|0|$
+--MetaData--|---|---|$
+Grid_Type|0|---|$
+Origin|0|0|$
+--TreasureToFind--|---|---|$
+Diamond|---|---|$
+--Hints--|---|---|$
+C2|---|---|$
+--Tools--|---|---|$
+Shovel|6|---|$
+Pickaxe|1|---|$
+Bomb|1|---|$
+

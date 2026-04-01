@@ -1211,11 +1211,12 @@ namespace CSVTools
 
         public static string[] LevelDataToEntry(LevelData levelDataSOs)
         {
-            int outputLength = levelDataSOs.grid.y_Length + 8 + levelDataSOs.treasureToFind.Count + levelDataSOs.hints.Count + levelDataSOs.tools.Count;
+            int outputLength = levelDataSOs.grid.y_Length + 8 + levelDataSOs.treasureToFind.Count + levelDataSOs.treasureRotations.Count + levelDataSOs.hints.Count + levelDataSOs.tools.Count;
             int gridStartIndex = 0;
             int metaDataStartIndex = levelDataSOs.grid.y_Length + 1;
             int treasureToFindStartIndex = metaDataStartIndex + 3;
-            int hintsStartIndex = treasureToFindStartIndex + levelDataSOs.treasureToFind.Count + 1;
+            int treasureRotationsStartIndex = treasureToFindStartIndex + levelDataSOs.treasureToFind.Count + 1;
+            int hintsStartIndex = treasureRotationsStartIndex + levelDataSOs.treasureRotations.Count + 1;
             int toolsStartIndex = hintsStartIndex + levelDataSOs.hints.Count + 1;
 
             string[] lines = new string[outputLength];
@@ -1324,6 +1325,35 @@ namespace CSVTools
                 treasureLine += $"{CSV_UserData.COLUMN_DELIMITER}$";
                 lines[treasureToFindStartIndex + i + 1] = treasureLine;
             }
+
+            // Treasure Rotations ================================
+            // Header
+            string treasureRotationsHeader = $"--TreasureRotations--";
+            if(levelDataSOs.grid.x_Length > 2)
+            {
+                for (int x = 1; x < levelDataSOs.grid.x_Length; x++)
+                {
+                    treasureRotationsHeader += $"{CSV_UserData.COLUMN_DELIMITER}---";
+                }
+            }
+            treasureRotationsHeader += $"{CSV_UserData.COLUMN_DELIMITER}$";
+            lines[treasureRotationsStartIndex] = treasureRotationsHeader;
+
+            // Data
+            for (int i = 0; i < levelDataSOs.treasureRotations.Count; i++)
+            {
+                string treasureRotationLine = $"{levelDataSOs.treasureRotations[i]}";
+                if(levelDataSOs.grid.x_Length > 2)
+                {
+                    for (int x = 1; x < levelDataSOs.grid.x_Length; x++)
+                    {
+                        treasureRotationLine += $"{CSV_UserData.COLUMN_DELIMITER}---";
+                    }
+                }
+                treasureRotationLine += $"{CSV_UserData.COLUMN_DELIMITER}$";
+                lines[treasureRotationsStartIndex + i + 1] = treasureRotationLine;
+            }
+
 
             // Hints ================================
             // Header

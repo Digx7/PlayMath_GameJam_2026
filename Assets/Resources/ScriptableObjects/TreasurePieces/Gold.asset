@@ -16,11 +16,11 @@ MonoBehaviour:
   mainSprite: {fileID: -636080611, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
   subSprites:
   - SubID: 1
-    subSprite: {fileID: -636080611, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite: {fileID: -209612516, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
     relativePosition: {x: 0, y: 0}
   - SubID: 2
-    subSprite: {fileID: -636080611, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite: {fileID: 180961233, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
     relativePosition: {x: 0, y: 1}
   - SubID: 3
-    subSprite: {fileID: -636080611, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite: {fileID: 728070967, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
     relativePosition: {x: 0, y: 2}

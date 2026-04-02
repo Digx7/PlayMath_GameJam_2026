@@ -16,17 +16,17 @@ MonoBehaviour:
   mainSprite: {fileID: 107485968, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
   subSprites:
   - SubID: 1
-    subSprite: {fileID: 107485968, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite: {fileID: 1358898805, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
     relativePosition: {x: 0, y: 0}
   - SubID: 2
-    subSprite: {fileID: 107485968, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite: {fileID: 952133734, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
     relativePosition: {x: 0, y: 1}
   - SubID: 3
-    subSprite: {fileID: 107485968, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite: {fileID: -1280134814, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
     relativePosition: {x: 0, y: 2}
   - SubID: 4
-    subSprite: {fileID: 107485968, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite: {fileID: 849032248, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
     relativePosition: {x: 1, y: 2}
   - SubID: 5
-    subSprite: {fileID: 107485968, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite: {fileID: -1085943137, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
     relativePosition: {x: 2, y: 2}

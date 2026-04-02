@@ -84,6 +84,35 @@ public class LevelData : ScriptableObject
         }
     }
 
+    public bool TryGetSpaceRotation(out TreasurePieceRotation treasurePieceRotation, Vector2Int coordinate)
+    {
+        
+        treasurePieceRotation = TreasurePieceRotation.None;
+        
+        if(!grid.IsCoordinateInGrid(coordinate))
+        {
+            return false;
+        }
+
+        string[] spaceFlags = grid.GetFlagsofGridSpace(coordinate);
+        if (spaceFlags.Length == 3)
+        {
+            string itemID = spaceFlags[1];
+            string subID = spaceFlags[2];
+
+            for (int i = 0; i < treasureToFind.Count; i++)
+            {
+                if (treasureToFind[i].ID == itemID)
+                {
+                    treasurePieceRotation = treasureRotations[i];
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     [ContextMenu("Print Grid")]
     public void PrintGrid()
     {

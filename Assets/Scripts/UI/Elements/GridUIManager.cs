@@ -59,11 +59,11 @@ public class GridUIManager : MonoBehaviour
 
                 Vector2Int coordintate = new Vector2Int(x,y);
                 gridButtonHelper.Coordinate = coordintate;
-                // Sprite subSprite = null;
-                if( levelDataSO.TryGetSpaceSubSprite(out Sprite subSprite, coordintate))
+                bool subSpriteFound = levelDataSO.TryGetSpaceSubSprite(out Sprite subSprite, coordintate);
+                bool rotationFound = levelDataSO.TryGetSpaceRotation(out TreasurePieceRotation treasurePieceRotation, coordintate);
+                if( subSprite && rotationFound)
                 {
-                    gridButtonHelper.TreasureDisplaySprite = subSprite;
-                    // gridButtonHelper.treasureDisplayImage.sprite = subSprite;
+                    gridButtonHelper.SetTreasureSprite(subSprite, treasurePieceRotation);
                     Debug.Log($"GridUIManager SubSprite added for coordinate {coordintate}");
                 }
                 else

@@ -37,16 +37,7 @@ public class GridOverlayManager : MonoBehaviour {
             }
             overlayPieceElement.hintText.text = levelDataSO.hints[i];
 
-
-            // StringChannelListener stringChannelListener = obj.GetComponentInChildren<StringChannelListener>();
-
-            // stringChannelListener.dataToListenFor = levelDataSO.treasureToFind[i].ID;
-
-            // TextMeshProUGUI hintText = obj.GetComponentInChildren<TextMeshProUGUI>();
-            // Image image = obj.GetComponentInChildren<Image>();
-            // image.sprite = levelDataSO.treasureToFind[i].mainSprite;
-
-            // hintText.text = levelDataSO.hints[i];
+            overlayPieceElement.StartAnimationDelay(1f + (i * 0.1f));
         }
     }
 

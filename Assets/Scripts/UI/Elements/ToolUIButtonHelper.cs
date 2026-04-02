@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
+using System;
+using System.Collections;
 
 public class ToolUIButtonHelper : MonoBehaviour {
     
@@ -21,6 +23,8 @@ public class ToolUIButtonHelper : MonoBehaviour {
     public ToolEvent TryChangeTool;
     public UnityEvent OnUseEmpty;
     public UnityEvent OnDecrease;
+    public Animator animator;
+    public string triggerName;
 
     private int m_currentCount;
     private Tool m_tool;
@@ -74,6 +78,17 @@ public class ToolUIButtonHelper : MonoBehaviour {
     public void OnUpdate(bool value)
     {
         if(value == true && m_tool != null) TryChangeToolChannel.Raise(m_tool);
+    }
+
+    public void StartAnimationDelay(float delay)
+    {
+        StartCoroutine(FadeInDelay(delay));
+    }
+
+    private IEnumerator FadeInDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        animator.SetTrigger(triggerName);
     }
 
     #endregion

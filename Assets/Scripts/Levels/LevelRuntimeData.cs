@@ -121,53 +121,6 @@ public class LevelRuntimeData : MonoBehaviour
             }
         }
 
-        // digData.coordinate = digCoordinates;
-
-        // string spaceFlag = levelDataSO.grid.GetFlagofGridSpace(digCoordinates);
-        
-        // if(levelDataSO.DoesSpaceContainTreasure(digCoordinates))
-        // {
-        //     if(modifiedGrid.GetFlagofGridSpace(digCoordinates) == "0")
-        //     {
-        //         modifiedGird.UpdateCoordinateFlag(digCoordinates, "T");
-        //         digData.result = DigResult.FOUND_NEW_TREASURE;
-        //     }
-        //     else
-        //     {
-        //         digData.result = DigResult.FOUND_OLD_TREASURE;
-        //     }
-
-            
-        // }
-        // else
-        // {
-        //     if(modifiedGrid.GetFlagofGridSpace(digCoordinates) == "0")
-        //     {
-        //         modifiedGrid.UpdateCoordinateFlag(digCoordinates, "E");
-        //         digData.result = DigResult.FOUND_NEW_EMPTY;
-        //     }
-        //     else
-        //     {
-        //         digData.result = DigResult.FOUND_OLD_EMPTY;
-        //     }
-
-            
-        // }
-
-        // if(spaceFlag != "0")
-        // {
-        //     string[] spaceFlagStrings = spaceFlag.Split('_');
-        //     digData.spaceID = spaceFlagStrings[0];
-        //     digData.itemID = spaceFlagStrings[1];
-        //     digData.itemSubID = spaceFlagStrings[2];
-        // }
-        // else
-        // {
-        //     digData.spaceID = "Null";
-        //     digData.itemID = "Null";
-        //     digData.itemSubID = "Null";
-        // }
-
         OnDig.Invoke(digData);
 
         AddFoundTreasureToFoundList(digData);

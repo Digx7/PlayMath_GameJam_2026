@@ -76,3 +76,7 @@ MonoBehaviour:
   tools:
   - count: 5
     tool: {fileID: 11400000, guid: 7ef80a48c11f0db4b9174efc95371beb, type: 2}
+  - count: 3
+    tool: {fileID: 11400000, guid: 3e62e31fecc60a24a8640e2a14d1d8aa, type: 2}
+  - count: 3
+    tool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}

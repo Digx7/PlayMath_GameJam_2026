@@ -44,6 +44,75 @@ public class LevelData : ScriptableObject
         return DoesSpaceContainTreasure(coordinates);
     }
 
+    public bool TryGetSpaceSubSprite(out Sprite sprite, Vector2Int coordinate)
+    {
+        Debug.Log($"LevelData TryGetSpaceSubSprite {coordinate}");
+        
+        sprite = null;
+
+        if(!grid.IsCoordinateInGrid(coordinate))
+        {
+            Debug.Log($"LevelData TryGetSpaceSubSprite exited early because {coordinate} was outside the grid");
+            return false;
+        }
+
+        string[] spaceFlags = grid.GetFlagsofGridSpace(coordinate);
+        if(spaceFlags.Length == 3)
+        {
+            string itemID = spaceFlags[1];
+            string subID = spaceFlags[2];
+
+            TreasurePiece treasure = treasureToFind.Find(i => i.ID == itemID);
+
+            if (treasure != null)
+            {
+                sprite = treasure.subSprites.Find(j => j.SubID == subID).subSprite;
+
+                Debug.Log($"LevelData TryGetSpaceSubSprite returned subSprite {sprite.name}");
+                return true;
+            }
+            else
+            {
+                Debug.Log($"LevelData TryGetSpaceSubSprite exited early because no treasure was found at {coordinate}\nInstead we found the flag {grid.GetFlagofGridSpace(coordinate)}");
+                return false;
+            }
+        }
+        else
+        {
+            Debug.Log($"LevelData TryGetSpaceSubSprite exited early because spaceFlags.Length != 3 but instead equals {spaceFlags.Length}");
+            return false;
+        }
+    }
+
+    public bool TryGetSpaceRotation(out TreasurePieceRotation treasurePieceRotation, Vector2Int coordinate)
+    {
+        
+        treasurePieceRotation = TreasurePieceRotation.None;
+        
+        if(!grid.IsCoordinateInGrid(coordinate))
+        {
+            return false;
+        }
+
+        string[] spaceFlags = grid.GetFlagsofGridSpace(coordinate);
+        if (spaceFlags.Length == 3)
+        {
+            string itemID = spaceFlags[1];
+            string subID = spaceFlags[2];
+
+            for (int i = 0; i < treasureToFind.Count; i++)
+            {
+                if (treasureToFind[i].ID == itemID)
+                {
+                    treasurePieceRotation = treasureRotations[i];
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     [ContextMenu("Print Grid")]
     public void PrintGrid()
     {

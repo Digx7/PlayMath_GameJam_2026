@@ -80,10 +80,20 @@ namespace Digx7
                 return data[i].flag;
             }
 
+            public string[] GetFlagsofGridSpace(Vector2Int coordinate)
+            {
+                return GetFlagofGridSpace(coordinate).Split('_');
+            }
+
             public string GetFlagofGridSpace(int x, int y)
             {
                 Vector2Int coordinate = new Vector2Int(x,y);
                 return GetFlagofGridSpace(coordinate);
+            }
+
+            public string[] GetFlagsofGridSpace(int x, int y)
+            {
+                return GetFlagofGridSpace(x, y).Split('_');
             }
 
             public bool IsCoordinateInGrid(Vector2Int coordinate)
@@ -123,6 +133,12 @@ namespace Digx7
             public static int CoordinateToIndex(Vector2Int coordinate, int x_Length, int y_Length)
             {
                 return (coordinate.y + (y_Length * coordinate.x));
+            }
+
+            public static Vector2Int IndexToCoordinate(int index, int x_Length, int y_Length)
+            {
+                Vector2Int output = new Vector2Int((int)(index / x_Length), (int)(index % y_Length));
+                return output;
             }
 
             public static bool IsCoordinateInGrid(Vector2Int coordinate, int x_Length, int y_Length)

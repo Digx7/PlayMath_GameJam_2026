@@ -28,6 +28,8 @@ public class ToolUIManager : MonoBehaviour {
             ToolUIButtonHelper toolUIButtonHelper = obj_tool.GetComponent<ToolUIButtonHelper>();
             toolUIButtonHelper.Setup(levelDataSO.tools[i]);
 
+            toolUIButtonHelper.StartAnimationDelay(1.25f + (i * 0.1f));
+
             if (i == 0)
             {
                 Toggle toggle = obj_tool.GetComponent<Toggle>();

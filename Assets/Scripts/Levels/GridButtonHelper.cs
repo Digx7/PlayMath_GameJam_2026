@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
+using System;
+using System.Collections;
 
-public class GridButtonHelper : MonoBehaviour {
+public class GridButtonHelper : MonoBehaviour 
+{
     public DigDataChannel onDig;
 
     [SerializeField]private Vector2Int coordinate;
@@ -22,6 +26,34 @@ public class GridButtonHelper : MonoBehaviour {
     public TextMeshProUGUI graphNumberTMPro;
     public GameObject verticalAxis;
     public GameObject horizontalAxis;
+
+    public Image treasureDisplayImage;
+    public void SetTreasureSprite(Sprite treasureSprite, TreasurePieceRotation treasurePieceRotation)
+    {
+        treasureDisplayImage.gameObject.SetActive(true);
+        treasureDisplayImage.sprite = treasureSprite;
+
+        switch (treasurePieceRotation)
+        {
+            case TreasurePieceRotation.None:
+                break;
+            case TreasurePieceRotation.Rotate90:
+                treasureDisplayImage.transform.Rotate(new Vector3(0,0,90));
+                break;
+            case TreasurePieceRotation.Rotate180:
+                treasureDisplayImage.transform.Rotate(new Vector3(0,0,180));
+                break;
+            case TreasurePieceRotation.Rotate270:
+                treasureDisplayImage.transform.Rotate(new Vector3(0,0,270));
+                break;
+            default:
+                break;
+        }
+    }
+
+    public Animator animator;
+    public string fadeInTriggerName;
+    public string winTriggerName;
 
     public BooleanEvent onFoundTreasure;
     public UnityEvent onFoundTreasure_Default;
@@ -86,5 +118,19 @@ public class GridButtonHelper : MonoBehaviour {
         // }
     }
 
-    
+    public void StartAnimationDelay(float delay)
+    {
+        StartCoroutine(AnimationTriggerDelay(fadeInTriggerName, delay));
+    }
+
+    public void WinAnimationDelay(float delay)
+    {
+        StartCoroutine(AnimationTriggerDelay(winTriggerName, delay));
+    }
+
+    private IEnumerator AnimationTriggerDelay(string triggerName, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        animator.SetTrigger(triggerName);
+    }
 }

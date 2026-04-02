@@ -1145,20 +1145,21 @@ namespace CSVTools
             }
 
             // MetaData ================================
-            Debug.Log($"Processing Level Data {assetName} metadata");
             int metaDataStartIndex = y_Length + 2;
             int treasureToFindStartIndex = metaDataStartIndex + 3;
             int treasureRotationsStartIndex = treasureToFindStartIndex + 2;
             int hintsStartIndex = treasureRotationsStartIndex + 2;
             int toolsStartIndex = hintsStartIndex + 2;
 
+            Debug.Log($"Processing Level Data {assetName} metadata\nStarting at line {metaDataStartIndex}");
+
             GridTypes gridType = (GridTypes)int.Parse(allEntries[metaDataStartIndex][1]);
             Vector2Int origin = new Vector2Int(int.Parse(allEntries[metaDataStartIndex + 1][1]), int.Parse(allEntries[metaDataStartIndex + 1][2]));
 
             // Treasure To Find ================================
-            Debug.Log($"Processing Level Data {assetName} treasure to find");
+            Debug.Log($"Processing Level Data {assetName} treasure to find\nStarting at line {treasureToFindStartIndex}");
             List<TreasurePiece> treasureToFind = new List<TreasurePiece>();
-            for (int i = treasureToFindStartIndex; i < allEntries.Count - 1; i++)
+            for (int i = treasureToFindStartIndex; i < allEntries.Count; i++)
             {
                 if (allEntries[i][0] == "--TreasureRotations--")
                 {
@@ -1171,9 +1172,9 @@ namespace CSVTools
             }
 
             // Treasure Rotations ================================
-            Debug.Log($"Processing Level Data {assetName} treasure rotations");
+            Debug.Log($"Processing Level Data {assetName} treasure rotations\nStarting at line {treasureRotationsStartIndex}");
             List<TreasurePieceRotation> treasureRotations = new List<TreasurePieceRotation>();
-            for (int i = treasureToFindStartIndex + treasureToFind.Count + 1; i < allEntries.Count - 1; i++)
+            for (int i = treasureRotationsStartIndex; i < allEntries.Count; i++)
             {
                 if (allEntries[i][0] == "--Hints--")
                 {
@@ -1186,10 +1187,10 @@ namespace CSVTools
             }
 
             // Hints ======================================
-            Debug.Log($"Processing Level Data {assetName} hints");
+            Debug.Log($"Processing Level Data {assetName} hints\nStarting at line {hintsStartIndex}");
             List<string> hints = new List<string>();
 
-            for (int i = hintsStartIndex; i < allEntries.Count - 1; i++)
+            for (int i = hintsStartIndex; i < allEntries.Count; i++)
             {
                 if (allEntries[i][0] == "--Tools--")
                 {
@@ -1201,10 +1202,10 @@ namespace CSVTools
             }
 
             // Tools ======================================
-            Debug.Log($"Processing Level Data {assetName} tools");
+            Debug.Log($"Processing Level Data {assetName} tools\nStarting at line {toolsStartIndex} out of {allEntries.Count - 1} lines");
             List<CountToolPair> tools = new List<CountToolPair>();
 
-            for (int i = toolsStartIndex; i < allEntries.Count - 1; i++)
+            for (int i = toolsStartIndex; i < allEntries.Count; i++)
             {
                 Debug.Log($"Processing Level Data {assetName} toolIndex {i} out of all entries count {allEntries.Count}");
                 

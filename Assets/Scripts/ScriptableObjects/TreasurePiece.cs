@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.SceneTemplate;
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -28,13 +29,24 @@ public class TreasurePiece : ScriptableObject
 
         foreach (var file in files)
         {
+            // Create level data
             LevelGeneratorTemplateData levelGeneratorTemplateData = (LevelGeneratorTemplateData)AssetDatabase.LoadAssetAtPath(file, typeof(LevelGeneratorTemplateData));
             Debug.Log($"{levelGeneratorTemplateData.name}");
 
             string newLevelName = $"{this.name}_{levelGeneratorTemplateData.name}";
 
             levelGeneratorTemplateData.treasurePiecesToUse[0] = this;
-            levelGeneratorTemplateData.GenerateLevel(path, newLevelName);
+            LevelData levelData = levelGeneratorTemplateData.GenerateLevel(path, newLevelName);
+
+            // Create test scene
+            string testScenePath = $"Assets/Scenes/TestScene/{newLevelName}.unity";
+            SceneTemplateAsset templateAsset = (SceneTemplateAsset)AssetDatabase.LoadAssetAtPath("Assets/Scenes/1-1.scenetemplate", typeof(SceneTemplateAsset));
+
+            Debug.Log($"templateAsset = {templateAsset}");
+
+            InstantiationResult result = SceneTemplateService.Instantiate(templateAsset, false, testScenePath);
+
+            Debug.Log($"Scene: {result.scene} and SceneAsset: {result.sceneAsset}");
         }
 
         // Edit treaurePieces to include this this

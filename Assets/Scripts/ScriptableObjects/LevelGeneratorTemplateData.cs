@@ -128,19 +128,28 @@ namespace Digx7.Levels
         #if UNITY_EDITOR
 
         [ContextMenu("Generate Level")]
-        public void GenerateLevel()
+        public LevelData GenerateLevel()
         {
-            LevelGenerator.SaveLevelDataAsAsset(LevelGenerator.GenerateRandomLevelFromTemplate(this), "Assets/GeneratedLevelsFromTemplate");
+            LevelData levelData = LevelGenerator.GenerateRandomLevelFromTemplate(this);
+            LevelGenerator.SaveLevelDataAsAsset(levelData, "Assets/GeneratedLevelsFromTemplate");
+
+            return levelData;
         }
 
-        public void GenerateLevel(string levelName)
+        public LevelData GenerateLevel(string levelName)
         {
-            LevelGenerator.SaveLevelDataAsAssetWithName(LevelGenerator.GenerateRandomLevelFromTemplate(this), "Assets/GeneratedLevelsFromTemplate", levelName);
+            LevelData levelData = LevelGenerator.GenerateRandomLevelFromTemplate(this);
+            LevelGenerator.SaveLevelDataAsAssetWithName(levelData, "Assets/GeneratedLevelsFromTemplate", levelName);
+
+            return levelData;
         }
 
-        public void GenerateLevel(string path, string levelName)
+        public LevelData GenerateLevel(string path, string levelName)
         {
-            LevelGenerator.SaveLevelDataAsAssetWithName(LevelGenerator.GenerateRandomLevelFromTemplate(this), path, levelName);
+            LevelData levelData = LevelGenerator.GenerateRandomLevelFromTemplate(this);
+            LevelGenerator.SaveLevelDataAsAssetWithName(levelData, path, levelName);
+
+            return levelData;
         }
 
         #endif

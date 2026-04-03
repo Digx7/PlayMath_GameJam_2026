@@ -17,27 +17,27 @@ MonoBehaviour:
     - coordinate: {x: 0, y: 0}
       flag: 0
     - coordinate: {x: 0, y: 1}
-      flag: T_Chest_6
-    - coordinate: {x: 0, y: 2}
-      flag: T_Chest_3
-    - coordinate: {x: 0, y: 3}
       flag: 0
+    - coordinate: {x: 0, y: 2}
+      flag: T_Chest_6
+    - coordinate: {x: 0, y: 3}
+      flag: T_Chest_3
     - coordinate: {x: 1, y: 0}
       flag: 0
     - coordinate: {x: 1, y: 1}
-      flag: T_Chest_5
-    - coordinate: {x: 1, y: 2}
-      flag: T_Chest_2
-    - coordinate: {x: 1, y: 3}
       flag: 0
+    - coordinate: {x: 1, y: 2}
+      flag: T_Chest_5
+    - coordinate: {x: 1, y: 3}
+      flag: T_Chest_2
     - coordinate: {x: 2, y: 0}
       flag: 0
     - coordinate: {x: 2, y: 1}
-      flag: T_Chest_4
-    - coordinate: {x: 2, y: 2}
-      flag: T_Chest_1
-    - coordinate: {x: 2, y: 3}
       flag: 0
+    - coordinate: {x: 2, y: 2}
+      flag: T_Chest_4
+    - coordinate: {x: 2, y: 3}
+      flag: T_Chest_1
     - coordinate: {x: 3, y: 0}
       flag: 0
     - coordinate: {x: 3, y: 1}
@@ -54,7 +54,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 15e099bf15b93f44eb9b9347c15253e0, type: 2}
   treasureRotations: 02000000
   hints:
-  - B3
+  - C3
   tools:
   - count: 3
     tool: {fileID: 11400000, guid: 7ef80a48c11f0db4b9174efc95371beb, type: 2}

@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ac0c0a51408a04f9ea578326becd37, type: 3}
+  m_Name: Wand_Coordinate_Rotation90
+  m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  grid:
+    data:
+    - coordinate: {x: 0, y: 0}
+      flag: 0
+    - coordinate: {x: 0, y: 1}
+      flag: 0
+    - coordinate: {x: 0, y: 2}
+      flag: 0
+    - coordinate: {x: 0, y: 3}
+      flag: 0
+    - coordinate: {x: 1, y: 0}
+      flag: T_Wand_1
+    - coordinate: {x: 1, y: 1}
+      flag: 0
+    - coordinate: {x: 1, y: 2}
+      flag: 0
+    - coordinate: {x: 1, y: 3}
+      flag: 0
+    - coordinate: {x: 2, y: 0}
+      flag: 0
+    - coordinate: {x: 2, y: 1}
+      flag: T_Wand_2
+    - coordinate: {x: 2, y: 2}
+      flag: 0
+    - coordinate: {x: 2, y: 3}
+      flag: 0
+    - coordinate: {x: 3, y: 0}
+      flag: 0
+    - coordinate: {x: 3, y: 1}
+      flag: 0
+    - coordinate: {x: 3, y: 2}
+      flag: T_Wand_3
+    - coordinate: {x: 3, y: 3}
+      flag: 0
+    x_Length: 4
+    y_Length: 4
+    gridType: 1
+    origin: {x: 0, y: 3}
+  treasureToFind:
+  - {fileID: 11400000, guid: c7b9ba1ef62a6bb4ea34afc246a15add, type: 2}
+  treasureRotations: 01000000
+  hints:
+  - (2, 2)
+  tools:
+  - count: 3
+    tool: {fileID: 11400000, guid: 7ef80a48c11f0db4b9174efc95371beb, type: 2}
+  - count: 1
+    tool: {fileID: 11400000, guid: 3e62e31fecc60a24a8640e2a14d1d8aa, type: 2}
+  - count: 1
+    tool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}

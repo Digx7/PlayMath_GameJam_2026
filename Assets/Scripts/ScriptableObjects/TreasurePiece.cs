@@ -3,6 +3,7 @@ using UnityEditor;
 using UnityEditor.SceneTemplate;
 using System;
 using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Digx7.Levels;
@@ -17,6 +18,12 @@ public class TreasurePiece : ScriptableObject
     #if UNITY_EDITOR
 
     [ContextMenu("Generate Test Level")]
+    public void StartGeneratingTestLevels()
+    {
+        // StartCoroutine(GenerateTestLevels());
+        GenerateTestLevels();
+    }
+
     public void GenerateTestLevels()
     {
         Debug.Log($"Genrating test levels for {name}");
@@ -39,14 +46,20 @@ public class TreasurePiece : ScriptableObject
             LevelData levelData = levelGeneratorTemplateData.GenerateLevel(path, newLevelName);
 
             // Create test scene
-            string testScenePath = $"Assets/Scenes/TestScene/{newLevelName}.unity";
-            SceneTemplateAsset templateAsset = (SceneTemplateAsset)AssetDatabase.LoadAssetAtPath("Assets/Scenes/1-1.scenetemplate", typeof(SceneTemplateAsset));
+            // string testScenePath = $"Assets/Scenes/TestScene/{newLevelName}.unity";
+            // SceneTemplateAsset templateAsset = (SceneTemplateAsset)AssetDatabase.LoadAssetAtPath("Assets/Scenes/1-1.scenetemplate", typeof(SceneTemplateAsset));
 
-            Debug.Log($"templateAsset = {templateAsset}");
+            // Debug.Log($"templateAsset = {templateAsset}");
 
-            InstantiationResult result = SceneTemplateService.Instantiate(templateAsset, false, testScenePath);
+            // InstantiationResult result = SceneTemplateService.Instantiate(templateAsset, false, testScenePath);
 
-            Debug.Log($"Scene: {result.scene} and SceneAsset: {result.sceneAsset}");
+            // Debug.Log($"Scene: {result.scene} and SceneAsset: {result.sceneAsset}");
+            
+            string templateLevelPath = "Assets/Scenes/1-1.unity";
+            string newTestLevelPath = $"Assets/Scenes/TestScene/{newLevelName}.unity";
+            
+            File.Copy(templateLevelPath, newTestLevelPath, true);
+            // yield return new WaitForSeconds(15f);
         }
 
         // Edit treaurePieces to include this this

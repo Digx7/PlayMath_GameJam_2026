@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09c516d3129e2f47a069387a71bd3ff, type: 3}
+  m_Name: A4_Rotation180
+  m_EditorClassIdentifier: Assembly-CSharp::Digx7.Levels.LevelGeneratorTemplateData
+  minGridSize: 4
+  maxGridSize: 4
+  gridTypesToUse: 00000000
+  minTreasureAmount: 1
+  maxTreasureAmount: 1
+  treasurePiecesToUse:
+  - {fileID: 11400000, guid: 1f666dc9f8fe22e4f8b1c255b0a57567, type: 2}
+  treasurePieceRotationsToUse: 02000000
+  useShovel: 1
+  minShovelsToUse: 3
+  maxShovelsToUse: 3
+  shovelTool: {fileID: 11400000, guid: 7ef80a48c11f0db4b9174efc95371beb, type: 2}
+  usePickAxe: 1
+  minPickAxesToUse: 1
+  maxPickAxesToUse: 1
+  pickAxeTool: {fileID: 11400000, guid: 3e62e31fecc60a24a8640e2a14d1d8aa, type: 2}
+  useBomb: 1
+  minBombsToUse: 1
+  maxBombsToUse: 1
+  bombTool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}

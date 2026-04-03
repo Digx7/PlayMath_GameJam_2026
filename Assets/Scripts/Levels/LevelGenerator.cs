@@ -467,6 +467,18 @@ namespace Digx7.Levels
 
             Debug.Log($"LevelData saved as asset at: {assetPath}");
         }
+
+        public static void SaveLevelDataAsAssetWithName(LevelData levelData, string path, string levelName)
+        {
+            string assetPath = $"{path}/{levelName}.asset";
+
+            Directory.CreateDirectory($"{path}");
+
+            AssetDatabase.CreateAsset(levelData, assetPath);
+            AssetDatabase.SaveAssets();
+
+            Debug.Log($"LevelData saved as asset at: {assetPath}");
+        }
         #endif
     }
 }

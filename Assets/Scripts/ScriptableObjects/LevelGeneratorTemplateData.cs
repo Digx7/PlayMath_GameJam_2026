@@ -133,6 +133,16 @@ namespace Digx7.Levels
             LevelGenerator.SaveLevelDataAsAsset(LevelGenerator.GenerateRandomLevelFromTemplate(this), "Assets/GeneratedLevelsFromTemplate");
         }
 
+        public void GenerateLevel(string levelName)
+        {
+            LevelGenerator.SaveLevelDataAsAssetWithName(LevelGenerator.GenerateRandomLevelFromTemplate(this), "Assets/GeneratedLevelsFromTemplate", levelName);
+        }
+
+        public void GenerateLevel(string path, string levelName)
+        {
+            LevelGenerator.SaveLevelDataAsAssetWithName(LevelGenerator.GenerateRandomLevelFromTemplate(this), path, levelName);
+        }
+
         #endif
     }
 }

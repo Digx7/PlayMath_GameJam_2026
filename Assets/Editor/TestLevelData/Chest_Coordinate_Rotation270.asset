@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05ac0c0a51408a04f9ea578326becd37, type: 3}
-  m_Name: RandomLevel_42127663-1ff3-4d38-bcdd-4f72bce774b2
+  m_Name: Chest_Coordinate_Rotation270
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   grid:
     data:
     - coordinate: {x: 0, y: 0}
-      flag: 0
+      flag: T_Chest_3
     - coordinate: {x: 0, y: 1}
-      flag: 0
+      flag: T_Chest_2
     - coordinate: {x: 0, y: 2}
-      flag: T_Gold_3
+      flag: T_Chest_1
     - coordinate: {x: 0, y: 3}
       flag: 0
     - coordinate: {x: 1, y: 0}
-      flag: 0
+      flag: T_Chest_6
     - coordinate: {x: 1, y: 1}
-      flag: 0
+      flag: T_Chest_5
     - coordinate: {x: 1, y: 2}
-      flag: 0
+      flag: T_Chest_4
     - coordinate: {x: 1, y: 3}
       flag: 0
     - coordinate: {x: 2, y: 0}
@@ -49,12 +49,12 @@ MonoBehaviour:
     x_Length: 4
     y_Length: 4
     gridType: 1
-    origin: {x: 3, y: 0}
+    origin: {x: 1, y: 0}
   treasureToFind:
-  - {fileID: 11400000, guid: 1f666dc9f8fe22e4f8b1c255b0a57567, type: 2}
-  treasureRotations: 00000000
+  - {fileID: 11400000, guid: 15e099bf15b93f44eb9b9347c15253e0, type: 2}
+  treasureRotations: 03000000
   hints:
-  - (-3, -2)
+  - (-1, -1)
   tools:
   - count: 3
     tool: {fileID: 11400000, guid: 7ef80a48c11f0db4b9174efc95371beb, type: 2}

@@ -6,6 +6,7 @@ using TMPro;
 public class LevelUIButtonHelper : MonoBehaviour {
     [Header("References")]
     public TextMeshProUGUI label;
+    public LevelDataChannelRaiser levelDataChannelRaiser;
 
     // private LevelData m_levelData;
     private string m_sceneName;
@@ -14,6 +15,8 @@ public class LevelUIButtonHelper : MonoBehaviour {
     {
         m_sceneName = levelData.name;
         label.text = levelData.name;
+
+        levelDataChannelRaiser.Data = levelData;
     }
 
     public void Setup(string name)

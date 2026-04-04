@@ -27,7 +27,7 @@ MonoBehaviour:
     - coordinate: {x: 1, y: 1}
       flag: 0
     - coordinate: {x: 1, y: 2}
-      flag: T_Wand_3
+      flag: T_Wand_1
     - coordinate: {x: 1, y: 3}
       flag: 0
     - coordinate: {x: 2, y: 0}
@@ -39,7 +39,7 @@ MonoBehaviour:
     - coordinate: {x: 2, y: 3}
       flag: 0
     - coordinate: {x: 3, y: 0}
-      flag: T_Wand_1
+      flag: T_Wand_3
     - coordinate: {x: 3, y: 1}
       flag: 0
     - coordinate: {x: 3, y: 2}
@@ -62,3 +62,5 @@ MonoBehaviour:
     tool: {fileID: 11400000, guid: 3e62e31fecc60a24a8640e2a14d1d8aa, type: 2}
   - count: 3
     tool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}
+  nextLevel: {fileID: 11400000, guid: 85d33cdd91f551d4c8958f898d0c360a, type: 2}
+  isLastLevel: 0

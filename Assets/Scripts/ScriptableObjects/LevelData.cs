@@ -13,6 +13,8 @@ public class LevelData : ScriptableObject
     public List<TreasurePieceRotation> treasureRotations;
     public List<String> hints;
     public List<CountToolPair> tools;
+    public LevelData nextLevel;
+    public bool isLastLevel = false;
 
     public void SetGrid(List<CoordinateFlagPair> newData, int newX_Length, int newY_Length, GridTypes gridType = GridTypes.Coordinate, Vector2Int newOrigin = default(Vector2Int))
     {

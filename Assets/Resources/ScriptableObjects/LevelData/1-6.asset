@@ -82,3 +82,5 @@ MonoBehaviour:
     tool: {fileID: 11400000, guid: 3e62e31fecc60a24a8640e2a14d1d8aa, type: 2}
   - count: 3
     tool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}
+  nextLevel: {fileID: 11400000, guid: ff590f8dece93b34e841a2c377628c68, type: 2}
+  isLastLevel: 0

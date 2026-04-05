@@ -12,6 +12,7 @@ public class LevelRuntimeData : MonoBehaviour
     
     // Level Data
     public LevelData levelDataSO;
+    public bool isOnLastLevel = false;
     public bool generateRandomLevelDataOnAwake = false;
 
 
@@ -27,15 +28,33 @@ public class LevelRuntimeData : MonoBehaviour
     public DigDataEvent OnDig;
     public StringEvent OnFullyDigUpPiece;
     public ToolEvent OnTryUseEmptyTool;
+    public LevelDataEvent OnSetNextLevel;
     public UnityEvent OnFinishLevel;
     public UnityEvent OnWinLevel;
     public UnityEvent OnLoseLevel;
 
     private void Awake() 
     {
+        Debug.Log("Level Runtime Data Awake");
+        
         if(generateRandomLevelDataOnAwake) 
         {
             levelDataSO = Digx7.Levels.LevelGenerator.GenerateRandomLevelData();
+        }
+        else
+        {
+            levelDataSO = LevelManager.Instance.MoveToNextLevel();
+            if(levelDataSO == null)
+            {
+                Debug.LogError("NO valid Level data was found");
+            }
+            else
+            {
+                if(!levelDataSO.isLastLevel)
+                {
+                    OnSetNextLevel.Invoke(levelDataSO.nextLevel);
+                }
+            }
         }
         
         modifiedGrid = new Digx7.Grids.Grid(levelDataSO.grid.x_Length, levelDataSO.grid.y_Length);

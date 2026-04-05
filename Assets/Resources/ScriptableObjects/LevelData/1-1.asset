@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ac0c0a51408a04f9ea578326becd37, type: 3}
   m_Name: 1-1
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  _displayName: 1-1
   grid:
     data:
     - coordinate: {x: 0, y: 0}

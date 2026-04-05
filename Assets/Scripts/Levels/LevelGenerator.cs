@@ -104,13 +104,13 @@ namespace Digx7.Levels
 
                         switch (treasureRotationType)
                         {
-                            case TreasurePieceRotation.Rotate90: // 90 degrees
+                            case TreasurePieceRotation.Rotate270: // 270 degrees
                                 rotatedRelativePos = new Vector2Int(-relativePos.y, relativePos.x);
                                 break;
                             case TreasurePieceRotation.Rotate180: // 180 degrees
                                 rotatedRelativePos = new Vector2Int(-relativePos.x, -relativePos.y);
                                 break;
-                            case TreasurePieceRotation.Rotate270: // 270 degrees
+                            case TreasurePieceRotation.Rotate90: // 90 degrees
                                 rotatedRelativePos = new Vector2Int(relativePos.y, -relativePos.x);
                                 break;
                         }
@@ -249,39 +249,8 @@ namespace Digx7.Levels
 
             
             // Treasure MetaData ======================================
-            
-            // int numberOfTreasures = UnityEngine.Random.Range(1, 4);
-            // TreasurePiece[] treasurePrefabs = Resources.LoadAll<TreasurePiece>("ScriptableObjects/TreasurePieces");
-            // Debug.Log($"Found {treasurePrefabs.Length} treasure prefabs in Resources/ScriptableObjects/TreasurePieces");
-            // int randomTreasureIndex = 0;
-            
-            // for (int i = 0; i < numberOfTreasures; i++)
-            // {
-            //     int treasureAttempts = 0;
-            //     int maxTreasureAttempts = 100;
-            //     bool validTreasureFound = false;
-
-            //     while (!validTreasureFound && treasureAttempts < maxTreasureAttempts)
-            //     {
-            //         randomTreasureIndex = UnityEngine.Random.Range(0, treasurePrefabs.Length);
-            //         TreasurePiece treasure = Resources.Load<TreasurePiece>($"ScriptableObjects/TreasurePieces/{treasurePrefabs[randomTreasureIndex].name}");
-
-            //         if (!treasureToFind.Contains(treasure))
-            //         {
-            //             treasureToFind.Add(treasure);
-            //             validTreasureFound = true;
-            //         }
-            //         else
-            //         {
-            //             treasureAttempts++;
-            //             Debug.LogWarning($"Treasure {treasure.name} already selected. Attempting to select a different treasure. Attempt {treasureAttempts}/{maxTreasureAttempts}");
-            //         }
-            //     }
-            // }
 
             treasureToFind = templateData.GetRandomListOfTreasuresToFind();
-
-
 
             // Place Treasures in Grid ======================================
             int treasureIndex = 0;
@@ -309,10 +278,7 @@ namespace Digx7.Levels
 
                 // Rotate the piece randomly before checking placement validity
                 TreasurePieceRotation treasureRotationType = templateData.GetRandomRotation();
-                // bool shouldRotate = UnityEngine.Random.value < 0.5f; // Randomly decide whether to rotate the piece
-                // if (shouldRotate)
-                // {
-                    // treasureRotationType = (TreasurePieceRotation)UnityEngine.Random.Range(1, 4); // Rotate 90, 180, or 270 degrees
+                
                 for (int i = 0; i < coordinatesToCheck.Count; i++)
                 {
                     Vector2Int relativePos = coordinatesToCheck[i] - randomPieceOrigin;
@@ -321,22 +287,20 @@ namespace Digx7.Levels
                     switch (treasureRotationType)
                     {
                         case TreasurePieceRotation.None:
-                            rotatedRelativePos = Vector2Int.zero;
                             break;
-                        case TreasurePieceRotation.Rotate90: // 90 degrees
+                        case TreasurePieceRotation.Rotate270: // 270 degrees
                             rotatedRelativePos = new Vector2Int(-relativePos.y, relativePos.x);
                             break;
                         case TreasurePieceRotation.Rotate180: // 180 degrees
                             rotatedRelativePos = new Vector2Int(-relativePos.x, -relativePos.y);
                             break;
-                        case TreasurePieceRotation.Rotate270: // 270 degrees
+                        case TreasurePieceRotation.Rotate90: // 90 degrees
                             rotatedRelativePos = new Vector2Int(relativePos.y, -relativePos.x);
                             break;
                     }
                     
                     coordinatesToCheck[i] = randomPieceOrigin + rotatedRelativePos;
                 }
-                // }
 
                 foreach (Vector2Int coordinate in coordinatesToCheck)
                 {
@@ -407,25 +371,6 @@ namespace Digx7.Levels
             }
 
             // Tools MetaData ======================================
-            // tools.Add(new CountToolPair(UnityEngine.Random.Range(placedSubSprites, placedSubSprites * 2), Resources.Load<Tool>("ScriptableObjects/Tools/Shovel")));
-
-            // int randomHasPickaxe = UnityEngine.Random.Range(0, 2);
-            // if (randomHasPickaxe == 1)        
-            // {
-            //     int numberOfPickaxe = (int)Mathf.FloorToInt(UnityEngine.Random.Range(placedSubSprites/2, placedSubSprites));
-            //     if(numberOfPickaxe < 1) numberOfPickaxe = 1; // Ensure at least 1 pickaxe if we decide to include it
-                
-            //     tools.Add(new CountToolPair(numberOfPickaxe, Resources.Load<Tool>("ScriptableObjects/Tools/Pickaxe")));
-            // }
-
-            // int randomHasBomb = UnityEngine.Random.Range(0, 2);
-            // if (randomHasBomb == 1)        
-            // {
-            //     int numberOfBombs = (int)Mathf.FloorToInt(UnityEngine.Random.Range(placedSubSprites/4, placedSubSprites/2));
-            //     if(numberOfBombs < 1) numberOfBombs = 1; //
-                
-            //     tools.Add(new CountToolPair(numberOfBombs, Resources.Load<Tool>("ScriptableObjects/Tools/Bomb")));
-            // }
 
             if(templateData.TryGetShovelCountToolPair(out CountToolPair shovelToolPair))
             {

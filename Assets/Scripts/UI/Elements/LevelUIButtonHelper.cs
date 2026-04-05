@@ -13,7 +13,7 @@ public class LevelUIButtonHelper : MonoBehaviour {
 
     public void Setup(LevelData levelData)
     {
-        m_sceneName = levelData.name;
+        // m_sceneName = levelData.name;
         label.text = levelData.name;
 
         levelDataChannelRaiser.Data = levelData;
@@ -21,18 +21,18 @@ public class LevelUIButtonHelper : MonoBehaviour {
 
     public void Setup(string name)
     {
-        m_sceneName = name;
+        // m_sceneName = name;
         label.text = name;
     }
 
     public void Setup(string labelText, string sceneName)
     {
         label.text = labelText;
-        m_sceneName = sceneName;
+        //  m_sceneName = sceneName;
     }
 
     public void OnClick()
     {
-        if(m_sceneName != null) UnityEngine.SceneManagement.SceneManager.LoadScene(m_sceneName);
+        // if(m_sceneName != null) UnityEngine.SceneManagement.SceneManager.LoadScene(m_sceneName);
     }
 }

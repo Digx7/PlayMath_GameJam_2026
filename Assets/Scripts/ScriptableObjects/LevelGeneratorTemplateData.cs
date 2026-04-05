@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEditor;
+using System;
 using System.Collections.Generic;
 using Digx7.Grids;
 
@@ -8,6 +10,7 @@ namespace Digx7.Levels
     [CreateAssetMenu(fileName = "NewLevelGeneratorTemplateData", menuName = "ScriptableObjects/Data/LevelGeneratorTemplateData", order = 1)]
     public class LevelGeneratorTemplateData: ScriptableObject
     {
+        public string gameName;
         public int minGridSize = 4;
         public int maxGridSize = 4;
         public List<GridTypes> gridTypesToUse = new List<GridTypes>{GridTypes.Coordinate};
@@ -133,6 +136,10 @@ namespace Digx7.Levels
             LevelData levelData = LevelGenerator.GenerateRandomLevelFromTemplate(this);
             LevelGenerator.SaveLevelDataAsAsset(levelData, "Assets/GeneratedLevelsFromTemplate");
 
+            EditorUtility.SetDirty(levelData);
+
+            AssetDatabase.SaveAssets();
+
             return levelData;
         }
 
@@ -141,6 +148,10 @@ namespace Digx7.Levels
             LevelData levelData = LevelGenerator.GenerateRandomLevelFromTemplate(this);
             LevelGenerator.SaveLevelDataAsAssetWithName(levelData, "Assets/GeneratedLevelsFromTemplate", levelName);
 
+            EditorUtility.SetDirty(levelData);
+
+            AssetDatabase.SaveAssets();
+
             return levelData;
         }
 
@@ -148,6 +159,10 @@ namespace Digx7.Levels
         {
             LevelData levelData = LevelGenerator.GenerateRandomLevelFromTemplate(this);
             LevelGenerator.SaveLevelDataAsAssetWithName(levelData, path, levelName);
+
+            EditorUtility.SetDirty(levelData);
+
+            AssetDatabase.SaveAssets();
 
             return levelData;
         }

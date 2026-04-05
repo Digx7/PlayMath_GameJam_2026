@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEditor;
-using UnityEditor.SceneTemplate;
 using System;
 using System.IO;
 using System.Collections;
@@ -17,7 +16,7 @@ public class TreasurePiece : ScriptableObject
 
     #if UNITY_EDITOR
 
-    [ContextMenu("Generate Test Level")]
+    [ContextMenu("Generate Test Levels")]
     public void StartGeneratingTestLevels()
     {
         // StartCoroutine(GenerateTestLevels());
@@ -34,38 +33,42 @@ public class TreasurePiece : ScriptableObject
 
         Debug.Log($"Found {files.Length} templates to use");
 
+        List<LevelData> generatedLevels = new List<LevelData>();
+
         foreach (var file in files)
         {
             // Create level data
             LevelGeneratorTemplateData levelGeneratorTemplateData = (LevelGeneratorTemplateData)AssetDatabase.LoadAssetAtPath(file, typeof(LevelGeneratorTemplateData));
             Debug.Log($"{levelGeneratorTemplateData.name}");
 
-            string newLevelName = $"{this.name}_{levelGeneratorTemplateData.name}";
+            string newLevelName = $"{this.name} {levelGeneratorTemplateData.gameName}";
 
             levelGeneratorTemplateData.treasurePiecesToUse[0] = this;
             LevelData levelData = levelGeneratorTemplateData.GenerateLevel(path, newLevelName);
 
-            // Create test scene
-            // string testScenePath = $"Assets/Scenes/TestScene/{newLevelName}.unity";
-            // SceneTemplateAsset templateAsset = (SceneTemplateAsset)AssetDatabase.LoadAssetAtPath("Assets/Scenes/1-1.scenetemplate", typeof(SceneTemplateAsset));
-
-            // Debug.Log($"templateAsset = {templateAsset}");
-
-            // InstantiationResult result = SceneTemplateService.Instantiate(templateAsset, false, testScenePath);
-
-            // Debug.Log($"Scene: {result.scene} and SceneAsset: {result.sceneAsset}");
-            
-            string templateLevelPath = "Assets/Scenes/1-1.unity";
-            string newTestLevelPath = $"Assets/Scenes/TestScene/{newLevelName}.unity";
-            
-            File.Copy(templateLevelPath, newTestLevelPath, true);
-            // yield return new WaitForSeconds(15f);
+            generatedLevels.Add(levelData);
         }
 
-        // Edit treaurePieces to include this this
-        // Generate LevelData
+        LevelData lastLevel = null;
 
-        // Generate Scenes
+        for (int i = 0; i < generatedLevels.Count; i++)
+        {
+            if (lastLevel != null)
+            {
+                lastLevel.nextLevel = generatedLevels[i];
+            }
+
+            lastLevel = generatedLevels[i];
+
+            if (i == (generatedLevels.Count - 1))
+            {
+                generatedLevels[i].isLastLevel = true;
+            }
+        }
+
+        AssetDatabase.SaveAssets();
+
+
     }
 
     #endif

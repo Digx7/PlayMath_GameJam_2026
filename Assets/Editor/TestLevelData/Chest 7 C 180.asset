@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05ac0c0a51408a04f9ea578326becd37, type: 3}
-  m_Name: 1-5
+  m_Name: Chest 7 C 180
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  _displayName: 1-5
   grid:
     data:
     - coordinate: {x: 0, y: 0}
@@ -26,42 +25,42 @@ MonoBehaviour:
     - coordinate: {x: 1, y: 0}
       flag: 0
     - coordinate: {x: 1, y: 1}
-      flag: 0
+      flag: T_Chest_6
     - coordinate: {x: 1, y: 2}
-      flag: T_Wand_1
+      flag: T_Chest_3
     - coordinate: {x: 1, y: 3}
       flag: 0
     - coordinate: {x: 2, y: 0}
       flag: 0
     - coordinate: {x: 2, y: 1}
-      flag: T_Wand_2
+      flag: T_Chest_5
     - coordinate: {x: 2, y: 2}
-      flag: 0
+      flag: T_Chest_2
     - coordinate: {x: 2, y: 3}
       flag: 0
     - coordinate: {x: 3, y: 0}
-      flag: T_Wand_3
+      flag: 0
     - coordinate: {x: 3, y: 1}
-      flag: 0
+      flag: T_Chest_4
     - coordinate: {x: 3, y: 2}
-      flag: 0
+      flag: T_Chest_1
     - coordinate: {x: 3, y: 3}
       flag: 0
     x_Length: 4
     y_Length: 4
     gridType: 1
-    origin: {x: 0, y: 0}
+    origin: {x: 3, y: 2}
   treasureToFind:
-  - {fileID: 11400000, guid: c7b9ba1ef62a6bb4ea34afc246a15add, type: 2}
-  treasureRotations: 00000000
+  - {fileID: 11400000, guid: 15e099bf15b93f44eb9b9347c15253e0, type: 2}
+  treasureRotations: 02000000
   hints:
-  - (2, -1)
+  - (-2, 1)
   tools:
-  - count: 4
+  - count: 99
     tool: {fileID: 11400000, guid: 7ef80a48c11f0db4b9174efc95371beb, type: 2}
-  - count: 3
+  - count: 99
     tool: {fileID: 11400000, guid: 3e62e31fecc60a24a8640e2a14d1d8aa, type: 2}
-  - count: 3
+  - count: 99
     tool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}
-  nextLevel: {fileID: 11400000, guid: 85d33cdd91f551d4c8958f898d0c360a, type: 2}
+  nextLevel: {fileID: 0}
   isLastLevel: 0

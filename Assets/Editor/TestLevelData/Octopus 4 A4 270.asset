@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ac0c0a51408a04f9ea578326becd37, type: 3}
+  m_Name: Octopus 4 A4 270
+  m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  grid:
+    data:
+    - coordinate: {x: 0, y: 0}
+      flag: 0
+    - coordinate: {x: 0, y: 1}
+      flag: T_Octopus_4
+    - coordinate: {x: 0, y: 2}
+      flag: 0
+    - coordinate: {x: 0, y: 3}
+      flag: T_Octopus_5
+    - coordinate: {x: 1, y: 0}
+      flag: 0
+    - coordinate: {x: 1, y: 1}
+      flag: T_Octopus_1
+    - coordinate: {x: 1, y: 2}
+      flag: T_Octopus_2
+    - coordinate: {x: 1, y: 3}
+      flag: T_Octopus_3
+    - coordinate: {x: 2, y: 0}
+      flag: 0
+    - coordinate: {x: 2, y: 1}
+      flag: 0
+    - coordinate: {x: 2, y: 2}
+      flag: 0
+    - coordinate: {x: 2, y: 3}
+      flag: 0
+    - coordinate: {x: 3, y: 0}
+      flag: 0
+    - coordinate: {x: 3, y: 1}
+      flag: 0
+    - coordinate: {x: 3, y: 2}
+      flag: 0
+    - coordinate: {x: 3, y: 3}
+      flag: 0
+    x_Length: 4
+    y_Length: 4
+    gridType: 0
+    origin: {x: 0, y: 0}
+  treasureToFind:
+  - {fileID: 11400000, guid: f04aeba82ebe5be4d9cd8d2a2ed5fa0d, type: 2}
+  treasureRotations: 03000000
+  hints:
+  - D2
+  tools:
+  - count: 99
+    tool: {fileID: 11400000, guid: 7ef80a48c11f0db4b9174efc95371beb, type: 2}
+  - count: 99
+    tool: {fileID: 11400000, guid: 3e62e31fecc60a24a8640e2a14d1d8aa, type: 2}
+  - count: 99
+    tool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}
+  nextLevel: {fileID: 0}
+  isLastLevel: 0

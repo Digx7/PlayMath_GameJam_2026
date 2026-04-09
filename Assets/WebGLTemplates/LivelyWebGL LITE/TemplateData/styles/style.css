@@ -1,0 +1,177 @@
+/* 
+* This WebGL template is licensed to the purchaser only.
+* Unauthorized copying, redistribution, modification, or use of this template or any of its components � in whole or in part � 
+* without a valid license is strictly prohibited and constitutes a violation of international copyright laws and licensing terms.
+* This notice must remain intact in this file as a condition of use.
+* Copyright � Devon Lively, 2025. All rights reserved. 
+*/
+
+@import url('styleVariables.css');
+
+*, *:before, *:after { box-sizing: inherit; }
+
+html { box-sizing: border-box; }
+
+html, body {
+    height: 100%;
+    overscroll-behavior: none;
+}
+
+body {
+    margin: 0;
+    background-color: var(--PageSetup_PageBackgroundColor);
+}
+
+canvas { display: block; }
+
+#unity-canvas {
+    width: 100%;
+    height: 100%;
+    background: var(--PageSetup_PageBackgroundColor);
+}
+
+#unity-container {
+    position: relative; 
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--PageSetup_PageBackgroundColor);
+}
+
+/*//////////////////////////////////////////*/
+/* Version Number Text */
+/*//////////////////////////////////////////*/
+#version-number-text {
+    position: fixed;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--Footer_VersionTextColor);
+    text-align: center;
+    font-size: var(--Footer_VersionTextFontSize);
+    z-index: 9993;
+}
+
+/*//////////////////////////////////////////*/
+/* Loading Screen Cover */
+/*//////////////////////////////////////////*/
+#background-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--backgroundURLPortrait);
+    background-size: var(--PageSetup_ImageSizeStyle);
+    background-repeat: var(--PageSetup_ImageRepeatStyle);
+    background-position: center;
+    z-index: 9990;
+}
+
+/*//////////////////////////////////////////*/
+/* Landscape override */
+/*//////////////////////////////////////////*/
+@media (orientation: landscape) {
+    #background-cover {
+        background-image: var(--backgroundURLLandscape);
+    }
+}
+
+#loading-cover {
+    position: fixed;
+    bottom: var(--LoadingScreen_ContainerYOffset);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9993;
+}
+
+#unity-logo { text-align: center; }
+
+#unity-logo img { max-width: var(--LoadingScreen_LogoImageMaxWidth); }
+
+/*//////////////////////////////////////////*/
+/* Loading Bar */
+/*//////////////////////////////////////////*/
+#unity-loading-bar {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#unity-progress-bar-empty {
+    width: var(--LoadingScreen_Frame_Width);
+    height: var(--LoadingScreen_Frame_Height);
+    margin: var(--LoadingScreen_Frame_LogoYOffset);
+    border: var(--unity-progress-bar-emptyborder);
+    padding: var(--LoadingScreen_Frame_Padding);
+    position: relative;
+    background-color: var(--LoadingScreen_Frame_BGColor);
+    border-radius: var(--LoadingScreen_Frame_Radius);
+    overflow: hidden;
+}
+
+@keyframes pulseColor {
+    0%, 100% {
+        background-color: var(--pulse-start);
+    }
+
+    50% {
+        background-color: var(--pulse-mid);
+    }
+}
+
+.pulsing {
+    animation: pulseColor 1.5s infinite ease-in-out;
+}
+
+#unity-progress-bar-full {
+    height: 100%;
+    width: 0%;
+    background-color: #4caf50;
+    transition: var(--unity-progress-bar-fulltransition);
+    border-radius: var(--unity-progress-bar-fullborder-radius);
+}
+
+#progress-bar-text {
+  position: absolute;
+  inset: 0; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  color: black;
+  font-size: var(--LoadingScreen_PercentValueFontSize);
+  line-height: var(--LoadingScreen_TextLineHeight);
+  pointer-events: none;
+  z-index: 2;
+}
+
+#unity-fullscreen-button {
+    bottom: 10px;
+    background: var(--unity-fullscreen-button);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#unity-fullscreen-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #2c80b4;
+}
+
+.menu-button {
+    position: fixed;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+    background-size: contain;
+    z-index: 9989;
+    border-radius: 4px;
+}

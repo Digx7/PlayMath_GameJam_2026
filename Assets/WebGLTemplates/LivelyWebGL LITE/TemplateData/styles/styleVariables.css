@@ -1,0 +1,47 @@
+/* 
+* This WebGL template is licensed to the purchaser only.
+* Unauthorized copying, redistribution, modification, or use of this template or any of its components � in whole or in part � 
+* without a valid license is strictly prohibited and constitutes a violation of international copyright laws and licensing terms.
+* This notice must remain intact in this file as a condition of use.
+* Copyright � Devon Lively, 2025. All rights reserved. 
+*/
+
+:root {
+    /* Pulse Animation Colors - These are set through the index.html */
+    --pulse-start: #4caf50;
+    --pulse-mid: #66bb6a;
+
+    /* Page Setup */
+    --PageSetup_PageBackgroundColor: #191919;
+    --PageSetup_ImageSizeStyle: cover;
+    --PageSetup_ImageRepeatStyle: no-repeat;
+
+    /* Loading Bar Settings */
+    --LoadingScreen_Frame_Padding : 2px;
+    --LoadingScreen_Frame_BGColor : #292929;
+    --LoadingScreen_Frame_Radius : 5px;
+    --LoadingScreen_PercentValueFontSize : 12px;
+    --LoadingScreen_Frame_Width : 50%;
+    --LoadingScreen_Frame_Height : 24px;
+    --LoadingScreen_Frame_LogoYOffset : 10px 20px 0px 20px;
+    --unity-progress-bar-emptyborder : 1px Solid #BFBFBF;
+    
+    --unity-progress-bar-fulltransition :  width 0.3s;
+    --unity-progress-bar-fullborder-radius : 5px;
+
+    --LoadingScreen_LogoImageMaxWidth : 80%;
+    --LoadingScreen_ContainerYOffset : 9%;
+    --LoadingScreen_TextLineHeight : 1%;
+       
+    /* Footer */
+   --Footer_VersionTextColor : #E6E6E6;
+    --Footer_VersionTextFontSize : 12px;
+
+    /* Background Images */
+    --backgroundURLPortrait : url('../Graphics/LoaderBackgrounds/backgroundPortrait.png') no-repeat center center fixed;
+    --backgroundURLLandscape : url('../Graphics/LoaderBackgrounds/backgroundLandscape.png');
+
+    /* Corner Button Menu Icons */
+    --unity-fullscreen-button : url('../Graphics/Icons/fullscreen-button.png') no-repeat center;
+
+}

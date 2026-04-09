@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248f3fb96bff16a479bedd3ea696c7e2, type: 3}
+  m_Name: Lively WebGL Preset
+  m_EditorClassIdentifier: Assembly-CSharp::DevonLively.LivelyWebGLLite.LivelyWebGLLitePreset
+  pageSetup:
+    PageTitle: Name Seen In Browser Tab
+    PageBackgroundColor: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
+    DisableSaveMenuPopup: 1
+    UseBackgroundImage: 1
+    DisableFullscreenButton: 0
+    FullscreenHidesCornerButton: 1
+    BackgroundImageConfig:
+      ImageSizeStyle: 2
+      ImageRepeatStyle: 0
+    googleFonts:
+      FontHref: https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap
+      FontFamily: '"Roboto", sans-serif'
+    displaySetup:
+      DefaultDPR: 2
+      MaxDPR: 2
+      DisplayScalingMode: 0
+      DefaultResolution: {x: 1920, y: 1080}
+      AspectRatio: {x: 16, y: 9}
+      hideExperimentalSettings: 0
+      UseDynamicAspectRatio: 0
+    footer:
+      versionFooter:
+        VersionTextColor: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
+        VersionTextFontSize: 12
+  loadingScreen:
+    usingBGImage: 1
+    BackgroundColor: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
+    loadingBarLogo:
+      useLoadingLogoImage: 1
+      LogoImageMaxWidth: 80
+      ContainerYOffset: 9
+    FrameSettings:
+      Frame_Padding: 2
+      Frame_Width: 50
+      Frame_Height: 24
+      Frame_Radius: 5
+      Frame_Thickness: 1
+      Frame_Style: 0
+      Frame_Color: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
+      Frame_BGColor: {r: 0.16078432, g: 0.16078432, b: 0.16078432, a: 1}
+      Frame_LogoYOffset: 10
+    loadingBar:
+      BarColor: {r: 0.11764706, g: 0.68235296, b: 0.827451, a: 1}
+      BarTransitionSpeed: 0.3
+      Pulses: 1
+      BarPulseColor: {r: 0.11764706, g: 0.24313726, b: 0.827451, a: 1}
+    loadingText:
+      FinalizingPhrase: Finishing Up...
+      FontSize: 12
+      TextLineHeight: 1
+      TextColorLow: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
+      TextColorHigh: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}

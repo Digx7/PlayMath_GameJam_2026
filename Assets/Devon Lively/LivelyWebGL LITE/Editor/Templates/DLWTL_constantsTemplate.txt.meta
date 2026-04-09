@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c26e1e2eb3095ad4ab70a453f93dade4
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 347758
+  packageName: Lively WebGL Template LITE
+  packageVersion: 1.0.01
+  assetPath: Assets/Devon Lively/LivelyWebGL LITE/Editor/Templates/DLWTL_constantsTemplate.txt
+  uploadId: 879352

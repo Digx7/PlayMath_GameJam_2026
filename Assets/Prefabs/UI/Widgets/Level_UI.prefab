@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8336186324590564722}
   - component: {fileID: 6988817052034601072}
+  - component: {fileID: 5720769872825504589}
   m_Layer: 5
   m_Name: ButtonsHolder
   m_TagString: Untagged
@@ -62,6 +63,23 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 3
+--- !u!114 &5720769872825504589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899705732059918483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272acfc0017771247b532abe168bf84e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResponsiveGridSizeHelper
+  gridLayoutGroups:
+  - {fileID: 6988817052034601072}
+  - {fileID: 6879616112341093417}
+  - {fileID: 2368800255066536089}
+  maxRowCount: 6
 --- !u!1 &2570321979218277835
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8651653963300733185}
   - component: {fileID: 736039347938242079}
+  - component: {fileID: 4436227318525818608}
   m_Layer: 5
   m_Name: Grid
   m_TagString: Untagged
@@ -132,7 +151,7 @@ RectTransform:
   m_Father: {fileID: 5168862836148025908}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.64500004, y: 0.91400003}
+  m_AnchorMax: {x: 0.645, y: 0.914}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -157,6 +176,36 @@ MonoBehaviour:
   gridLabelPrefab: {fileID: 3477655196530361856, guid: 3050f57757709e84b90156caed8c851b, type: 3}
   gridLabelTopHolder: {fileID: 8784309235669585361}
   gridLabelLeftHolder: {fileID: 8431989088853347110}
+--- !u!114 &4436227318525818608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2574786010821982181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896712ac06b04684999386d7f0f11de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResponsiveUIHelper
+  breakPoints:
+  - breakPointName: Portrait
+    minScreenWidth: 0
+    maxScreenWidth: 899
+    AnchorMinPoints: {x: 0, y: 0.5}
+    AnchorMaxPoints: {x: 1, y: 0.914}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - breakPointName: Landscape
+    minScreenWidth: 900
+    maxScreenWidth: 999999
+    AnchorMinPoints: {x: 0, y: 0}
+    AnchorMaxPoints: {x: 0.645, y: 0.914}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  updateInEditMode: 0
 --- !u!1 &3284631579524765109
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,7 +912,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8784309235669585361}
-  - component: {fileID: 5994062672479940384}
+  - component: {fileID: 6879616112341093417}
   m_Layer: 5
   m_Name: Top
   m_TagString: Untagged
@@ -890,7 +939,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5994062672479940384
+--- !u!114 &6879616112341093417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -899,23 +948,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 7060224659221500904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
   m_Padding:
     m_Left: 0
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 3
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 2
+  m_ConstraintCount: 1
 --- !u!1 &7389450314287097633
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,7 +1050,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8431989088853347110}
-  - component: {fileID: 5509726093319060709}
+  - component: {fileID: 2368800255066536089}
   m_Layer: 5
   m_Name: Left
   m_TagString: Untagged
@@ -1030,7 +1077,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5509726093319060709
+--- !u!114 &2368800255066536089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1039,23 +1086,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 7592598520345085820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
   m_Padding:
     m_Left: 0
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 1
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 1
+  m_ConstraintCount: 1
 --- !u!1 &7631616752552993913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,6 +1716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4752571166510290436}
   - component: {fileID: 6443827281864105796}
+  - component: {fileID: 7829020673763482172}
   m_Layer: 5
   m_Name: Overlay
   m_TagString: Untagged
@@ -1695,7 +1741,7 @@ RectTransform:
   - {fileID: 1296143304329093765}
   m_Father: {fileID: 5168862836148025908}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.64500004, y: 0}
+  m_AnchorMin: {x: 0.645, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -1715,6 +1761,36 @@ MonoBehaviour:
   OnSetupLevel: {fileID: 11400000, guid: 60e2db639608fe345a958f5ec8e127fd, type: 2}
   overlayPrefab: {fileID: 6451353617513515577, guid: b66214af69068b648a81fec5036b68c7, type: 3}
   overlayHolder: {fileID: 2372203605505833210}
+--- !u!114 &7829020673763482172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9197027726419613908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896712ac06b04684999386d7f0f11de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResponsiveUIHelper
+  breakPoints:
+  - breakPointName: Portrait
+    minScreenWidth: 0
+    maxScreenWidth: 899
+    AnchorMinPoints: {x: 0, y: 0}
+    AnchorMaxPoints: {x: 1, y: 0.5}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - breakPointName: Landscape
+    minScreenWidth: 900
+    maxScreenWidth: 999999
+    AnchorMinPoints: {x: 0.645, y: 0}
+    AnchorMaxPoints: {x: 1, y: 1}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  updateInEditMode: 0
 --- !u!1001 &4907183047176153205
 PrefabInstance:
   m_ObjectHideFlags: 0

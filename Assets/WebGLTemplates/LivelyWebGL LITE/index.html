@@ -1,0 +1,454 @@
+<!-- This WebGL template is licensed to the purchaser only.-->
+<!-- Unauthorized copying, redistribution, modification, or use of this template or any of its components — in whole or in part-->
+<!-- without a valid license is strictly prohibited and constitutes a violation of international copyright laws and licensing terms.-->
+<!-- This notice must remain intact in this file as a condition of use.-->
+<!-- Copyright © Devon Lively, 2025. All rights reserved.-->
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <!-- Meta Data -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Title -->
+    <title></title>
+
+    <!-- Externals -->
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link id="google-font" href="" rel="stylesheet">
+</head>
+
+<body>
+    <div id="background-cover" style="display:none;"></div>
+    <div id="version-number-text">Digx7_Studios  Treasure Coordinate Hunt  0.2.1.6_Itch_Web_FullGame</div>
+
+    <!-- The Game Canvas -->
+    <div id="unity-container" class="unity-desktop">
+        <canvas id="unity-canvas"></canvas>
+    </div>
+
+    <!-- The loading screen -->
+    <div id="loading-cover" style="display:none;">
+        <div id="unity-loading-bar">
+            <div id="unity-logo" style="display:none"><img src="TemplateData/Graphics/logo.png"></div>
+            <div id="unity-progress-bar-empty" style="display: none;">
+                <div id="unity-progress-bar-full"></div>
+                <div id="progress-bar-text">Fetching Data</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- When the user only wants to use a fullscreen button-->
+    <div id="unity-fullscreen-button" style="display: none;" class="menu-button"></div>
+
+    <script src="core/constants.js"></script>
+    <script>
+        // performance setup
+        // override built-in DPR *before* Unity loads
+        window.UNITY_CUSTOM_DPR = ConstantsLib.PageSetup_DefaultDPR;
+
+        // force Unity to use your custom DPR
+        Object.defineProperty(window, 'devicePixelRatio', {
+            get: () => window.UNITY_CUSTOM_DPR
+        });
+
+        console.log("DPR: " + window.devicePixelRatio);
+    </script>
+    <script>
+
+        /*------------------------------------*/
+        // Create the config
+        /*------------------------------------*/
+        const buildUrl = "Build";
+        const loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
+        const streamingAssetsUrl = "StreamingAssets";
+        const config = {
+            dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
+            frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
+            codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
+            streamingAssetsUrl: streamingAssetsUrl,
+            companyName: "Digx7_Studios",
+            productName: "Treasure Coordinate Hunt",
+            productVersion: "0.2.1.6_Itch_Web_FullGame",
+            matchWebGLToCanvasSize: false,
+        };
+
+        /*------------------------------------*/
+        // Custom Elements
+        /*------------------------------------*/
+        const backgroundCover = document.getElementById("background-cover");
+        const googleFont = document.getElementById("google-font");
+
+        /*------------------------------------*/
+        // Standard Elements
+        /*------------------------------------*/
+        const container = document.querySelector("#unity-container");
+        const canvas = document.querySelector("#unity-canvas");
+        const logoImage = document.querySelector("#unity-logo");
+        const loadingCover = document.querySelector("#loading-cover");
+        const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
+        const progressBarFull = document.querySelector("#unity-progress-bar-full");
+
+        const versionNumberText = document.querySelector("#version-number-text");
+        const progressBarText = document.querySelector("#progress-bar-text");
+
+        const fullscreenButton = document.querySelector("#unity-fullscreen-button");
+
+        // sets the page title
+        (function () {
+            const PageTitle = ConstantsLib.pageTitle;
+            const safeTitle = PageTitle.trim() !== "" ? PageTitle : "Untitled";
+            document.title = safeTitle;
+        })();
+
+        /*------------------------------------*/
+        /* DISPLAY RELATED */
+        /*------------------------------------*/
+
+        // get dpr
+        function getDPR() {
+            return Math.min(window.devicePixelRatio || 0.5, ConstantsLib.PageSetup_MaxDPI); // Limit to 2 for performance
+        }
+        // Returns true if criteria is met
+        const canFullscreen = (
+            function () {
+                for (const key of [
+                    'exitFullscreen', 'webkitExitFullscreen', 'webkitCancelFullScreen', 'mozCancelFullScreen', 'msExitFullscreen',
+                    'webkitExitFullscreen', 'webkitCancelFullScreen', 'webkitRequestFullscreen', 'webkitRequestFullScreen',
+                    'mozRequestFullScreen', 'msRequestFullscreen', 'msFullscreenElement', 'webkitFullscreenElement',
+                    'webkitFullscreenEnabled', 'mozFullScreen', 'msFullscreen', 'webkitFullscreen',
+                    'webkitFullscreenElement', 'mozFullscreen', 'mozFullScreenElement'
+                ]) {
+                    if (key in document) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        )();
+
+        // aspect ratio mode
+        function resizeCanvasToAspectRatio() {
+            const container = document.getElementById('unity-container') || document.body;
+
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
+            const dpr = getDPR();
+
+            let targetAspect;
+
+            if (!ConstantsLib.UseDynamicAspectRatio) {
+                targetAspect = ConstantsLib.aspectX / ConstantsLib.aspectY;
+            }
+
+            // Dynamic aspect ratio
+            else {
+                targetAspect = windowWidth / windowHeight;
+            }
+
+            let newWidth = windowWidth;
+            let newHeight = windowWidth / targetAspect;
+
+            if (newHeight > windowHeight) {
+                newHeight = windowHeight;
+                newWidth = newHeight * targetAspect;
+            }
+
+            canvas.style.width = newWidth + 'px';
+            canvas.style.height = newHeight + 'px';
+
+            // Set Internal Resolution
+            canvas.width = Math.round(newWidth * dpr);
+            canvas.height = Math.round(newHeight * dpr);
+
+            // Center the canvas
+            canvas.style.position = 'absolute';
+            canvas.style.left = ((windowWidth - newWidth) / 2) + 'px';
+            canvas.style.top = ((windowHeight - newHeight) / 2) + 'px';
+        }
+
+        function resizeCanvasToFullScreen() {
+            const dpr = getDPR();
+
+            // Set the CSS size of the canvas (how big it appears)
+            const cssWidth = window.innerWidth;
+            const cssHeight = window.innerHeight;
+            canvas.style.width = cssWidth + "px";
+            canvas.style.height = cssHeight + "px";
+
+            // Set the internal resolution of the canvas
+            const bufferWidth = Math.round(cssWidth * dpr);
+            const bufferHeight = Math.round(cssHeight * dpr);
+            canvas.width = bufferWidth;
+            canvas.height = bufferHeight;
+
+        }
+
+        function resizeCanvasFixed(defaultWidth, defaultHeight) {
+            const dpr = getDPR();
+
+            // CSS size stays fixed to defaults
+            canvas.style.width = defaultWidth + 'px';
+            canvas.style.height = defaultHeight + 'px';
+
+            // Internal resolution scaled by device pixel ratio
+            canvas.width = Math.round(defaultWidth * dpr);
+            canvas.height = Math.round(defaultHeight * dpr);
+
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            canvas.style.position = 'absolute';
+            canvas.style.left = ((windowWidth - defaultWidth) / 2) + 'px';
+            canvas.style.top = ((windowHeight - defaultHeight) / 2) + 'px';
+        }
+
+        // Go fullscreen
+        function goFullScreen(element) {
+            if (element.requestFullscreen) {
+                element.requestFullscreen();
+            } else if (element.webkitRequestFullscreen) { // Safari
+                element.webkitRequestFullscreen();
+            } else if (element.msRequestFullscreen) { // IE11
+                element.msRequestFullscreen();
+            }
+        }
+
+        // Exit fullscreen
+        function exitFullScreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) { // Safari
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { // IE11
+                document.msExitFullscreen();
+            }
+        }
+
+
+        // toggles fullscreen
+        function fullscreenToggle() {
+            if (document.fullscreenElement) {
+                exitFullScreen();
+            } else {
+                goFullScreen(document.documentElement);
+            }
+        }
+
+        function SetCanvasScaling() {
+            switch (ConstantsLib.displayScalingMode) {
+                case (0):
+                    resizeCanvasToAspectRatio();
+                    break;
+                case (1):
+                    resizeCanvasToFullScreen();
+                    break;
+                case (2):
+                    resizeCanvasFixed(ConstantsLib.defaultWidth, ConstantsLib.defaultHeight);
+                    break;
+                default:
+                    resizeCanvasToAspectRatio();
+                    break;
+            }
+        }
+
+        /*------------------------------------*/
+        // BASIC SETUP
+        /*------------------------------------*/
+
+        // sets up generally seen fonts
+        function InitiateFonts() {
+            googleFont.href = ConstantsLib.googleFontHref;
+            if (ConstantsLib.loadingTextType === "None")
+                progressBarText.style.display = "none";
+            else
+                progressBarText.style.fontFamily = ConstantsLib.googleFontFamily;
+            versionNumberText.style.fontFamily = ConstantsLib.googleFontFamily;
+        }
+
+        function PresetUp() {
+            // on mobile devices, we set the container to mobile, and set the pixel ratio to 1 which changes the DPI
+            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                container.className = "unity-mobile";
+            }
+
+            // Set up the background Image for the loading screen or keep it a color
+            if (!ConstantsLib.showBackgroundImage)
+                loadingCover.style.background = ConstantsLib.loadingScreenColor;
+            else
+                backgroundCover.style.display = "";
+
+            // set up loading bar colors
+            if (ConstantsLib.loadingBarPulses) {
+                progressBarFull.classList.add("pulsing");
+                document.documentElement.style.setProperty('--pulse-start', ConstantsLib.progressBarFullSettings);
+                document.documentElement.style.setProperty('--pulse-mid', ConstantsLib.LoadingScreen_BarPulseColor);
+            }
+            else
+                progressBarFull.style.background = ConstantsLib.progressBarFullSettings;
+        }
+
+        // General function to run after the game has loaded
+        function AfterLoad() {
+            setTimeout(() => {
+                // Resize the canvas to the correct size
+                SetCanvasScaling();
+                // Setup the menu button functionality
+                if (!ConstantsLib.hideCornerButton) {
+                    [fullscreenButton].forEach(btn => { btn.onclick = fullscreenToggle; });
+                    // Setup the button visiblity
+                    UpdateFullscreenButtonVisibility();
+                }
+                // hide the loading screen
+                loadingCover.style.display = "none";
+            }, 100);
+        }
+
+        // Function to update the loading progress bar
+        function LoadingUnityInstance(progress) {
+            progressBarEmpty.style.display = "";
+            progressBarText.style.color = (progress < 0.45) ? ConstantsLib.LoadingScreen_PercentValueTextColorLow : ConstantsLib.LoadingScreen_PercentValueTextColorHigh;
+            progressBarFull.style.width = `${100 * progress}%`;
+
+            // clamp the percentage
+            const numericProgress = Math.min(Math.max(Number(progress), 0), 1);
+            progressBarText.innerHTML = (progress < 0.89) ? `${(numericProgress * 100).toFixed(2)}%` : `Finishing Up...`;
+        }
+
+        // Hides all Overlays when the game is done loading / tap to start is pressed
+        function HideOverlays() {
+            loadingCover.style.display = "none";
+            backgroundCover.style.display = "none";
+            versionNumberText.style.display = "none";
+        }
+
+        function UpdateFullscreenButtonVisibility() {
+            if (!ConstantsLib.hideCornerButton) {
+                fullscreenButton.style.display = "";
+            }          
+        }
+
+        /*------------------------------------*/
+        // INSTANCE CREATION
+        /*------------------------------------*/
+        function LoadTheGame() {
+            // make a reference to an onLoad script
+            const script = document.createElement("script");
+            // set the sript source to the loaderURL
+            script.src = loaderUrl;
+            // and when OnLoad is called
+            script.onload = () => {
+                // now show the loading screen
+                loadingCover.style.display = "";
+                // start loading and show the progress bar
+                createUnityInstance(canvas, config, (progress) => { LoadingUnityInstance(progress); }
+                    // Loading is complete
+                ).then((unityInstanceLoader) => { AfterLoad(); HideOverlays(); }
+                    // Didn't work
+                ).catch((message) => { alert(message); });
+            };
+
+            document.body.appendChild(script);
+        }
+
+        /*------------------------------------*/
+        // Event Listeners
+        /*------------------------------------*/
+        const mql = window.matchMedia("(orientation: portrait)");
+
+        mql.addEventListener("change", (e) => {
+            if (e.matches) {
+                console.log("Now in portrait");
+                UpdateFullscreenButtonVisibility();
+            } else {
+                console.log("Now in landscape");
+                UpdateFullscreenButtonVisibility();
+            }
+        });
+
+        document.addEventListener('fullscreenchange',
+            function () {
+                // Hide corner button on fullscreen
+                if (document.fullscreenElement && ConstantsLib.fullscreenHidesCornerButton) {
+                    fullscreenButton.style.display = "none";
+                }
+                else {
+                    fullscreenButton.style.display = "";
+                }
+            }
+        );
+
+        // Keydown event listener for keyboard shortcuts
+        document.addEventListener('keydown', function (event) {
+            // monitors the availablity of ctrl+s
+            if (ConstantsLib.disableSaveMenuPopup) {
+                if (event.ctrlKey && (event.key === 's' || event.key === 'S')) {
+                    event.preventDefault();
+                    return;
+                }
+            }
+
+            // monitors the availablity of ctrl+w (closes tab)
+            if (ConstantsLib.disableCtrlWClosesTab) {
+                if (event.ctrlKey && (event.key === 'w' || event.key === 'W')) {
+                    event.preventDefault();
+                    return;
+                }
+            }
+
+            // Handle F11 / esc key for fullscreen toggle
+            if (event.key === 'F11') {
+                event.preventDefault();
+                fullscreenToggle();
+            }
+
+            // Esc, closes fullscreen when in fullscreen
+            // otherwise, it doesn't work in fullscreen as a browser security measure
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                if (document.fullscreenElement)
+                    fullscreenToggle();
+            }
+        });
+
+        // incase the window is resized
+        window.addEventListener('resize', SetCanvasScaling);
+
+
+        // Reposition on window resize
+        window.addEventListener('resize', () => {
+            PositionFooterObjects(versionNumberText);
+        });
+        PositionFooterObjects(versionNumberText);
+        function PositionFooterObjects(...elements){
+            let offset = 5; // starting padding from bottom
+
+            for (const el of elements) {
+              const rect = el.getBoundingClientRect();
+              el.style.bottom = offset + "px";
+              offset += rect.height + 3; // 8px gap between items
+            }
+        }
+
+        /*------------------------------------*/
+        // BOOTSTRAP
+        /*------------------------------------*/
+
+        // Now Setup the logo image
+        if (ConstantsLib.ShowLoadingLogoImage) {
+            logoImage.style.display = "";
+        }
+        InitiateFonts();
+        PresetUp();
+        LoadTheGame();
+
+    </script>
+</body>
+</html>

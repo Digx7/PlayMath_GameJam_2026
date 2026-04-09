@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0de99dbeeb274404c8b453bad406b986
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 347758
+  packageName: Lively WebGL Template LITE
+  packageVersion: 1.0.01
+  assetPath: Assets/Devon Lively/Attributes/ButtonAttribute.cs
+  uploadId: 879352

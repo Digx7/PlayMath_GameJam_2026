@@ -1,0 +1,56 @@
+/*
+* This WebGL template is licensed to the purchaser only.
+* Unauthorized copying, redistribution, modification, or use of this template or any of its components — in whole or in part — 
+* without a valid license is strictly prohibited and constitutes a violation of international copyright laws and licensing terms.
+* This notice must remain intact in this file as a condition of use.
+* Copyright © Devon Lively, 2025. All rights reserved. 
+*/
+window.ConstantsLib = {
+
+    ////////////////////////////////////////////////////
+    // Display Setup
+    ////////////////////////////////////////////////////
+    displayScalingMode: [[[DisplaySetup_DisplayScalingMode]]],
+    UseDynamicAspectRatio: [[[DisplaySetup_UseDynamicAspectRatio]]],
+    aspectX: [[[DisplaySetup_AspectRatioX]]],          // user wants to set aspect ratio
+    aspectY: [[[DisplaySetup_AspectRatioY]]],          // user wants to set aspect ratio
+    defaultWidth: [[[DisplaySetup_DefaultResolutionX]]],
+    defaultHeight: [[[DisplaySetup_DefaultResolutionY]]],
+    PageSetup_MaxDPI: [[[PageSetup_MaxDPI]]],
+    PageSetup_DefaultDPR: [[[PageSetup_DefaultDPR]]],
+    fullscreenHidesCornerButton: [[[fullscreenHidesCornerButton]]],
+
+    ////////////////////////////////////////////////////
+    // Loading Screen
+    ////////////////////////////////////////////////////
+    ShowLoadingLogoImage: [[[LoadingScreen_UseLoadingLogoImage]]],					 // show loading logo image
+    loadingScreenColor: "[[[LoadingScreen_BackgroundColor]]]",          // webpage background
+    progressBarFullSettings: "[[[LoadingScreen_BarColor]]]",            // loading bar color
+    LoadingScreen_BarPulseColor: '[[[LoadingScreen_BarPulseColor]]]',
+    LoadingScreen_PercentValueTextColorLow: '[[[LoadingScreen_PercentValueTextColorLow]]]',
+    LoadingScreen_PercentValueTextColorHigh: '[[[LoadingScreen_PercentValueTextColorHigh]]]',
+    loadingBarPulses: [[[LoadingScreen_Pulses]]],
+
+    ////////////////////////////////////////////////////
+    // Shared Tap + Loading Settings
+    ////////////////////////////////////////////////////
+    showBackgroundImage: [[[Footer_UseBackgroundImage]]],
+
+    ////////////////////////////////////////////////////
+    // Hamburger / Corner Button
+    ////////////////////////////////////////////////////
+    hideCornerButton: [[[HamburgerMenu_Disable]]],                     // hide fullscreen/menu button
+
+    ////////////////////////////////////////////////////
+    // Page Setup
+    ////////////////////////////////////////////////////
+    disableSaveMenuPopup: [[[PageSetup_DisableSaveMenuPopup]]],
+    disableCtrlWClosesTab: [[[PageSetup_DisableCtrlWClosesTab]]],
+    pageTitle: "[[[PageSetup_PageTitle]]]",
+
+    ////////////////////////////////////////////////////
+    // Google Fonts
+    ////////////////////////////////////////////////////
+    googleFontHref: "[[[GoogleFonts_FontHref]]]",                      // link to font
+    googleFontFamily: '[[[GoogleFonts_FontFamily]]]',                  // font family
+}

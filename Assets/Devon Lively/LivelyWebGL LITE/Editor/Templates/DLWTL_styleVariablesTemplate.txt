@@ -1,0 +1,47 @@
+/* 
+* This WebGL template is licensed to the purchaser only.
+* Unauthorized copying, redistribution, modification, or use of this template or any of its components — in whole or in part — 
+* without a valid license is strictly prohibited and constitutes a violation of international copyright laws and licensing terms.
+* This notice must remain intact in this file as a condition of use.
+* Copyright © Devon Lively, 2025. All rights reserved. 
+*/
+
+:root {
+    /* Pulse Animation Colors - These are set through the index.html */
+    --pulse-start: #4caf50;
+    --pulse-mid: #66bb6a;
+
+    /* Page Setup */
+    --PageSetup_PageBackgroundColor: [[[PageSetup_PageBackgroundColor]]];
+    --PageSetup_ImageSizeStyle: [[[PageSetup_ImageSizeStyle]]];
+    --PageSetup_ImageRepeatStyle: [[[PageSetup_ImageRepeatStyle]]];
+
+    /* Loading Bar Settings */
+    --LoadingScreen_Frame_Padding : [[[LoadingScreen_Frame_Padding]]]px;
+    --LoadingScreen_Frame_BGColor : [[[LoadingScreen_Frame_BGColor]]];
+    --LoadingScreen_Frame_Radius : [[[LoadingScreen_Frame_Radius]]]px;
+    --LoadingScreen_PercentValueFontSize : [[[LoadingScreen_PercentValueFontSize]]]px;
+    --LoadingScreen_Frame_Width : [[[LoadingScreen_Frame_Width]]]%;
+    --LoadingScreen_Frame_Height : [[[LoadingScreen_Frame_Height]]]px;
+    --LoadingScreen_Frame_LogoYOffset : [[[LoadingScreen_Frame_LogoYOffset]]]px 20px 0px 20px;
+    --unity-progress-bar-emptyborder : [[[LoadingScreen_Frame_Thickness]]]px [[[LoadingScreen_Frame_Style]]] [[[LoadingScreen_Frame_Color]]];
+    
+    --unity-progress-bar-fulltransition :  width [[[LoadingScreen_BarTransitionSpeed]]]s;
+    --unity-progress-bar-fullborder-radius : [[[LoadingScreen_Frame_Radius]]]px;
+
+    --LoadingScreen_LogoImageMaxWidth : [[[LoadingScreen_LogoImageMaxWidth]]]%;
+    --LoadingScreen_ContainerYOffset : [[[LoadingScreen_ContainerYOffset]]]%;
+    --LoadingScreen_TextLineHeight : [[[LoadingScreen_TextLineHeight]]]%;
+       
+    /* Footer */
+   --Footer_VersionTextColor : [[[Footer_VersionTextColor]]];
+    --Footer_VersionTextFontSize : [[[Footer_VersionTextFontSize]]]px;
+
+    /* Background Images */
+    --backgroundURLPortrait : url('../Graphics/LoaderBackgrounds/backgroundPortrait.png') no-repeat center center fixed;
+    --backgroundURLLandscape : url('../Graphics/LoaderBackgrounds/backgroundLandscape.png');
+
+    /* Corner Button Menu Icons */
+    --unity-fullscreen-button : url('../Graphics/Icons/fullscreen-button.png') no-repeat center;
+
+}

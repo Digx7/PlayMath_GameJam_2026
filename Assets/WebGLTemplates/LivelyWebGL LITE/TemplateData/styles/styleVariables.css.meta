@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 34a1a4e965f99b84489c040355461e6f
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 347758
+  packageName: Lively WebGL Template LITE
+  packageVersion: 1.0.01
+  assetPath: Assets/WebGLTemplates/LivelyWebGL LITE/TemplateData/styles/styleVariables.css
+  uploadId: 879352

@@ -10,7 +10,7 @@ window.ConstantsLib = {
     ////////////////////////////////////////////////////
     // Display Setup
     ////////////////////////////////////////////////////
-    displayScalingMode: 0,
+    displayScalingMode: 1,
     UseDynamicAspectRatio: false,
     aspectX: 16,          // user wants to set aspect ratio
     aspectY: 9,          // user wants to set aspect ratio
@@ -34,7 +34,7 @@ window.ConstantsLib = {
     ////////////////////////////////////////////////////
     // Shared Tap + Loading Settings
     ////////////////////////////////////////////////////
-    showBackgroundImage: true,
+    showBackgroundImage: false,
 
     ////////////////////////////////////////////////////
     // Hamburger / Corner Button
@@ -45,7 +45,7 @@ window.ConstantsLib = {
     // Page Setup
     ////////////////////////////////////////////////////
     disableSaveMenuPopup: true,
-    disableCtrlWClosesTab: [[[PageSetup_DisableCtrlWClosesTab]]],
+    //disableCtrlWClosesTab: [[[PageSetup_DisableCtrlWClosesTab]]],
     pageTitle: "Name Seen In Browser Tab",
 
     ////////////////////////////////////////////////////

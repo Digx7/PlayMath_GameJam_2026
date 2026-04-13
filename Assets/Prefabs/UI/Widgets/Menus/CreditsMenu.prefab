@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3931675058910787632}
   - component: {fileID: 1349521115998160747}
   - component: {fileID: 4125005038707407701}
+  - component: {fileID: 7111531373283674561}
   m_Layer: 5
   m_Name: NormalText (TMP)
   m_TagString: Untagged
@@ -93,10 +94,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 60.3
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -132,12 +133,80 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 17.55, y: 0, z: 20.37, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7111531373283674561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680109681877465555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71f18df6158a154a8ebaf195881c7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResponsiveBreakpointHelper
+  breakPoints:
+  - breakPointName: Mobile
+    minScreenWidth: 0
+    maxScreenWidth: 399
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4125005038707407701}
+          m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_MethodName: set_fontSizeMax
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 250
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - breakPointName: Tablet
+    minScreenWidth: 400
+    maxScreenWidth: 899
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4125005038707407701}
+          m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_MethodName: set_fontSizeMax
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 150
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - breakPointName: Desktop
+    minScreenWidth: 900
+    maxScreenWidth: 9999
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4125005038707407701}
+          m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_MethodName: set_fontSizeMax
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 72
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  updateInEditMode: 0
 --- !u!1 &5611477107808259697
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +292,7 @@ RectTransform:
   - {fileID: 6192492379820280492}
   - {fileID: 6501894639491743375}
   - {fileID: 3931675058910787632}
-  - {fileID: 8498801499337760450}
+  - {fileID: 1075243319417591914}
   m_Father: {fileID: 7744922878888492304}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.34, y: 0}
@@ -247,26 +316,28 @@ MonoBehaviour:
   - breakPointName: Mobile
     minScreenWidth: 0
     maxScreenWidth: 399
+    screenBreakPoint:
+      breakPointName: Mobile
+      minScreenWidth: 0
+      maxScreenWidth: 399
+      onBreakPointApplied:
+        m_PersistentCalls:
+          m_Calls: []
     AnchorMinPoints: {x: 0, y: 0}
     AnchorMaxPoints: {x: 1, y: 1}
     onBreakPointApplied:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - breakPointName: Tablet
     minScreenWidth: 400
     maxScreenWidth: 899
+    screenBreakPoint:
+      breakPointName: Tablet
+      minScreenWidth: 400
+      maxScreenWidth: 899
+      onBreakPointApplied:
+        m_PersistentCalls:
+          m_Calls: []
     AnchorMinPoints: {x: 0, y: 0}
     AnchorMaxPoints: {x: 1, y: 1}
     onBreakPointApplied:
@@ -275,75 +346,19 @@ MonoBehaviour:
   - breakPointName: Desktop
     minScreenWidth: 900
     maxScreenWidth: 9999
+    screenBreakPoint:
+      breakPointName: Desktop
+      minScreenWidth: 900
+      maxScreenWidth: 9999
+      onBreakPointApplied:
+        m_PersistentCalls:
+          m_Calls: []
     AnchorMinPoints: {x: 0.34, y: 0}
     AnchorMaxPoints: {x: 0.65, y: 1}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
   updateInEditMode: 1
---- !u!1 &6590559280686287866
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8498801499337760450}
-  - component: {fileID: 684467746521974535}
-  m_Layer: 5
-  m_Name: Buttons
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &8498801499337760450
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6590559280686287866}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1075243319417591914}
-  m_Father: {fileID: 8975525813644398208}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.15}
-  m_AnchorMax: {x: 1, y: 0.27}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &684467746521974535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6590559280686287866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 4
-  m_Spacing: 28.6
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!1001 &297115401013020781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -562,7 +577,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 8498801499337760450}
+    m_TransformParent: {fileID: 8975525813644398208}
     m_Modifications:
     - target: {fileID: 924701941320546054, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_Name
@@ -638,27 +653,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.7606802
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 0.2598148
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.24036023
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.165
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: -7.75
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: -19
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_LocalScale.x
@@ -690,15 +705,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -723,10 +738,77 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 924701941320546054, guid: fcdda1224de852644831c34c80b862c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5341242430028138602}
   m_SourcePrefab: {fileID: 100100000, guid: fcdda1224de852644831c34c80b862c7, type: 3}
 --- !u!224 &1075243319417591914 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
   m_PrefabInstance: {fileID: 8690112857047171634}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8380152299273352500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 924701941320546054, guid: fcdda1224de852644831c34c80b862c7, type: 3}
+  m_PrefabInstance: {fileID: 8690112857047171634}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5341242430028138602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8380152299273352500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896712ac06b04684999386d7f0f11de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResponsiveUIHelper
+  breakPoints:
+  - breakPointName: Mobile
+    minScreenWidth: 0
+    maxScreenWidth: 0
+    screenBreakPoint:
+      breakPointName: Mobile
+      minScreenWidth: 0
+      maxScreenWidth: 399
+      onBreakPointApplied:
+        m_PersistentCalls:
+          m_Calls: []
+    AnchorMinPoints: {x: 0.21266666, y: 0.120000005}
+    AnchorMaxPoints: {x: 0.794, y: 0.2598148}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - breakPointName: Tablet
+    minScreenWidth: 0
+    maxScreenWidth: 0
+    screenBreakPoint:
+      breakPointName: Tablet
+      minScreenWidth: 400
+      maxScreenWidth: 899
+      onBreakPointApplied:
+        m_PersistentCalls:
+          m_Calls: []
+    AnchorMinPoints: {x: 0.24036023, y: 0.165}
+    AnchorMaxPoints: {x: 0.7606802, y: 0.2598148}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - breakPointName: Desktop
+    minScreenWidth: 0
+    maxScreenWidth: 0
+    screenBreakPoint:
+      breakPointName: Desktop
+      minScreenWidth: 900
+      maxScreenWidth: 9999
+      onBreakPointApplied:
+        m_PersistentCalls:
+          m_Calls: []
+    AnchorMinPoints: {x: 0.24036023, y: 0.165}
+    AnchorMaxPoints: {x: 0.7606802, y: 0.2598148}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  updateInEditMode: 1

@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8490566
       objectReference: {fileID: 0}
+    - target: {fileID: 3732544385392289711, guid: fcdda1224de852644831c34c80b862c7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7632145875938098759, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -214,6 +218,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Start
       objectReference: {fileID: 0}
+    - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -224,27 +232,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0.60062504
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.2154052
+      value: 0.26848152
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0.33900002
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.2154052
+      value: 0.15322223
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -297,8 +305,75 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 924701941320546054, guid: fcdda1224de852644831c34c80b862c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4885973257966641773}
   m_SourcePrefab: {fileID: 100100000, guid: fcdda1224de852644831c34c80b862c7, type: 3}
+--- !u!1 &4411018284493547350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 924701941320546054, guid: fcdda1224de852644831c34c80b862c7, type: 3}
+  m_PrefabInstance: {fileID: 3594477536689246288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4885973257966641773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411018284493547350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896712ac06b04684999386d7f0f11de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResponsiveUIHelper
+  breakPoints:
+  - breakPointName: Moblle
+    minScreenWidth: 0
+    maxScreenWidth: 0
+    screenBreakPoint:
+      breakPointName: Mobile
+      minScreenWidth: 0
+      maxScreenWidth: 399
+      onBreakPointApplied:
+        m_PersistentCalls:
+          m_Calls: []
+    AnchorMinPoints: {x: 0.15322223, y: 0.1301389}
+    AnchorMaxPoints: {x: 0.862889, y: 0.27725002}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - breakPointName: Tablet
+    minScreenWidth: 0
+    maxScreenWidth: 0
+    screenBreakPoint:
+      breakPointName: Tablet
+      minScreenWidth: 400
+      maxScreenWidth: 899
+      onBreakPointApplied:
+        m_PersistentCalls:
+          m_Calls: []
+    AnchorMinPoints: {x: 0.20046915, y: 0.15300001}
+    AnchorMaxPoints: {x: 0.781, y: 0.26848152}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - breakPointName: Desktop
+    minScreenWidth: 0
+    maxScreenWidth: 0
+    screenBreakPoint:
+      breakPointName: Desktop
+      minScreenWidth: 900
+      maxScreenWidth: 9999
+      onBreakPointApplied:
+        m_PersistentCalls:
+          m_Calls: []
+    AnchorMinPoints: {x: 0.33900002, y: 0.15322223}
+    AnchorMaxPoints: {x: 0.60062504, y: 0.26848152}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  updateInEditMode: 0
 --- !u!224 &5158686205958588936 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
@@ -402,7 +477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5732099593534810254, guid: f5fb38a070db5ff4d897f3c2a88a6b99, type: 3}
       propertyPath: m_fontSize
-      value: 105.85
+      value: 167.3
       objectReference: {fileID: 0}
     - target: {fileID: 5732099593534810254, guid: f5fb38a070db5ff4d897f3c2a88a6b99, type: 3}
       propertyPath: m_fontAsset

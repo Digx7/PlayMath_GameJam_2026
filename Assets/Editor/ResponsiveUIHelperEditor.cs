@@ -72,7 +72,7 @@ public class ResponsiveUIHelperEditor : Editor
         for (int i = 0; i < helper.breakPoints.Count; i++)
         {
             UIResponsiveBreakPoint bp = helper.breakPoints[i];
-            string label = string.IsNullOrWhiteSpace(bp.breakPointName) ? "Breakpoint " + (i + 1) : bp.breakPointName;
+            string label = string.IsNullOrWhiteSpace(bp.screenBreakPoint.breakPointName) ? "Breakpoint " + (i + 1) : bp.screenBreakPoint.breakPointName;
 
             EditorGUILayout.BeginVertical("HelpBox");
             EditorGUILayout.LabelField(label, EditorStyles.boldLabel);

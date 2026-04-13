@@ -76,7 +76,7 @@ public class ResponsiveUIHelper : MonoBehaviour
     private bool IsWithinBreakPoint(ScreenInfo screenInfo, UIResponsiveBreakPoint breakPoint) 
     {
         
-        if (screenInfo.width < breakPoint.minScreenWidth || screenInfo.width > breakPoint.maxScreenWidth)
+        if (screenInfo.width < breakPoint.screenBreakPoint.minScreenWidth || screenInfo.width > breakPoint.screenBreakPoint.maxScreenWidth)
         {
             return false;
         }

@@ -396,12 +396,12 @@
             }
 
             // monitors the availablity of ctrl+w (closes tab)
-            if (ConstantsLib.disableCtrlWClosesTab) {
-                if (event.ctrlKey && (event.key === 'w' || event.key === 'W')) {
-                    event.preventDefault();
-                    return;
-                }
-            }
+            //if (ConstantsLib.disableCtrlWClosesTab) {
+            //    if (event.ctrlKey && (event.key === 'w' || event.key === 'W')) {
+            //        event.preventDefault();
+            //        return;
+            //    }
+            //}
 
             // Handle F11 / esc key for fullscreen toggle
             if (event.key === 'F11') {

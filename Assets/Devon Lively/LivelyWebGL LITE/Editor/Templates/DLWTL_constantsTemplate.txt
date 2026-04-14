@@ -1,9 +1,9 @@
 /*
 * This WebGL template is licensed to the purchaser only.
-* Unauthorized copying, redistribution, modification, or use of this template or any of its components ï¿½ in whole or in part ï¿½ 
+* Unauthorized copying, redistribution, modification, or use of this template or any of its components — in whole or in part — 
 * without a valid license is strictly prohibited and constitutes a violation of international copyright laws and licensing terms.
 * This notice must remain intact in this file as a condition of use.
-* Copyright ï¿½ Devon Lively, 2025. All rights reserved. 
+* Copyright © Devon Lively, 2025. All rights reserved. 
 */
 window.ConstantsLib = {
 
@@ -45,7 +45,7 @@ window.ConstantsLib = {
     // Page Setup
     ////////////////////////////////////////////////////
     disableSaveMenuPopup: [[[PageSetup_DisableSaveMenuPopup]]],
-    //disableCtrlWClosesTab: [[[PageSetup_DisableCtrlWClosesTab]]],
+    // disableCtrlWClosesTab: [[[PageSetup_DisableCtrlWClosesTab]]],
     pageTitle: "[[[PageSetup_PageTitle]]]",
 
     ////////////////////////////////////////////////////

@@ -10,11 +10,18 @@ using System.Threading.Tasks;
 [ExecuteAlways]
 public class ResponsiveUIHelper : MonoBehaviour 
 {
+    #region Variables ================================
+    [Header("Variables")]
     public List<UIResponsiveBreakPoint> breakPoints;
 
     public bool updateInEditMode = false;
+    public bool updateOnStart = true;
 
     private RectTransform rectTransform;
+
+    #endregion
+
+    #region Setup ================================
 
     private void Awake() 
     {
@@ -23,8 +30,15 @@ public class ResponsiveUIHelper : MonoBehaviour
 
     private void Start() 
     {
-        UpdateUI();
+        if(updateOnStart)
+        {
+            UpdateUI();
+        }
     }
+
+    #endregion
+
+    #region Main Methods ================================
 
     private void OnRectTransformDimensionsChange() 
     {
@@ -97,5 +111,7 @@ public class ResponsiveUIHelper : MonoBehaviour
         await Task.Delay((int)(delay * 1000));
         rectTransform.anchoredPosition = Vector2.zero; // Center the UI element
     }
+
+    #endregion
 
 }

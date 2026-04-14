@@ -170,7 +170,7 @@ namespace DevonLively.LivelyWebGLLite.Editor
             public static bool[] pageNum = new bool[3];
             static Texture2D myTexture;
 
-            static string versionCode = "1.0.01";
+            static string versionCode = "1.0.02";
 
             public static void HelpBox(string title, string helpText, string url = "")
             {

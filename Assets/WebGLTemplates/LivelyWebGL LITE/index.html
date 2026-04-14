@@ -27,7 +27,7 @@
 
 <body>
     <div id="background-cover" style="display:none;"></div>
-    <div id="version-number-text">Digx7_Studios  Treasure Coordinate Hunt  0.2.1.9_Itch_Web_FullGame</div>
+    <div id="version-number-text">Digx7_Studios  Treasure Coordinate Hunt  0.2.1.10_Itch_Web_FullGame</div>
 
     <!-- The Game Canvas -->
     <div id="unity-container" class="unity-desktop">
@@ -76,7 +76,7 @@
             streamingAssetsUrl: streamingAssetsUrl,
             companyName: "Digx7_Studios",
             productName: "Treasure Coordinate Hunt",
-            productVersion: "0.2.1.9_Itch_Web_FullGame",
+            productVersion: "0.2.1.10_Itch_Web_FullGame",
             matchWebGLToCanvasSize: false,
         };
 
@@ -396,12 +396,12 @@
             }
 
             // monitors the availablity of ctrl+w (closes tab)
-            if (ConstantsLib.disableCtrlWClosesTab) {
-                if (event.ctrlKey && (event.key === 'w' || event.key === 'W')) {
-                    event.preventDefault();
-                    return;
-                }
-            }
+            //if (ConstantsLib.disableCtrlWClosesTab) {
+            //    if (event.ctrlKey && (event.key === 'w' || event.key === 'W')) {
+            //        event.preventDefault();
+            //        return;
+            //    }
+            //}
 
             // Handle F11 / esc key for fullscreen toggle
             if (event.key === 'F11') {

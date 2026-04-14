@@ -45,7 +45,7 @@ window.ConstantsLib = {
     // Page Setup
     ////////////////////////////////////////////////////
     disableSaveMenuPopup: true,
-    //disableCtrlWClosesTab: [[[PageSetup_DisableCtrlWClosesTab]]],
+    // disableCtrlWClosesTab: [[[PageSetup_DisableCtrlWClosesTab]]],
     pageTitle: "Name Seen In Browser Tab",
 
     ////////////////////////////////////////////////////

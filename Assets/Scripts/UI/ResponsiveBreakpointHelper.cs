@@ -5,8 +5,26 @@ using System.Collections.Generic;
 
 public class ResponsiveBreakpointHelper : MonoBehaviour 
 {
+    #region Variables ================================
+    [Header("Variables")]
     public List<ScreenBreakPoint> breakPoints;
     public bool updateInEditMode = false;
+    public bool updateOnStart = true;
+    #endregion
+
+    #region Setup ================================
+
+    private void Start() 
+    {
+        if(updateOnStart)
+        {
+            UpdateUI();
+        }
+    }
+
+    #endregion
+
+    #region Main Methods ================================
 
     private void OnRectTransformDimensionsChange() 
     {
@@ -47,4 +65,6 @@ public class ResponsiveBreakpointHelper : MonoBehaviour
             return true;
         }
     }
+
+    #endregion
 }

@@ -19,7 +19,6 @@ jobs:
           - HTML5/Playable in browser
         build:
           - WebGL
-    runs-on: ubuntu-latest
     name: Deploy - Itch.io ${{ matrix.build }}
     steps:
       - uses: actions/download-artifact@v2.0.8

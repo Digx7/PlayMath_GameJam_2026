@@ -6,6 +6,7 @@ on:
       - Public
     tags:
       - 'v*'
+  workflow_dispatch:
 
 env:
   ITCH_USERNAME: digx7

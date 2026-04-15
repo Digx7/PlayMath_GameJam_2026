@@ -1,0 +1,79 @@
+name: Deploy to GitHub Release
+on:
+  workflow_call:
+    inputs:
+      artifactName:
+        description: 'The name of the build artifact to include in the release (e.g., Build-WebGL).'
+        required: true
+        type: string
+      zipName:
+        description: 'The name of the zip file to create from the build artifacts (e.g., release-assets.zip).'
+        required: true
+        type: string
+      tagName:
+        description: 'The tag name for the release (e.g., v1.0.0).'
+        required: true
+        type: string
+      note:
+        description: 'Release notes for the GitHub release.'
+        required: false
+        type: string
+      prerelease:
+        description: 'Set to "true" to mark this release as a pre-release. Default is "false".'
+        default: 'true'
+        required: false
+        type: boolean
+  workflow_dispatch:
+
+jobs:
+  create_release:
+    # Runs the job on the latest Ubuntu version
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks out a copy of your repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # gets build artifacts
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ inputs.artifactName }}
+          path: build/${{ inputs.artifactName }}
+
+      # zips the build artifacts
+      - name: Zip Build Artifacts
+        run: |
+          cd build
+          zip -r ${{ inputs.zipName }} ${{ inputs.artifactName }}
+
+      - name: Create Release
+        # Uses the create-github-release action
+        uses: nekofar/create-github-release@v1
+        with:
+          # Defines the tag name for the release (e.g., v1.0.0).
+          tag: ${{ inputs.tagName }}
+
+          # (Optional) Files to include in the release
+          files: |
+            build/${{ inputs.zipName }}
+
+          # (Optional) Defines the title of the release
+          title: Update ${{ inputs.tagName }}
+
+          # (Optional) Allows multiline release notes
+          notes: |
+            ${{ inputs.note }}
+
+          # (Optional) Set to "true" to create a draft release. Default is "false"
+          draft: false
+
+          # (Optional) Set to "true" to create a pre-release. Default is "false"
+          prerelease: ${{ inputs.prerelease }}
+
+          # (Optional) Set to "true" to mark this release as the latest. Default is "false"
+          latest: true
+
+          # (Optional) GitHub token for authentication. Default: ${{ github.token }}. If not provided, it will use the repository's default token
+          token: ${{ github.token }}

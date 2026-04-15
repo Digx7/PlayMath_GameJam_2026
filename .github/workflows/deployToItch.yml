@@ -1,0 +1,36 @@
+name: Deploy to Itch.io
+on:
+  workflow_call:
+  workflow_dispatch:
+
+env:
+  ITCH_USERNAME: digx7
+  ITCH_GAME_ID: treasure-hunt-post-game-jam
+
+
+jobs:
+  deployToItch:
+    name: Upload to Itch
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        channel:
+          - HTML5/Playable in browser
+        build:
+          - WebGL
+    runs-on: ubuntu-latest
+    name: Deploy - Itch.io ${{ matrix.build }}
+    steps:
+      - uses: actions/download-artifact@v2.0.8
+        with:
+          name: ${{ matrix.build }}
+          path: build/${{ matrix.build }}
+      - uses: KikimoraGames/itch-publish@v0.0.3
+        with:
+          butlerApiKey: ${{secrets.BUTLER_API_KEY}}
+          gameData: ./build/${{ matrix.build }}
+          itchUsername: ${{env.ITCH_USERNAME}}
+          itchGameId: ${{ env.ITCH_GAME_ID }}
+          buildChannel: ${{ matrix.channel }}
+          buildNumber: ${{ needs.version.outputs.version_hash }}

@@ -2,8 +2,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
+using Digx7.Grids;
+using Digx7.Zygote;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GridButtonHelper : MonoBehaviour 
 {
@@ -23,7 +26,11 @@ public class GridButtonHelper : MonoBehaviour
         }
     }
     public Vector2IntChannelRaiser vector2IntChannelRaiser;
-    public TextMeshProUGUI graphNumberTMPro;
+    public List<TextMeshProUGUI> graphNumberTMPros;
+    public void SetGraphNumberText(string text, Quadrant quadrant)
+    {
+        graphNumberTMPros[(int)quadrant].text = text;
+    }
     public GameObject verticalAxis;
     public GameObject horizontalAxis;
 

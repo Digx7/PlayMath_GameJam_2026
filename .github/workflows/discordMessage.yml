@@ -12,14 +12,17 @@ on:
         description: 'The message to send to Discord.'
         required: true
         type: string
+
+env:
+    DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+
 jobs:
-  build:
-    name: Build
+  message:
+    name: Send Discord Message
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: send custom message
-        uses: appleboy/discord-action@v1.2.0
+      - name: Actions for Discord
+        uses: Ilshidur/action-discord@0.4.0
         with:
-          webhook_url: ${{ secrets.WEBHOOK_URL }}
-          message: ${{ inputs.message }}
+          args: ${{ inputs.message }}

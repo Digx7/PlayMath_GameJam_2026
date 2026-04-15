@@ -19,8 +19,8 @@ on:
         required: false
         type: string
       prerelease:
-        description: 'Set to "true" to mark this release as a pre-release. Default is "false".'
-        default: 'true'
+        description: 'Set to "true" to mark this release as a pre-release. Default is "true".'
+        default: true
         required: false
         type: boolean
   workflow_dispatch:

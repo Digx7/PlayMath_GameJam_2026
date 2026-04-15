@@ -316,6 +316,7 @@ public class GridUIManager : MonoBehaviour
                         }
 
                         gridButtonHelper.verticalAxis.SetActive(true);
+                        // Test
                     }
                 }
             }

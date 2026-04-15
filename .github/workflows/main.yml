@@ -15,7 +15,7 @@ env:
 jobs:
   # testProject:
   #   uses: ./.github/workflows/testProject.yml
-  discordMessage_ProcessFinished:
+  discordMessage_ProcessStarted:
     uses: ./.github/workflows/discordMessage.yml
     with:
       message: "A new release ${{ github.ref_name }} is being processed! Stay tuned for updates on GitHub Releases and Itch.io!"

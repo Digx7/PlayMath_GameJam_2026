@@ -20,7 +20,7 @@ jobs:
     with:
       message: "A new release ${{ github.ref_name }} is being processed! Stay tuned for updates on GitHub Releases and Itch.io!"
   buildForAllSupportedPlatforms:
-    needs: testProject
+    # needs: testProject
     uses: ./.github/workflows/buildForAllPlatforms.yml
   deployToItch:
     needs: buildForAllSupportedPlatforms

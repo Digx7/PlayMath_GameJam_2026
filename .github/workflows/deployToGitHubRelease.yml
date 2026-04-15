@@ -24,6 +24,28 @@ on:
         required: false
         type: boolean
   workflow_dispatch:
+    inputs:
+      artifactName:
+        description: 'The name of the build artifact to include in the release (e.g., Build-WebGL).'
+        required: true
+        type: string
+      zipName:
+        description: 'The name of the zip file to create from the build artifacts (e.g., release-assets.zip).'
+        required: true
+        type: string
+      tagName:
+        description: 'The tag name for the release (e.g., v1.0.0).'
+        required: true
+        type: string
+      note:
+        description: 'Release notes for the GitHub release.'
+        required: false
+        type: string
+      prerelease:
+        description: 'Set to "true" to mark this release as a pre-release. Default is "true".'
+        default: true
+        required: false
+        type: boolean
 
 jobs:
   create_release:

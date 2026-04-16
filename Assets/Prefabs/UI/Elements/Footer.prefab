@@ -64,7 +64,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 250
+            m_FloatArgument: 125
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -82,7 +82,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 150
+            m_FloatArgument: 75
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -100,11 +100,12 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 72
+            m_FloatArgument: 18
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
   updateInEditMode: 0
+  updateOnStart: 1
 --- !u!1 &5910052081855575119
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +238,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 30, y: 0, z: 30, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

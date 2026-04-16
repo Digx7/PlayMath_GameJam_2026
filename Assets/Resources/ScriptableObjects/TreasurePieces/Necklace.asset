@@ -17,25 +17,41 @@ MonoBehaviour:
   subSprites:
   - SubID: 1
     subSprite: {fileID: 1843169002, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite_Cropped: {fileID: -2073902324, guid: 16ce190489980a640897b51ca843f0db, type: 3}
+    subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 0, y: 0}
   - SubID: 2
     subSprite: {fileID: 426720635, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite_Cropped: {fileID: -1390539027, guid: 16ce190489980a640897b51ca843f0db, type: 3}
+    subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 1, y: 0}
   - SubID: 3
     subSprite: {fileID: -1475692936, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite_Cropped: {fileID: 1187937935, guid: 16ce190489980a640897b51ca843f0db, type: 3}
+    subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 2, y: 0}
   - SubID: 4
     subSprite: {fileID: -516151941, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite_Cropped: {fileID: -298379831, guid: 16ce190489980a640897b51ca843f0db, type: 3}
+    subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 0, y: 1}
   - SubID: 5
     subSprite: {fileID: 1098005367, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite_Cropped: {fileID: -1375933910, guid: 16ce190489980a640897b51ca843f0db, type: 3}
+    subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 2, y: 1}
   - SubID: 6
     subSprite: {fileID: 1469463856, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite_Cropped: {fileID: -911630880, guid: 16ce190489980a640897b51ca843f0db, type: 3}
+    subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 0, y: 2}
   - SubID: 7
     subSprite: {fileID: -588166041, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite_Cropped: {fileID: -624004900, guid: 16ce190489980a640897b51ca843f0db, type: 3}
+    subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 1, y: 2}
   - SubID: 8
     subSprite: {fileID: -605947647, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite_Cropped: {fileID: 1965371196, guid: 16ce190489980a640897b51ca843f0db, type: 3}
+    subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 2, y: 2}

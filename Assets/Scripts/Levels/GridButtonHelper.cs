@@ -283,8 +283,11 @@ public class GridButtonHelper : MonoBehaviour
         treasureDisplayImage_Cropped.gameObject.SetActive(true);
         treasureDisplayImage_Cropped.sprite = treasureSubSprite.subSprite_Cropped;
 
-        treasureDisplayImage_Overflow.gameObject.SetActive(true);
-        treasureDisplayImage_Overflow.sprite = treasureSubSprite.subSprite_Overflow;
+        if(treasureSubSprite.subSprite_Overflow != null)
+        {
+            treasureDisplayImage_Overflow.gameObject.SetActive(true);
+            treasureDisplayImage_Overflow.sprite = treasureSubSprite.subSprite_Overflow;
+        }
 
         switch (treasurePieceRotation)
         {

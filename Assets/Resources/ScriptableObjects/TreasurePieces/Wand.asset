@@ -17,10 +17,16 @@ MonoBehaviour:
   subSprites:
   - SubID: 1
     subSprite: {fileID: -1149776041, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite_Cropped: {fileID: 857423945, guid: 8b9ead358fbbac440b1ce00667ee4968, type: 3}
+    subSprite_Overflow: {fileID: -1715510178, guid: 8b9ead358fbbac440b1ce00667ee4968, type: 3}
     relativePosition: {x: 0, y: 0}
   - SubID: 2
     subSprite: {fileID: 1138462323, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite_Cropped: {fileID: 1201840575, guid: 8b9ead358fbbac440b1ce00667ee4968, type: 3}
+    subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 1, y: -1}
   - SubID: 3
     subSprite: {fileID: -1470810455, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite_Cropped: {fileID: 1134751787, guid: 8b9ead358fbbac440b1ce00667ee4968, type: 3}
+    subSprite_Overflow: {fileID: -752913971, guid: 8b9ead358fbbac440b1ce00667ee4968, type: 3}
     relativePosition: {x: 2, y: -2}

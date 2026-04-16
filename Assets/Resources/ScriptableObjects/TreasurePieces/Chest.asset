@@ -17,31 +17,31 @@ MonoBehaviour:
   subSprites:
   - SubID: 1
     subSprite: {fileID: -1296910469, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
-    subSprite_Cropped: {fileID: -97976327, guid: f34d78e383f6b904b95d213e828b9fd6, type: 3}
-    subSprite_Overflow: {fileID: 582221659, guid: f34d78e383f6b904b95d213e828b9fd6, type: 3}
+    subSprite_Cropped: {fileID: 334741924, guid: 4b7179ce10569a341816496cfbf14403, type: 3}
+    subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 0, y: 0}
   - SubID: 2
     subSprite: {fileID: -874141455, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
-    subSprite_Cropped: {fileID: -1981325570, guid: f34d78e383f6b904b95d213e828b9fd6, type: 3}
-    subSprite_Overflow: {fileID: 1970906492, guid: f34d78e383f6b904b95d213e828b9fd6, type: 3}
+    subSprite_Cropped: {fileID: 1445417272, guid: 4b7179ce10569a341816496cfbf14403, type: 3}
+    subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 1, y: 0}
   - SubID: 3
     subSprite: {fileID: -541934081, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
-    subSprite_Cropped: {fileID: 0}
+    subSprite_Cropped: {fileID: 1039339082, guid: 4b7179ce10569a341816496cfbf14403, type: 3}
     subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 2, y: 0}
   - SubID: 4
     subSprite: {fileID: 1181476426, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
-    subSprite_Cropped: {fileID: 0}
+    subSprite_Cropped: {fileID: -1797128161, guid: 4b7179ce10569a341816496cfbf14403, type: 3}
     subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 0, y: 1}
   - SubID: 5
     subSprite: {fileID: 907691257, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
-    subSprite_Cropped: {fileID: 0}
+    subSprite_Cropped: {fileID: 1280407594, guid: 4b7179ce10569a341816496cfbf14403, type: 3}
     subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 1, y: 1}
   - SubID: 6
     subSprite: {fileID: 1670647176, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
-    subSprite_Cropped: {fileID: 0}
+    subSprite_Cropped: {fileID: 823206797, guid: 4b7179ce10569a341816496cfbf14403, type: 3}
     subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 2, y: 1}

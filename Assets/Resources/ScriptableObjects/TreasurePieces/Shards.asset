@@ -17,13 +17,21 @@ MonoBehaviour:
   subSprites:
   - SubID: 1
     subSprite: {fileID: -1935941586, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite_Cropped: {fileID: 842834922, guid: f09da61e59897374fba6694c4b3cf3e7, type: 3}
+    subSprite_Overflow: {fileID: 1990904186, guid: f09da61e59897374fba6694c4b3cf3e7, type: 3}
     relativePosition: {x: 0, y: 0}
   - SubID: 2
     subSprite: {fileID: -663067178, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite_Cropped: {fileID: -1265852487, guid: f09da61e59897374fba6694c4b3cf3e7, type: 3}
+    subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 1, y: 0}
   - SubID: 3
     subSprite: {fileID: 1545188069, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite_Cropped: {fileID: -1120074968, guid: f09da61e59897374fba6694c4b3cf3e7, type: 3}
+    subSprite_Overflow: {fileID: 0}
     relativePosition: {x: 1, y: -1}
   - SubID: 4
     subSprite: {fileID: -1023578380, guid: 697a758092a7bd0438e2fd412620a427, type: 3}
+    subSprite_Cropped: {fileID: 54607413, guid: f09da61e59897374fba6694c4b3cf3e7, type: 3}
+    subSprite_Overflow: {fileID: 334711176, guid: f09da61e59897374fba6694c4b3cf3e7, type: 3}
     relativePosition: {x: 2, y: -1}

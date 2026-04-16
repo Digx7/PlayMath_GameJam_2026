@@ -46,6 +46,8 @@ public class GridUIManager : MonoBehaviour
         bool yAxisOnRight = false;
         bool originInMiddle = false;
 
+        GridAxisMetadata gridAxisMetadata = GetGridAxisMetadata();
+
         for (int y = 0; y < levelDataSO.grid.y_Length; y++)
         {
             if(levelData.grid.gridType == GridTypes.A4)
@@ -61,13 +63,16 @@ public class GridUIManager : MonoBehaviour
             
             for (int x = 0; x < levelDataSO.grid.x_Length; x++)
             {
-                GameObject gridButtonPrefabToUse = (levelDataSO.grid.gridType == GridTypes.Coordinate) ? gridButtonPrefab_Coordinate : gridButtonPrefab_A4;
+                // GameObject gridButtonPrefabToUse = (levelDataSO.grid.gridType == GridTypes.Coordinate) ? gridButtonPrefab_Coordinate : gridButtonPrefab_A4;
 
-                GameObject obj = Instantiate(gridButtonPrefabToUse, gridButtonHolder);
+                GameObject obj = Instantiate(gridButtonPrefab_A4, gridButtonHolder);
                 GridButtonHelper gridButtonHelper = obj.GetComponentInChildren<GridButtonHelper>();
 
+                // Set Coordinate
                 Vector2Int coordintate = new Vector2Int(x,y);
                 gridButtonHelper.Coordinate = coordintate;
+
+                // Set Treasure Display Spirte
                 bool subSpriteFound = levelDataSO.TryGetSpaceSubSprite(out Sprite subSprite, coordintate);
                 bool rotationFound = levelDataSO.TryGetSpaceRotation(out TreasurePieceRotation treasurePieceRotation, coordintate);
                 if( subSprite && rotationFound)
@@ -79,246 +84,256 @@ public class GridUIManager : MonoBehaviour
                 {
                     Debug.Log($"GridUIManager NO SubSprite added for coordinate {coordintate}");
                 }
-                gridButtonHelper.StartAnimationDelay(x * 0.1f + (y * 0.1f));
 
+                // Set Grid
+                Vector2Int gameCoordinate = levelDataSO.grid.gridType == GridTypes.Coordinate ? GridUtils.SpreadSheetCoordinateToGameCoordinate(coordintate, levelDataSO.grid.origin) : coordintate;
+                gridButtonHelper.SetGridDisplayImage(levelDataSO.grid.gridType, gameCoordinate);
+                
+                // Adds coordinate axis labels
                 if(levelDataSO.grid.gridType == GridTypes.Coordinate)
                 {
                     
-                    Vector2Int gameCoordinate = GridUtils.SpreadSheetCoordinateToGameCoordinate(coordintate, levelDataSO.grid.origin);
+                    gridButtonHelper.SetCoordinateNumber(gameCoordinate, gridAxisMetadata);
+
+                    // Vector2Int gameCoordinate = GridUtils.SpreadSheetCoordinateToGameCoordinate(coordintate, levelDataSO.grid.origin);
                     
 
-                    if(!axisSet)
-                    {
-                        Vector2Int spreadSheetOriginCoordinate = levelDataSO.grid.origin;
+                    // if(!axisSet)
+                    // {
+                    //     Vector2Int spreadSheetOriginCoordinate = levelDataSO.grid.origin;
 
-                        if (spreadSheetOriginCoordinate.x == 0 && spreadSheetOriginCoordinate.y == 0)
-                            {
-                                // Origin is at the top left
-                                xAxisOnTop = true;
-                                yAxisOnLeft = true;
-                                axisSet = true;
-                            }
-                            else if (spreadSheetOriginCoordinate.x == 0 && spreadSheetOriginCoordinate.y == levelDataSO.grid.y_Length - 1)
-                            {
-                                // Origin is at the bottom left
-                                xAxisOnBottom = true;
-                                yAxisOnLeft = true;
-                                axisSet = true;
+                    //     if (spreadSheetOriginCoordinate.x == 0 && spreadSheetOriginCoordinate.y == 0)
+                    //         {
+                    //             // Origin is at the top left
+                    //             xAxisOnTop = true;
+                    //             yAxisOnLeft = true;
+                    //             axisSet = true;
+                    //         }
+                    //         else if (spreadSheetOriginCoordinate.x == 0 && spreadSheetOriginCoordinate.y == levelDataSO.grid.y_Length - 1)
+                    //         {
+                    //             // Origin is at the bottom left
+                    //             xAxisOnBottom = true;
+                    //             yAxisOnLeft = true;
+                    //             axisSet = true;
                                 
-                            }
-                            else if (spreadSheetOriginCoordinate.x == levelDataSO.grid.x_Length - 1 && spreadSheetOriginCoordinate.y == 0)
-                            {
-                                // Origin is at the top right
-                                xAxisOnTop = true;
-                                yAxisOnRight = true;
-                                axisSet = true;
+                    //         }
+                    //         else if (spreadSheetOriginCoordinate.x == levelDataSO.grid.x_Length - 1 && spreadSheetOriginCoordinate.y == 0)
+                    //         {
+                    //             // Origin is at the top right
+                    //             xAxisOnTop = true;
+                    //             yAxisOnRight = true;
+                    //             axisSet = true;
                                 
-                            }
-                            else if (spreadSheetOriginCoordinate.x == levelDataSO.grid.x_Length - 1 && spreadSheetOriginCoordinate.y == levelDataSO.grid.y_Length - 1)
-                            {
-                                // Origin is at the bottom right
-                                xAxisOnBottom = true;
-                                yAxisOnRight = true;
-                                axisSet = true;
+                    //         }
+                    //         else if (spreadSheetOriginCoordinate.x == levelDataSO.grid.x_Length - 1 && spreadSheetOriginCoordinate.y == levelDataSO.grid.y_Length - 1)
+                    //         {
+                    //             // Origin is at the bottom right
+                    //             xAxisOnBottom = true;
+                    //             yAxisOnRight = true;
+                    //             axisSet = true;
                                 
-                            }
-                            else if (spreadSheetOriginCoordinate.x == 0)
-                            {
-                                // Origin is along the left
-                                yAxisOnLeft = true;
-                                axisSet = true;
+                    //         }
+                    //         else if (spreadSheetOriginCoordinate.x == 0)
+                    //         {
+                    //             // Origin is along the left
+                    //             yAxisOnLeft = true;
+                    //             axisSet = true;
                                 
-                            }
-                            else if (spreadSheetOriginCoordinate.x == levelDataSO.grid.x_Length - 1)
-                            {
-                                // Origin is along the right
-                                yAxisOnRight = true;
-                                axisSet = true;
+                    //         }
+                    //         else if (spreadSheetOriginCoordinate.x == levelDataSO.grid.x_Length - 1)
+                    //         {
+                    //             // Origin is along the right
+                    //             yAxisOnRight = true;
+                    //             axisSet = true;
                                 
-                            }
-                            else if (spreadSheetOriginCoordinate.y == 0)
-                            {
-                                // Origin is along the top
-                                xAxisOnTop = true;
-                                axisSet = true;
+                    //         }
+                    //         else if (spreadSheetOriginCoordinate.y == 0)
+                    //         {
+                    //             // Origin is along the top
+                    //             xAxisOnTop = true;
+                    //             axisSet = true;
                                 
-                            }
-                            else if (spreadSheetOriginCoordinate.y == levelDataSO.grid.y_Length - 1)
-                            {
-                                // Origin is along the bottom
-                                xAxisOnBottom = true;
-                                axisSet = true;
+                    //         }
+                    //         else if (spreadSheetOriginCoordinate.y == levelDataSO.grid.y_Length - 1)
+                    //         {
+                    //             // Origin is along the bottom
+                    //             xAxisOnBottom = true;
+                    //             axisSet = true;
                                 
-                            }
-                            else
-                            {
-                                // Origin is in the middle somewhere
-                                originInMiddle = true;
-                                axisSet = true;
-                            }
-                    }
+                    //         }
+                    //         else
+                    //         {
+                    //             // Origin is in the middle somewhere
+                    //             originInMiddle = true;
+                    //             axisSet = true;
+                    //         }
+                    // }
 
-                    if (gameCoordinate.x == 0 && gameCoordinate.y == 0)
-                    {
-                        // Origin
+                    // if (gameCoordinate.x == 0 && gameCoordinate.y == 0)
+                    // {
+                    //     // Origin
                         
-                        if(xAxisOnTop && yAxisOnLeft)
-                        {
-                            // Origin is at the top left
-                            gridButtonHelper.SetGraphNumberText("0", Quadrant.TopLeft);
-                        }
-                        else if(xAxisOnBottom && yAxisOnLeft)
-                        {
-                            // Origin is at the bottom left
-                            gridButtonHelper.SetGraphNumberText("0", Quadrant.BottomLeft);
-                        }
-                        else if(xAxisOnTop && yAxisOnRight)
-                        {
-                            // Origin is at the top right
-                            gridButtonHelper.SetGraphNumberText("0", Quadrant.TopRight);
-                        }
-                        else if(xAxisOnBottom && yAxisOnRight)
-                        {
-                            // Origin is at the bottom right
-                            gridButtonHelper.SetGraphNumberText("0", Quadrant.BottomRight);
-                        }
-                        else if(xAxisOnTop)
-                        {
-                            // Origin is along the top
-                            gridButtonHelper.SetGraphNumberText("0", Quadrant.TopLeft);
-                        }
-                        else if(xAxisOnBottom)
-                        {
-                            // Origin is along the bottom
-                            gridButtonHelper.SetGraphNumberText("0", Quadrant.BottomLeft);
-                        }
-                        else if(yAxisOnLeft)
-                        {
-                            // Origin is along the left
-                            gridButtonHelper.SetGraphNumberText("0", Quadrant.BottomLeft);
-                        }
-                        else if(yAxisOnRight)
-                        {
-                            // Origin is along the right
-                            gridButtonHelper.SetGraphNumberText("0", Quadrant.BottomRight);
-                        }
-                        else if(originInMiddle)
-                        {
-                            // Origin is in the middle somewhere
-                            gridButtonHelper.SetGraphNumberText("0", Quadrant.BottomLeft);
-                        }
+                    //     if(xAxisOnTop && yAxisOnLeft)
+                    //     {
+                    //         // Origin is at the top left
+                    //         gridButtonHelper.SetGraphNumberText("0", Quadrant.TopLeft);
+                    //     }
+                    //     else if(xAxisOnBottom && yAxisOnLeft)
+                    //     {
+                    //         // Origin is at the bottom left
+                    //         gridButtonHelper.SetGraphNumberText("0", Quadrant.BottomLeft);
+                    //     }
+                    //     else if(xAxisOnTop && yAxisOnRight)
+                    //     {
+                    //         // Origin is at the top right
+                    //         gridButtonHelper.SetGraphNumberText("0", Quadrant.TopRight);
+                    //     }
+                    //     else if(xAxisOnBottom && yAxisOnRight)
+                    //     {
+                    //         // Origin is at the bottom right
+                    //         gridButtonHelper.SetGraphNumberText("0", Quadrant.BottomRight);
+                    //     }
+                    //     else if(xAxisOnTop)
+                    //     {
+                    //         // Origin is along the top
+                    //         gridButtonHelper.SetGraphNumberText("0", Quadrant.TopLeft);
+                    //     }
+                    //     else if(xAxisOnBottom)
+                    //     {
+                    //         // Origin is along the bottom
+                    //         gridButtonHelper.SetGraphNumberText("0", Quadrant.BottomLeft);
+                    //     }
+                    //     else if(yAxisOnLeft)
+                    //     {
+                    //         // Origin is along the left
+                    //         gridButtonHelper.SetGraphNumberText("0", Quadrant.BottomLeft);
+                    //     }
+                    //     else if(yAxisOnRight)
+                    //     {
+                    //         // Origin is along the right
+                    //         gridButtonHelper.SetGraphNumberText("0", Quadrant.BottomRight);
+                    //     }
+                    //     else if(originInMiddle)
+                    //     {
+                    //         // Origin is in the middle somewhere
+                    //         gridButtonHelper.SetGraphNumberText("0", Quadrant.BottomLeft);
+                    //     }
 
-                        gridButtonHelper.verticalAxis.SetActive(true);
-                        gridButtonHelper.horizontalAxis.SetActive(true);
-                    }
-                    else if (gameCoordinate.y == 0)
-                    {
-                        // X axis
-                        
-
-                        if(xAxisOnTop && yAxisOnLeft)
-                        {
-                            // Origin is at the top left
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.TopLeft);
-                        }
-                        else if(xAxisOnBottom && yAxisOnLeft)
-                        {
-                            // Origin is at the bottom left
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.BottomLeft);
-                        }
-                        else if(xAxisOnTop && yAxisOnRight)
-                        {
-                            // Origin is at the top right
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.TopRight);
-                        }
-                        else if(xAxisOnBottom && yAxisOnRight)
-                        {
-                            // Origin is at the bottom right
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.BottomRight);
-                        }
-                        else if(xAxisOnTop)
-                        {
-                            // Origin is along the top
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.TopLeft);
-                        }
-                        else if(xAxisOnBottom)
-                        {
-                            // Origin is along the bottom
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.BottomLeft);
-                        }
-                        else if(yAxisOnLeft)
-                        {
-                            // Origin is along the left
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.BottomLeft);
-                        }
-                        else if(yAxisOnRight)
-                        {
-                            // Origin is along the right
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.BottomRight);
-                        }
-                        else if(originInMiddle)
-                        {
-                            // Origin is in the middle somewhere
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.BottomLeft);
-                        }
-
-                        gridButtonHelper.horizontalAxis.SetActive(true);
-                    }
-                    else if (gameCoordinate.x == 0)
-                    {
-                        // Y axis
+                    //     gridButtonHelper.verticalAxis.SetActive(true);
+                    //     gridButtonHelper.horizontalAxis.SetActive(true);
+                    // }
+                    // else if (gameCoordinate.y == 0)
+                    // {
+                    //     // X axis
                         
 
-                        if(xAxisOnTop && yAxisOnLeft)
-                        {
-                            // Origin is at the top left
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.TopLeft);
-                        }
-                        else if(xAxisOnBottom && yAxisOnLeft)
-                        {
-                            // Origin is at the bottom left
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.BottomLeft);
-                        }
-                        else if(xAxisOnTop && yAxisOnRight)
-                        {
-                            // Origin is at the top right
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.TopRight);
-                        }
-                        else if(xAxisOnBottom && yAxisOnRight)
-                        {
-                            // Origin is at the bottom right
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.BottomRight);
-                        }
-                        else if(xAxisOnTop)
-                        {
-                            // Origin is along the top
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.TopLeft);
-                        }
-                        else if(xAxisOnBottom)
-                        {
-                            // Origin is along the bottom
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.BottomLeft);
-                        }
-                        else if(yAxisOnLeft)
-                        {
-                            // Origin is along the left
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.BottomLeft);
-                        }
-                        else if(yAxisOnRight)
-                        {
-                            // Origin is along the right
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.BottomRight);
-                        }
-                        else if(originInMiddle)
-                        {
-                            // Origin is in the middle somewhere
-                            gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.BottomLeft);
-                        }
+                    //     if(xAxisOnTop && yAxisOnLeft)
+                    //     {
+                    //         // Origin is at the top left
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.TopLeft);
+                    //     }
+                    //     else if(xAxisOnBottom && yAxisOnLeft)
+                    //     {
+                    //         // Origin is at the bottom left
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.BottomLeft);
+                    //     }
+                    //     else if(xAxisOnTop && yAxisOnRight)
+                    //     {
+                    //         // Origin is at the top right
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.TopRight);
+                    //     }
+                    //     else if(xAxisOnBottom && yAxisOnRight)
+                    //     {
+                    //         // Origin is at the bottom right
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.BottomRight);
+                    //     }
+                    //     else if(xAxisOnTop)
+                    //     {
+                    //         // Origin is along the top
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.TopLeft);
+                    //     }
+                    //     else if(xAxisOnBottom)
+                    //     {
+                    //         // Origin is along the bottom
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.BottomLeft);
+                    //     }
+                    //     else if(yAxisOnLeft)
+                    //     {
+                    //         // Origin is along the left
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.BottomLeft);
+                    //     }
+                    //     else if(yAxisOnRight)
+                    //     {
+                    //         // Origin is along the right
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.BottomRight);
+                    //     }
+                    //     else if(originInMiddle)
+                    //     {
+                    //         // Origin is in the middle somewhere
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.x.ToString(), Quadrant.BottomLeft);
+                    //     }
 
-                        gridButtonHelper.verticalAxis.SetActive(true);
-                        // Test
-                    }
+                    //     gridButtonHelper.horizontalAxis.SetActive(true);
+                    // }
+                    // else if (gameCoordinate.x == 0)
+                    // {
+                    //     // Y axis
+                        
+
+                    //     if(xAxisOnTop && yAxisOnLeft)
+                    //     {
+                    //         // Origin is at the top left
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.TopLeft);
+                    //     }
+                    //     else if(xAxisOnBottom && yAxisOnLeft)
+                    //     {
+                    //         // Origin is at the bottom left
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.BottomLeft);
+                    //     }
+                    //     else if(xAxisOnTop && yAxisOnRight)
+                    //     {
+                    //         // Origin is at the top right
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.TopRight);
+                    //     }
+                    //     else if(xAxisOnBottom && yAxisOnRight)
+                    //     {
+                    //         // Origin is at the bottom right
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.BottomRight);
+                    //     }
+                    //     else if(xAxisOnTop)
+                    //     {
+                    //         // Origin is along the top
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.TopLeft);
+                    //     }
+                    //     else if(xAxisOnBottom)
+                    //     {
+                    //         // Origin is along the bottom
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.BottomLeft);
+                    //     }
+                    //     else if(yAxisOnLeft)
+                    //     {
+                    //         // Origin is along the left
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.BottomLeft);
+                    //     }
+                    //     else if(yAxisOnRight)
+                    //     {
+                    //         // Origin is along the right
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.BottomRight);
+                    //     }
+                    //     else if(originInMiddle)
+                    //     {
+                    //         // Origin is in the middle somewhere
+                    //         gridButtonHelper.SetGraphNumberText(gameCoordinate.y.ToString(), Quadrant.BottomLeft);
+                    //     }
+
+                    //     gridButtonHelper.verticalAxis.SetActive(true);
+                    //     // Test
+                    // }
                 }
+            
+            
+                gridButtonHelper.StartAnimationDelay(x * 0.1f + (y * 0.1f));
+            
             }
         }
 
@@ -387,4 +402,72 @@ public class GridUIManager : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
+
+    private GridAxisMetadata GetGridAxisMetadata()
+    {
+        GridAxisMetadata output = new GridAxisMetadata();
+        output.SetAllToFalse();
+
+        Vector2Int spreadSheetOriginCoordinate = levelDataSO.grid.origin;
+
+        if (spreadSheetOriginCoordinate.x == 0 && spreadSheetOriginCoordinate.y == 0)
+        {
+            // Origin is at the top left
+            output.xAxisOnTop = true;
+            output.yAxisOnLeft = true;
+        }
+        else if (spreadSheetOriginCoordinate.x == 0 && spreadSheetOriginCoordinate.y == levelDataSO.grid.y_Length - 1)
+        {
+            // Origin is at the bottom left
+            output.xAxisOnBottom = true;
+            output.yAxisOnLeft = true;
+            
+        }
+        else if (spreadSheetOriginCoordinate.x == levelDataSO.grid.x_Length - 1 && spreadSheetOriginCoordinate.y == 0)
+        {
+            // Origin is at the top right
+            output.xAxisOnTop = true;
+            output.yAxisOnRight = true;
+            
+        }
+        else if (spreadSheetOriginCoordinate.x == levelDataSO.grid.x_Length - 1 && spreadSheetOriginCoordinate.y == levelDataSO.grid.y_Length - 1)
+        {
+            // Origin is at the bottom right
+            output.xAxisOnBottom = true;
+            output.yAxisOnRight = true;
+            
+        }
+        else if (spreadSheetOriginCoordinate.x == 0)
+        {
+            // Origin is along the left
+            output.yAxisOnLeft = true;
+            
+        }
+        else if (spreadSheetOriginCoordinate.x == levelDataSO.grid.x_Length - 1)
+        {
+            // Origin is along the right
+            output.yAxisOnRight = true;
+            
+        }
+        else if (spreadSheetOriginCoordinate.y == 0)
+        {
+            // Origin is along the top
+            output.xAxisOnTop = true;
+            
+        }
+        else if (spreadSheetOriginCoordinate.y == levelDataSO.grid.y_Length - 1)
+        {
+            // Origin is along the bottom
+            output.xAxisOnBottom = true;
+            
+        }
+        else
+        {
+            // Origin is in the middle somewhere
+            output.originInMiddle = true;
+        }
+
+        return output;
+    }
+
 }

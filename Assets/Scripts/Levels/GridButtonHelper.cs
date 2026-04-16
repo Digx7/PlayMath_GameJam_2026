@@ -274,24 +274,30 @@ public class GridButtonHelper : MonoBehaviour
         }
     }
 
+    [SerializeField] Transform treasureDisplayImageParent;
     [SerializeField] Image treasureDisplayImage;
-    public void SetTreasureSprite(Sprite treasureSprite, TreasurePieceRotation treasurePieceRotation)
+    [SerializeField] Image treasureDisplayImage_Cropped;
+    [SerializeField] Image treasureDisplayImage_Overflow;
+    public void SetTreasureSprite(SubSprite treasureSubSprite, TreasurePieceRotation treasurePieceRotation)
     {
-        treasureDisplayImage.gameObject.SetActive(true);
-        treasureDisplayImage.sprite = treasureSprite;
+        treasureDisplayImage_Cropped.gameObject.SetActive(true);
+        treasureDisplayImage_Cropped.sprite = treasureSubSprite.subSprite_Cropped;
+
+        treasureDisplayImage_Overflow.gameObject.SetActive(true);
+        treasureDisplayImage_Overflow.sprite = treasureSubSprite.subSprite_Overflow;
 
         switch (treasurePieceRotation)
         {
             case TreasurePieceRotation.None:
                 break;
             case TreasurePieceRotation.Rotate90:
-                treasureDisplayImage.transform.Rotate(new Vector3(0,0,90));
+                treasureDisplayImageParent.Rotate(new Vector3(0,0,90));
                 break;
             case TreasurePieceRotation.Rotate180:
-                treasureDisplayImage.transform.Rotate(new Vector3(0,0,180));
+                treasureDisplayImageParent.Rotate(new Vector3(0,0,180));
                 break;
             case TreasurePieceRotation.Rotate270:
-                treasureDisplayImage.transform.Rotate(new Vector3(0,0,270));
+                treasureDisplayImageParent.Rotate(new Vector3(0,0,270));
                 break;
             default:
                 break;

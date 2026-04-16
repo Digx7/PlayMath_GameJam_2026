@@ -79,6 +79,8 @@ public struct SubSprite
 {
     public string SubID;
     public Sprite subSprite;
+    public Sprite subSprite_Cropped;
+    public Sprite subSprite_Overflow;
     public Vector2Int relativePosition;
 }
 

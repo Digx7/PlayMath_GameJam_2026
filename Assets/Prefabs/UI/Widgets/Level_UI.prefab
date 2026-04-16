@@ -2401,6 +2401,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GridButtonUIElement_A4
       objectReference: {fileID: 0}
+    - target: {fileID: 3693490650803753518, guid: 369e72ee16f89f74b804dc3daaca5f9d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7173160979006354642, guid: 369e72ee16f89f74b804dc3daaca5f9d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

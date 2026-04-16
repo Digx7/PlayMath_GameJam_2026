@@ -73,9 +73,9 @@ public class GridUIManager : MonoBehaviour
                 gridButtonHelper.Coordinate = coordintate;
 
                 // Set Treasure Display Spirte
-                bool subSpriteFound = levelDataSO.TryGetSpaceSubSprite(out Sprite subSprite, coordintate);
+                bool subSpriteFound = levelDataSO.TryGetSpaceSubSprite(out SubSprite subSprite, coordintate);
                 bool rotationFound = levelDataSO.TryGetSpaceRotation(out TreasurePieceRotation treasurePieceRotation, coordintate);
-                if( subSprite && rotationFound)
+                if( subSpriteFound && rotationFound)
                 {
                     gridButtonHelper.SetTreasureSprite(subSprite, treasurePieceRotation);
                     Debug.Log($"GridUIManager SubSprite added for coordinate {coordintate}");

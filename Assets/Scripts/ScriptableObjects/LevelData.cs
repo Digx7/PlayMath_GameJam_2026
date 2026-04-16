@@ -46,11 +46,11 @@ public class LevelData : ScriptableObject
         return DoesSpaceContainTreasure(coordinates);
     }
 
-    public bool TryGetSpaceSubSprite(out Sprite sprite, Vector2Int coordinate)
+    public bool TryGetSpaceSubSprite(out SubSprite subSprite, Vector2Int coordinate)
     {
         Debug.Log($"LevelData TryGetSpaceSubSprite {coordinate}");
         
-        sprite = null;
+        subSprite = new SubSprite();
 
         if(!grid.IsCoordinateInGrid(coordinate))
         {
@@ -68,9 +68,9 @@ public class LevelData : ScriptableObject
 
             if (treasure != null)
             {
-                sprite = treasure.subSprites.Find(j => j.SubID == subID).subSprite;
+                subSprite = treasure.subSprites.Find(j => j.SubID == subID);
 
-                Debug.Log($"LevelData TryGetSpaceSubSprite returned subSprite {sprite.name}");
+                Debug.Log($"LevelData TryGetSpaceSubSprite returned subSprite {subSprite.SubID}");
                 return true;
             }
             else

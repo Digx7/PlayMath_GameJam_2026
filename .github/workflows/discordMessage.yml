@@ -13,10 +13,10 @@ on:
         required: true
         type: string
 
+env:
+  DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
 
 jobs:
-  env:
-    DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
   message:
     name: Send Discord Message
     runs-on: ubuntu-latest

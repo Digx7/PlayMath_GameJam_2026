@@ -26,8 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Actions for Discord
-        uses: Ilshidur/action-discord@0.4.0
+        uses: appleboy/discord-action@v1.2.0
         with:
-          args: ${{ inputs.message }}
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          # Test
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
+          message: ${{ github.message }}

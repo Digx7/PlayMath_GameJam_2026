@@ -63,3 +63,5 @@ jobs:
       message: "Something failed with ${{ github.ref_name }} you can view it [here](https://github.com/Digx7/PlayMath_GameJam_2026/actions)"
     secrets:
       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+
+  # new

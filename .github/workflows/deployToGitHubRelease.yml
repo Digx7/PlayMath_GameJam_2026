@@ -61,7 +61,7 @@ jobs:
       - name: Download Build Artifacts
         uses: actions/download-artifact@v8
         with:
-          name: Build-${{ inputs.artifactName }}
+          name: ${{ inputs.artifactName }}
           path: build/${{ inputs.artifactName }}
 
       # zips the build artifacts

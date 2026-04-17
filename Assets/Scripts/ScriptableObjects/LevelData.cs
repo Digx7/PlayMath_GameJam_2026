@@ -1,5 +1,6 @@
 using UnityEngine;
 using Digx7.Grids;
+using Digx7.Levels;
 using System;
 using System.Collections.Generic;
 
@@ -14,7 +15,17 @@ public class LevelData : ScriptableObject
     public List<String> hints;
     public List<CountToolPair> tools;
     public LevelData nextLevel;
+    public LevelData GetNextLevel(LevelGeneratorTemplateData templateData = null)
+    {
+        if(isRandomLevel)
+        {
+            nextLevel = Digx7.Levels.LevelGenerator.TryGenerateRandomLevelFromTemplate(templateData);
+        }
+
+        return nextLevel;
+    }
     public bool isLastLevel = false;
+    public bool isRandomLevel = false;
 
     public void SetGrid(List<CoordinateFlagPair> newData, int newX_Length, int newY_Length, GridTypes gridType = GridTypes.Coordinate, Vector2Int newOrigin = default(Vector2Int))
     {

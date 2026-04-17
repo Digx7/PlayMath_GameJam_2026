@@ -215,6 +215,8 @@ namespace Digx7.Levels
             levelDataSO.treasureRotations = treasureRotations;
             levelDataSO.hints = hints;
             levelDataSO.tools = tools;
+            levelDataSO.isLastLevel = false;
+            levelDataSO.isRandomLevel = true;
 
             return levelDataSO;
         }
@@ -394,8 +396,22 @@ namespace Digx7.Levels
             levelDataSO.treasureRotations = treasureRotations;
             levelDataSO.hints = hints;
             levelDataSO.tools = tools;
+            levelDataSO.isLastLevel = templateData.isLastLevel;
+            levelDataSO.isRandomLevel = templateData.isRandomLevel;
 
             return levelDataSO;
+        }
+
+        public static LevelData TryGenerateRandomLevelFromTemplate(LevelGeneratorTemplateData templateData = null)
+        {
+            if(templateData == null)
+            {
+                return GenerateRandomLevelData();
+            }
+            else
+            {
+                return GenerateRandomLevelFromTemplate(templateData);
+            }
         }
 
         #if UNITY_EDITOR

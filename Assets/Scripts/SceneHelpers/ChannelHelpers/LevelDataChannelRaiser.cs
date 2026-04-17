@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using Digx7.Levels;
 
 public class LevelDataChannelRaiser : MonoBehaviour
 {
@@ -28,5 +29,15 @@ public class LevelDataChannelRaiser : MonoBehaviour
     public void RaiseMData()
     {
         channelToRaise.Raise(m_data);
+    }
+
+    public void RaiseRandom()
+    {
+        channelToRaise.Raise(LevelGenerator.GenerateRandomLevelData());
+    }
+
+    public void RaiseRandom(LevelGeneratorTemplateData levelGeneratorTemplateData)
+    {
+        channelToRaise.Raise(LevelGenerator.TryGenerateRandomLevelFromTemplate(levelGeneratorTemplateData));
     }
 }

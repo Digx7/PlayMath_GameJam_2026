@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System;
 using System.Collections.Generic;
+using Digx7.Levels;
 
 
 public class LevelRuntimeData : MonoBehaviour 
@@ -13,7 +14,7 @@ public class LevelRuntimeData : MonoBehaviour
     // Level Data
     public LevelData levelDataSO;
     public bool isOnLastLevel = false;
-    public bool generateRandomLevelDataOnAwake = false;
+    // public bool generateRandomLevelDataOnAwake = false;
 
 
     // Runtime Data
@@ -37,24 +38,30 @@ public class LevelRuntimeData : MonoBehaviour
     {
         Debug.Log("Level Runtime Data Awake");
         
-        if(generateRandomLevelDataOnAwake) 
+        // if(generateRandomLevelDataOnAwake) 
+        // {
+        //     levelDataSO = Digx7.Levels.LevelGenerator.GenerateRandomLevelData();
+        // }
+        // else
+        // {
+        //     levelDataSO = LevelManager.Instance.MoveToNextLevel();
+        //     if(levelDataSO == null)
+        //     {
+        //         Debug.LogError("NO valid Level data was found");
+        //     }
+        //     else
+        //     {
+        //         if(!levelDataSO.isLastLevel)
+        //         {
+        //             OnSetNextLevel.Invoke(levelDataSO.nextLevel);
+        //         }
+        //     }
+        // }
+
+        levelDataSO = LevelManager.Instance.CurrentLevel;
+        if(!levelDataSO.isLastLevel)
         {
-            levelDataSO = Digx7.Levels.LevelGenerator.GenerateRandomLevelData();
-        }
-        else
-        {
-            levelDataSO = LevelManager.Instance.MoveToNextLevel();
-            if(levelDataSO == null)
-            {
-                Debug.LogError("NO valid Level data was found");
-            }
-            else
-            {
-                if(!levelDataSO.isLastLevel)
-                {
-                    OnSetNextLevel.Invoke(levelDataSO.nextLevel);
-                }
-            }
+            OnSetNextLevel.Invoke(levelDataSO.GetNextLevel(LevelManager.Instance.ActiveLevelTemplate));
         }
         
         modifiedGrid = new Digx7.Grids.Grid(levelDataSO.grid.x_Length, levelDataSO.grid.y_Length);

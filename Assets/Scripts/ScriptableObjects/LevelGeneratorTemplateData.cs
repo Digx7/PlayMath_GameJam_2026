@@ -122,6 +122,9 @@ namespace Digx7.Levels
             }
         }
 
+        public bool isLastLevel = false;
+        public bool isRandomLevel = false;
+
         public void OnEnable() {
             shovelTool = Resources.Load<Tool>("ScriptableObjects/Tools/Shovel");
             pickAxeTool = Resources.Load<Tool>("ScriptableObjects/Tools/Pickaxe");

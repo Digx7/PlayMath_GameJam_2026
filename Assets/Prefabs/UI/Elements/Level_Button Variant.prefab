@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 1556116022208747789}
   - component: {fileID: 6257648334225648139}
   m_Layer: 5
-  m_Name: SetNextLevel
+  m_Name: SetCurrentLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2920fef7cb11643bbedb80bfa0335d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelDataChannelRaiser
-  channelToRaise: {fileID: 11400000, guid: 9cf48f28faf379b43822c3f15a801668, type: 2}
+  channelToRaise: {fileID: 11400000, guid: 509c6971ee3a3bc40b91c7ff71f7bf36, type: 2}
   m_data: {fileID: 0}
 --- !u!1 &7621549037434218699
 GameObject:
@@ -308,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_fontSize
-      value: 12
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_fontSizeMin

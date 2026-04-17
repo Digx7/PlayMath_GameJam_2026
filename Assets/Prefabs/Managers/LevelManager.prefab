@@ -46,4 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   _currentLevel: {fileID: 0}
   _nextLevel: {fileID: 0}
+  _activeLevelTemplateData: {fileID: 0}
+  RequestSetCurrentLevel: {fileID: 11400000, guid: 509c6971ee3a3bc40b91c7ff71f7bf36, type: 2}
   RequestSetNextLevel: {fileID: 11400000, guid: 9cf48f28faf379b43822c3f15a801668, type: 2}
+  RequestMoveToNextLevel: {fileID: 11400000, guid: c955b74357f37604aaddb4ee01dc365b, type: 2}
+  RequestSetActiveLevelTemplateData: {fileID: 11400000, guid: e76ab1921e07e97499f346b8472e7b40, type: 2}

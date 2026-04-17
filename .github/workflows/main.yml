@@ -48,7 +48,8 @@ jobs:
   #     note: "${{ github.event.head_commit.message }}"
   #     prerelease: true
   discordMessage_ProcessFinished:
-    needs: [deployToGitHubRelease, deployToItch]
+    # needs: [deployToGitHubRelease, deployToItch]
+    needs: deployToItch
     uses: ./.github/workflows/discordMessage.yml
     with:
       message: "A new release ${{ github.ref_name }} has been deployed to [GitHub Releases](https://github.com/Digx7/PlayMath_GameJam_2026/releases/tag/{{ github.ref_name }}) and [Itch.io](https://digx7.itch.io/treasure-hunt-post-game-jam)! Check it out! "

@@ -30,7 +30,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v8
         with:
-          name: ${{ matrix.build }}
+          name: Build-${{ matrix.build }}
           path: build/${{ matrix.build }}
       - uses: KikimoraGames/itch-publish@v0.0.3
         with:

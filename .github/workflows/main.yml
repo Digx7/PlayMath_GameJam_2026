@@ -2,10 +2,8 @@ name: Build project
 
 on: 
   push:
-    # branches:
-    #   - Public
     tags:
-      - 'v[1-9]+.[1-9]+.[1-9]+.[1-9]+'
+      - 'v*'
   workflow_dispatch:
 
 env:

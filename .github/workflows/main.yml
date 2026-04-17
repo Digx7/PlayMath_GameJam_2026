@@ -1,41 +1,41 @@
-# name: Build project
+name: Build project
 
-# on: 
-#   push:
-#     branches:
-#       - Public
-#     tags:
-#       - 'v*'
-#   workflow_dispatch:
+on: 
+  push:
+    # branches:
+    #   - Public
+    tags:
+      - 'v[1-9]+.[1-9]+.[1-9]+.[1-9]+'
+  workflow_dispatch:
 
-# env:
-#   ITCH_USERNAME: digx7
-#   ITCH_GAME_ID: treasure-hunt-post-game-jam
+env:
+  ITCH_USERNAME: digx7
+  ITCH_GAME_ID: treasure-hunt-post-game-jam
 
-# jobs:
-#   # testProject:
-#   #   uses: ./.github/workflows/testProject.yml
-#   discordMessage_ProcessStarted:
-#     uses: ./.github/workflows/discordMessage.yml
-#     with:
-#       message: "A new release ${{ github.ref_name }} is being processed! Stay tuned for updates on GitHub Releases and Itch.io!"
-#   buildForAllSupportedPlatforms:
-#     # needs: testProject
-#     uses: ./.github/workflows/buildForAllPlatforms.yml
-#   deployToItch:
-#     needs: buildForAllSupportedPlatforms
-#     uses: ./.github/workflows/deployToItch.yml
-#   deployToGitHubRelease:
-#     needs: buildForAllSupportedPlatforms
-#     uses: ./.github/workflows/deployToGitHubRelease.yml
-#     with:
-#       artifactName: Build-WebGL
-#       zipName: ${{ github.ref_name }}_Itch_WebGL_FullGame.zip
-#       tagName: ${{ github.ref_name }}
-#       note: "${{ github.event.head_commit.message }}"
-#       prerelease: true
-#   discordMessage_ProcessFinished:
-#     needs: [deployToGitHubRelease, deployToItch]
-#     uses: ./.github/workflows/discordMessage.yml
-#     with:
-#       message: "A new release ${{ github.ref_name }} has been deployed to GitHub Releases and Itch.io! Check it out!"
+jobs:
+  # testProject:
+  #   uses: ./.github/workflows/testProject.yml
+  discordMessage_ProcessStarted:
+    uses: ./.github/workflows/discordMessage.yml
+    with:
+      message: "A new release ${{ github.ref_name }} is being processed! Stay tuned for updates on GitHub Releases and Itch.io!"
+  buildForAllSupportedPlatforms:
+    # needs: testProject
+    uses: ./.github/workflows/buildForAllPlatforms.yml
+  deployToItch:
+    needs: buildForAllSupportedPlatforms
+    uses: ./.github/workflows/deployToItch.yml
+  deployToGitHubRelease:
+    needs: buildForAllSupportedPlatforms
+    uses: ./.github/workflows/deployToGitHubRelease.yml
+    with:
+      artifactName: Build-WebGL
+      zipName: ${{ github.ref_name }}_Itch_WebGL_FullGame.zip
+      tagName: ${{ github.ref_name }}
+      note: "${{ github.event.head_commit.message }}"
+      prerelease: true
+  discordMessage_ProcessFinished:
+    needs: [deployToGitHubRelease, deployToItch]
+    uses: ./.github/workflows/discordMessage.yml
+    with:
+      message: "A new release ${{ github.ref_name }} has been deployed to GitHub Releases and Itch.io! Check it out!"

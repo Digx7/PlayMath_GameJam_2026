@@ -38,15 +38,15 @@ jobs:
       BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
       ITCH_USERNAME: ${{ secrets.ITCH_USERNAME }}
       ITCH_GAME_ID: ${{ secrets.ITCH_GAME_ID }}
-  deployToGitHubRelease:
-    needs: buildForAllSupportedPlatforms
-    uses: ./.github/workflows/deployToGitHubRelease.yml
-    with:
-      artifactName: Build-WebGL
-      zipName: ${{ github.ref_name }}_Itch_WebGL_FullGame.zip
-      tagName: ${{ github.ref_name }}
-      note: "${{ github.event.head_commit.message }}"
-      prerelease: true
+  # deployToGitHubRelease:
+  #   needs: buildForAllSupportedPlatforms
+  #   uses: ./.github/workflows/deployToGitHubRelease.yml
+  #   with:
+  #     artifactName: Build-WebGL
+  #     zipName: ${{ github.ref_name }}_Itch_WebGL_FullGame.zip
+  #     tagName: ${{ github.ref_name }}
+  #     note: "${{ github.event.head_commit.message }}"
+  #     prerelease: true
   discordMessage_ProcessFinished:
     needs: [deployToGitHubRelease, deployToItch]
     uses: ./.github/workflows/discordMessage.yml

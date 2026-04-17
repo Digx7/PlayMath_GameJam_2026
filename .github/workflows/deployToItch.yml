@@ -11,10 +11,6 @@ on:
 
   workflow_dispatch:
 
-env:
-  ITCH_USERNAME: digx7
-  ITCH_GAME_ID: treasure-hunt-post-game-jam
-
 
 jobs:
   deployToItch:
@@ -32,11 +28,11 @@ jobs:
         with:
           name: Build-${{ matrix.build }}
           path: build/${{ matrix.build }}
-      - uses: KikimoraGames/itch-publish@v0.0.3
+      - uses: Oval-Tutu/publish-to-itch-with-butler@v1
         with:
-          butlerApiKey: ${{ secrets.BUTLER_API_KEY }}
-          gameData: ./build/${{ matrix.build }}
-          itchUsername: ${{ secrets.ITCH_USERNAME }}
-          itchGameId: ${{ secrets.ITCH_GAME_ID }}
-          buildChannel: ${{ matrix.channel }}
-          buildNumber: ${{ github.ref_name }}
+          api-key: ${{ secrets.BUTLER_API_KEY }}
+          itch_user: ${{ secrets.ITCH_USERNAME }}
+          itch_game: ${{ secrets.ITCH_GAME_ID }}
+          channel: ${{ matrix.channel }}
+          package: ./build/${{ matrix.build }}/
+          version: ${{ github.ref_name }}

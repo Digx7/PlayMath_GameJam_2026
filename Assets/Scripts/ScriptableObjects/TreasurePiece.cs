@@ -87,8 +87,8 @@ public struct SubSprite
 [System.Serializable]
 public enum TreasurePieceRotation
 {
-    None,
-    Rotate90,
-    Rotate180,
-    Rotate270
+    None = 0,
+    Rotate90 = 1,
+    Rotate180 = 2,
+    Rotate270 = 3
 }

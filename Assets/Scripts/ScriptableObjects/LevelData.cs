@@ -3,6 +3,7 @@ using Digx7.Grids;
 using Digx7.Levels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 [CreateAssetMenu(fileName = "NewLevelData", menuName = "ScriptableObjects/LevelData", order = 0)]
 public class LevelData : ScriptableObject 
@@ -124,6 +125,18 @@ public class LevelData : ScriptableObject
         }
 
         return false;
+    }
+
+    public bool IsAnyTreasureRotated()
+    {
+        if(treasureRotations.Count > 0)
+        {
+            return treasureRotations.Any(n => n > 0);
+        }
+        else
+        {
+            return false;
+        }
     }
 
     [ContextMenu("Print Grid")]

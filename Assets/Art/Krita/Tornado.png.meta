@@ -197,6 +197,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Tornado_Large
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ed49a71e05471479f6a86f1319e63d
+      internalID: 1028453978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -214,11 +236,11 @@ TextureImporter:
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":75.0,"y":75.0},"gridSpriteOffset":{"x":50.0,"y":50.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Tornado_0: 82652027
-      Tornado_1: 1110712741
       Tornado_2: 530137303
       Tornado_3: 1418711399
       Tornado_4: -432311350
       Tornado_5: 383294045
+      Tornado_Large: 1110712741
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

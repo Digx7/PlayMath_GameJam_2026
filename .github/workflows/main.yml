@@ -13,16 +13,30 @@ env:
 jobs:
   # testProject:
   #   uses: ./.github/workflows/testProject.yml
+  #   secrets:
+  #   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+  #   UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+  #   UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
   discordMessage_ProcessStarted:
     uses: ./.github/workflows/discordMessage.yml
     with:
       message: "A new release ${{ github.ref_name }} is being processed! Stay tuned for updates on GitHub Releases and Itch.io!"
+    secrets:
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
   buildForAllSupportedPlatforms:
     # needs: testProject
     uses: ./.github/workflows/buildForAllPlatforms.yml
+    secrets:
+      UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+      UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+      UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
   deployToItch:
     needs: buildForAllSupportedPlatforms
     uses: ./.github/workflows/deployToItch.yml
+    secrets:
+      BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+      ITCH_USERNAME: ${{ secrets.ITCH_USERNAME }}
+      ITCH_GAME_ID: ${{ secrets.ITCH_GAME_ID }}
   deployToGitHubRelease:
     needs: buildForAllSupportedPlatforms
     uses: ./.github/workflows/deployToGitHubRelease.yml
@@ -37,3 +51,5 @@ jobs:
     uses: ./.github/workflows/discordMessage.yml
     with:
       message: "A new release ${{ github.ref_name }} has been deployed to GitHub Releases and Itch.io! Check it out!"
+    secrets:
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}

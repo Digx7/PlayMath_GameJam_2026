@@ -1,6 +1,14 @@
 name: Deploy to Itch.io
 on:
   workflow_call:
+    secrets:
+      BUTLER_API_KEY:
+        required: true
+      ITCH_USERNAME:
+        required: true
+      ITCH_GAME_ID:
+        required: true
+
   workflow_dispatch:
 
 env:
@@ -26,9 +34,9 @@ jobs:
           path: build/${{ matrix.build }}
       - uses: KikimoraGames/itch-publish@v0.0.3
         with:
-          butlerApiKey: ${{secrets.BUTLER_API_KEY}}
+          butlerApiKey: ${{ secrets.BUTLER_API_KEY }}
           gameData: ./build/${{ matrix.build }}
-          itchUsername: ${{env.ITCH_USERNAME}}
-          itchGameId: ${{ env.ITCH_GAME_ID }}
+          itchUsername: ${{ secrets.ITCH_USERNAME }}
+          itchGameId: ${{ secrets.ITCH_GAME_ID }}
           buildChannel: ${{ matrix.channel }}
           buildNumber: ${{ needs.version.outputs.version_hash }}

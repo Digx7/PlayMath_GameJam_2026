@@ -6,6 +6,9 @@ on:
         description: 'The message to send to Discord.'
         required: true
         type: string
+    secrets:
+      DISCORD_WEBHOOK:
+        required: true
   workflow_dispatch:
     inputs:
       message:
@@ -13,8 +16,8 @@ on:
         required: true
         type: string
 
-env:
-  DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+# env:
+#   DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
 
 jobs:
   message:
@@ -26,4 +29,5 @@ jobs:
         uses: Ilshidur/action-discord@0.4.0
         with:
           args: ${{ inputs.message }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           # Test

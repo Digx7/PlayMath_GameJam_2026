@@ -59,7 +59,7 @@ jobs:
 
       # gets build artifacts
       - name: Download Build Artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v8
         with:
           name: ${{ inputs.artifactName }}
           path: build/${{ inputs.artifactName }}

@@ -28,7 +28,7 @@ jobs:
         build:
           - WebGL
     steps:
-      - uses: actions/download-artifact@v2.0.8
+      - uses: actions/download-artifact@v8
         with:
           name: ${{ matrix.build }}
           path: build/${{ matrix.build }}

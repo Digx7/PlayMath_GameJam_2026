@@ -29,4 +29,4 @@ jobs:
         uses: appleboy/discord-action@v1.2.0
         with:
           webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
-          message: ${{ github.message }}
+          message: ${{ inputs.message }}

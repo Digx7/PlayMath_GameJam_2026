@@ -28,17 +28,29 @@ public class OverlayPieceElement : MonoBehaviour
     public StringChannelListener stringChannelListener;
     public Animator animator;
     public string fadeInTriggerName;
+    public AudioSource tornadoLabelSFX;
+
+    private bool isRotated = false;
 
 
 
     public void SetIsRotated()
     {
         rotationImage.gameObject.SetActive(true);
+        isRotated = true;
     }
 
     public void StartAnimationDelay(float delay)
     {
         StartCoroutine(FadeInDelay(delay));
+    }
+
+    public void PlayTornadoLabelSFX()
+    {
+        if(isRotated)
+        {
+            tornadoLabelSFX.Play();
+        }
     }
 
     private IEnumerator FadeInDelay(float delay)

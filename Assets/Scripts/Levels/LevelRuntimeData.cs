@@ -31,32 +31,13 @@ public class LevelRuntimeData : MonoBehaviour
     public ToolEvent OnTryUseEmptyTool;
     public LevelDataEvent OnSetNextLevel;
     public UnityEvent OnFinishLevel;
+    public UnityEvent OnFinishLastLevel;
     public UnityEvent OnWinLevel;
     public UnityEvent OnLoseLevel;
 
     private void Awake() 
     {
         Debug.Log("Level Runtime Data Awake");
-        
-        // if(generateRandomLevelDataOnAwake) 
-        // {
-        //     levelDataSO = Digx7.Levels.LevelGenerator.GenerateRandomLevelData();
-        // }
-        // else
-        // {
-        //     levelDataSO = LevelManager.Instance.MoveToNextLevel();
-        //     if(levelDataSO == null)
-        //     {
-        //         Debug.LogError("NO valid Level data was found");
-        //     }
-        //     else
-        //     {
-        //         if(!levelDataSO.isLastLevel)
-        //         {
-        //             OnSetNextLevel.Invoke(levelDataSO.nextLevel);
-        //         }
-        //     }
-        // }
 
         levelDataSO = LevelManager.Instance.CurrentLevel;
         if(!levelDataSO.isLastLevel)
@@ -253,8 +234,17 @@ public class LevelRuntimeData : MonoBehaviour
         if(hasFoundAllTreasure) 
         {
             levelFinished = true;
-            OnWinLevel.Invoke();
-            OnFinishLevel.Invoke();
+
+            if(levelDataSO.isLastLevel)
+            {
+                OnFinishLastLevel.Invoke();
+            }
+            else
+            {
+                OnWinLevel.Invoke();
+                OnFinishLevel.Invoke();
+            }
+
         }
         else if(ranOutOFTools)
         {

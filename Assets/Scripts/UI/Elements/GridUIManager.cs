@@ -22,6 +22,18 @@ public class GridUIManager : MonoBehaviour
 
     public Animator animator;
     public string tornadoTriggerName;
+    public AudioSourceHelper tornadoWindSFX;
+    public void StartTornadoWindSFX()
+    {
+        tornadoWindSFX.SetVolume(0f);
+        tornadoWindSFX.Play();
+        tornadoWindSFX.FadeIn();
+    }
+
+    public void StopTornadoWindSFX()
+    {
+        tornadoWindSFX.FadeOut();
+    }
 
     private LevelData levelDataSO;
 

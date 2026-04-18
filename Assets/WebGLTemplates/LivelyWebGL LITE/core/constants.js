@@ -23,7 +23,7 @@ window.ConstantsLib = {
     ////////////////////////////////////////////////////
     // Loading Screen
     ////////////////////////////////////////////////////
-    ShowLoadingLogoImage: true,					 // show loading logo image
+    ShowLoadingLogoImage: false,					 // show loading logo image
     loadingScreenColor: "#191919",          // webpage background
     progressBarFullSettings: "#1EAED3",            // loading bar color
     LoadingScreen_BarPulseColor: '#1E3ED3',
@@ -39,7 +39,7 @@ window.ConstantsLib = {
     ////////////////////////////////////////////////////
     // Hamburger / Corner Button
     ////////////////////////////////////////////////////
-    hideCornerButton: false,                     // hide fullscreen/menu button
+    hideCornerButton: true,                     // hide fullscreen/menu button
 
     ////////////////////////////////////////////////////
     // Page Setup

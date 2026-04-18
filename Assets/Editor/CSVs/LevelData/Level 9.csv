@@ -7,6 +7,9 @@ T_Wand_3|0|0|T_Gold_2|0|$
 --MetaData--|---|---|---|---|$
 Grid_Type|0|---|---|---|$
 Origin|0|0|---|---|$
+isLastLevel|False|---|---|---|$
+isRandomLevel|False|---|---|---|$
+Next_Level|Assets/Resources/ScriptableObjects/LevelData/1-10.asset|---|---|---|$
 --TreasureToFind--|---|---|---|---|$
 Wand|---|---|---|---|$
 Gold|---|---|---|---|$

@@ -7,12 +7,15 @@
 --MetaData--|---|---|---|---|$
 Grid_Type|1|---|---|---|$
 Origin|0|0|---|---|$
+isLastLevel|False|---|---|---|$
+isRandomLevel|False|---|---|---|$
+Next_Level|Assets/Resources/ScriptableObjects/LevelData/1-11.asset|---|---|---|$
 --TreasureToFind--|---|---|---|---|$
 Lizard|---|---|---|---|$
 Gold|---|---|---|---|$
 --TreasureRotations--|---|---|---|---|$
 None|---|---|---|---|$
-Rotate90|---|---|---|---|$
+Rotate270|---|---|---|---|$
 --Hints--|---|---|---|---|$
 (3, -3)|---|---|---|---|$
 (2, -2)|---|---|---|---|$

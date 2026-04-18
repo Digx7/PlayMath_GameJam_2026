@@ -7,6 +7,9 @@
 --MetaData--|---|---|---|---|$
 Grid_Type|1|---|---|---|$
 Origin|2|2|---|---|$
+isLastLevel|False|---|---|---|$
+isRandomLevel|False|---|---|---|$
+Next_Level|Assets/Resources/ScriptableObjects/LevelData/1-7.asset|---|---|---|$
 --TreasureToFind--|---|---|---|---|$
 Wand|---|---|---|---|$
 Gold|---|---|---|---|$

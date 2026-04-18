@@ -6,6 +6,9 @@ T_Diamond_1|T_Diamond_2|T_Diamond_3|T_Gold_1|$
 --MetaData--|---|---|---|$
 Grid_Type|1|---|---|$
 Origin|0|0|---|$
+isLastLevel|False|---|---|$
+isRandomLevel|False|---|---|$
+Next_Level|Assets/Resources/ScriptableObjects/LevelData/1-5.asset|---|---|$
 --TreasureToFind--|---|---|---|$
 Diamond|---|---|---|$
 Gold|---|---|---|$

@@ -1093,6 +1093,14 @@ namespace CSVTools
             { 
                 CSV_Editor.ImportAllEntriesAtOnce(csvFile, AllEntriesToLevelData);
             }
+
+            // We run this twice because levels have references to each other
+            // Depending on the order they are imported some of these references might not get setup
+            // So we run this twice 
+            foreach (string csvFile in csvFiles)
+            { 
+                CSV_Editor.ImportAllEntriesAtOnce(csvFile, AllEntriesToLevelData);
+            }
         }
 
         [MenuItem("Utilities/CSV/LevelData/Export")]
@@ -1155,6 +1163,13 @@ namespace CSVTools
 
             GridTypes gridType = (GridTypes)int.Parse(allEntries[metaDataStartIndex][1]);
             Vector2Int origin = new Vector2Int(int.Parse(allEntries[metaDataStartIndex + 1][1]), int.Parse(allEntries[metaDataStartIndex + 1][2]));
+            bool isLastLevel = Boolean.Parse(allEntries[metaDataStartIndex + 2][1]);
+            bool isRandomLevel = Boolean.Parse(allEntries[metaDataStartIndex + 3][1]);
+            LevelData nextLevel = null;
+            if(AssetDatabase.AssetPathExists(allEntries[metaDataStartIndex + 5][1]))
+            {
+                nextLevel = (LevelData)AssetDatabase.LoadAssetAtPath(allEntries[metaDataStartIndex + 5][1], typeof(LevelData));
+            }
 
             // Treasure To Find ================================
             Debug.Log($"Processing Level Data {assetName} treasure to find\nStarting at line {treasureToFindStartIndex}");
@@ -1223,13 +1238,16 @@ namespace CSVTools
             levelDataSO.treasureRotations = treasureRotations;
             levelDataSO.hints = hints;
             levelDataSO.tools = tools;
+            levelDataSO.isLastLevel = isLastLevel;
+            levelDataSO.isRandomLevel = isRandomLevel;
+            levelDataSO.nextLevel = nextLevel;
 
             CSV_SOHelpers.CreateNewScriptableObjectIfAssetDoesntExist<LevelData>(levelDataSO, assetPath);
         }
 
         public static string[] LevelDataToEntry(LevelData levelDataSOs)
         {
-            int outputLength = levelDataSOs.grid.y_Length + 8 + levelDataSOs.treasureToFind.Count + levelDataSOs.treasureRotations.Count + levelDataSOs.hints.Count + levelDataSOs.tools.Count;
+            int outputLength = levelDataSOs.grid.y_Length + 11 + levelDataSOs.treasureToFind.Count + levelDataSOs.treasureRotations.Count + levelDataSOs.hints.Count + levelDataSOs.tools.Count;
             int gridStartIndex = 0;
             int metaDataStartIndex = levelDataSOs.grid.y_Length + 1;
             int treasureToFindStartIndex = metaDataStartIndex + 6;

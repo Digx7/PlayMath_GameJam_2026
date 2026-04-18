@@ -1,11 +1,14 @@
 1-5|---|---|---|$
-0|0|0|T_Wand_1|$
+0|0|0|T_Wand_3|$
 0|0|T_Wand_2|0|$
-0|T_Wand_3|0|0|$
+0|T_Wand_1|0|0|$
 0|0|0|0|$
 --MetaData--|---|---|---|$
 Grid_Type|1|---|---|$
 Origin|0|0|---|$
+isLastLevel|False|---|---|$
+isRandomLevel|False|---|---|$
+Next_Level|Assets/Resources/ScriptableObjects/LevelData/1-6.asset|---|---|$
 --TreasureToFind--|---|---|---|$
 Wand|---|---|---|$
 --TreasureRotations--|---|---|---|$

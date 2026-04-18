@@ -7,6 +7,9 @@
 --MetaData--|---|---|---|---|$
 Grid_Type|1|---|---|---|$
 Origin|2|2|---|---|$
+isLastLevel|True|---|---|---|$
+isRandomLevel|False|---|---|---|$
+Next_Level|---|---|---|---|$
 --TreasureToFind--|---|---|---|---|$
 Lizard|---|---|---|---|$
 --TreasureRotations--|---|---|---|---|$

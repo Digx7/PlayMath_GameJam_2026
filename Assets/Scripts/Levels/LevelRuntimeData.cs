@@ -238,6 +238,7 @@ public class LevelRuntimeData : MonoBehaviour
             if(levelDataSO.isLastLevel)
             {
                 OnFinishLastLevel.Invoke();
+                OnFinishLevel.Invoke();
             }
             else
             {

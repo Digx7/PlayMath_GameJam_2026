@@ -39,7 +39,7 @@ window.ConstantsLib = {
     ////////////////////////////////////////////////////
     // Hamburger / Corner Button
     ////////////////////////////////////////////////////
-    hideCornerButton: true,                     // hide fullscreen/menu button
+    hideCornerButton: false,                     // hide fullscreen/menu button
 
     ////////////////////////////////////////////////////
     // Page Setup

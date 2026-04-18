@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIWidgetDataChannelRaiser
   channelToRaise: {fileID: 11400000, guid: f451e53f6d34f5e4493c2c5bdbed8351, type: 2}
-  m_data: {fileID: 11400000, guid: 23e25a2a47f69b745aee31703bef671e, type: 2}
+  m_data: {fileID: 11400000, guid: 633a1e4a8a4e81a4285cebd7cbbf68e6, type: 2}
 --- !u!1 &1333067172643141002
 GameObject:
   m_ObjectHideFlags: 0

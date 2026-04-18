@@ -1232,7 +1232,7 @@ namespace CSVTools
             int outputLength = levelDataSOs.grid.y_Length + 8 + levelDataSOs.treasureToFind.Count + levelDataSOs.treasureRotations.Count + levelDataSOs.hints.Count + levelDataSOs.tools.Count;
             int gridStartIndex = 0;
             int metaDataStartIndex = levelDataSOs.grid.y_Length + 1;
-            int treasureToFindStartIndex = metaDataStartIndex + 3;
+            int treasureToFindStartIndex = metaDataStartIndex + 6;
             int treasureRotationsStartIndex = treasureToFindStartIndex + levelDataSOs.treasureToFind.Count + 1;
             int hintsStartIndex = treasureRotationsStartIndex + levelDataSOs.treasureRotations.Count + 1;
             int toolsStartIndex = hintsStartIndex + levelDataSOs.hints.Count + 1;
@@ -1315,6 +1315,60 @@ namespace CSVTools
             }
             originLine += $"{CSV_UserData.COLUMN_DELIMITER}$";
             lines[metaDataStartIndex + 2] = originLine;
+
+            string isLastLevelLine = $"isLastLevel";
+            if(levelDataSOs.grid.x_Length > 2)
+            {
+                for (int x = 1; x < levelDataSOs.grid.x_Length; x++)
+                {
+                    if(x == 1)
+                    {
+                        isLastLevelLine += $"{CSV_UserData.COLUMN_DELIMITER}{levelDataSOs.isLastLevel}";
+                    }
+                    else
+                    {
+                        isLastLevelLine += $"{CSV_UserData.COLUMN_DELIMITER}---";
+                    }
+                }
+            }
+            isLastLevelLine += $"{CSV_UserData.COLUMN_DELIMITER}$";
+            lines[metaDataStartIndex + 3] = isLastLevelLine;
+
+            string isRandomLevelLine = $"isRandomLevel";
+            if(levelDataSOs.grid.x_Length > 2)
+            {
+                for (int x = 1; x < levelDataSOs.grid.x_Length; x++)
+                {
+                    if(x == 1)
+                    {
+                        isRandomLevelLine += $"{CSV_UserData.COLUMN_DELIMITER}{levelDataSOs.isRandomLevel}";
+                    }
+                    else
+                    {
+                        isRandomLevelLine += $"{CSV_UserData.COLUMN_DELIMITER}---";
+                    }
+                }
+            }
+            isRandomLevelLine += $"{CSV_UserData.COLUMN_DELIMITER}$";
+            lines[metaDataStartIndex + 4] = isRandomLevelLine;
+
+            string nextLevelLine = $"Next_Level";
+            if(levelDataSOs.grid.x_Length > 2)
+            {
+                for (int x = 1; x < levelDataSOs.grid.x_Length; x++)
+                {
+                    if(x == 1 && levelDataSOs.nextLevel != null)
+                    {
+                        nextLevelLine += $"{CSV_UserData.COLUMN_DELIMITER}{AssetDatabase.GetAssetPath(levelDataSOs.nextLevel)}";
+                    }
+                    else
+                    {
+                        nextLevelLine += $"{CSV_UserData.COLUMN_DELIMITER}---";
+                    }
+                }
+            }
+            nextLevelLine += $"{CSV_UserData.COLUMN_DELIMITER}$";
+            lines[metaDataStartIndex + 5] = nextLevelLine;
 
             // Treasure To Find ================================
             // Header

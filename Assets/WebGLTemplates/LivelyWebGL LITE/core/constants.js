@@ -17,7 +17,7 @@ window.ConstantsLib = {
     defaultWidth: 1920,
     defaultHeight: 1080,
     PageSetup_MaxDPI: 2,
-    PageSetup_DefaultDPR: 1,
+    PageSetup_DefaultDPR: 2,
     fullscreenHidesCornerButton: true,
 
     ////////////////////////////////////////////////////
@@ -39,7 +39,7 @@ window.ConstantsLib = {
     ////////////////////////////////////////////////////
     // Hamburger / Corner Button
     ////////////////////////////////////////////////////
-    hideCornerButton: false,                     // hide fullscreen/menu button
+    hideCornerButton: true,                     // hide fullscreen/menu button
 
     ////////////////////////////////////////////////////
     // Page Setup

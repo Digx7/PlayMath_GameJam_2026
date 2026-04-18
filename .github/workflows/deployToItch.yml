@@ -12,27 +12,28 @@ on:
   workflow_dispatch:
 
 
+
 jobs:
-  deployToItch:
-    name: Upload to Itch ${{ matrix.build }}
-    runs-on: windows-latest
+  deploy:
+    name: Upload to Itch
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: true
       matrix:
         channel:
-          - HTML5/Playable in browser
-        build:
-          - WebGL
+          # - windows
+          - webgl
+    runs-on: ubuntu-latest
+    name: Deploy - Itch.io ${{ matrix.channel }}
     steps:
       - uses: actions/download-artifact@v8
         with:
-          name: Build-${{ matrix.build }}
-          path: build/${{ matrix.build }}
-      - uses: Oval-Tutu/publish-to-itch-with-butler@1.0.0
+          name: Build-${{ matrix.channel }}
+          path: build/${{ matrix.channel }}
+      - uses: KikimoraGames/itch-publish@v0.0.3
         with:
-          api-key: ${{ secrets.BUTLER_API_KEY }}
-          itch_user: ${{ secrets.ITCH_USERNAME }}
-          itch_game: ${{ secrets.ITCH_GAME_ID }}
-          channel: ${{ matrix.channel }}
-          package: ./build/${{ matrix.build }}/
-          version: ${{ github.ref_name }}
+          butlerApiKey: ${{secrets.BUTLER_API_KEY}}
+          gameData: ./build/${{ matrix.channel }}
+          itchUsername: ${{secrets.ITCH_USERNAME}}
+          itchGameId: ${{ secrets.ITCH_GAME_ID }}
+          buildChannel: ${{ matrix.channel }}

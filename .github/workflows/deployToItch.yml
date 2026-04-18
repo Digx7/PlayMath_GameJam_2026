@@ -1,6 +1,11 @@
 name: Deploy to Itch.io
 on:
   workflow_call:
+    inputs:
+      run_id:
+        description: 'The id of the workflow we want to download the artifact from'
+        required: true
+        type: string
     secrets:
       BUTLER_API_KEY:
         required: true
@@ -10,6 +15,11 @@ on:
         required: true
 
   workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'The id of the workflow we want to download the artifact from'
+        required: true
+        type: string
 
 
 
@@ -22,12 +32,14 @@ jobs:
       matrix:
         channel:
           # - windows
-          - webgl
+          - WebGL 
     steps:
       - uses: actions/download-artifact@v8
         with:
           name: Build-${{ matrix.channel }}
           path: build/${{ matrix.channel }}
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - uses: KikimoraGames/itch-publish@v0.0.3
         with:
           butlerApiKey: ${{secrets.BUTLER_API_KEY}}

@@ -283,12 +283,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7851252869dbb534e8751ee1741013ac, type: 2}
   - {fileID: 11400000, guid: 5f0a69b717d3d674896aca54496d43a4, type: 2}
   - {fileID: 11400000, guid: f7edfd5be0ecfb842a776774d06d8f14, type: 2}
+  - {fileID: 11400000, guid: 261ca9c5f17a4154bb6f3e7d5961b65d, type: 2}
   levels_string: []
-  testLevelDatas:
-  - {fileID: 11400000, guid: 2ddacfe20c1479c44a45e6bc186090d2, type: 2}
-  - {fileID: 11400000, guid: 44906a31f2b23ca4fb10f0900dbf3493, type: 2}
-  - {fileID: 11400000, guid: fc4ba5e039f969e4c9bff39613d4e24b, type: 2}
-  - {fileID: 11400000, guid: 7bf5d66ed2233894abefc867a8ea4ca3, type: 2}
+  testLevelDatas: []
   testLevelDataPath: Assets\Editor\TestLevelData
 --- !u!1001 &9219621247782567449
 PrefabInstance:

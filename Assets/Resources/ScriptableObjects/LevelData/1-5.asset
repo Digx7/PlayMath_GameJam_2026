@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ac0c0a51408a04f9ea578326becd37, type: 3}
   m_Name: 1-5
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  _displayName: 1-5
   grid:
     data:
     - coordinate: {x: 0, y: 0}
@@ -65,3 +64,4 @@ MonoBehaviour:
     tool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}
   nextLevel: {fileID: 11400000, guid: 85d33cdd91f551d4c8958f898d0c360a, type: 2}
   isLastLevel: 0
+  isRandomLevel: 0

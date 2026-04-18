@@ -16,6 +16,7 @@ public class LevelSelectionUIWidget : UIMenu
     [Header("References")]
     public GameObject levelButtonPrefab;
     public Transform levelButtonHolder;
+    // public string levelDataResourcePath;
     public List<LevelData> levels_LevelData;
     public List<string> levels_string;
 
@@ -51,6 +52,9 @@ public class LevelSelectionUIWidget : UIMenu
         //     LevelUIButtonHelper levelUIButtonHelper = obj.GetComponent<LevelUIButtonHelper>();
         //     levelUIButtonHelper.Setup(levels_LevelData[i]);
         // }
+
+        // levels_LevelData = new List<LevelData>();
+        // levels_LevelData.AddRange(Array.ConvertAll(Resources.LoadAll(levelDataResourcePath, typeof(LevelData)), item => (LevelData)item));
 
         LoadLevelButtons(levels_LevelData);
 

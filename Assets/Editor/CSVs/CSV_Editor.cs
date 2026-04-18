@@ -1154,7 +1154,7 @@ namespace CSVTools
 
             // MetaData ================================
             int metaDataStartIndex = y_Length + 2;
-            int treasureToFindStartIndex = metaDataStartIndex + 3;
+            int treasureToFindStartIndex = metaDataStartIndex + 6;
             int treasureRotationsStartIndex = treasureToFindStartIndex + 2;
             int hintsStartIndex = treasureRotationsStartIndex + 2;
             int toolsStartIndex = hintsStartIndex + 2;
@@ -1166,9 +1166,9 @@ namespace CSVTools
             bool isLastLevel = Boolean.Parse(allEntries[metaDataStartIndex + 2][1]);
             bool isRandomLevel = Boolean.Parse(allEntries[metaDataStartIndex + 3][1]);
             LevelData nextLevel = null;
-            if(AssetDatabase.AssetPathExists(allEntries[metaDataStartIndex + 5][1]))
+            if(AssetDatabase.AssetPathExists(allEntries[metaDataStartIndex + 4][1]))
             {
-                nextLevel = (LevelData)AssetDatabase.LoadAssetAtPath(allEntries[metaDataStartIndex + 5][1], typeof(LevelData));
+                nextLevel = (LevelData)AssetDatabase.LoadAssetAtPath(allEntries[metaDataStartIndex + 4][1], typeof(LevelData));
             }
 
             // Treasure To Find ================================

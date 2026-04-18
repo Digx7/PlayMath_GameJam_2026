@@ -7,9 +7,9 @@
 --MetaData--|---|---|---|---|$
 Grid_Type|1|---|---|---|$
 Origin|2|2|---|---|$
-isLastLevel|True|---|---|---|$
+isLastLevel|False|---|---|---|$
 isRandomLevel|False|---|---|---|$
-Next_Level|---|---|---|---|$
+Next_Level|Assets/Resources/ScriptableObjects/LevelData/1-12.asset|---|---|---|$
 --TreasureToFind--|---|---|---|---|$
 Lizard|---|---|---|---|$
 --TreasureRotations--|---|---|---|---|$

@@ -1,7 +1,7 @@
 2-5|---|---|---|---|$
-T_Gold_1|0|0|0|0|$
-T_Gold_2|0|0|0|0|$
-T_Gold_3|0|0|0|0|$
+0|0|T_Necklace_1|T_Necklace_2|T_Necklace_3|$
+0|0|T_Necklace_4|0|T_Necklace_5|$
+0|0|T_Necklace_6|T_Necklace_7|T_Necklace_8|$
 0|0|0|0|0|$
 0|0|0|0|0|$
 --MetaData--|---|---|---|---|$
@@ -11,10 +11,11 @@ isLastLevel|False|---|---|---|$
 isRandomLevel|False|---|---|---|$
 Next_Level|Assets/Resources/ScriptableObjects/LevelData/2-6.asset|---|---|---|$
 --TreasureToFind--|---|---|---|---|$
-Gold|---|---|---|---|$
+Necklace|---|---|---|---|$
 --TreasureRotations--|---|---|---|---|$
 None|---|---|---|---|$
+None|---|---|---|---|$
 --Hints--|---|---|---|---|$
-(0,4)|---|---|---|---|$
+(4,4)|---|---|---|---|$
 --Tools--|---|---|---|---|$
-Shovel|4|---|---|---|$
+Shovel|9|---|---|---|$

@@ -1,8 +1,8 @@
 2-8|---|---|---|---|$
-T_Gold_1|0|0|0|0|$
-T_Gold_2|0|0|0|0|$
-T_Gold_3|0|0|0|0|$
-0|0|0|0|0|$
+T_Diamond_1|T_Diamond_2|T_Diamond_3|0|0|$
+0|T_Diamond_4|0|0|T_Gold_1|$
+0|0|0|0|T_Gold_2|$
+0|0|0|0|T_Gold_3|$
 0|0|0|0|0|$
 --MetaData--|---|---|---|---|$
 Grid_Type|1|---|---|---|$
@@ -11,10 +11,12 @@ isLastLevel|False|---|---|---|$
 isRandomLevel|False|---|---|---|$
 Next_Level|Assets/Resources/ScriptableObjects/LevelData/2-9.asset|---|---|---|$
 --TreasureToFind--|---|---|---|---|$
+Diamond|---|---|---|---|$
 Gold|---|---|---|---|$
 --TreasureRotations--|---|---|---|---|$
 None|---|---|---|---|$
 --Hints--|---|---|---|---|$
 (0,4)|---|---|---|---|$
+(4,3)|---|---|---|---|$
 --Tools--|---|---|---|---|$
-Shovel|4|---|---|---|$
+Shovel|9|---|---|---|$

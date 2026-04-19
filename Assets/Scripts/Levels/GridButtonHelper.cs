@@ -11,6 +11,7 @@ using System.Collections.Generic;
 public class GridButtonHelper : MonoBehaviour 
 {
     public DigDataChannel onDig;
+    public DigDataChannel onDigHover;
 
     [Header("Coorinate")]
     [SerializeField]private Vector2Int coordinate;
@@ -23,10 +24,13 @@ public class GridButtonHelper : MonoBehaviour
         set
         {
             coordinate = value;
-            vector2IntChannelRaiser.Data = value;
+            clickChannelRaiser.Data = value;
+            hoverChannelRaiser.Data = value;
         }
     }
-    public Vector2IntChannelRaiser vector2IntChannelRaiser;
+    public Vector2IntChannelRaiser clickChannelRaiser;
+    public Vector2IntChannelRaiser hoverChannelRaiser
+    ;
     [SerializeField] List<TextMeshProUGUI> graphNumberTMPros;
     public void SetGraphNumberText(string text, Quadrant quadrant)
     {
@@ -311,6 +315,10 @@ public class GridButtonHelper : MonoBehaviour
     [SerializeField] string fadeInTriggerName;
     [SerializeField] string winTriggerName;
 
+    public BooleanEvent onHover;
+    public UnityEvent onHover_Start;
+    public UnityEvent onHover_Stop;
+
     public BooleanEvent onFoundTreasure;
     public UnityEvent onFoundTreasure_Default;
 
@@ -328,11 +336,13 @@ public class GridButtonHelper : MonoBehaviour
     private void OnEnable() 
     {
         onDig.channelEvent.AddListener(Recieve_OnDig);
+        onDigHover.channelEvent.AddListener(Recieve_OnHover);
     }
 
     private void OnDisable() 
     {
         onDig.channelEvent.RemoveListener(Recieve_OnDig);
+        onDigHover.channelEvent.RemoveListener(Recieve_OnHover);
     }
 
     public void Recieve_OnDig(DigData digData)
@@ -362,6 +372,20 @@ public class GridButtonHelper : MonoBehaviour
                 default:
                     break;
             }
+        }
+    }
+
+    public void Recieve_OnHover(DigData digData)
+    {
+        if(digData.tileData.ContainsKey(coordinate))
+        {
+            onHover.Invoke(true);
+            onHover_Start.Invoke();
+        }
+        else
+        {
+            onHover.Invoke(false);
+            onHover_Stop.Invoke();
         }
     }
 

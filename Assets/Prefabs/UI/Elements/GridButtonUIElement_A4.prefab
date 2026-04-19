@@ -37,6 +37,7 @@ RectTransform:
   - {fileID: 7585014466213897087}
   - {fileID: 2946732202459741449}
   - {fileID: 8706611697496922103}
+  - {fileID: 9148183853999164456}
   - {fileID: 435956674999749546}
   - {fileID: 9190421161258227520}
   - {fileID: 424517695781674833}
@@ -124,8 +125,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridButtonHelper
   onDig: {fileID: 11400000, guid: 8e3d02440f7299d4b9889cd055e06e2c, type: 2}
+  onDigHover: {fileID: 11400000, guid: a1d5068d91fca804284fe2795c44a27a, type: 2}
   coordinate: {x: 0, y: 0}
-  vector2IntChannelRaiser: {fileID: 7243844329930152724}
+  clickChannelRaiser: {fileID: 7243844329930152724}
+  hoverChannelRaiser: {fileID: 2011905732990857139}
   graphNumberTMPros:
   - {fileID: 6845678113774637307}
   - {fileID: 7886851483087619629}
@@ -158,6 +161,39 @@ MonoBehaviour:
   animator: {fileID: 1971017573595697664}
   fadeInTriggerName: FadeIn
   winTriggerName: Win
+  onHover:
+    m_PersistentCalls:
+      m_Calls: []
+  onHover_Start:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5498710936890519665}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onHover_Stop:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5498710936890519665}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onFoundTreasure:
     m_PersistentCalls:
       m_Calls:
@@ -253,17 +289,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 5498710936890519665}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 2011905732990857139}
+          m_TargetAssemblyTypeName: Vector2IntChannelRaiser, Assembly-CSharp
+          m_MethodName: RaiseMData
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
+            m_BoolArgument: 0
           m_CallState: 2
   - eventID: 9
     callback:
@@ -288,19 +324,7 @@ MonoBehaviour:
   - eventID: 1
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5498710936890519665}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!225 &6801826251468279121
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -586,6 +610,56 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &3101188155307663572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9148183853999164456}
+  - component: {fileID: 2011905732990857139}
+  m_Layer: 5
+  m_Name: HoverRaiser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &9148183853999164456
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3101188155307663572}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7173160979006354642}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2011905732990857139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3101188155307663572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958beddb995cea24cb005f571f627d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Vector2IntChannelRaiser
+  channelToRaise: {fileID: 11400000, guid: d33c9d18764b7bc4fae08fd4d44ea9cd, type: 2}
+  m_data: {x: 0, y: 0}
 --- !u!1 &3524010381994194508
 GameObject:
   m_ObjectHideFlags: 0

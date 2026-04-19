@@ -9,6 +9,7 @@ public class LevelRuntimeData : MonoBehaviour
 {
     [Header("InComing Channels")]
     public Vector2IntChannel TryDigChannel;
+    public Vector2IntChannel TryHoverChannel;
     public ToolChannel TryChangeTool;
     
     // Level Data
@@ -27,6 +28,7 @@ public class LevelRuntimeData : MonoBehaviour
     [Header("Events")]
     public LevelDataEvent OnSetup;
     public DigDataEvent OnDig;
+    public DigDataEvent OnHover;
     public StringEvent OnFullyDigUpPiece;
     public ToolEvent OnTryUseEmptyTool;
     public LevelDataEvent OnSetNextLevel;
@@ -65,12 +67,14 @@ public class LevelRuntimeData : MonoBehaviour
 
     private void OnEnable() {
         TryDigChannel.channelEvent.AddListener(TryDigInSpace);
+        TryHoverChannel.channelEvent.AddListener(TryHoverOverSpace);
         TryChangeTool.channelEvent.AddListener(ChangeTool);
     }
 
     private void OnDisable() {
         TryDigChannel.channelEvent.RemoveListener(TryDigInSpace);
-        TryChangeTool.channelEvent.AddListener(ChangeTool);
+        TryHoverChannel.channelEvent.RemoveListener(TryHoverOverSpace);
+        TryChangeTool.channelEvent.RemoveListener(ChangeTool);
     }
 
     public void ChangeTool(Tool newTool)
@@ -104,6 +108,31 @@ public class LevelRuntimeData : MonoBehaviour
         {
             OnTryUseEmptyTool.Invoke(tools[selectedToolIndex].tool);
         }
+    }
+
+    public void TryHoverOverSpace(Vector2Int hoverCoordinates)
+    {
+        DigData hoverData = new DigData();
+        hoverData.result = DigResult.FOUND_OLD_EMPTY;
+        hoverData.tileData = new Dictionary<Vector2Int, DigTileData>();
+        hoverData.toolUsed = tools[selectedToolIndex].tool;
+
+        for (int i = 0; i < hoverData.toolUsed.relativeSpacesToDig.Count; i++)
+        {
+            Vector2Int _hoverCoordinates = hoverCoordinates + hoverData.toolUsed.relativeSpacesToDig[i];
+            if(levelDataSO.grid.IsCoordinateInGrid(_hoverCoordinates))
+            {
+                hoverData.tileData[_hoverCoordinates] = new DigTileData
+                                                        {
+                                                            result = DigResult.FOUND_NEW_EMPTY,
+                                                            coordinate = new Vector2Int(),
+                                                            tileFlag = new TileFlag(),
+                                                            subSprite = null
+                                                        };
+            }
+        }
+
+        OnHover.Invoke(hoverData);
     }
 
     private void DigInSpace(Vector2Int digCoordinates)

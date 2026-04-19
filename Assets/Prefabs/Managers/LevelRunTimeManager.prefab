@@ -232,6 +232,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIWidgetDataChannelRaiser
   channelToRaise: {fileID: 11400000, guid: f9e8b7ff78e0ae943a4926492de10937, type: 2}
   m_data: {fileID: 11400000, guid: 23e25a2a47f69b745aee31703bef671e, type: 2}
+--- !u!1 &5170889908710293485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2600592356646743623}
+  - component: {fileID: 1554123633925727550}
+  m_Layer: 0
+  m_Name: OnHover
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2600592356646743623
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5170889908710293485}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7103015261264786592}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1554123633925727550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5170889908710293485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab8957ffaae0764c9b679b5fbe7d487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DigDataChannelRaiser
+  channelToRaise: {fileID: 11400000, guid: a1d5068d91fca804284fe2795c44a27a, type: 2}
+  m_data:
+    result: 0
+    toolUsed: {fileID: 0}
 --- !u!1 &5266935294711495909
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +578,7 @@ Transform:
   m_Children:
   - {fileID: 196855390561231215}
   - {fileID: 7465833482811558445}
+  - {fileID: 2600592356646743623}
   - {fileID: 6159888653613842868}
   - {fileID: 7519307331211631400}
   - {fileID: 7494579676636609069}
@@ -550,6 +599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelRuntimeData
   TryDigChannel: {fileID: 11400000, guid: e8be464b7a2b2db49b389b545be43473, type: 2}
+  TryHoverChannel: {fileID: 11400000, guid: d33c9d18764b7bc4fae08fd4d44ea9cd, type: 2}
   TryChangeTool: {fileID: 11400000, guid: 3cb1b04714c461e46a53c86b4980e45c, type: 2}
   levelDataSO: {fileID: 0}
   isOnLastLevel: 0
@@ -593,6 +643,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2038680006177729057}
+        m_TargetAssemblyTypeName: DigDataChannelRaiser, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHover:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1554123633925727550}
         m_TargetAssemblyTypeName: DigDataChannelRaiser, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 0

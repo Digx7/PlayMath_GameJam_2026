@@ -156,19 +156,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridButtonHelper
   onDig: {fileID: 11400000, guid: 8e3d02440f7299d4b9889cd055e06e2c, type: 2}
+  onDigHover: {fileID: 11400000, guid: a1d5068d91fca804284fe2795c44a27a, type: 2}
   coordinate: {x: 0, y: 0}
-  vector2IntChannelRaiser: {fileID: 7243844329930152724}
+  clickChannelRaiser: {fileID: 0}
+  hoverChannelRaiser: {fileID: 0}
   graphNumberTMPros:
   - {fileID: 6710389380045885372}
   - {fileID: 7499930416210208352}
   - {fileID: 861788196831368865}
   - {fileID: 116610430321718876}
-  verticalAxis: {fileID: 554245056795115702}
-  horizontalAxis: {fileID: 322142950233879768}
+  baseDisplayImage: {fileID: 0}
+  baseSprites: []
+  gridDisplayImage: {fileID: 0}
+  axisDisplayImage: {fileID: 0}
+  gridSprites: []
+  gridAxisSprites: []
+  _isRock: 0
+  rockDisplayImage: {fileID: 0}
+  rockDisplaySprites: []
+  treasureDisplayImageParent: {fileID: 0}
   treasureDisplayImage: {fileID: 3859287644316686623}
+  treasureDisplayImage_Cropped: {fileID: 0}
+  treasureDisplayImage_Overflow: {fileID: 0}
   animator: {fileID: 3387066153836935501}
   fadeInTriggerName: FadeIn
   winTriggerName: Win
+  onHover:
+    m_PersistentCalls:
+      m_Calls: []
+  onHover_Start:
+    m_PersistentCalls:
+      m_Calls: []
+  onHover_Stop:
+    m_PersistentCalls:
+      m_Calls: []
   onFoundTreasure:
     m_PersistentCalls:
       m_Calls:
@@ -211,6 +232,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onFoundHazard:
+    m_PersistentCalls:
+      m_Calls: []
+  onFoundHazard_Default:
+    m_PersistentCalls:
+      m_Calls: []
+  onFoundEmpty:
+    m_PersistentCalls:
+      m_Calls: []
   onFoundEmpty_Default:
     m_PersistentCalls:
       m_Calls:

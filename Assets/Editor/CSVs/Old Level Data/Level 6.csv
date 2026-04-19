@@ -7,14 +7,19 @@
 --MetaData--|---|---|---|---|$
 Grid_Type|1|---|---|---|$
 Origin|2|2|---|---|$
+isLastLevel|False|---|---|---|$
+isRandomLevel|False|---|---|---|$
+Next_Level|Assets/Resources/ScriptableObjects/LevelData/1-7.asset|---|---|---|$
 --TreasureToFind--|---|---|---|---|$
 Wand|---|---|---|---|$
 Gold|---|---|---|---|$
+--TreasureRotations--|---|---|---|---|$
+None|---|---|---|---|$
+None|---|---|---|---|$
 --Hints--|---|---|---|---|$
 (0, 1)|---|---|---|---|$
 (0, -1)|---|---|---|---|$
 --Tools--|---|---|---|---|$
 Shovel|7|---|---|---|$
-Pickaxe|1|---|---|---|$
-Bomb|1|---|---|---|$
-
+Pickaxe|3|---|---|---|$
+Bomb|3|---|---|---|$

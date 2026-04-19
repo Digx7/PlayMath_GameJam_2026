@@ -271,6 +271,7 @@ MonoBehaviour:
   requestUnLoadUIWidgetChannel: {fileID: 11400000, guid: f451e53f6d34f5e4493c2c5bdbed8351, type: 2}
   levelButtonPrefab: {fileID: 8974963316519555865, guid: 5210179c09ac32f4c809cac3537b668a, type: 3}
   levelButtonHolder: {fileID: 4050184320072582122}
+  levelDataResourcePath: ScriptableObjects/LevelData
   levels_LevelData:
   - {fileID: 11400000, guid: 055c2258f57cbda43a383be8e393fdfe, type: 2}
   - {fileID: 11400000, guid: 1c63bbd6b7384054a922a406537ffe51, type: 2}

@@ -3,6 +3,7 @@ using UnityEditor;
 using TMPro;
 using System;
 using System.IO;
+using System.Linq;
 using System.Collections.Generic;
 
 public class LevelSelectionUIWidget : UIMenu
@@ -16,7 +17,7 @@ public class LevelSelectionUIWidget : UIMenu
     [Header("References")]
     public GameObject levelButtonPrefab;
     public Transform levelButtonHolder;
-    // public string levelDataResourcePath;
+    public string levelDataResourcePath;
     public List<LevelData> levels_LevelData;
     public List<string> levels_string;
 
@@ -53,8 +54,17 @@ public class LevelSelectionUIWidget : UIMenu
         //     levelUIButtonHelper.Setup(levels_LevelData[i]);
         // }
 
-        // levels_LevelData = new List<LevelData>();
-        // levels_LevelData.AddRange(Array.ConvertAll(Resources.LoadAll(levelDataResourcePath, typeof(LevelData)), item => (LevelData)item));
+        levels_LevelData = new List<LevelData>();
+        levels_LevelData.AddRange(Array.ConvertAll(Resources.LoadAll(levelDataResourcePath, typeof(LevelData)), item => (LevelData)item));
+        // levels_LevelData.Sort((x,y) => x.name.CompareTo(y.name));
+
+        // var levels = Resources.LoadAll(levelDataResourcePath, typeof(LevelData));
+        // foreach (var level in levels)
+        // {
+        //     levels_LevelData.Add((LevelData)level);
+        // }
+
+        levels_LevelData.Sort(ExtensionMethods.CompareStoryModeLevelNames);
 
         LoadLevelButtons(levels_LevelData);
 

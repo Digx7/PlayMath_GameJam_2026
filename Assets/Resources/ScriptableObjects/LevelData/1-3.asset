@@ -15,55 +15,35 @@ MonoBehaviour:
   grid:
     data:
     - coordinate: {x: 0, y: 0}
-      flag: 0
-    - coordinate: {x: 0, y: 1}
       flag: T_Gold_1
-    - coordinate: {x: 0, y: 2}
+    - coordinate: {x: 0, y: 1}
       flag: T_Gold_2
-    - coordinate: {x: 0, y: 3}
+    - coordinate: {x: 0, y: 2}
       flag: T_Gold_3
     - coordinate: {x: 1, y: 0}
-      flag: T_Diamond_1
+      flag: 0
     - coordinate: {x: 1, y: 1}
       flag: 0
     - coordinate: {x: 1, y: 2}
       flag: 0
-    - coordinate: {x: 1, y: 3}
-      flag: 0
     - coordinate: {x: 2, y: 0}
-      flag: T_Diamond_2
+      flag: 0
     - coordinate: {x: 2, y: 1}
-      flag: T_Diamond_4
+      flag: 0
     - coordinate: {x: 2, y: 2}
       flag: 0
-    - coordinate: {x: 2, y: 3}
-      flag: 0
-    - coordinate: {x: 3, y: 0}
-      flag: T_Diamond_3
-    - coordinate: {x: 3, y: 1}
-      flag: 0
-    - coordinate: {x: 3, y: 2}
-      flag: 0
-    - coordinate: {x: 3, y: 3}
-      flag: 0
-    x_Length: 4
-    y_Length: 4
+    x_Length: 3
+    y_Length: 3
     gridType: 0
     origin: {x: 0, y: 0}
   treasureToFind:
   - {fileID: 11400000, guid: 1f666dc9f8fe22e4f8b1c255b0a57567, type: 2}
-  - {fileID: 11400000, guid: cc579467d7a81284287a76f3ca613d94, type: 2}
-  treasureRotations: 0000000000000000
+  treasureRotations: 00000000
   hints:
-  - C1
-  - A3
+  - A1
   tools:
-  - count: 9
+  - count: 4
     tool: {fileID: 11400000, guid: 7ef80a48c11f0db4b9174efc95371beb, type: 2}
-  - count: 3
-    tool: {fileID: 11400000, guid: 3e62e31fecc60a24a8640e2a14d1d8aa, type: 2}
-  - count: 3
-    tool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}
   nextLevel: {fileID: 11400000, guid: 03b438b5b18329a43ac414a40468e2f2, type: 2}
   isLastLevel: 0
   isRandomLevel: 0

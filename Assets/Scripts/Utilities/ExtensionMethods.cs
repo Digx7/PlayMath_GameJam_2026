@@ -17,4 +17,76 @@ public static class ExtensionMethods
        
         return to;
     }
+
+    public static int CompareStoryModeLevelNames(LevelData x, LevelData y)
+    {
+        if (x == null)
+        {
+            if (y == null)
+            {
+                // If x is null and y is null, they're
+                // equal.
+                return 0;
+            }
+            else
+            {
+                // If x is null and y is not null, y
+                // is greater.
+                return -1;
+            }
+        }
+        else
+        {
+            // If x is not null...
+            //
+            if (y == null)
+                // ...and y is null, x is greater.
+            {
+                return 1;
+            }
+            else
+            {
+                // ...and y is not null, compare the names
+
+                string[] xNameParts = x.name.Split('-', System.StringSplitOptions.RemoveEmptyEntries);
+                int xName_World = int.Parse(xNameParts[0]);
+                int xName_Level = int.Parse(xNameParts[1]);
+
+                string[] yNameParts = y.name.Split('-', System.StringSplitOptions.RemoveEmptyEntries);
+                int yName_World = int.Parse(yNameParts[0]);
+                int yName_Level = int.Parse(yNameParts[1]);
+
+                if (xName_World == yName_World)
+                {
+                    // Same world
+                    if( xName_Level == yName_Level)
+                    {
+                        // same level
+                        return 0;
+                    }
+                    else if (xName_Level > yName_Level )
+                    {
+                        // x level is greater
+                        return 1;
+                    }
+                    else 
+                    {
+                        // y level is greater
+                        return -1;
+                    }
+                }
+                else if ( xName_World > yName_World )
+                {
+                    // x world is greater
+                    return 1;
+                }
+                else
+                {
+                    // y world is greater
+                    return -1;
+                }
+                
+            }
+        }
+    }
 }

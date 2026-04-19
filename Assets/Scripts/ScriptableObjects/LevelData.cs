@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 [CreateAssetMenu(fileName = "NewLevelData", menuName = "ScriptableObjects/LevelData", order = 0)]
-public class LevelData : ScriptableObject 
+public class LevelData : ScriptableObject
 {
     [SerializeField]
     public Digx7.Grids.Grid grid;

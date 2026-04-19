@@ -15,15 +15,15 @@ MonoBehaviour:
   grid:
     data:
     - coordinate: {x: 0, y: 0}
-      flag: T_Gold_1
+      flag: 0
     - coordinate: {x: 0, y: 1}
-      flag: T_Gold_2
+      flag: 0
     - coordinate: {x: 0, y: 2}
-      flag: T_Gold_3
+      flag: 0
     - coordinate: {x: 0, y: 3}
       flag: 0
     - coordinate: {x: 0, y: 4}
-      flag: 0
+      flag: T_Gold_1
     - coordinate: {x: 0, y: 5}
       flag: 0
     - coordinate: {x: 0, y: 6}
@@ -39,7 +39,7 @@ MonoBehaviour:
     - coordinate: {x: 1, y: 3}
       flag: 0
     - coordinate: {x: 1, y: 4}
-      flag: 0
+      flag: T_Gold_2
     - coordinate: {x: 1, y: 5}
       flag: 0
     - coordinate: {x: 1, y: 6}
@@ -47,7 +47,7 @@ MonoBehaviour:
     - coordinate: {x: 1, y: 7}
       flag: 0
     - coordinate: {x: 2, y: 0}
-      flag: 0
+      flag: T_Diamond_1
     - coordinate: {x: 2, y: 1}
       flag: 0
     - coordinate: {x: 2, y: 2}
@@ -55,7 +55,7 @@ MonoBehaviour:
     - coordinate: {x: 2, y: 3}
       flag: 0
     - coordinate: {x: 2, y: 4}
-      flag: 0
+      flag: T_Gold_3
     - coordinate: {x: 2, y: 5}
       flag: 0
     - coordinate: {x: 2, y: 6}
@@ -63,9 +63,9 @@ MonoBehaviour:
     - coordinate: {x: 2, y: 7}
       flag: 0
     - coordinate: {x: 3, y: 0}
-      flag: 0
+      flag: T_Diamond_2
     - coordinate: {x: 3, y: 1}
-      flag: 0
+      flag: T_Diamond_4
     - coordinate: {x: 3, y: 2}
       flag: 0
     - coordinate: {x: 3, y: 3}
@@ -79,7 +79,7 @@ MonoBehaviour:
     - coordinate: {x: 3, y: 7}
       flag: 0
     - coordinate: {x: 4, y: 0}
-      flag: 0
+      flag: T_Diamond_3
     - coordinate: {x: 4, y: 1}
       flag: 0
     - coordinate: {x: 4, y: 2}
@@ -87,7 +87,7 @@ MonoBehaviour:
     - coordinate: {x: 4, y: 3}
       flag: 0
     - coordinate: {x: 4, y: 4}
-      flag: 0
+      flag: T_Wand_1
     - coordinate: {x: 4, y: 5}
       flag: 0
     - coordinate: {x: 4, y: 6}
@@ -101,11 +101,11 @@ MonoBehaviour:
     - coordinate: {x: 5, y: 2}
       flag: 0
     - coordinate: {x: 5, y: 3}
-      flag: 0
+      flag: T_Potion_1
     - coordinate: {x: 5, y: 4}
       flag: 0
     - coordinate: {x: 5, y: 5}
-      flag: 0
+      flag: T_Wand_2
     - coordinate: {x: 5, y: 6}
       flag: 0
     - coordinate: {x: 5, y: 7}
@@ -115,15 +115,15 @@ MonoBehaviour:
     - coordinate: {x: 6, y: 1}
       flag: 0
     - coordinate: {x: 6, y: 2}
-      flag: 0
+      flag: T_Potion_4
     - coordinate: {x: 6, y: 3}
-      flag: 0
+      flag: T_Potion_3
     - coordinate: {x: 6, y: 4}
-      flag: 0
+      flag: T_Potion_2
     - coordinate: {x: 6, y: 5}
       flag: 0
     - coordinate: {x: 6, y: 6}
-      flag: 0
+      flag: T_Wand_3
     - coordinate: {x: 6, y: 7}
       flag: 0
     - coordinate: {x: 7, y: 0}
@@ -131,11 +131,11 @@ MonoBehaviour:
     - coordinate: {x: 7, y: 1}
       flag: 0
     - coordinate: {x: 7, y: 2}
-      flag: 0
+      flag: T_Potion_7
     - coordinate: {x: 7, y: 3}
-      flag: 0
+      flag: T_Potion_6
     - coordinate: {x: 7, y: 4}
-      flag: 0
+      flag: T_Potion_5
     - coordinate: {x: 7, y: 5}
       flag: 0
     - coordinate: {x: 7, y: 6}
@@ -147,12 +147,18 @@ MonoBehaviour:
     gridType: 1
     origin: {x: 0, y: 7}
   treasureToFind:
+  - {fileID: 11400000, guid: 83a366abc373f6545ab289d39d6dc85b, type: 2}
+  - {fileID: 11400000, guid: cc579467d7a81284287a76f3ca613d94, type: 2}
   - {fileID: 11400000, guid: 1f666dc9f8fe22e4f8b1c255b0a57567, type: 2}
-  treasureRotations: 00000000
+  - {fileID: 11400000, guid: c7b9ba1ef62a6bb4ea34afc246a15add, type: 2}
+  treasureRotations: 01000000000000000100000003000000
   hints:
-  - (0,7)
+  - (7,6)
+  - (3,7)
+  - (0,3)
+  - (6,1)
   tools:
-  - count: 4
+  - count: 19
     tool: {fileID: 11400000, guid: 7ef80a48c11f0db4b9174efc95371beb, type: 2}
   nextLevel: {fileID: 11400000, guid: bc38e01d63385974494a351e8dfa2965, type: 2}
   isLastLevel: 0

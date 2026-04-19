@@ -15,11 +15,11 @@ MonoBehaviour:
   grid:
     data:
     - coordinate: {x: 0, y: 0}
-      flag: T_Gold_1
+      flag: 0
     - coordinate: {x: 0, y: 1}
-      flag: T_Gold_2
+      flag: 0
     - coordinate: {x: 0, y: 2}
-      flag: T_Gold_3
+      flag: 0
     - coordinate: {x: 0, y: 3}
       flag: 0
     - coordinate: {x: 0, y: 4}
@@ -69,7 +69,7 @@ MonoBehaviour:
     - coordinate: {x: 3, y: 2}
       flag: 0
     - coordinate: {x: 3, y: 3}
-      flag: 0
+      flag: T_Gold_1
     - coordinate: {x: 3, y: 4}
       flag: 0
     - coordinate: {x: 3, y: 5}
@@ -85,7 +85,7 @@ MonoBehaviour:
     - coordinate: {x: 4, y: 2}
       flag: 0
     - coordinate: {x: 4, y: 3}
-      flag: 0
+      flag: T_Gold_2
     - coordinate: {x: 4, y: 4}
       flag: 0
     - coordinate: {x: 4, y: 5}
@@ -101,7 +101,7 @@ MonoBehaviour:
     - coordinate: {x: 5, y: 2}
       flag: 0
     - coordinate: {x: 5, y: 3}
-      flag: 0
+      flag: T_Gold_3
     - coordinate: {x: 5, y: 4}
       flag: 0
     - coordinate: {x: 5, y: 5}
@@ -148,11 +148,11 @@ MonoBehaviour:
     origin: {x: 0, y: 0}
   treasureToFind:
   - {fileID: 11400000, guid: 1f666dc9f8fe22e4f8b1c255b0a57567, type: 2}
-  treasureRotations: 00000000
+  treasureRotations: 01000000
   hints:
-  - A1
+  - D5
   tools:
-  - count: 4
+  - count: 5
     tool: {fileID: 11400000, guid: 7ef80a48c11f0db4b9174efc95371beb, type: 2}
   nextLevel: {fileID: 11400000, guid: 5f0a69b717d3d674896aca54496d43a4, type: 2}
   isLastLevel: 0

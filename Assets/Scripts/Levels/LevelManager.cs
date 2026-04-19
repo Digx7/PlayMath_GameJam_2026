@@ -86,7 +86,7 @@ public class LevelManager : Singleton<LevelManager>
     
     public void OnRecieve_RequestSetCurrentLevel(LevelData data)
     {
-        CurrentLevel = data;
+        SetCurrentLevel(data);
     }
 
     public void OnRecieve_RequestSetNextLevel(LevelData data)
@@ -106,6 +106,11 @@ public class LevelManager : Singleton<LevelManager>
 
     #endregion
     #region MainFunctions
+
+    public void SetCurrentLevel(LevelData currentLevel)
+    {
+        CurrentLevel = currentLevel;
+    }
 
     public void SetNextLevel(LevelData newNextLevel)
     {

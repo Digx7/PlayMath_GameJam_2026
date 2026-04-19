@@ -14,7 +14,8 @@ isLastLevel|False|---|---|---|---|---|---|$
 isRandomLevel|False|---|---|---|---|---|---|$
 Next_Level|Assets/Resources/ScriptableObjects/LevelData/1-12.asset|---|---|---|---|---|---|$
 --TreasureToFind--|---|---|---|---|---|---|---|$
-Gold|---|---|---|---|---|---|---|$
+Octopus|---|---|---|---|---|---|---|$
+Potion|---|---|---|---|---|---|---|$
 --TreasureRotations--|---|---|---|---|---|---|---|$
 Rotate270|---|---|---|---|---|---|---|$
 None|---|---|---|---|---|---|---|$

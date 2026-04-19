@@ -16,7 +16,7 @@ MonoBehaviour:
     PageTitle: Name Seen In Browser Tab
     PageBackgroundColor: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
     DisableSaveMenuPopup: 1
-    UseBackgroundImage: 1
+    UseBackgroundImage: 0
     DisableFullscreenButton: 1
     FullscreenHidesCornerButton: 1
     BackgroundImageConfig:
@@ -38,7 +38,7 @@ MonoBehaviour:
         VersionTextColor: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
         VersionTextFontSize: 12
   loadingScreen:
-    usingBGImage: 1
+    usingBGImage: 0
     BackgroundColor: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
     loadingBarLogo:
       useLoadingLogoImage: 0

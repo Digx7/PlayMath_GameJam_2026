@@ -20,10 +20,19 @@ public class LevelAutoTester : EditorWindow
 
     private void OnGUI()
     {
-        if (GUILayout.Button("Run Level Tests"))
+        string storyModeFolderPath = "Assets/Resources/ScriptableObjects/LevelData";
+        string testLevelsFolderPath = "Assets/Editor/TestLevelData";
+        
+        if (GUILayout.Button("Run Story Level Tests"))
         {
             Debug.Log("LevelAutoTester: OnGUI()");
-            RunLevelTestsAsync();
+            RunLevelTestsAsync(storyModeFolderPath);
+        }
+        
+        if (GUILayout.Button("Run Editor Level Tests"))
+        {
+            Debug.Log("LevelAutoTester: OnGUI()");
+            RunLevelTestsAsync(testLevelsFolderPath);
         }
     }
 
@@ -33,6 +42,33 @@ public class LevelAutoTester : EditorWindow
         
         string levelsFolderPath = "Assets/Editor/TestLevelData";
         string[] levelAssetPaths = Directory.GetFiles(levelsFolderPath, "*.asset", SearchOption.AllDirectories);
+        startTime = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+        Debug.Log($"LevelAutoTester: Found {levelAssetPaths.Length} level assets to test");
+
+
+        foreach (string assetPath in levelAssetPaths)
+        {
+            Debug.Log($"LevelAutoTester: Testing level at path: {assetPath}");
+            
+            LevelData levelData = AssetDatabase.LoadAssetAtPath<LevelData>(assetPath);
+            if (levelData != null)
+            {
+                bool isValid = await ValidateLevelDataAsync(levelData);
+                Debug.Log($"Level '{levelData.name}' validation result: {(isValid ? "Passed" : "Failed")}");
+            }
+            else
+            {
+                Debug.LogError($"Failed to load LevelData from path: {assetPath}");
+            }
+        }
+    }
+
+    private async Task RunLevelTestsAsync(string levelPath)
+    {
+        Debug.Log("LevelAutoTester: RunLevelTestsAsync()");
+        
+        // string levelsFolderPath = "Assets/Editor/TestLevelData";
+        string[] levelAssetPaths = Directory.GetFiles(levelPath, "*.asset", SearchOption.AllDirectories);
         startTime = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
         Debug.Log($"LevelAutoTester: Found {levelAssetPaths.Length} level assets to test");
 

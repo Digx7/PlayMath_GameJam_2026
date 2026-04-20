@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ac0c0a51408a04f9ea578326becd37, type: 3}
+  m_Name: 5-11
+  m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  grid:
+    data:
+    - coordinate: {x: 0, y: 0}
+      flag: 0
+    - coordinate: {x: 0, y: 1}
+      flag: 0
+    - coordinate: {x: 0, y: 2}
+      flag: 0
+    - coordinate: {x: 0, y: 3}
+      flag: 0
+    - coordinate: {x: 0, y: 4}
+      flag: 0
+    - coordinate: {x: 0, y: 5}
+      flag: 0
+    - coordinate: {x: 0, y: 6}
+      flag: 0
+    - coordinate: {x: 0, y: 7}
+      flag: 0
+    - coordinate: {x: 1, y: 0}
+      flag: 0
+    - coordinate: {x: 1, y: 1}
+      flag: 0
+    - coordinate: {x: 1, y: 2}
+      flag: 0
+    - coordinate: {x: 1, y: 3}
+      flag: 0
+    - coordinate: {x: 1, y: 4}
+      flag: 0
+    - coordinate: {x: 1, y: 5}
+      flag: 0
+    - coordinate: {x: 1, y: 6}
+      flag: 0
+    - coordinate: {x: 1, y: 7}
+      flag: 0
+    - coordinate: {x: 2, y: 0}
+      flag: 0
+    - coordinate: {x: 2, y: 1}
+      flag: 0
+    - coordinate: {x: 2, y: 2}
+      flag: 0
+    - coordinate: {x: 2, y: 3}
+      flag: 0
+    - coordinate: {x: 2, y: 4}
+      flag: 0
+    - coordinate: {x: 2, y: 5}
+      flag: T_Star_5
+    - coordinate: {x: 2, y: 6}
+      flag: 0
+    - coordinate: {x: 2, y: 7}
+      flag: 0
+    - coordinate: {x: 3, y: 0}
+      flag: 0
+    - coordinate: {x: 3, y: 1}
+      flag: 0
+    - coordinate: {x: 3, y: 2}
+      flag: 0
+    - coordinate: {x: 3, y: 3}
+      flag: 0
+    - coordinate: {x: 3, y: 4}
+      flag: T_Star_2
+    - coordinate: {x: 3, y: 5}
+      flag: T_Star_3
+    - coordinate: {x: 3, y: 6}
+      flag: T_Star_4
+    - coordinate: {x: 3, y: 7}
+      flag: 0
+    - coordinate: {x: 4, y: 0}
+      flag: 0
+    - coordinate: {x: 4, y: 1}
+      flag: 0
+    - coordinate: {x: 4, y: 2}
+      flag: 0
+    - coordinate: {x: 4, y: 3}
+      flag: 0
+    - coordinate: {x: 4, y: 4}
+      flag: 0
+    - coordinate: {x: 4, y: 5}
+      flag: T_Star_1
+    - coordinate: {x: 4, y: 6}
+      flag: 0
+    - coordinate: {x: 4, y: 7}
+      flag: 0
+    - coordinate: {x: 5, y: 0}
+      flag: 0
+    - coordinate: {x: 5, y: 1}
+      flag: 0
+    - coordinate: {x: 5, y: 2}
+      flag: 0
+    - coordinate: {x: 5, y: 3}
+      flag: 0
+    - coordinate: {x: 5, y: 4}
+      flag: 0
+    - coordinate: {x: 5, y: 5}
+      flag: 0
+    - coordinate: {x: 5, y: 6}
+      flag: 0
+    - coordinate: {x: 5, y: 7}
+      flag: 0
+    - coordinate: {x: 6, y: 0}
+      flag: 0
+    - coordinate: {x: 6, y: 1}
+      flag: 0
+    - coordinate: {x: 6, y: 2}
+      flag: 0
+    - coordinate: {x: 6, y: 3}
+      flag: 0
+    - coordinate: {x: 6, y: 4}
+      flag: 0
+    - coordinate: {x: 6, y: 5}
+      flag: 0
+    - coordinate: {x: 6, y: 6}
+      flag: 0
+    - coordinate: {x: 6, y: 7}
+      flag: 0
+    - coordinate: {x: 7, y: 0}
+      flag: 0
+    - coordinate: {x: 7, y: 1}
+      flag: 0
+    - coordinate: {x: 7, y: 2}
+      flag: 0
+    - coordinate: {x: 7, y: 3}
+      flag: 0
+    - coordinate: {x: 7, y: 4}
+      flag: 0
+    - coordinate: {x: 7, y: 5}
+      flag: 0
+    - coordinate: {x: 7, y: 6}
+      flag: 0
+    - coordinate: {x: 7, y: 7}
+      flag: 0
+    x_Length: 8
+    y_Length: 8
+    gridType: 1
+    origin: {x: 0, y: 7}
+  treasureToFind:
+  - {fileID: 11400000, guid: 98f82ce3b1f480741932329f4f494491, type: 2}
+  treasureRotations: 03000000
+  hints:
+  - (3, 3)
+  tools:
+  - count: 5
+    tool: {fileID: 11400000, guid: 3e62e31fecc60a24a8640e2a14d1d8aa, type: 2}
+  nextLevel: {fileID: 0}
+  isLastLevel: 0
+  isRandomLevel: 0

@@ -18,6 +18,11 @@ namespace Digx7.Levels
         {
             return gridTypesToUse[UnityEngine.Random.Range(0, gridTypesToUse.Count)];
         }
+        public List<OriginTypes> originTypesToUse = new List<OriginTypes>{OriginTypes.ANY_WHERE};
+        public OriginTypes GetRandomOriginType()
+        {
+            return originTypesToUse[UnityEngine.Random.Range(0, originTypesToUse.Count)];
+        }
 
         public int minTreasureAmount = 1;
         public int maxTreasureAmount = 1;
@@ -44,7 +49,7 @@ namespace Digx7.Levels
                 while (!validTreasureFound && treasureAttempts < maxTreasureAttempts)
                 {
                     randomTreasureIndex = UnityEngine.Random.Range(0, treasurePiecesToUse.Count);
-                    TreasurePiece treasure = treasurePiecesToUse[i];
+                    TreasurePiece treasure = treasurePiecesToUse[randomTreasureIndex];
 
                     if (!treasureToFind.Contains(treasure))
                     {

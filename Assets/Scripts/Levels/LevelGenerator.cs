@@ -230,7 +230,33 @@ namespace Digx7.Levels
 
             GridTypes gridType = templateData.GetRandomGridType();
 
-            Vector2Int origin = (gridType == GridTypes.Coordinate) ? new Vector2Int(UnityEngine.Random.Range(0, xLength), UnityEngine.Random.Range(0, yLength)) : Vector2Int.zero;
+            // Vector2Int origin = (gridType == GridTypes.Coordinate) ? new Vector2Int(UnityEngine.Random.Range(0, xLength), UnityEngine.Random.Range(0, yLength)) : Vector2Int.zero;
+            Vector2Int origin = Vector2Int.zero;
+            if(gridType == GridTypes.Coordinate)
+            {
+                OriginTypes randomOriginType = templateData.GetRandomOriginType();
+                
+                switch (randomOriginType)
+                {
+                    case OriginTypes.ANY_WHERE:
+                        origin = new Vector2Int(UnityEngine.Random.Range(0, xLength), UnityEngine.Random.Range(0, yLength));
+                        break;
+                    case OriginTypes.TOP_LEFT:
+                        origin = Vector2Int.zero;
+                        break;
+                    case OriginTypes.TOP_RIGHT:
+                        origin = new Vector2Int(xLength-1, 0);
+                        break;
+                    case OriginTypes.BOTTOM_RIGHT:
+                        origin = new Vector2Int(xLength-1, yLength-1);
+                        break;
+                    case OriginTypes.BOTTOM_LEFT:
+                        origin = new Vector2Int(0, yLength-1);
+                        break;
+                    default:
+                        break;
+                }
+            }
 
             List<CoordinateFlagPair> gridData = new List<CoordinateFlagPair>();
             List<TreasurePiece> treasureToFind = new List<TreasurePiece>();

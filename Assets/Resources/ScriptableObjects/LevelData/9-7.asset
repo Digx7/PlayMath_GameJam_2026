@@ -1,0 +1,163 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ac0c0a51408a04f9ea578326becd37, type: 3}
+  m_Name: 9-7
+  m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  grid:
+    data:
+    - coordinate: {x: 0, y: 0}
+      flag: 0
+    - coordinate: {x: 0, y: 1}
+      flag: 0
+    - coordinate: {x: 0, y: 2}
+      flag: T_Diamond_1
+    - coordinate: {x: 0, y: 3}
+      flag: 0
+    - coordinate: {x: 0, y: 4}
+      flag: 0
+    - coordinate: {x: 0, y: 5}
+      flag: 0
+    - coordinate: {x: 0, y: 6}
+      flag: 0
+    - coordinate: {x: 0, y: 7}
+      flag: 0
+    - coordinate: {x: 1, y: 0}
+      flag: 0
+    - coordinate: {x: 1, y: 1}
+      flag: 0
+    - coordinate: {x: 1, y: 2}
+      flag: T_Diamond_2
+    - coordinate: {x: 1, y: 3}
+      flag: T_Diamond_4
+    - coordinate: {x: 1, y: 4}
+      flag: 0
+    - coordinate: {x: 1, y: 5}
+      flag: 0
+    - coordinate: {x: 1, y: 6}
+      flag: 0
+    - coordinate: {x: 1, y: 7}
+      flag: 0
+    - coordinate: {x: 2, y: 0}
+      flag: 0
+    - coordinate: {x: 2, y: 1}
+      flag: T_Octopus_4
+    - coordinate: {x: 2, y: 2}
+      flag: T_Diamond_3
+    - coordinate: {x: 2, y: 3}
+      flag: T_Octopus_5
+    - coordinate: {x: 2, y: 4}
+      flag: 0
+    - coordinate: {x: 2, y: 5}
+      flag: 0
+    - coordinate: {x: 2, y: 6}
+      flag: 0
+    - coordinate: {x: 2, y: 7}
+      flag: 0
+    - coordinate: {x: 3, y: 0}
+      flag: 0
+    - coordinate: {x: 3, y: 1}
+      flag: T_Octopus_1
+    - coordinate: {x: 3, y: 2}
+      flag: T_Octopus_2
+    - coordinate: {x: 3, y: 3}
+      flag: T_Octopus_3
+    - coordinate: {x: 3, y: 4}
+      flag: 0
+    - coordinate: {x: 3, y: 5}
+      flag: 0
+    - coordinate: {x: 3, y: 6}
+      flag: 0
+    - coordinate: {x: 3, y: 7}
+      flag: 0
+    - coordinate: {x: 4, y: 0}
+      flag: 0
+    - coordinate: {x: 4, y: 1}
+      flag: 0
+    - coordinate: {x: 4, y: 2}
+      flag: 0
+    - coordinate: {x: 4, y: 3}
+      flag: 0
+    - coordinate: {x: 4, y: 4}
+      flag: 0
+    - coordinate: {x: 4, y: 5}
+      flag: 0
+    - coordinate: {x: 4, y: 6}
+      flag: 0
+    - coordinate: {x: 4, y: 7}
+      flag: 0
+    - coordinate: {x: 5, y: 0}
+      flag: 0
+    - coordinate: {x: 5, y: 1}
+      flag: 0
+    - coordinate: {x: 5, y: 2}
+      flag: 0
+    - coordinate: {x: 5, y: 3}
+      flag: 0
+    - coordinate: {x: 5, y: 4}
+      flag: 0
+    - coordinate: {x: 5, y: 5}
+      flag: 0
+    - coordinate: {x: 5, y: 6}
+      flag: 0
+    - coordinate: {x: 5, y: 7}
+      flag: 0
+    - coordinate: {x: 6, y: 0}
+      flag: 0
+    - coordinate: {x: 6, y: 1}
+      flag: 0
+    - coordinate: {x: 6, y: 2}
+      flag: 0
+    - coordinate: {x: 6, y: 3}
+      flag: 0
+    - coordinate: {x: 6, y: 4}
+      flag: T_Shards_1
+    - coordinate: {x: 6, y: 5}
+      flag: T_Shards_2
+    - coordinate: {x: 6, y: 6}
+      flag: 0
+    - coordinate: {x: 6, y: 7}
+      flag: 0
+    - coordinate: {x: 7, y: 0}
+      flag: 0
+    - coordinate: {x: 7, y: 1}
+      flag: 0
+    - coordinate: {x: 7, y: 2}
+      flag: 0
+    - coordinate: {x: 7, y: 3}
+      flag: 0
+    - coordinate: {x: 7, y: 4}
+      flag: 0
+    - coordinate: {x: 7, y: 5}
+      flag: T_Shards_3
+    - coordinate: {x: 7, y: 6}
+      flag: T_Shards_4
+    - coordinate: {x: 7, y: 7}
+      flag: 0
+    x_Length: 8
+    y_Length: 8
+    gridType: 1
+    origin: {x: 7, y: 7}
+  treasureToFind:
+  - {fileID: 11400000, guid: 7337f837bca04264ea1296bef50ce6ae, type: 2}
+  - {fileID: 11400000, guid: f04aeba82ebe5be4d9cd8d2a2ed5fa0d, type: 2}
+  - {fileID: 11400000, guid: cc579467d7a81284287a76f3ca613d94, type: 2}
+  treasureRotations: 030000000300000000000000
+  hints:
+  - (-1, 3)
+  - (-5, 4)
+  - (-6, 4)
+  tools:
+  - count: 3
+    tool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}
+  nextLevel: {fileID: 0}
+  isLastLevel: 0
+  isRandomLevel: 0

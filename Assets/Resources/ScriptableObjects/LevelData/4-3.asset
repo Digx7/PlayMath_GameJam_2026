@@ -17,147 +17,33 @@ MonoBehaviour:
     - coordinate: {x: 0, y: 0}
       flag: 0
     - coordinate: {x: 0, y: 1}
-      flag: 0
+      flag: T_Potion_2
     - coordinate: {x: 0, y: 2}
-      flag: 0
-    - coordinate: {x: 0, y: 3}
-      flag: 0
-    - coordinate: {x: 0, y: 4}
-      flag: 0
-    - coordinate: {x: 0, y: 5}
-      flag: T_Diamond_3
-    - coordinate: {x: 0, y: 6}
-      flag: T_Diamond_2
-    - coordinate: {x: 0, y: 7}
-      flag: T_Diamond_1
+      flag: T_Potion_5
     - coordinate: {x: 1, y: 0}
-      flag: 0
+      flag: T_Potion_1
     - coordinate: {x: 1, y: 1}
-      flag: 0
+      flag: T_Potion_3
     - coordinate: {x: 1, y: 2}
-      flag: 0
-    - coordinate: {x: 1, y: 3}
-      flag: 0
-    - coordinate: {x: 1, y: 4}
-      flag: 0
-    - coordinate: {x: 1, y: 5}
-      flag: 0
-    - coordinate: {x: 1, y: 6}
-      flag: T_Diamond_4
-    - coordinate: {x: 1, y: 7}
-      flag: 0
+      flag: T_Potion_6
     - coordinate: {x: 2, y: 0}
       flag: 0
     - coordinate: {x: 2, y: 1}
-      flag: 0
+      flag: T_Potion_4
     - coordinate: {x: 2, y: 2}
-      flag: 0
-    - coordinate: {x: 2, y: 3}
-      flag: 0
-    - coordinate: {x: 2, y: 4}
-      flag: 0
-    - coordinate: {x: 2, y: 5}
-      flag: 0
-    - coordinate: {x: 2, y: 6}
-      flag: 0
-    - coordinate: {x: 2, y: 7}
-      flag: 0
-    - coordinate: {x: 3, y: 0}
-      flag: 0
-    - coordinate: {x: 3, y: 1}
-      flag: 0
-    - coordinate: {x: 3, y: 2}
-      flag: 0
-    - coordinate: {x: 3, y: 3}
-      flag: 0
-    - coordinate: {x: 3, y: 4}
-      flag: 0
-    - coordinate: {x: 3, y: 5}
-      flag: 0
-    - coordinate: {x: 3, y: 6}
-      flag: 0
-    - coordinate: {x: 3, y: 7}
-      flag: T_Wand_1
-    - coordinate: {x: 4, y: 0}
-      flag: 0
-    - coordinate: {x: 4, y: 1}
-      flag: T_Octopus_4
-    - coordinate: {x: 4, y: 2}
-      flag: 0
-    - coordinate: {x: 4, y: 3}
-      flag: T_Octopus_5
-    - coordinate: {x: 4, y: 4}
-      flag: 0
-    - coordinate: {x: 4, y: 5}
-      flag: 0
-    - coordinate: {x: 4, y: 6}
-      flag: T_Wand_2
-    - coordinate: {x: 4, y: 7}
-      flag: 0
-    - coordinate: {x: 5, y: 0}
-      flag: 0
-    - coordinate: {x: 5, y: 1}
-      flag: T_Octopus_1
-    - coordinate: {x: 5, y: 2}
-      flag: T_Octopus_2
-    - coordinate: {x: 5, y: 3}
-      flag: T_Octopus_3
-    - coordinate: {x: 5, y: 4}
-      flag: 0
-    - coordinate: {x: 5, y: 5}
-      flag: T_Wand_3
-    - coordinate: {x: 5, y: 6}
-      flag: 0
-    - coordinate: {x: 5, y: 7}
-      flag: 0
-    - coordinate: {x: 6, y: 0}
-      flag: 0
-    - coordinate: {x: 6, y: 1}
-      flag: 0
-    - coordinate: {x: 6, y: 2}
-      flag: 0
-    - coordinate: {x: 6, y: 3}
-      flag: 0
-    - coordinate: {x: 6, y: 4}
-      flag: 0
-    - coordinate: {x: 6, y: 5}
-      flag: 0
-    - coordinate: {x: 6, y: 6}
-      flag: 0
-    - coordinate: {x: 6, y: 7}
-      flag: 0
-    - coordinate: {x: 7, y: 0}
-      flag: 0
-    - coordinate: {x: 7, y: 1}
-      flag: 0
-    - coordinate: {x: 7, y: 2}
-      flag: 0
-    - coordinate: {x: 7, y: 3}
-      flag: 0
-    - coordinate: {x: 7, y: 4}
-      flag: 0
-    - coordinate: {x: 7, y: 5}
-      flag: 0
-    - coordinate: {x: 7, y: 6}
-      flag: 0
-    - coordinate: {x: 7, y: 7}
-      flag: 0
-    x_Length: 8
-    y_Length: 8
-    gridType: 1
-    origin: {x: 6, y: 6}
+      flag: T_Potion_7
+    x_Length: 3
+    y_Length: 3
+    gridType: 0
+    origin: {x: 0, y: 0}
   treasureToFind:
-  - {fileID: 11400000, guid: cc579467d7a81284287a76f3ca613d94, type: 2}
-  - {fileID: 11400000, guid: f04aeba82ebe5be4d9cd8d2a2ed5fa0d, type: 2}
-  - {fileID: 11400000, guid: c7b9ba1ef62a6bb4ea34afc246a15add, type: 2}
-  treasureRotations: 010000000300000000000000
+  - {fileID: 11400000, guid: 83a366abc373f6545ab289d39d6dc85b, type: 2}
+  treasureRotations: 00000000
   hints:
-  - (0,-6)
-  - (-1,4)
-  - (-2,0)
+  - B2
   tools:
-  - count: 9
-    tool: {fileID: 11400000, guid: 7ef80a48c11f0db4b9174efc95371beb, type: 2}
-  nextLevel: {fileID: 11400000, guid: 1d2aaa418c77bd74395d2b8b358caa85, type: 2}
+  - count: 3
+    tool: {fileID: 11400000, guid: 3e62e31fecc60a24a8640e2a14d1d8aa, type: 2}
+  nextLevel: {fileID: 11400000, guid: 0fb3010e3ae57f944916d4b2fd4cc97a, type: 2}
   isLastLevel: 0
   isRandomLevel: 0

@@ -49,7 +49,7 @@ MonoBehaviour:
   gameModeToChangeToOnSetup: MainMenu
   changeSongOnSceneStart: 1
   requestJumpToSongChannel: {fileID: 11400000, guid: c0ab9c0a3239601448462bd578abfeb8, type: 2}
-  songToJumpTo: {fileID: 11400000, guid: bd15bfd552254614d91cee4b695238ca, type: 2}
+  songToJumpTo: {fileID: 11400000, guid: af3b6635aa37e5d4b872c314f63be58a, type: 2}
   context:
     SpawnPointID: 0
     sceneCameraMode: 0

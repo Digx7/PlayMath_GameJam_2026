@@ -154,7 +154,7 @@ MonoBehaviour:
   - G6
   - B2
   tools:
-  - count: 3
+  - count: 5
     tool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}
   nextLevel: {fileID: 11400000, guid: 2287de24f9924064a864548493d610f4, type: 2}
   isLastLevel: 0

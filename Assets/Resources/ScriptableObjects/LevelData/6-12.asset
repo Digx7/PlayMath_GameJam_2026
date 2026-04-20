@@ -152,8 +152,8 @@ MonoBehaviour:
   hints:
   - (-1, -2)
   tools:
-  - count: 9
+  - count: 4
     tool: {fileID: 11400000, guid: 3e62e31fecc60a24a8640e2a14d1d8aa, type: 2}
-  nextLevel: {fileID: 0}
+  nextLevel: {fileID: 11400000, guid: ac8639397d6cdde4ab33586151e0a408, type: 2}
   isLastLevel: 0
   isRandomLevel: 0

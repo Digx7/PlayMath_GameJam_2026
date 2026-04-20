@@ -74,7 +74,7 @@ MonoBehaviour:
   hints:
   - (2, 2)
   tools:
-  - count: 1
+  - count: 3
     tool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}
   nextLevel: {fileID: 11400000, guid: c95afb9efd3c8294a9119aff47f4acec, type: 2}
   isLastLevel: 0

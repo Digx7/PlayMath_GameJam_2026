@@ -158,7 +158,7 @@ MonoBehaviour:
   - (-4, -5)
   - (-4, 0)
   tools:
-  - count: 3
+  - count: 11
     tool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}
   nextLevel: {fileID: 11400000, guid: 0f26a421e9e16af43aefc0bcff325177, type: 2}
   isLastLevel: 0

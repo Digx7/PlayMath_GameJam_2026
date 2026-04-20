@@ -152,7 +152,7 @@ MonoBehaviour:
   hints:
   - (6, -4)
   tools:
-  - count: 3
+  - count: 2
     tool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}
   nextLevel: {fileID: 11400000, guid: 30df2a8e97b94bb4fb1a9a53ee9f25af, type: 2}
   isLastLevel: 0

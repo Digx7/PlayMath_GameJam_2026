@@ -74,8 +74,8 @@ MonoBehaviour:
   hints:
   - D1
   tools:
-  - count: 2
+  - count: 3
     tool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}
-  nextLevel: {fileID: 0}
+  nextLevel: {fileID: 11400000, guid: fe6c78fc6edf2184e9edbb61ec8cc082, type: 2}
   isLastLevel: 0
   isRandomLevel: 0

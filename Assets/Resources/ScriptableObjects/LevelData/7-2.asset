@@ -42,8 +42,8 @@ MonoBehaviour:
   hints:
   - C2
   tools:
-  - count: 1
+  - count: 2
     tool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}
-  nextLevel: {fileID: 0}
+  nextLevel: {fileID: 11400000, guid: 31c70db1050294a438929c16539b9495, type: 2}
   isLastLevel: 0
   isRandomLevel: 0

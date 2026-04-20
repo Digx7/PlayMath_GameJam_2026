@@ -42,7 +42,7 @@ MonoBehaviour:
   hints:
   - (2, 1)
   tools:
-  - count: 1
+  - count: 4
     tool: {fileID: 11400000, guid: 9ecd77916114cac4983086e7a0f1eeff, type: 2}
   nextLevel: {fileID: 11400000, guid: adac2e344191e3a4f8b70e83ea002c17, type: 2}
   isLastLevel: 0

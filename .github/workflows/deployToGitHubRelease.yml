@@ -103,7 +103,7 @@ jobs:
 
           # (Optional) Files to include in the release
           files: |
-            build/${{ inputs.zipName }}
+            build/${{ inputs.zipName }}/
 
           # (Optional) Defines the title of the release
           title: Update ${{ inputs.tagName }}

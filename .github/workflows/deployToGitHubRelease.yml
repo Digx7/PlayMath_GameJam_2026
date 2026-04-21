@@ -81,6 +81,9 @@ jobs:
           cd build
           if [ -d "${{ inputs.artifactName }}" ]; then
             zip -r ${{ inputs.zipName }} ${{ inputs.artifactName }}
+            sudo chmod u+x ${{ inputs.zipName }}
+            sudo chmod g+x ${{ inputs.zipName }}
+            sudo chmod o+x ${{ inputs.zipName }}
             ls -la
           else
             echo "Error: Directory ${{ inputs.artifactName }} not found in build/"

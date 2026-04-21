@@ -27,7 +27,7 @@ on:
         default: true
         required: false
         type: boolean
-        
+
   workflow_dispatch:
     inputs:
       run_id:
@@ -81,6 +81,7 @@ jobs:
           cd build
           if [ -d "${{ inputs.artifactName }}" ]; then
             zip -r ${{ inputs.zipName }} ${{ inputs.artifactName }}
+            ls -la
           else
             echo "Error: Directory ${{ inputs.artifactName }} not found in build/"
             ls -la
@@ -96,7 +97,7 @@ jobs:
 
           # (Optional) Files to include in the release
           files: |
-            build/${{ inputs.zipName }}
+            build/${{ inputs.zipName }}.zip
 
           # (Optional) Defines the title of the release
           title: Update ${{ inputs.tagName }}

@@ -87,6 +87,12 @@ jobs:
             ls -la
             exit 1
           fi
+      
+      # Checks if zip files still exist
+      - name: Verify Zip File
+        run: |
+          ls build/
+          ls -la build/
 
       - name: Create Release
         # Uses the create-github-release action

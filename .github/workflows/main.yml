@@ -40,30 +40,20 @@ jobs:
       BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
       ITCH_USERNAME: ${{ secrets.ITCH_USERNAME }}
       ITCH_GAME_ID: ${{ secrets.ITCH_GAME_ID }}
-  # deployToGitHubRelease:
-  #   needs: buildForAllSupportedPlatforms
-  #   uses: ./.github/workflows/deployToGitHubRelease.yml
-  #   with:
-  #     artifactName: Build-WebGL
-  #     zipName: ${{ github.ref_name }}_Itch_WebGL_FullGame.zip
-  #     tagName: ${{ github.ref_name }}
-  #     note: "${{ github.event.head_commit.message }}"
-  #     prerelease: true
+  deployToGitHubRelease:
+    needs: buildForAllSupportedPlatforms
+    uses: ./.github/workflows/deployToGitHubRelease.yml
+    with:
+      artifactName: Build-WebGL
+      zipName: ${{ github.ref_name }}_Itch_WebGL_FullGame.zip
+      tagName: ${{ github.ref_name }}
+      note: "${{ github.event.head_commit.message }}"
+      prerelease: true
   discordMessage_ProcessFinished:
-    # needs: [deployToGitHubRelease, deployToItch]
-    needs: deployToItch
+    needs: [deployToGitHubRelease, deployToItch]
+    # needs: deployToItch
     uses: ./.github/workflows/discordMessage.yml
     with:
       message: "A new release ${{ github.ref_name }} has been deployed to [GitHub Releases](https://github.com/Digx7/PlayMath_GameJam_2026/releases/tag/{{ github.ref_name }}) and [Itch.io](https://digx7.itch.io/treasure-hunt-post-game-jam)! Check it out! "
     secrets:
       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-  
-  discordMessage_ProcessFailure:
-    if: ${{ always() && contains(needs.*.result, 'failure') }}
-    uses: ./.github/workflows/discordMessage.yml
-    with:
-      message: "Something failed with ${{ github.ref_name }} you can view it [here](https://github.com/Digx7/PlayMath_GameJam_2026/actions)"
-    secrets:
-      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-
-  # new 1

@@ -328,10 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResponsiveUIHelper
   breakPoints:
-  - breakPointName: Moblle
-    minScreenWidth: 0
-    maxScreenWidth: 0
-    screenBreakPoint:
+  - screenBreakPoint:
       breakPointName: Mobile
       minScreenWidth: 0
       maxScreenWidth: 399
@@ -343,10 +340,7 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
-  - breakPointName: Tablet
-    minScreenWidth: 0
-    maxScreenWidth: 0
-    screenBreakPoint:
+  - screenBreakPoint:
       breakPointName: Tablet
       minScreenWidth: 400
       maxScreenWidth: 899
@@ -358,10 +352,7 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
-  - breakPointName: Desktop
-    minScreenWidth: 0
-    maxScreenWidth: 0
-    screenBreakPoint:
+  - screenBreakPoint:
       breakPointName: Desktop
       minScreenWidth: 900
       maxScreenWidth: 9999
@@ -374,6 +365,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   updateInEditMode: 0
+  updateOnStart: 1
 --- !u!224 &5158686205958588936 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
@@ -473,11 +465,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5732099593534810254, guid: f5fb38a070db5ff4d897f3c2a88a6b99, type: 3}
       propertyPath: m_text
-      value: Treasure Hunt
+      value: Coordinate Treasure Hunt
       objectReference: {fileID: 0}
     - target: {fileID: 5732099593534810254, guid: f5fb38a070db5ff4d897f3c2a88a6b99, type: 3}
       propertyPath: m_fontSize
-      value: 167.3
+      value: 163.25
       objectReference: {fileID: 0}
     - target: {fileID: 5732099593534810254, guid: f5fb38a070db5ff4d897f3c2a88a6b99, type: 3}
       propertyPath: m_fontAsset

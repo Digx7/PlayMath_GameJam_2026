@@ -88,14 +88,8 @@ jobs:
           notes: |
             ${{ inputs.note }}
 
-          # (Optional) Set to "true" to create a draft release. Default is "false"
-          draft: false
-
           # (Optional) Set to "true" to create a pre-release. Default is "false"
           prerelease: ${{ inputs.prerelease }}
 
           # (Optional) Set to "true" to mark this release as the latest. Default is "false"
           latest: true
-
-          # (Optional) GitHub token for authentication. Default: ${{ github.token }}. If not provided, it will use the repository's default token
-          token: ${{ github.token }}

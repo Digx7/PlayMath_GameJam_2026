@@ -97,26 +97,10 @@ jobs:
           ls build/
           ls -la build/
 
-      - name: Create Release
-        # Uses the create-github-release action
-        uses: nekofar/create-github-release@v1
+      - name: GitHub Release
+        uses: softprops/action-gh-release@v3.0.0
         with:
-          # Defines the tag name for the release (e.g., v1.0.0).
-          tag: ${{ inputs.tagName }}
-
-          # (Optional) Files to include in the release
-          files: |
-            build/${{ inputs.zipName }}
-
-          # (Optional) Defines the title of the release
-          title: Update ${{ inputs.tagName }}
-
-          # (Optional) Allows multiline release notes
-          notes: |
-            ${{ inputs.note }}
-
-          # (Optional) Set to "true" to create a pre-release. Default is "false"
+          body: ${{ inputs.note }}
           prerelease: ${{ inputs.prerelease }}
-
-          # (Optional) Set to "true" to mark this release as the latest. Default is "false"
-          latest: true
+          files: build/${{inputs.zipName}}
+          tag_name: ${{ inputs.tagName }}

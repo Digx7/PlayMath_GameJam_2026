@@ -44,6 +44,7 @@ jobs:
     needs: buildForAllSupportedPlatforms
     uses: ./.github/workflows/deployToGitHubRelease.yml
     with:
+      run_id: ${{ github.run_id }}
       artifactName: Build-WebGL
       zipName: ${{ github.ref_name }}_Itch_WebGL_FullGame.zip
       tagName: ${{ github.ref_name }}

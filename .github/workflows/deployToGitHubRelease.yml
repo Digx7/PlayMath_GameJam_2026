@@ -2,6 +2,10 @@ name: Deploy to GitHub Release
 on:
   workflow_call:
     inputs:
+      run_id:
+        description: 'The id of the workflow we want to download the artifact from'
+        required: true
+        type: string
       artifactName:
         description: 'The name of the build artifact to include in the release (e.g., Build-WebGL).'
         required: true
@@ -23,8 +27,13 @@ on:
         default: true
         required: false
         type: boolean
+        
   workflow_dispatch:
     inputs:
+      run_id:
+        description: 'The id of the workflow we want to download the artifact from'
+        required: true
+        type: string
       artifactName:
         description: 'The name of the build artifact to include in the release (e.g., Build-WebGL).'
         required: true
@@ -63,12 +72,20 @@ jobs:
         with:
           name: ${{ inputs.artifactName }}
           path: build/${{ inputs.artifactName }}
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       # zips the build artifacts
       - name: Zip Build Artifacts
         run: |
           cd build
-          zip -r ${{ inputs.zipName }} ${{ inputs.artifactName }}
+          if [ -d "${{ inputs.artifactName }}" ]; then
+            zip -r ${{ inputs.zipName }} ${{ inputs.artifactName }}
+          else
+            echo "Error: Directory ${{ inputs.artifactName }} not found in build/"
+            ls -la
+            exit 1
+          fi
 
       - name: Create Release
         # Uses the create-github-release action

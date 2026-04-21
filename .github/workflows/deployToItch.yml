@@ -28,7 +28,7 @@ jobs:
     name: Deploy - Itch.io ${{ matrix.channel }}
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         channel:
           # - windows

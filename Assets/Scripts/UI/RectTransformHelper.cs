@@ -28,4 +28,28 @@ public class RectTransformHelper : MonoBehaviour {
         
         rectTransform.sizeDelta = new Vector2(width, rectTransform.sizeDelta.y); 
     }
+
+    public void SetPivot(Vector2 pivot)
+    {
+        if(rectTransform == null) return;
+        
+        rectTransform.pivot = pivot; 
+        rectTransform.anchoredPosition = Vector2.zero;
+    }
+
+    public void SetPivotX(float pivotX)
+    {
+        if(rectTransform == null) return;
+        
+        rectTransform.pivot = new Vector2(pivotX, rectTransform.pivot.y); 
+        rectTransform.anchoredPosition = Vector2.zero;
+    }
+
+    public void SetPivotY(float pivotY)
+    {
+        if(rectTransform == null) return;
+        
+        rectTransform.pivot = new Vector2(rectTransform.pivot.x, pivotY); 
+        rectTransform.anchoredPosition = Vector2.zero;
+    }
 }

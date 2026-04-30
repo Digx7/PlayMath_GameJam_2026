@@ -54,7 +54,7 @@ public class GridUIManager : MonoBehaviour
         
         levelDataSO = levelData;
         gridLayoutGroup.constraintCount = levelDataSO.grid.x_Length;
-        responsiveGridSizeHelper.maxRowCount = levelDataSO.grid.y_Length;
+        responsiveGridSizeHelper.maxRowCount = levelDataSO.grid.gridType == GridTypes.A4 ? levelDataSO.grid.x_Length + 1 : levelDataSO.grid.x_Length; // Adds extra row for A4 labels if A4 grid
         responsiveGridSizeHelper.UpdateGridCellSize();
 
         if(levelDataSO.IsAnyTreasureRotated())

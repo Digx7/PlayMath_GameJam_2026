@@ -21,7 +21,11 @@ public class ResponsiveGridSizeHelper : MonoBehaviour {
         foreach (var gridLayoutGroup in gridLayoutGroups) {
             if (gridLayoutGroup != null) {
                 // Update the cell size based on the RectTransform's size
-                int size = Mathf.CeilToInt(rectTransform.rect.height / maxRowCount);
+                int sizeWidth = Mathf.CeilToInt(rectTransform.rect.width / maxRowCount);
+                int sizeHeight = Mathf.CeilToInt(rectTransform.rect.height / maxRowCount);
+    
+                int size = Mathf.Min(sizeWidth, sizeHeight);
+
                 gridLayoutGroup.cellSize = new Vector2(size, size);
             }
         }

@@ -170,18 +170,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start Button
       objectReference: {fileID: 0}
-    - target: {fileID: 3377666420812286383, guid: fcdda1224de852644831c34c80b862c7, type: 3}
-      propertyPath: m_Color.b
-      value: 0.3244037
-      objectReference: {fileID: 0}
-    - target: {fileID: 3377666420812286383, guid: fcdda1224de852644831c34c80b862c7, type: 3}
-      propertyPath: m_Color.g
-      value: 0.5910695
-      objectReference: {fileID: 0}
-    - target: {fileID: 3377666420812286383, guid: fcdda1224de852644831c34c80b862c7, type: 3}
-      propertyPath: m_Color.r
-      value: 0.8490566
-      objectReference: {fileID: 0}
     - target: {fileID: 3732544385392289711, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -232,19 +220,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.60062504
+      value: 0.862889
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.26848152
+      value: 0.27725002
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.33900002
+      value: 0.15322223
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.15322223
+      value: 0.1301389
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -469,7 +457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5732099593534810254, guid: f5fb38a070db5ff4d897f3c2a88a6b99, type: 3}
       propertyPath: m_fontSize
-      value: 163.25
+      value: 43.35
       objectReference: {fileID: 0}
     - target: {fileID: 5732099593534810254, guid: f5fb38a070db5ff4d897f3c2a88a6b99, type: 3}
       propertyPath: m_fontAsset

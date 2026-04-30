@@ -333,6 +333,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   updateInEditMode: 0
+  updateOnStart: 1
 --- !u!1 &1171821596756169566
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,8 +409,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281348144
-  m_fontColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -484,11 +485,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextMeshProColorHelper
   colors:
-  - {r: 0.19215687, g: 0.19215687, b: 0.19215687, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
   textMeshProElements:
   - {fileID: 8080289554011393059}
-  startingColor: {r: 0.19215687, g: 0.19215687, b: 0.19215687, a: 1}
+  startingColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &5790205815474489063
 GameObject:
   m_ObjectHideFlags: 0

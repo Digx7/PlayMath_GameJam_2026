@@ -7,6 +7,6 @@ namespace Digx7.Zygote
     [System.Serializable]
     public enum Quadrant
     {
-        TopRight = 0, BottomRight = 1, BottomLeft = 2, TopLeft = 3 
+        TopRight = 0, BottomRight = 1, BottomLeft = 2, TopLeft = 3, OutsideTop = 4, OutsideLeft = 5
     }
 }

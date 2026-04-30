@@ -15,10 +15,11 @@ public class GridUIManager : MonoBehaviour
     public GameObject gridButtonPrefab_A4;
     public Transform gridButtonHolder;
     public GridLayoutGroup gridLayoutGroup;
+    public ResponsiveGridSizeHelper responsiveGridSizeHelper;
 
-    public GameObject gridLabelPrefab;
-    public Transform gridLabelTopHolder;
-    public Transform gridLabelLeftHolder;
+    // public GameObject gridLabelPrefab;
+    // public Transform gridLabelTopHolder;
+    // public Transform gridLabelLeftHolder;
 
     public Animator animator;
     public string tornadoTriggerName;
@@ -53,6 +54,8 @@ public class GridUIManager : MonoBehaviour
         
         levelDataSO = levelData;
         gridLayoutGroup.constraintCount = levelDataSO.grid.x_Length;
+        responsiveGridSizeHelper.maxRowCount = levelDataSO.grid.y_Length;
+        responsiveGridSizeHelper.UpdateGridCellSize();
 
         if(levelDataSO.IsAnyTreasureRotated())
         {
@@ -70,16 +73,16 @@ public class GridUIManager : MonoBehaviour
 
         for (int y = 0; y < levelDataSO.grid.y_Length; y++)
         {
-            if(levelData.grid.gridType == GridTypes.A4)
-            {
-                GameObject obj_Label_Top = Instantiate(gridLabelPrefab, gridLabelTopHolder);
-                // TextMeshProUGUI topLabelTextMeshPro = obj_Label_Top.GetComponentInChildren<TextMeshProUGUI>();
-                // topLabelTextMeshPro.text = (y + 1).ToString();
+            // if(levelData.grid.gridType == GridTypes.A4)
+            // {
+            //     GameObject obj_Label_Top = Instantiate(gridLabelPrefab, gridLabelTopHolder);
+            //     // TextMeshProUGUI topLabelTextMeshPro = obj_Label_Top.GetComponentInChildren<TextMeshProUGUI>();
+            //     // topLabelTextMeshPro.text = (y + 1).ToString();
 
-                GridRulerHelper gridRulerHelper_Top = obj_Label_Top.GetComponentInChildren<GridRulerHelper>();
-                gridRulerHelper_Top.SetText((y + 1).ToString());
-                gridRulerHelper_Top.StartAnimationDelay(y * 0.1f);
-            }
+            //     GridRulerHelper gridRulerHelper_Top = obj_Label_Top.GetComponentInChildren<GridRulerHelper>();
+            //     gridRulerHelper_Top.SetText((y + 1).ToString());
+            //     gridRulerHelper_Top.StartAnimationDelay(y * 0.1f);
+            // }
             
             for (int x = 0; x < levelDataSO.grid.x_Length; x++)
             {
@@ -122,19 +125,19 @@ public class GridUIManager : MonoBehaviour
             }
         }
 
-        for (int x = 0; x < levelDataSO.grid.x_Length; x++)
-        {
-            if(levelDataSO.grid.gridType == GridTypes.A4)
-            {
-                GameObject obj_Label_Left = Instantiate(gridLabelPrefab, gridLabelLeftHolder);
-                TextMeshProUGUI leftLabelTextMeshPro = obj_Label_Left.GetComponentInChildren<TextMeshProUGUI>();
-                leftLabelTextMeshPro.text = Convert.ToChar(x + 65).ToString();
+        // for (int x = 0; x < levelDataSO.grid.x_Length; x++)
+        // {
+        //     if(levelDataSO.grid.gridType == GridTypes.A4)
+        //     {
+        //         GameObject obj_Label_Left = Instantiate(gridLabelPrefab, gridLabelLeftHolder);
+        //         TextMeshProUGUI leftLabelTextMeshPro = obj_Label_Left.GetComponentInChildren<TextMeshProUGUI>();
+        //         leftLabelTextMeshPro.text = Convert.ToChar(x + 65).ToString();
 
-                GridRulerHelper gridRulerHelper_Left = obj_Label_Left.GetComponentInChildren<GridRulerHelper>();
-                gridRulerHelper_Left.SetText(Convert.ToChar(x + 65).ToString());
-                gridRulerHelper_Left.StartAnimationDelay(levelDataSO.grid.x_Length * 0.1f + (x * 0.1f));
-            }
-        }
+        //         GridRulerHelper gridRulerHelper_Left = obj_Label_Left.GetComponentInChildren<GridRulerHelper>();
+        //         gridRulerHelper_Left.SetText(Convert.ToChar(x + 65).ToString());
+        //         gridRulerHelper_Left.StartAnimationDelay(levelDataSO.grid.x_Length * 0.1f + (x * 0.1f));
+        //     }
+        // }
     }
 
     public void OnWin()
@@ -149,24 +152,24 @@ public class GridUIManager : MonoBehaviour
             }
         }
 
-        if (levelDataSO.grid.gridType == GridTypes.A4)
-        {
-            foreach (Transform child in gridLabelLeftHolder)
-            {
-                if(child.gameObject.TryGetComponent<GridRulerHelper>(out GridRulerHelper gridRulerHelper))
-                {
-                    gridRulerHelper.WinAnimationDelay((child.GetSiblingIndex() * 0.1f) * 2f);
-                }
-            }
+        // if (levelDataSO.grid.gridType == GridTypes.A4)
+        // {
+        //     foreach (Transform child in gridLabelLeftHolder)
+        //     {
+        //         if(child.gameObject.TryGetComponent<GridRulerHelper>(out GridRulerHelper gridRulerHelper))
+        //         {
+        //             gridRulerHelper.WinAnimationDelay((child.GetSiblingIndex() * 0.1f) * 2f);
+        //         }
+        //     }
 
-            foreach (Transform child in gridLabelTopHolder)
-            {
-                if(child.gameObject.TryGetComponent<GridRulerHelper>(out GridRulerHelper gridRulerHelper))
-                {
-                    gridRulerHelper.WinAnimationDelay((child.GetSiblingIndex() * 0.1f) * 2f);
-                }
-            }
-        }
+        //     foreach (Transform child in gridLabelTopHolder)
+        //     {
+        //         if(child.gameObject.TryGetComponent<GridRulerHelper>(out GridRulerHelper gridRulerHelper))
+        //         {
+        //             gridRulerHelper.WinAnimationDelay((child.GetSiblingIndex() * 0.1f) * 2f);
+        //         }
+        //     }
+        // }
 
     }
 
@@ -177,15 +180,15 @@ public class GridUIManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        foreach (Transform child in gridLabelTopHolder)
-        {
-            Destroy(child.gameObject);
-        }
+        // foreach (Transform child in gridLabelTopHolder)
+        // {
+        //     Destroy(child.gameObject);
+        // }
 
-        foreach (Transform child in gridLabelLeftHolder)
-        {
-            Destroy(child.gameObject);
-        }
+        // foreach (Transform child in gridLabelLeftHolder)
+        // {
+        //     Destroy(child.gameObject);
+        // }
     }
 
     private GridAxisMetadata GetGridAxisMetadata()

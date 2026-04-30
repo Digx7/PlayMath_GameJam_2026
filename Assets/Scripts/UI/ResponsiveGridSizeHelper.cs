@@ -17,7 +17,7 @@ public class ResponsiveGridSizeHelper : MonoBehaviour {
         UpdateGridCellSize();
     }
 
-    private void UpdateGridCellSize() {
+    public void UpdateGridCellSize() {
         foreach (var gridLayoutGroup in gridLayoutGroups) {
             if (gridLayoutGroup != null) {
                 // Update the cell size based on the RectTransform's size

@@ -244,6 +244,18 @@ public class GridButtonHelper : MonoBehaviour
             case GridTypes.A4:
                 gridDisplayImage.sprite = gridSprites[1];
                 axisDisplayImage.gameObject.SetActive(false);
+
+                if(gameCoordinate.y == 0)
+                {
+                    // Top Ruler
+                    SetGraphNumberText((gameCoordinate.x + 1).ToString(), Quadrant.OutsideTop);
+                }
+                if(gameCoordinate.x == 0)
+                {
+                    // Left Ruler
+                    SetGraphNumberText(Convert.ToChar(gameCoordinate.y + 65).ToString(), Quadrant.OutsideLeft);
+                }
+
                 break;
             default:
                 break;

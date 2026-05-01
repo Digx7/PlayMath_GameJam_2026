@@ -55,6 +55,6 @@ jobs:
     # needs: deployToItch
     uses: ./.github/workflows/discordMessage.yml
     with:
-      message: "Build ${{ github.ref_name }} has been deployed to [GitHub Releases](https://github.com/Digx7/PlayMath_GameJam_2026/releases/tags/${{ github.ref_name }}) and [Itch.io](https://digx7.itch.io/treasure-hunt-post-game-jam)!\nCheck it out!\n\n**Build ${{ github.ref_name }} Notes: ======**\n${{ github.event.head_commit.message }}"
+      message: "Build ${{ github.ref_name }} has been deployed to [GitHub Releases](https://github.com/Digx7/PlayMath_GameJam_2026/releases/tag/${{ github.ref_name }}) and [Itch.io](https://digx7.itch.io/treasure-hunt-post-game-jam)!\nCheck it out!\n\n**Build ${{ github.ref_name }} Notes: ======**\n${{ github.event.head_commit.message }}"
     secrets:
       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}

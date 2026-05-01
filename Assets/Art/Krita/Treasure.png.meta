@@ -245,7 +245,7 @@ TextureImporter:
       name: Treasure_Gold
       rect:
         serializedVersion: 2
-        x: 200
+        x: 221
         y: 480
         width: 200
         height: 200
@@ -1302,7 +1302,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 523
-        y: 552
+        y: 553
         width: 54
         height: 54
       alignment: 0

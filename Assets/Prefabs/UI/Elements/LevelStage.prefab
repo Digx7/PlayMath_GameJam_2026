@@ -189,6 +189,18 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 375885294193775671}
+          m_TargetAssemblyTypeName: UnityEngine.UI.GridLayoutGroup, UnityEngine.UI
+          m_MethodName: set_constraintCount
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 4083682360862138131}
           m_TargetAssemblyTypeName: RectTransformHelper, Assembly-CSharp
           m_MethodName: SetHeight
@@ -197,7 +209,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 2000
+            m_FloatArgument: 2750
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -255,6 +267,18 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 375885294193775671}
+          m_TargetAssemblyTypeName: UnityEngine.UI.GridLayoutGroup, UnityEngine.UI
+          m_MethodName: set_constraintCount
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 4083682360862138131}
           m_TargetAssemblyTypeName: RectTransformHelper, Assembly-CSharp
           m_MethodName: SetHeight
@@ -263,7 +287,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 1000
+            m_FloatArgument: 1750
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -321,6 +345,18 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 375885294193775671}
+          m_TargetAssemblyTypeName: UnityEngine.UI.GridLayoutGroup, UnityEngine.UI
+          m_MethodName: set_constraintCount
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 5
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 4083682360862138131}
           m_TargetAssemblyTypeName: RectTransformHelper, Assembly-CSharp
           m_MethodName: SetHeight
@@ -329,7 +365,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 550
+            m_FloatArgument: 600
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2

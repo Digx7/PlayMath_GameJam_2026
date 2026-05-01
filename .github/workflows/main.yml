@@ -21,7 +21,7 @@ jobs:
   discordMessage_ProcessStarted:
     uses: ./.github/workflows/discordMessage.yml
     with:
-      message: "A new release ${{ github.ref_name }} is being processed! Stay tuned for updates on GitHub Releases and Itch.io!  You can view the workflow [here](https://github.com/Digx7/PlayMath_GameJam_2026/actions)"
+      message: "Build ${{ github.ref_name }} is being processed! Stay tuned for updates on GitHub Releases and Itch.io!  You can view the workflow [here](https://github.com/Digx7/PlayMath_GameJam_2026/actions)"
     secrets:
       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
   buildForAllSupportedPlatforms:
@@ -55,6 +55,6 @@ jobs:
     # needs: deployToItch
     uses: ./.github/workflows/discordMessage.yml
     with:
-      message: "A new release ${{ github.ref_name }} has been deployed to [GitHub Releases](https://github.com/Digx7/PlayMath_GameJam_2026/releases/tag/{{ github.ref_name }}) and [Itch.io](https://digx7.itch.io/treasure-hunt-post-game-jam)! Check it out! "
+      message: "Build ${{ github.ref_name }} has been deployed to [GitHub Releases](https://github.com/Digx7/PlayMath_GameJam_2026/releases/tags/${{ github.ref_name }}) and [Itch.io](https://digx7.itch.io/treasure-hunt-post-game-jam)!\nCheck it out!\n\n**Build ${{ github.ref_name }} Notes: ======**\n${{ github.event.head_commit.message }}"
     secrets:
       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}

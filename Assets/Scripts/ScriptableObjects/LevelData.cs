@@ -25,6 +25,45 @@ public class LevelData : ScriptableObject
 
         return nextLevel;
     }
+
+    public string GetStageName()
+    {
+        if(name.Contains("-"))
+        {
+            return name.Split("-")[0];
+        }
+        else
+        {
+            return name.Split(" ")[0];
+        }
+    }
+
+    public string GetLevelName()
+    {
+        if(name.Contains("-"))
+        {
+            int index = name.IndexOf('-') + 1;
+            string result = name;
+
+            if (index >= 0) 
+            {
+                result = name.Substring(index);
+            } 
+            return result;
+        }
+        else
+        {
+            int index = name.IndexOf(' ') + 1;
+            string result = name;
+
+            if (index >= 0) 
+            {
+                result = name.Substring(index);
+            } 
+            return result;
+        }
+    }
+
     public bool isLastLevel = false;
     public bool isRandomLevel = false;
 

@@ -253,10 +253,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4050184320072582122}
-  - component: {fileID: 7321483937541740128}
-  - component: {fileID: 5372025900716749736}
   - component: {fileID: 406624560655634241}
   - component: {fileID: 8290339727747461549}
+  - component: {fileID: 4126083622069522539}
+  - component: {fileID: 4214538164013411068}
   m_Layer: 5
   m_Name: LevelsHolder
   m_TagString: Untagged
@@ -283,42 +283,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7321483937541740128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074534970106510534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
-  m_Padding:
-    m_Left: 168
-    m_Right: 0
-    m_Top: 52
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 0, y: 0}
-  m_Constraint: 0
-  m_ConstraintCount: 2
---- !u!114 &5372025900716749736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074534970106510534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c0867e46d02c114792f8c99ad804ac0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SetGridLayoutSizeHelper
 --- !u!114 &406624560655634241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,27 +302,27 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5372025900716749736}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
-          m_MethodName: SetCellSize
-          m_Mode: 4
+        - m_Target: {fileID: 4214538164013411068}
+          m_TargetAssemblyTypeName: LayoutGroupHelper, Assembly-CSharp
+          m_MethodName: SetPaddingLeft
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 400
+            m_IntArgument: 20
+            m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 5372025900716749736}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
-          m_MethodName: SetCellSpacing
-          m_Mode: 4
+        - m_Target: {fileID: 4214538164013411068}
+          m_TargetAssemblyTypeName: LayoutGroupHelper, Assembly-CSharp
+          m_MethodName: SetPaddingRight
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 20
+            m_IntArgument: 20
+            m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -368,27 +332,27 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5372025900716749736}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
-          m_MethodName: SetCellSize
-          m_Mode: 4
+        - m_Target: {fileID: 4214538164013411068}
+          m_TargetAssemblyTypeName: LayoutGroupHelper, Assembly-CSharp
+          m_MethodName: SetPaddingLeft
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 200
+            m_IntArgument: 100
+            m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 5372025900716749736}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
-          m_MethodName: SetCellSpacing
-          m_Mode: 4
+        - m_Target: {fileID: 4214538164013411068}
+          m_TargetAssemblyTypeName: LayoutGroupHelper, Assembly-CSharp
+          m_MethodName: SetPaddingRight
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 10
+            m_IntArgument: 100
+            m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -398,26 +362,26 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5372025900716749736}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
-          m_MethodName: SetCellSize
-          m_Mode: 4
+        - m_Target: {fileID: 4214538164013411068}
+          m_TargetAssemblyTypeName: LayoutGroupHelper, Assembly-CSharp
+          m_MethodName: SetPaddingLeft
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 100
+            m_IntArgument: 300
+            m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 5372025900716749736}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
-          m_MethodName: SetCellSpacing
-          m_Mode: 4
+        - m_Target: {fileID: 4214538164013411068}
+          m_TargetAssemblyTypeName: LayoutGroupHelper, Assembly-CSharp
+          m_MethodName: SetPaddingRight
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 300
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -438,6 +402,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &4126083622069522539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074534970106510534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
+  m_Padding:
+    m_Left: 300
+    m_Right: 300
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 53.04
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 1
+  m_ReverseArrangement: 0
+--- !u!114 &4214538164013411068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074534970106510534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2fa5050e21606241a451b23d91d7c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LayoutGroupHelper
+  target: {fileID: 4126083622069522539}
 --- !u!1 &2210465671818798774
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,6 +823,7 @@ MonoBehaviour:
   requestLoadUIWidgetChannel: {fileID: 11400000, guid: f9e8b7ff78e0ae943a4926492de10937, type: 2}
   requestUnLoadUIWidgetChannel: {fileID: 11400000, guid: f451e53f6d34f5e4493c2c5bdbed8351, type: 2}
   levelButtonPrefab: {fileID: 8974963316519555865, guid: 5210179c09ac32f4c809cac3537b668a, type: 3}
+  levelStagePrefab: {fileID: 2977940035676231757, guid: 51b7242449505b24ca652f5a4ee8c30a, type: 3}
   levelButtonHolder: {fileID: 4050184320072582122}
   levelDataResourcePath: ScriptableObjects/LevelData
   levels_LevelData:
@@ -1141,7 +1145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_fontSize
-      value: 24.9
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_margin.x
@@ -1161,19 +1165,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.22700001
+      value: 0.14347917
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.8354672
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.015000001
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.20160581
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_SizeDelta.x

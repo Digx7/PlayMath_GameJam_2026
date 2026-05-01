@@ -14,7 +14,7 @@ public class LevelUIButtonHelper : MonoBehaviour {
     public void Setup(LevelData levelData)
     {
         // m_sceneName = levelData.name;
-        label.text = levelData.name;
+        label.text = levelData.GetLevelName();
 
         levelDataChannelRaiser.Data = levelData;
     }

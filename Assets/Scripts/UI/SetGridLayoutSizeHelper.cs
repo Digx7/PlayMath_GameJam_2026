@@ -15,6 +15,18 @@ public class SetGridLayoutSizeHelper : MonoBehaviour {
         }
     }
 
+    public void SetCellHight(float height) {
+        if (gridLayoutGroup != null) {
+            gridLayoutGroup.cellSize = new Vector2(gridLayoutGroup.cellSize.x, height);
+        }
+    }
+
+    public void SetCellWidth(float width) {
+        if (gridLayoutGroup != null) {
+            gridLayoutGroup.cellSize = new Vector2(width, gridLayoutGroup.cellSize.y);
+        }
+    }
+
     public void SetCellSpacing(float spacing) {
         if (gridLayoutGroup != null) {
             gridLayoutGroup.spacing = new Vector2(spacing, spacing);

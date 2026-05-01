@@ -16,6 +16,7 @@ public class LevelSelectionUIWidget : UIMenu
 
     [Header("References")]
     public GameObject levelButtonPrefab;
+    public GameObject levelStagePrefab;
     public Transform levelButtonHolder;
     public string levelDataResourcePath;
     public List<LevelData> levels_LevelData;
@@ -98,11 +99,26 @@ public class LevelSelectionUIWidget : UIMenu
 
     public void LoadLevelButtons(List<LevelData> levels)
     {
+        GameObject stageObj = null;
+        LevelStageElement levelStageElement = null;
+        string currentStage = "";
+        
         for (int i = 0; i < levels.Count; i++)
         {
-            GameObject obj = Instantiate(levelButtonPrefab, levelButtonHolder);
-            LevelUIButtonHelper levelUIButtonHelper = obj.GetComponent<LevelUIButtonHelper>();
-            levelUIButtonHelper.Setup(levels[i]);
+            // GameObject obj = Instantiate(levelButtonPrefab, levelButtonHolder);
+            // LevelUIButtonHelper levelUIButtonHelper = obj.GetComponent<LevelUIButtonHelper>();
+            // levelUIButtonHelper.Setup(levels[i]);
+
+            if(stageObj == null || currentStage != levels[i].GetStageName())
+            {
+                stageObj = Instantiate(levelStagePrefab, levelButtonHolder);
+                levelStageElement = stageObj.GetComponent<LevelStageElement>();
+
+                currentStage = levels[i].GetStageName();
+                levelStageElement.SetLabel(currentStage);
+            }
+
+            levelStageElement.AddLevel(levels[i]);
         }
     }
 }

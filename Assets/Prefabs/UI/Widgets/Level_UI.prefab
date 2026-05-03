@@ -250,7 +250,7 @@ MonoBehaviour:
           m_CallState: 2
   - screenBreakPointData: {fileID: 11400000, guid: 3787566aa0926f749951cf0be7f4de47, type: 2}
     AnchorMinPoints: {x: 0, y: 0.91400003}
-    AnchorMaxPoints: {x: 1, y: 1}
+    AnchorMaxPoints: {x: 0.645, y: 1}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
@@ -317,6 +317,36 @@ MonoBehaviour:
         - m_Target: {fileID: 4837564721663168079}
           m_TargetAssemblyTypeName: UnityEngine.UI.HorizontalLayoutGroup, UnityEngine.UI
           m_MethodName: set_childScaleWidth
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4837564721663168079}
+          m_TargetAssemblyTypeName: UnityEngine.UI.HorizontalLayoutGroup, UnityEngine.UI
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - screenBreakPointData: {fileID: 11400000, guid: 71af48c2bd7cebb4db453e250b2b09c9, type: 2}
+    AnchorMinPoints: {x: 0, y: 0.91400003}
+    AnchorMaxPoints: {x: 0.64500004, y: 1}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4837564721663168079}
+          m_TargetAssemblyTypeName: UnityEngine.UI.HorizontalLayoutGroup, UnityEngine.UI
+          m_MethodName: set_enabled
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -452,8 +482,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: 3787566aa0926f749951cf0be7f4de47, type: 2}
-    AnchorMinPoints: {x: 0, y: 0.33}
-    AnchorMaxPoints: {x: 1, y: 0.91400003}
+    AnchorMinPoints: {x: 0, y: 0}
+    AnchorMaxPoints: {x: 0.645, y: 0.91400003}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
@@ -466,6 +496,12 @@ MonoBehaviour:
   - screenBreakPointData: {fileID: 11400000, guid: 7f4b7845212eaea4eb275273975024b4, type: 2}
     AnchorMinPoints: {x: 0, y: 0.33}
     AnchorMaxPoints: {x: 1, y: 0.91400003}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 71af48c2bd7cebb4db453e250b2b09c9, type: 2}
+    AnchorMinPoints: {x: 0, y: 0}
+    AnchorMaxPoints: {x: 0.64500004, y: 0.91400003}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
@@ -2741,8 +2777,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - screenBreakPointData: {fileID: 11400000, guid: 3787566aa0926f749951cf0be7f4de47, type: 2}
-    AnchorMinPoints: {x: 0, y: 0}
-    AnchorMaxPoints: {x: 1, y: 0.33}
+    AnchorMinPoints: {x: 0.645, y: 0}
+    AnchorMaxPoints: {x: 1, y: 1}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
@@ -2754,7 +2790,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 400
+            m_FloatArgument: 200
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -2791,6 +2827,24 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 400
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - screenBreakPointData: {fileID: 11400000, guid: 71af48c2bd7cebb4db453e250b2b09c9, type: 2}
+    AnchorMinPoints: {x: 0.645, y: 0}
+    AnchorMaxPoints: {x: 1, y: 1}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7950947992822894627}
+          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
+          m_MethodName: SetCellSize
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 200
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -2916,19 +2970,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4001392825058351012, guid: 32a3ced6164a26b45bcaf5b49970d128, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 4001392825058351012, guid: 32a3ced6164a26b45bcaf5b49970d128, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4001392825058351012, guid: 32a3ced6164a26b45bcaf5b49970d128, type: 3}
-      propertyPath: m_AnchorMin.x
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4001392825058351012, guid: 32a3ced6164a26b45bcaf5b49970d128, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4001392825058351012, guid: 32a3ced6164a26b45bcaf5b49970d128, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4001392825058351012, guid: 32a3ced6164a26b45bcaf5b49970d128, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4429175961652735550, guid: 32a3ced6164a26b45bcaf5b49970d128, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3124,7 +3178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.22638503
+      value: 0.226385
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3468,7 +3522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7605889644540895712, guid: 7c863cc170c44a742b078f2f50a1a662, type: 3}
       propertyPath: m_fontSize
-      value: 72.7
+      value: 115.15
       objectReference: {fileID: 0}
     - target: {fileID: 7605889644540895712, guid: 7c863cc170c44a742b078f2f50a1a662, type: 3}
       propertyPath: m_margin.x

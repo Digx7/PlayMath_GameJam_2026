@@ -319,8 +319,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: 3787566aa0926f749951cf0be7f4de47, type: 2}
-    AnchorMinPoints: {x: 0.33900002, y: 0.1301389}
-    AnchorMaxPoints: {x: 0.862889, y: 0.27725}
+    AnchorMinPoints: {x: 0.33900002, y: 0.1532222}
+    AnchorMaxPoints: {x: 0.600625, y: 0.2684815}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
@@ -333,6 +333,12 @@ MonoBehaviour:
   - screenBreakPointData: {fileID: 11400000, guid: 7f4b7845212eaea4eb275273975024b4, type: 2}
     AnchorMinPoints: {x: 0.20046915, y: 0.15300001}
     AnchorMaxPoints: {x: 0.781, y: 0.26848152}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 71af48c2bd7cebb4db453e250b2b09c9, type: 2}
+    AnchorMinPoints: {x: 0.33900002, y: 0.15322223}
+    AnchorMaxPoints: {x: 0.60062504, y: 0.26848152}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []

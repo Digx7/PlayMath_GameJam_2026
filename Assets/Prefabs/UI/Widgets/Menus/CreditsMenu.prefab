@@ -272,6 +272,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - screenBreakPointData: {fileID: 11400000, guid: 71af48c2bd7cebb4db453e250b2b09c9, type: 2}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4125005038707407701}
+          m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_MethodName: set_fontSizeMax
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 72
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - screenBreakPointData: {fileID: 11400000, guid: feecbb67fe010d246b9d4edabf2ca443, type: 2}
     onBreakPointApplied:
       m_PersistentCalls:
@@ -403,8 +419,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: 3787566aa0926f749951cf0be7f4de47, type: 2}
-    AnchorMinPoints: {x: 0, y: 0}
-    AnchorMaxPoints: {x: 1, y: 1}
+    AnchorMinPoints: {x: 0.34, y: 0}
+    AnchorMaxPoints: {x: 0.65, y: 1}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
@@ -417,6 +433,12 @@ MonoBehaviour:
   - screenBreakPointData: {fileID: 11400000, guid: 7f4b7845212eaea4eb275273975024b4, type: 2}
     AnchorMinPoints: {x: 0, y: 0}
     AnchorMaxPoints: {x: 1, y: 1}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 71af48c2bd7cebb4db453e250b2b09c9, type: 2}
+    AnchorMinPoints: {x: 0.34, y: 0}
+    AnchorMaxPoints: {x: 0.65, y: 1}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
@@ -854,6 +876,12 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: 7f4b7845212eaea4eb275273975024b4, type: 2}
+    AnchorMinPoints: {x: 0.24036023, y: 0.165}
+    AnchorMaxPoints: {x: 0.7606802, y: 0.2598148}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 71af48c2bd7cebb4db453e250b2b09c9, type: 2}
     AnchorMinPoints: {x: 0.24036023, y: 0.165}
     AnchorMaxPoints: {x: 0.7606802, y: 0.2598148}
     onBreakPointApplied:

@@ -472,13 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResponsiveUIHelper
   breakPoints:
-  - screenBreakPoint:
-      breakPointName: Mobile
-      minScreenWidth: 0
-      maxScreenWidth: 399
-      onBreakPointApplied:
-        m_PersistentCalls:
-          m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 50dae164319c0df4b84e418ac1710966, type: 2}
     AnchorMinPoints: {x: 0, y: 0}
     AnchorMaxPoints: {x: 1, y: 0.33}
     onBreakPointApplied:
@@ -496,13 +490,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - screenBreakPoint:
-      breakPointName: Tablet
-      minScreenWidth: 400
-      maxScreenWidth: 899
-      onBreakPointApplied:
-        m_PersistentCalls:
-          m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 7f4b7845212eaea4eb275273975024b4, type: 2}
     AnchorMinPoints: {x: 0, y: 0}
     AnchorMaxPoints: {x: 1, y: 0.33}
     onBreakPointApplied:
@@ -520,13 +508,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - screenBreakPoint:
-      breakPointName: Desktop
-      minScreenWidth: 900
-      maxScreenWidth: 999999
-      onBreakPointApplied:
-        m_PersistentCalls:
-          m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: feecbb67fe010d246b9d4edabf2ca443, type: 2}
     AnchorMinPoints: {x: 0.645, y: 0}
     AnchorMaxPoints: {x: 1, y: 1}
     onBreakPointApplied:
@@ -759,37 +741,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResponsiveUIHelper
   breakPoints:
-  - screenBreakPoint:
-      breakPointName: Mobile
-      minScreenWidth: 0
-      maxScreenWidth: 399
-      onBreakPointApplied:
-        m_PersistentCalls:
-          m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 50dae164319c0df4b84e418ac1710966, type: 2}
     AnchorMinPoints: {x: 0.2, y: 0.04054688}
     AnchorMaxPoints: {x: 0.8, y: 0.74844444}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
-  - screenBreakPoint:
-      breakPointName: Tablet
-      minScreenWidth: 400
-      maxScreenWidth: 899
-      onBreakPointApplied:
-        m_PersistentCalls:
-          m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 7f4b7845212eaea4eb275273975024b4, type: 2}
     AnchorMinPoints: {x: 0.2, y: 0.04054688}
     AnchorMaxPoints: {x: 0.8, y: 0.74844444}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
-  - screenBreakPoint:
-      breakPointName: Desktop
-      minScreenWidth: 900
-      maxScreenWidth: 9999
-      onBreakPointApplied:
-        m_PersistentCalls:
-          m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: feecbb67fe010d246b9d4edabf2ca443, type: 2}
     AnchorMinPoints: {x: 0.2, y: 0.3}
     AnchorMaxPoints: {x: 0.8, y: 0.6}
     onBreakPointApplied:

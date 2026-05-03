@@ -60,7 +60,7 @@ public class ResponsiveUIHelper : MonoBehaviour
             }
         }
         
-        ScreenInfo currentScreenInfo = new ScreenInfo { width = Screen.width, height = Screen.height };
+        ScreenInfo currentScreenInfo = new ScreenInfo { width = Screen.width, height = Screen.height, isMobile = GameManager.IsMobileBrowser() };
 
         foreach (var breakPoint in breakPoints) 
         {
@@ -90,14 +90,16 @@ public class ResponsiveUIHelper : MonoBehaviour
     private bool IsWithinBreakPoint(ScreenInfo screenInfo, UIResponsiveBreakPoint breakPoint) 
     {
         
-        if (screenInfo.width < breakPoint.screenBreakPoint.minScreenWidth || screenInfo.width > breakPoint.screenBreakPoint.maxScreenWidth)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+        // if (screenInfo.width < breakPoint.screenBreakPointData.minScreenWidth || screenInfo.width > breakPoint.screenBreakPointData.maxScreenWidth)
+        // {
+        //     return false;
+        // }
+        // else
+        // {
+        //     return true;
+        // }
+
+        return breakPoint.screenBreakPointData.IsWithinBreakPoint(screenInfo);
     }
 
     private IEnumerator DelayAncorZero(float delay)

@@ -11,6 +11,10 @@ namespace Digx7.Zygote
     {
         public int width;
         public int height;
+        public bool isMobile;
+
+        public bool IsPortrait => height > width;
+        public bool IsLandscape => width > height;
 
         public Vector2Int Resolution => new Vector2Int(width, height);
 

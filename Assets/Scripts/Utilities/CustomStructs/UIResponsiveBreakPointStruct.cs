@@ -7,7 +7,7 @@ namespace Digx7.Zygote
     [System.Serializable]
     public struct UIResponsiveBreakPoint : IEquatable<UIResponsiveBreakPoint>
     {
-        public ScreenBreakPoint screenBreakPoint;
+        public ScreenBreakPointData screenBreakPointData;
 
         [Header("Anchor Points")]
         public Vector2 AnchorMinPoints;
@@ -21,7 +21,7 @@ namespace Digx7.Zygote
         {
             return AnchorMinPoints.Equals(other.AnchorMinPoints) &&
                    AnchorMaxPoints.Equals(other.AnchorMaxPoints) &&
-                   screenBreakPoint.Equals(other.screenBreakPoint);
+                   screenBreakPointData.Equals(other.screenBreakPointData);
         }
 
         // Override Object.Equals(object obj) to call the type-specific Equals
@@ -33,7 +33,7 @@ namespace Digx7.Zygote
         // Override Object.GetHashCode() so that equal objects have the same hash code
         public override int GetHashCode()
         {
-            return HashCode.Combine(AnchorMinPoints, AnchorMaxPoints, screenBreakPoint);
+            return HashCode.Combine(AnchorMinPoints, AnchorMaxPoints, screenBreakPointData);
         }
 
         // Overload the == and != operators for intuitive syntax

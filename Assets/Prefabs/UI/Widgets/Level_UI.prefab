@@ -201,7 +201,7 @@ RectTransform:
   m_Father: {fileID: 6436567188895539114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.91400003}
-  m_AnchorMax: {x: 0.64500004, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -340,7 +340,7 @@ MonoBehaviour:
           m_CallState: 2
   - screenBreakPointData: {fileID: 11400000, guid: 71af48c2bd7cebb4db453e250b2b09c9, type: 2}
     AnchorMinPoints: {x: 0, y: 0.91400003}
-    AnchorMaxPoints: {x: 0.64500004, y: 1}
+    AnchorMaxPoints: {x: 1, y: 1}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
@@ -398,7 +398,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  updateInEditMode: 1
+  updateInEditMode: 0
   updateOnStart: 1
 --- !u!1 &2574786010821982181
 GameObject:
@@ -435,8 +435,8 @@ RectTransform:
   - {fileID: 2365961407269372817}
   m_Father: {fileID: 6436567188895539114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.64500004, y: 0.91400003}
+  m_AnchorMin: {x: 0, y: 0.33}
+  m_AnchorMax: {x: 1, y: 0.91400003}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -500,8 +500,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: 71af48c2bd7cebb4db453e250b2b09c9, type: 2}
-    AnchorMinPoints: {x: 0, y: 0}
-    AnchorMaxPoints: {x: 0.64500004, y: 0.91400003}
+    AnchorMinPoints: {x: 0, y: 0.33}
+    AnchorMaxPoints: {x: 1, y: 0.91400003}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
@@ -2725,8 +2725,8 @@ RectTransform:
   - {fileID: 1296143304329093765}
   m_Father: {fileID: 6436567188895539114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.645, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0.33}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2831,8 +2831,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - screenBreakPointData: {fileID: 11400000, guid: 71af48c2bd7cebb4db453e250b2b09c9, type: 2}
-    AnchorMinPoints: {x: 0.645, y: 0}
-    AnchorMaxPoints: {x: 1, y: 1}
+    AnchorMinPoints: {x: 0, y: 0}
+    AnchorMaxPoints: {x: 1, y: 0.33}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
@@ -2844,7 +2844,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 200
+            m_FloatArgument: 400
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -3166,7 +3166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 52.65
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_Pivot.x
@@ -3178,7 +3178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.226385
+      value: 0.13100001
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3190,7 +3190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.25829977
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3289,8 +3289,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: 3787566aa0926f749951cf0be7f4de47, type: 2}
-    AnchorMinPoints: {x: 0, y: 0}
-    AnchorMaxPoints: {x: 0.226385, y: 1}
+    AnchorMinPoints: {x: 0, y: 0.2582998}
+    AnchorMaxPoints: {x: 0.131, y: 1}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
@@ -3303,6 +3303,12 @@ MonoBehaviour:
   - screenBreakPointData: {fileID: 11400000, guid: 7f4b7845212eaea4eb275273975024b4, type: 2}
     AnchorMinPoints: {x: 0, y: 0}
     AnchorMaxPoints: {x: 0.17469794, y: 1}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 71af48c2bd7cebb4db453e250b2b09c9, type: 2}
+    AnchorMinPoints: {x: 0, y: 0}
+    AnchorMaxPoints: {x: 0.226385, y: 1}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
@@ -3522,7 +3528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7605889644540895712, guid: 7c863cc170c44a742b078f2f50a1a662, type: 3}
       propertyPath: m_fontSize
-      value: 115.15
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 7605889644540895712, guid: 7c863cc170c44a742b078f2f50a1a662, type: 3}
       propertyPath: m_margin.x

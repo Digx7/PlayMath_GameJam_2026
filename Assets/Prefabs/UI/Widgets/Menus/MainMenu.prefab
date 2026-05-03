@@ -919,8 +919,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: 71af48c2bd7cebb4db453e250b2b09c9, type: 2}
-    AnchorMinPoints: {x: 0.34, y: 0}
-    AnchorMaxPoints: {x: 0.65, y: 1}
+    AnchorMinPoints: {x: 0, y: 0}
+    AnchorMaxPoints: {x: 1, y: 1}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
@@ -996,7 +996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 475105688228868513, guid: 879ede82d4abe724cb2c719eee40acbf, type: 3}
       propertyPath: m_fontSize
-      value: 76.25
+      value: 66.25
       objectReference: {fileID: 0}
     - target: {fileID: 2005282208601704212, guid: 879ede82d4abe724cb2c719eee40acbf, type: 3}
       propertyPath: m_Name
@@ -1138,7 +1138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 67.95
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_Pivot.x
@@ -1336,7 +1336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 63.15
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_Pivot.x
@@ -1501,7 +1501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_fontSize
-      value: 69.15
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_Pivot.x
@@ -2004,7 +2004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 65.45
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_Pivot.x

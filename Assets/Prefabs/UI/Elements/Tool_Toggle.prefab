@@ -632,7 +632,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 1
+            m_FloatArgument: 0.5
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -814,8 +814,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4537896863236741389}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0.1}
+  m_AnchorMax: {x: 0.95, y: 0.9}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
@@ -957,8 +957,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: 71af48c2bd7cebb4db453e250b2b09c9, type: 2}
-    AnchorMinPoints: {x: 0.5, y: 0.1}
-    AnchorMaxPoints: {x: 0.95, y: 0.9}
+    AnchorMinPoints: {x: 0, y: 0}
+    AnchorMaxPoints: {x: 0.5, y: 0.5}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
@@ -1728,7 +1728,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 200
+            m_FloatArgument: 400
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -1740,7 +1740,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 72
+            m_FloatArgument: 250
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -1752,7 +1752,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0.5
+            m_FloatArgument: 0.07
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -1764,7 +1764,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0.5
+            m_FloatArgument: 0.07
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2

@@ -194,8 +194,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: 71af48c2bd7cebb4db453e250b2b09c9, type: 2}
-    AnchorMinPoints: {x: 0.34, y: 0}
-    AnchorMaxPoints: {x: 0.65, y: 1}
+    AnchorMinPoints: {x: 0, y: 0}
+    AnchorMaxPoints: {x: 1, y: 1}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
@@ -435,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7605889644540895712, guid: 7c863cc170c44a742b078f2f50a1a662, type: 3}
       propertyPath: m_fontSize
-      value: 122.85
+      value: 121.1
       objectReference: {fileID: 0}
     - target: {fileID: 8416761257626244949, guid: 7c863cc170c44a742b078f2f50a1a662, type: 3}
       propertyPath: m_Name

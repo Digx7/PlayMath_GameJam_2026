@@ -354,8 +354,8 @@ RectTransform:
   - {fileID: 7302896256251404487}
   m_Father: {fileID: 4413168276017332689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.33}
+  m_AnchorMin: {x: 0.645, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -0.0000076293945}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -372,60 +372,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResponsiveUIHelper
   breakPoints:
+  - screenBreakPointData: {fileID: 11400000, guid: a6452213aa209e64c9812dc2cd230d06, type: 2}
+    AnchorMinPoints: {x: 0, y: 0}
+    AnchorMaxPoints: {x: 1, y: 0.33}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 3787566aa0926f749951cf0be7f4de47, type: 2}
+    AnchorMinPoints: {x: 0, y: 0}
+    AnchorMaxPoints: {x: 1, y: 0.33}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: 50dae164319c0df4b84e418ac1710966, type: 2}
     AnchorMinPoints: {x: 0, y: 0}
     AnchorMaxPoints: {x: 1, y: 0.33}
     onBreakPointApplied:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
-          m_MethodName: SetCellSize
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 600
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: 7f4b7845212eaea4eb275273975024b4, type: 2}
     AnchorMinPoints: {x: 0, y: 0}
     AnchorMaxPoints: {x: 1, y: 0.33}
     onBreakPointApplied:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
-          m_MethodName: SetCellSize
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 400
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: feecbb67fe010d246b9d4edabf2ca443, type: 2}
     AnchorMinPoints: {x: 0.645, y: 0}
     AnchorMaxPoints: {x: 1, y: 1}
     onBreakPointApplied:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
-          m_MethodName: SetCellSize
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 200
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   updateInEditMode: 1
   updateOnStart: 1
 --- !u!1 &6452799648092079463
@@ -641,6 +617,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResponsiveUIHelper
   breakPoints:
+  - screenBreakPointData: {fileID: 11400000, guid: a6452213aa209e64c9812dc2cd230d06, type: 2}
+    AnchorMinPoints: {x: 0.2, y: 0.04054688}
+    AnchorMaxPoints: {x: 0.8, y: 0.7484444}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 3787566aa0926f749951cf0be7f4de47, type: 2}
+    AnchorMinPoints: {x: 0.2, y: 0.04054688}
+    AnchorMaxPoints: {x: 0.8, y: 0.7484444}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: 50dae164319c0df4b84e418ac1710966, type: 2}
     AnchorMinPoints: {x: 0.2, y: 0.04054688}
     AnchorMaxPoints: {x: 0.8, y: 0.74844444}
@@ -781,7 +769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7605889644540895712, guid: 7c863cc170c44a742b078f2f50a1a662, type: 3}
       propertyPath: m_fontSize
-      value: 58.5
+      value: 98.4
       objectReference: {fileID: 0}
     - target: {fileID: 7605889644540895712, guid: 7c863cc170c44a742b078f2f50a1a662, type: 3}
       propertyPath: m_margin.x
@@ -903,7 +891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_fontSize
-      value: 55.05
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_Pivot.x
@@ -1065,7 +1053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_fontSize
-      value: 55.05
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_Pivot.x

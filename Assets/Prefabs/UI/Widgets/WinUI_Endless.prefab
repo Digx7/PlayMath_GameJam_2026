@@ -472,60 +472,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResponsiveUIHelper
   breakPoints:
+  - screenBreakPointData: {fileID: 11400000, guid: a6452213aa209e64c9812dc2cd230d06, type: 2}
+    AnchorMinPoints: {x: 0, y: 0}
+    AnchorMaxPoints: {x: 1, y: 0.33}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 3787566aa0926f749951cf0be7f4de47, type: 2}
+    AnchorMinPoints: {x: 0, y: 0}
+    AnchorMaxPoints: {x: 1, y: 0.33}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: 50dae164319c0df4b84e418ac1710966, type: 2}
     AnchorMinPoints: {x: 0, y: 0}
     AnchorMaxPoints: {x: 1, y: 0.33}
     onBreakPointApplied:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
-          m_MethodName: SetCellSize
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 600
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: 7f4b7845212eaea4eb275273975024b4, type: 2}
     AnchorMinPoints: {x: 0, y: 0}
     AnchorMaxPoints: {x: 1, y: 0.33}
     onBreakPointApplied:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
-          m_MethodName: SetCellSize
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 400
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: feecbb67fe010d246b9d4edabf2ca443, type: 2}
     AnchorMinPoints: {x: 0.645, y: 0}
     AnchorMaxPoints: {x: 1, y: 1}
     onBreakPointApplied:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
-          m_MethodName: SetCellSize
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 200
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   updateInEditMode: 0
   updateOnStart: 1
 --- !u!1 &6853292706823004862
@@ -741,6 +717,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResponsiveUIHelper
   breakPoints:
+  - screenBreakPointData: {fileID: 11400000, guid: a6452213aa209e64c9812dc2cd230d06, type: 2}
+    AnchorMinPoints: {x: 0.2, y: 0.04054688}
+    AnchorMaxPoints: {x: 0.8, y: 0.7484444}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 3787566aa0926f749951cf0be7f4de47, type: 2}
+    AnchorMinPoints: {x: 0.2, y: 0.04054688}
+    AnchorMaxPoints: {x: 0.8, y: 0.7484444}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: 50dae164319c0df4b84e418ac1710966, type: 2}
     AnchorMinPoints: {x: 0.2, y: 0.04054688}
     AnchorMaxPoints: {x: 0.8, y: 0.74844444}

@@ -170,26 +170,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start Button
       objectReference: {fileID: 0}
-    - target: {fileID: 3732544385392289711, guid: fcdda1224de852644831c34c80b862c7, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3732544385392289711, guid: fcdda1224de852644831c34c80b862c7, type: 3}
-      propertyPath: breakPointsDataAndEventPairs.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3732544385392289711, guid: fcdda1224de852644831c34c80b862c7, type: 3}
-      propertyPath: breakPointsDataAndEventPairs.Array.data[0].screenBreakPointData
-      value: 
-      objectReference: {fileID: 11400000, guid: 50dae164319c0df4b84e418ac1710966, type: 2}
-    - target: {fileID: 3732544385392289711, guid: fcdda1224de852644831c34c80b862c7, type: 3}
-      propertyPath: breakPointsDataAndEventPairs.Array.data[1].screenBreakPointData
-      value: 
-      objectReference: {fileID: 11400000, guid: 7f4b7845212eaea4eb275273975024b4, type: 2}
-    - target: {fileID: 3732544385392289711, guid: fcdda1224de852644831c34c80b862c7, type: 3}
-      propertyPath: breakPointsDataAndEventPairs.Array.data[2].screenBreakPointData
-      value: 
-      objectReference: {fileID: 11400000, guid: feecbb67fe010d246b9d4edabf2ca443, type: 2}
     - target: {fileID: 7632145875938098759, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -236,19 +216,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.862889
+      value: 0.60062504
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.27725002
+      value: 0.26848152
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.15322223
+      value: 0.33900002
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.1301389
+      value: 0.15322223
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -332,6 +312,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResponsiveUIHelper
   breakPoints:
+  - screenBreakPointData: {fileID: 11400000, guid: a6452213aa209e64c9812dc2cd230d06, type: 2}
+    AnchorMinPoints: {x: 0.1532222, y: 0.1301389}
+    AnchorMaxPoints: {x: 0.862889, y: 0.27725}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 3787566aa0926f749951cf0be7f4de47, type: 2}
+    AnchorMinPoints: {x: 0.33900002, y: 0.1301389}
+    AnchorMaxPoints: {x: 0.862889, y: 0.27725}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
   - screenBreakPointData: {fileID: 11400000, guid: 50dae164319c0df4b84e418ac1710966, type: 2}
     AnchorMinPoints: {x: 0.15322223, y: 0.1301389}
     AnchorMaxPoints: {x: 0.862889, y: 0.27725002}

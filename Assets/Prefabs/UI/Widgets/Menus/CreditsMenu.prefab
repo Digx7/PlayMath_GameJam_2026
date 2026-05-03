@@ -207,6 +207,87 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  breakPointsDataAndEventPairs:
+  - screenBreakPointData: {fileID: 11400000, guid: a6452213aa209e64c9812dc2cd230d06, type: 2}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4125005038707407701}
+          m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_MethodName: set_fontSizeMax
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 250
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - screenBreakPointData: {fileID: 11400000, guid: 3787566aa0926f749951cf0be7f4de47, type: 2}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4125005038707407701}
+          m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_MethodName: set_fontSizeMax
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 250
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - screenBreakPointData: {fileID: 11400000, guid: 50dae164319c0df4b84e418ac1710966, type: 2}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4125005038707407701}
+          m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_MethodName: set_fontSizeMax
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 250
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - screenBreakPointData: {fileID: 11400000, guid: 7f4b7845212eaea4eb275273975024b4, type: 2}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4125005038707407701}
+          m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_MethodName: set_fontSizeMax
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 150
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - screenBreakPointData: {fileID: 11400000, guid: feecbb67fe010d246b9d4edabf2ca443, type: 2}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4125005038707407701}
+          m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_MethodName: set_fontSizeMax
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 72
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   updateInEditMode: 0
   updateOnStart: 1
 --- !u!1 &5611477107808259697
@@ -315,43 +396,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResponsiveUIHelper
   breakPoints:
-  - screenBreakPoint:
-      breakPointName: Mobile
-      minScreenWidth: 0
-      maxScreenWidth: 399
-      onBreakPointApplied:
-        m_PersistentCalls:
-          m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: a6452213aa209e64c9812dc2cd230d06, type: 2}
     AnchorMinPoints: {x: 0, y: 0}
     AnchorMaxPoints: {x: 1, y: 1}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
-  - screenBreakPoint:
-      breakPointName: Tablet
-      minScreenWidth: 400
-      maxScreenWidth: 899
-      onBreakPointApplied:
-        m_PersistentCalls:
-          m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 3787566aa0926f749951cf0be7f4de47, type: 2}
     AnchorMinPoints: {x: 0, y: 0}
     AnchorMaxPoints: {x: 1, y: 1}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
-  - screenBreakPoint:
-      breakPointName: Desktop
-      minScreenWidth: 900
-      maxScreenWidth: 9999
-      onBreakPointApplied:
-        m_PersistentCalls:
-          m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 50dae164319c0df4b84e418ac1710966, type: 2}
+    AnchorMinPoints: {x: 0, y: 0}
+    AnchorMaxPoints: {x: 1, y: 1}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 7f4b7845212eaea4eb275273975024b4, type: 2}
+    AnchorMinPoints: {x: 0, y: 0}
+    AnchorMaxPoints: {x: 1, y: 1}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: feecbb67fe010d246b9d4edabf2ca443, type: 2}
     AnchorMinPoints: {x: 0.34, y: 0}
     AnchorMaxPoints: {x: 0.65, y: 1}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
-  updateInEditMode: 1
+  updateInEditMode: 0
   updateOnStart: 1
 --- !u!1001 &297115401013020781
 PrefabInstance:
@@ -760,41 +835,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResponsiveUIHelper
   breakPoints:
-  - screenBreakPoint:
-      breakPointName: Mobile
-      minScreenWidth: 0
-      maxScreenWidth: 399
-      onBreakPointApplied:
-        m_PersistentCalls:
-          m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: a6452213aa209e64c9812dc2cd230d06, type: 2}
+    AnchorMinPoints: {x: 0.2126667, y: 0.12}
+    AnchorMaxPoints: {x: 0.794, y: 0.2598148}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 3787566aa0926f749951cf0be7f4de47, type: 2}
+    AnchorMinPoints: {x: 0.2126667, y: 0.12}
+    AnchorMaxPoints: {x: 0.794, y: 0.2598148}
+    onBreakPointApplied:
+      m_PersistentCalls:
+        m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 50dae164319c0df4b84e418ac1710966, type: 2}
     AnchorMinPoints: {x: 0.21266666, y: 0.120000005}
     AnchorMaxPoints: {x: 0.794, y: 0.2598148}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
-  - screenBreakPoint:
-      breakPointName: Tablet
-      minScreenWidth: 400
-      maxScreenWidth: 899
-      onBreakPointApplied:
-        m_PersistentCalls:
-          m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: 7f4b7845212eaea4eb275273975024b4, type: 2}
     AnchorMinPoints: {x: 0.24036023, y: 0.165}
     AnchorMaxPoints: {x: 0.7606802, y: 0.2598148}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
-  - screenBreakPoint:
-      breakPointName: Desktop
-      minScreenWidth: 900
-      maxScreenWidth: 9999
-      onBreakPointApplied:
-        m_PersistentCalls:
-          m_Calls: []
+  - screenBreakPointData: {fileID: 11400000, guid: feecbb67fe010d246b9d4edabf2ca443, type: 2}
     AnchorMinPoints: {x: 0.24036023, y: 0.165}
     AnchorMaxPoints: {x: 0.7606802, y: 0.2598148}
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls: []
-  updateInEditMode: 1
+  updateInEditMode: 0
   updateOnStart: 1

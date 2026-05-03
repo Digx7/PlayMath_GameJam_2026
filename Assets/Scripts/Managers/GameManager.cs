@@ -27,6 +27,8 @@ public class GameManager : Singleton<GameManager>
     private const string FullScreenKey = "FullScreen";
     private const string ResolutionKey = "Resolution";
 
+    public static bool IsEditorMobilePreview = false;
+
     // CHANELS =================================
 
     private void Start()
@@ -190,6 +192,9 @@ public class GameManager : Singleton<GameManager>
       
         [System.Runtime.InteropServices.DllImport("__Internal")]
         public static extern bool IsPreferredDesktopPlatform();
+#elif UNITY_EDITOR
+        public static bool IsMobileBrowser() => IsEditorMobilePreview;
+        public static bool IsPreferredDesktopPlatform() => !IsEditorMobilePreview;
 #else
         public static bool IsMobileBrowser() => false;
         public static bool IsPreferredDesktopPlatform() => true;

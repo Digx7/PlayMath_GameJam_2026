@@ -49,7 +49,7 @@ jobs:
       zipName: ${{ github.ref_name }}_Itch_WebGL_FullGame.zip
       tagName: ${{ github.ref_name }}
       note: "${{ github.event.head_commit.message }}"
-      prerelease: true
+      prerelease: false
   discordMessage_ProcessFinished:
     needs: [deployToGitHubRelease, deployToItch]
     # needs: deployToItch

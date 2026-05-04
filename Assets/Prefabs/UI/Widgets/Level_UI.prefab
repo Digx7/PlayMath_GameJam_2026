@@ -224,29 +224,17 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4837564721663168079}
-          m_TargetAssemblyTypeName: UnityEngine.UI.HorizontalLayoutGroup, UnityEngine.UI
-          m_MethodName: set_enabled
-          m_Mode: 6
+        - m_Target: {fileID: 7899806547722120899}
+          m_TargetAssemblyTypeName: UnityComponentHelper, Assembly-CSharp
+          m_MethodName: DisableComponetForSeconds
+          m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0
+            m_FloatArgument: 0.001
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4837564721663168079}
-          m_TargetAssemblyTypeName: UnityEngine.UI.HorizontalLayoutGroup, UnityEngine.UI
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
           m_CallState: 2
   - screenBreakPointData: {fileID: 11400000, guid: 3787566aa0926f749951cf0be7f4de47, type: 2}
     AnchorMinPoints: {x: 0, y: 0.91400003}
@@ -254,29 +242,17 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4837564721663168079}
-          m_TargetAssemblyTypeName: UnityEngine.UI.HorizontalLayoutGroup, UnityEngine.UI
-          m_MethodName: set_enabled
-          m_Mode: 6
+        - m_Target: {fileID: 7899806547722120899}
+          m_TargetAssemblyTypeName: UnityComponentHelper, Assembly-CSharp
+          m_MethodName: DisableComponetForSeconds
+          m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0
+            m_FloatArgument: 0.001
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4837564721663168079}
-          m_TargetAssemblyTypeName: UnityEngine.UI.HorizontalLayoutGroup, UnityEngine.UI
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
           m_CallState: 2
   - screenBreakPointData: {fileID: 11400000, guid: 50dae164319c0df4b84e418ac1710966, type: 2}
     AnchorMinPoints: {x: 0, y: 0.91400003}
@@ -284,29 +260,17 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4837564721663168079}
-          m_TargetAssemblyTypeName: UnityEngine.UI.HorizontalLayoutGroup, UnityEngine.UI
-          m_MethodName: set_enabled
-          m_Mode: 6
+        - m_Target: {fileID: 7899806547722120899}
+          m_TargetAssemblyTypeName: UnityComponentHelper, Assembly-CSharp
+          m_MethodName: DisableComponetForSeconds
+          m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0
+            m_FloatArgument: 0.001
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4837564721663168079}
-          m_TargetAssemblyTypeName: UnityEngine.UI.HorizontalLayoutGroup, UnityEngine.UI
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
           m_CallState: 2
   - screenBreakPointData: {fileID: 11400000, guid: 7f4b7845212eaea4eb275273975024b4, type: 2}
     AnchorMinPoints: {x: 0, y: 0.91400003}
@@ -314,29 +278,17 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4837564721663168079}
-          m_TargetAssemblyTypeName: UnityEngine.UI.HorizontalLayoutGroup, UnityEngine.UI
-          m_MethodName: set_childScaleWidth
-          m_Mode: 6
+        - m_Target: {fileID: 7899806547722120899}
+          m_TargetAssemblyTypeName: UnityComponentHelper, Assembly-CSharp
+          m_MethodName: DisableComponetForSeconds
+          m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0
+            m_FloatArgument: 0.001
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4837564721663168079}
-          m_TargetAssemblyTypeName: UnityEngine.UI.HorizontalLayoutGroup, UnityEngine.UI
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
           m_CallState: 2
   - screenBreakPointData: {fileID: 11400000, guid: 71af48c2bd7cebb4db453e250b2b09c9, type: 2}
     AnchorMinPoints: {x: 0, y: 0.91400003}
@@ -344,29 +296,17 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4837564721663168079}
-          m_TargetAssemblyTypeName: UnityEngine.UI.HorizontalLayoutGroup, UnityEngine.UI
-          m_MethodName: set_enabled
-          m_Mode: 6
+        - m_Target: {fileID: 7899806547722120899}
+          m_TargetAssemblyTypeName: UnityComponentHelper, Assembly-CSharp
+          m_MethodName: DisableComponetForSeconds
+          m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0
+            m_FloatArgument: 0.001
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4837564721663168079}
-          m_TargetAssemblyTypeName: UnityEngine.UI.HorizontalLayoutGroup, UnityEngine.UI
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
           m_CallState: 2
   - screenBreakPointData: {fileID: 11400000, guid: feecbb67fe010d246b9d4edabf2ca443, type: 2}
     AnchorMinPoints: {x: 0, y: 0.91400003}
@@ -374,29 +314,17 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4837564721663168079}
-          m_TargetAssemblyTypeName: UnityEngine.UI.HorizontalLayoutGroup, UnityEngine.UI
-          m_MethodName: set_enabled
-          m_Mode: 6
+        - m_Target: {fileID: 7899806547722120899}
+          m_TargetAssemblyTypeName: UnityComponentHelper, Assembly-CSharp
+          m_MethodName: DisableComponetForSeconds
+          m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0
+            m_FloatArgument: 0.001
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4837564721663168079}
-          m_TargetAssemblyTypeName: UnityEngine.UI.HorizontalLayoutGroup, UnityEngine.UI
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
           m_CallState: 2
   updateInEditMode: 0
   updateOnStart: 1
@@ -1095,6 +1023,7 @@ GameObject:
   - component: {fileID: 2372203605505833210}
   - component: {fileID: 6724111488075849361}
   - component: {fileID: 7950947992822894627}
+  - component: {fileID: 315419265997019646}
   m_Layer: 5
   m_Name: PiecesHolder
   m_TagString: Untagged
@@ -1158,6 +1087,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0867e46d02c114792f8c99ad804ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SetGridLayoutSizeHelper
+--- !u!114 &315419265997019646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960736973634474327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc6cb0dd1c03964ab9948dcd6906a1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OverlayGridSizeHelper
+  gridLayoutSizeHelper: {fileID: 7950947992822894627}
+  numberOfPieces: 3
+  lastCellSize: 400
 --- !u!1 &5081477921634429931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,6 +1700,7 @@ GameObject:
   - component: {fileID: 4703927573037325882}
   - component: {fileID: 4837564721663168079}
   - component: {fileID: 5249491490510623128}
+  - component: {fileID: 7899806547722120899}
   m_Layer: 5
   m_Name: Tools
   m_TagString: Untagged
@@ -1824,6 +1769,19 @@ MonoBehaviour:
   OnSetupLevel: {fileID: 11400000, guid: 60e2db639608fe345a958f5ec8e127fd, type: 2}
   toolButtonPrefab: {fileID: 8075029534145646639, guid: 32a3ced6164a26b45bcaf5b49970d128, type: 3}
   toolButtonHolder: {fileID: 4703927573037325882}
+--- !u!114 &7899806547722120899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7389450314287097633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d611b0e8e118c14b915d4234082b295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnityComponentHelper
+  unityComponent: {fileID: 4837564721663168079}
 --- !u!1 &7631616752552993913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2745,6 +2703,7 @@ MonoBehaviour:
   OnSetupLevel: {fileID: 11400000, guid: 60e2db639608fe345a958f5ec8e127fd, type: 2}
   overlayPrefab: {fileID: 6451353617513515577, guid: b66214af69068b648a81fec5036b68c7, type: 3}
   overlayHolder: {fileID: 2372203605505833210}
+  overlayGridSizeHelper: {fileID: 315419265997019646}
 --- !u!114 &7829020673763482172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2764,8 +2723,8 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7950947992822894627}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
+        - m_Target: {fileID: 315419265997019646}
+          m_TargetAssemblyTypeName: OverlayGridSizeHelper, Assembly-CSharp
           m_MethodName: SetCellSize
           m_Mode: 4
           m_Arguments:
@@ -2782,8 +2741,8 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7950947992822894627}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
+        - m_Target: {fileID: 315419265997019646}
+          m_TargetAssemblyTypeName: OverlayGridSizeHelper, Assembly-CSharp
           m_MethodName: SetCellSize
           m_Mode: 4
           m_Arguments:
@@ -2800,8 +2759,8 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7950947992822894627}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
+        - m_Target: {fileID: 315419265997019646}
+          m_TargetAssemblyTypeName: OverlayGridSizeHelper, Assembly-CSharp
           m_MethodName: SetCellSize
           m_Mode: 4
           m_Arguments:
@@ -2818,8 +2777,8 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7950947992822894627}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
+        - m_Target: {fileID: 315419265997019646}
+          m_TargetAssemblyTypeName: OverlayGridSizeHelper, Assembly-CSharp
           m_MethodName: SetCellSize
           m_Mode: 4
           m_Arguments:
@@ -2836,8 +2795,8 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7950947992822894627}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
+        - m_Target: {fileID: 315419265997019646}
+          m_TargetAssemblyTypeName: OverlayGridSizeHelper, Assembly-CSharp
           m_MethodName: SetCellSize
           m_Mode: 4
           m_Arguments:
@@ -2854,8 +2813,8 @@ MonoBehaviour:
     onBreakPointApplied:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7950947992822894627}
-          m_TargetAssemblyTypeName: SetGridLayoutSizeHelper, Assembly-CSharp
+        - m_Target: {fileID: 315419265997019646}
+          m_TargetAssemblyTypeName: OverlayGridSizeHelper, Assembly-CSharp
           m_MethodName: SetCellSize
           m_Mode: 4
           m_Arguments:
@@ -3166,7 +3125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080289554011393059, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_fontSize
-      value: 52.65
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_Pivot.x
@@ -3178,7 +3137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.13100001
+      value: 0.226385
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3190,7 +3149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.25829977
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8535855678628387416, guid: fcdda1224de852644831c34c80b862c7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3528,7 +3487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7605889644540895712, guid: 7c863cc170c44a742b078f2f50a1a662, type: 3}
       propertyPath: m_fontSize
-      value: 75
+      value: 86.95
       objectReference: {fileID: 0}
     - target: {fileID: 7605889644540895712, guid: 7c863cc170c44a742b078f2f50a1a662, type: 3}
       propertyPath: m_margin.x

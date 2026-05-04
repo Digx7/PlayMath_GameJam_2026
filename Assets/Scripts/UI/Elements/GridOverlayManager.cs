@@ -8,6 +8,8 @@ public class GridOverlayManager : MonoBehaviour {
     public GameObject overlayPrefab;
     public Transform overlayHolder;
 
+    public OverlayGridSizeHelper overlayGridSizeHelper;
+
     private LevelData levelDataSO;
 
     private void OnEnable() {
@@ -23,6 +25,7 @@ public class GridOverlayManager : MonoBehaviour {
         ClearOverlays();
         levelDataSO = levelData;
 
+        overlayGridSizeHelper.SetNumberOfPieces(levelDataSO.treasureToFind.Count);
 
         for (int i = 0; i < levelDataSO.treasureToFind.Count; i++)
         {
